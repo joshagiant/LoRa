@@ -1,0 +1,248 @@
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"freertos.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.vApplicationGetIdleTaskMemory,"ax",%progbits
+  20              		.align	1
+  21              		.global	vApplicationGetIdleTaskMemory
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	vApplicationGetIdleTaskMemory:
+  27              	.LVL0:
+  28              	.LFB135:
+  29              		.file 1 "Core/Src/freertos.c"
+   1:Core/Src/freertos.c **** /* USER CODE BEGIN Header */
+   2:Core/Src/freertos.c **** /**
+   3:Core/Src/freertos.c ****   ******************************************************************************
+   4:Core/Src/freertos.c ****   * File Name          : freertos.c
+   5:Core/Src/freertos.c ****   * Description        : Code for freertos applications
+   6:Core/Src/freertos.c ****   ******************************************************************************
+   7:Core/Src/freertos.c ****   * @attention
+   8:Core/Src/freertos.c ****   *
+   9:Core/Src/freertos.c ****   * Copyright (c) 2024 STMicroelectronics.
+  10:Core/Src/freertos.c ****   * All rights reserved.
+  11:Core/Src/freertos.c ****   *
+  12:Core/Src/freertos.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  13:Core/Src/freertos.c ****   * in the root directory of this software component.
+  14:Core/Src/freertos.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:Core/Src/freertos.c ****   *
+  16:Core/Src/freertos.c ****   ******************************************************************************
+  17:Core/Src/freertos.c ****   */
+  18:Core/Src/freertos.c **** /* USER CODE END Header */
+  19:Core/Src/freertos.c **** 
+  20:Core/Src/freertos.c **** /* Includes ------------------------------------------------------------------*/
+  21:Core/Src/freertos.c **** #include "FreeRTOS.h"
+  22:Core/Src/freertos.c **** #include "task.h"
+  23:Core/Src/freertos.c **** #include "main.h"
+  24:Core/Src/freertos.c **** 
+  25:Core/Src/freertos.c **** /* Private includes ----------------------------------------------------------*/
+  26:Core/Src/freertos.c **** /* USER CODE BEGIN Includes */
+  27:Core/Src/freertos.c **** 
+  28:Core/Src/freertos.c **** /* USER CODE END Includes */
+  29:Core/Src/freertos.c **** 
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s 			page 2
+
+
+  30:Core/Src/freertos.c **** /* Private typedef -----------------------------------------------------------*/
+  31:Core/Src/freertos.c **** /* USER CODE BEGIN PTD */
+  32:Core/Src/freertos.c **** 
+  33:Core/Src/freertos.c **** /* USER CODE END PTD */
+  34:Core/Src/freertos.c **** 
+  35:Core/Src/freertos.c **** /* Private define ------------------------------------------------------------*/
+  36:Core/Src/freertos.c **** /* USER CODE BEGIN PD */
+  37:Core/Src/freertos.c **** 
+  38:Core/Src/freertos.c **** /* USER CODE END PD */
+  39:Core/Src/freertos.c **** 
+  40:Core/Src/freertos.c **** /* Private macro -------------------------------------------------------------*/
+  41:Core/Src/freertos.c **** /* USER CODE BEGIN PM */
+  42:Core/Src/freertos.c **** 
+  43:Core/Src/freertos.c **** /* USER CODE END PM */
+  44:Core/Src/freertos.c **** 
+  45:Core/Src/freertos.c **** /* Private variables ---------------------------------------------------------*/
+  46:Core/Src/freertos.c **** /* USER CODE BEGIN Variables */
+  47:Core/Src/freertos.c **** 
+  48:Core/Src/freertos.c **** /* USER CODE END Variables */
+  49:Core/Src/freertos.c **** 
+  50:Core/Src/freertos.c **** /* Private function prototypes -----------------------------------------------*/
+  51:Core/Src/freertos.c **** /* USER CODE BEGIN FunctionPrototypes */
+  52:Core/Src/freertos.c **** 
+  53:Core/Src/freertos.c **** /* USER CODE END FunctionPrototypes */
+  54:Core/Src/freertos.c **** 
+  55:Core/Src/freertos.c **** /* GetIdleTaskMemory prototype (linked to static allocation support) */
+  56:Core/Src/freertos.c **** void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskS
+  57:Core/Src/freertos.c **** 
+  58:Core/Src/freertos.c **** /* GetTimerTaskMemory prototype (linked to static allocation support) */
+  59:Core/Src/freertos.c **** void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer, StackType_t **ppxTimerTa
+  60:Core/Src/freertos.c **** 
+  61:Core/Src/freertos.c **** /* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
+  62:Core/Src/freertos.c **** static StaticTask_t xIdleTaskTCBBuffer;
+  63:Core/Src/freertos.c **** static StackType_t xIdleStack[configMINIMAL_STACK_SIZE];
+  64:Core/Src/freertos.c **** 
+  65:Core/Src/freertos.c **** void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskS
+  66:Core/Src/freertos.c **** {
+  30              		.loc 1 66 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  67:Core/Src/freertos.c ****   *ppxIdleTaskTCBBuffer = &xIdleTaskTCBBuffer;
+  35              		.loc 1 67 3 view .LVU1
+  36              		.loc 1 67 25 is_stmt 0 view .LVU2
+  37 0000 034B     		ldr	r3, .L2
+  38 0002 0360     		str	r3, [r0]
+  68:Core/Src/freertos.c ****   *ppxIdleTaskStackBuffer = &xIdleStack[0];
+  39              		.loc 1 68 3 is_stmt 1 view .LVU3
+  40              		.loc 1 68 27 is_stmt 0 view .LVU4
+  41 0004 034B     		ldr	r3, .L2+4
+  42 0006 0B60     		str	r3, [r1]
+  69:Core/Src/freertos.c ****   *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
+  43              		.loc 1 69 3 is_stmt 1 view .LVU5
+  44              		.loc 1 69 25 is_stmt 0 view .LVU6
+  45 0008 8023     		movs	r3, #128
+  46 000a 1360     		str	r3, [r2]
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s 			page 3
+
+
+  70:Core/Src/freertos.c ****   /* place for user code */
+  71:Core/Src/freertos.c **** }
+  47              		.loc 1 71 1 view .LVU7
+  48 000c 7047     		bx	lr
+  49              	.L3:
+  50 000e 00BF     		.align	2
+  51              	.L2:
+  52 0010 00000000 		.word	.LANCHOR0
+  53 0014 00000000 		.word	.LANCHOR1
+  54              		.cfi_endproc
+  55              	.LFE135:
+  57              		.section	.text.vApplicationGetTimerTaskMemory,"ax",%progbits
+  58              		.align	1
+  59              		.global	vApplicationGetTimerTaskMemory
+  60              		.syntax unified
+  61              		.thumb
+  62              		.thumb_func
+  64              	vApplicationGetTimerTaskMemory:
+  65              	.LVL1:
+  66              	.LFB136:
+  72:Core/Src/freertos.c **** /* USER CODE END GET_IDLE_TASK_MEMORY */
+  73:Core/Src/freertos.c **** 
+  74:Core/Src/freertos.c **** /* USER CODE BEGIN GET_TIMER_TASK_MEMORY */
+  75:Core/Src/freertos.c **** static StaticTask_t xTimerTaskTCBBuffer;
+  76:Core/Src/freertos.c **** static StackType_t xTimerStack[configTIMER_TASK_STACK_DEPTH];
+  77:Core/Src/freertos.c **** 
+  78:Core/Src/freertos.c **** void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer, StackType_t **ppxTimerTa
+  79:Core/Src/freertos.c **** {
+  67              		.loc 1 79 1 is_stmt 1 view -0
+  68              		.cfi_startproc
+  69              		@ args = 0, pretend = 0, frame = 0
+  70              		@ frame_needed = 0, uses_anonymous_args = 0
+  71              		@ link register save eliminated.
+  80:Core/Src/freertos.c ****   *ppxTimerTaskTCBBuffer = &xTimerTaskTCBBuffer;
+  72              		.loc 1 80 3 view .LVU9
+  73              		.loc 1 80 26 is_stmt 0 view .LVU10
+  74 0000 034B     		ldr	r3, .L5
+  75 0002 0360     		str	r3, [r0]
+  81:Core/Src/freertos.c ****   *ppxTimerTaskStackBuffer = &xTimerStack[0];
+  76              		.loc 1 81 3 is_stmt 1 view .LVU11
+  77              		.loc 1 81 28 is_stmt 0 view .LVU12
+  78 0004 034B     		ldr	r3, .L5+4
+  79 0006 0B60     		str	r3, [r1]
+  82:Core/Src/freertos.c ****   *pulTimerTaskStackSize = configTIMER_TASK_STACK_DEPTH;
+  80              		.loc 1 82 3 is_stmt 1 view .LVU13
+  81              		.loc 1 82 26 is_stmt 0 view .LVU14
+  82 0008 4FF48073 		mov	r3, #256
+  83 000c 1360     		str	r3, [r2]
+  83:Core/Src/freertos.c ****   /* place for user code */
+  84:Core/Src/freertos.c **** }
+  84              		.loc 1 84 1 view .LVU15
+  85 000e 7047     		bx	lr
+  86              	.L6:
+  87              		.align	2
+  88              	.L5:
+  89 0010 00000000 		.word	.LANCHOR2
+  90 0014 00000000 		.word	.LANCHOR3
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s 			page 4
+
+
+  91              		.cfi_endproc
+  92              	.LFE136:
+  94              		.section	.bss.xIdleStack,"aw",%nobits
+  95              		.align	2
+  96              		.set	.LANCHOR1,. + 0
+  99              	xIdleStack:
+ 100 0000 00000000 		.space	512
+ 100      00000000 
+ 100      00000000 
+ 100      00000000 
+ 100      00000000 
+ 101              		.section	.bss.xIdleTaskTCBBuffer,"aw",%nobits
+ 102              		.align	2
+ 103              		.set	.LANCHOR0,. + 0
+ 106              	xIdleTaskTCBBuffer:
+ 107 0000 00000000 		.space	84
+ 107      00000000 
+ 107      00000000 
+ 107      00000000 
+ 107      00000000 
+ 108              		.section	.bss.xTimerStack,"aw",%nobits
+ 109              		.align	2
+ 110              		.set	.LANCHOR3,. + 0
+ 113              	xTimerStack:
+ 114 0000 00000000 		.space	1024
+ 114      00000000 
+ 114      00000000 
+ 114      00000000 
+ 114      00000000 
+ 115              		.section	.bss.xTimerTaskTCBBuffer,"aw",%nobits
+ 116              		.align	2
+ 117              		.set	.LANCHOR2,. + 0
+ 120              	xTimerTaskTCBBuffer:
+ 121 0000 00000000 		.space	84
+ 121      00000000 
+ 121      00000000 
+ 121      00000000 
+ 121      00000000 
+ 122              		.text
+ 123              	.Letext0:
+ 124              		.file 2 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 125              		.file 3 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 126              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 127              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 freertos.c
+C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s:20     .text.vApplicationGetIdleTaskMemory:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s:26     .text.vApplicationGetIdleTaskMemory:00000000 vApplicationGetIdleTaskMemory
+C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s:52     .text.vApplicationGetIdleTaskMemory:00000010 $d
+C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s:58     .text.vApplicationGetTimerTaskMemory:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s:64     .text.vApplicationGetTimerTaskMemory:00000000 vApplicationGetTimerTaskMemory
+C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s:89     .text.vApplicationGetTimerTaskMemory:00000010 $d
+C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s:95     .bss.xIdleStack:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s:99     .bss.xIdleStack:00000000 xIdleStack
+C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s:102    .bss.xIdleTaskTCBBuffer:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s:106    .bss.xIdleTaskTCBBuffer:00000000 xIdleTaskTCBBuffer
+C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s:109    .bss.xTimerStack:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s:113    .bss.xTimerStack:00000000 xTimerStack
+C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s:116    .bss.xTimerTaskTCBBuffer:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccq9dN5Y.s:120    .bss.xTimerTaskTCBBuffer:00000000 xTimerTaskTCBBuffer
+
+NO UNDEFINED SYMBOLS
