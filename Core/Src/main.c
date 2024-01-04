@@ -22,7 +22,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "extern.h"
+#include "i2c-lcd.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -340,6 +341,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LORA_CS_GPIO_Port, &GPIO_InitStruct);
 
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
+
 }
 
 /* USER CODE BEGIN 4 */
@@ -356,12 +361,82 @@ static void MX_GPIO_Init(void)
 void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN 5 */
+  lcd_init();
+  lcd_send_string("King of the hill!");
+
+  osDelay(2000);
+
+  uint8_t x = 0;
+  
+
   /* Infinite loop */
   for(;;)
   {
+    
+    switch (gameState)
+    {
+      case waiting:
+        if(stateChange_flag)
+        {
+          stateChange_flag = 0;
+          lcd_clear();
+          lcd_put_cur(0,0);
+          lcd_send_string("Push to play");
+        }
+      break;
 
-    HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
-    osDelay(500);
+      case p1King:
+        if(stateChange_flag)
+        {
+          stateChange_flag = 0;
+          lcd_clear();
+          lcd_put_cur(0,0);
+          lcd_send_string("P1 is king");
+          lcd_put_cur(1,0);
+          lcd_send_string("of the hill!");
+        }
+      break;
+
+      case p2King:
+        if(stateChange_flag)
+        {
+          stateChange_flag = 0;
+          lcd_clear();
+          lcd_put_cur(0,0);
+          lcd_send_string("P2 is king");
+          lcd_put_cur(1,0);
+          lcd_send_string("of the hill!");
+        }
+      break;
+
+      case p1Winner:
+        if(stateChange_flag)
+        {
+          stateChange_flag = 0;
+          lcd_clear();
+          lcd_put_cur(0,0);
+          lcd_send_string("P1 wins!");
+          lcd_put_cur(1,0);
+          lcd_send_string("Score: _ to _");
+        }
+      break;
+
+      case p2Winner:
+        if(stateChange_flag)
+        {
+          stateChange_flag = 0;
+          lcd_clear();
+          lcd_put_cur(0,0);
+          lcd_send_string("P2 wins!");
+          lcd_put_cur(1,0);
+          lcd_send_string("Score: _ to _");
+        }
+      break;
+      
+    }
+
+    osDelay(1);
+   
 
 
   }
@@ -399,7 +474,8 @@ void StartDisplayTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+
+    osDelay(100);
   }
   /* USER CODE END StartDisplayTask */
 }

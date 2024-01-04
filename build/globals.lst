@@ -1,0 +1,77 @@
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cciktpze.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"globals.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	gameState
+  20              		.global	p2King_counter
+  21              		.global	p1King_counter
+  22              		.global	p2King_flag
+  23              		.global	p1King_flag
+  24              		.global	stateChange_flag
+  25              		.global	loraRX_flag
+  26              		.section	.bss.gameState,"aw",%nobits
+  29              	gameState:
+  30 0000 00       		.space	1
+  31              		.section	.bss.loraRX_flag,"aw",%nobits
+  34              	loraRX_flag:
+  35 0000 00       		.space	1
+  36              		.section	.bss.p1King_counter,"aw",%nobits
+  37              		.align	2
+  40              	p1King_counter:
+  41 0000 00000000 		.space	4
+  42              		.section	.bss.p1King_flag,"aw",%nobits
+  45              	p1King_flag:
+  46 0000 00       		.space	1
+  47              		.section	.bss.p2King_counter,"aw",%nobits
+  48              		.align	2
+  51              	p2King_counter:
+  52 0000 00000000 		.space	4
+  53              		.section	.bss.p2King_flag,"aw",%nobits
+  56              	p2King_flag:
+  57 0000 00       		.space	1
+  58              		.section	.bss.stateChange_flag,"aw",%nobits
+  61              	stateChange_flag:
+  62 0000 00       		.space	1
+  63              		.text
+  64              	.Letext0:
+  65              		.file 1 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\machine\\_default_types.h"
+  66              		.file 2 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\sys\\_stdint.h"
+  67              		.file 3 "Core/Inc/globals.c"
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cciktpze.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 globals.c
+C:\Users\jdcox\AppData\Local\Temp\cciktpze.s:29     .bss.gameState:00000000 gameState
+C:\Users\jdcox\AppData\Local\Temp\cciktpze.s:51     .bss.p2King_counter:00000000 p2King_counter
+C:\Users\jdcox\AppData\Local\Temp\cciktpze.s:40     .bss.p1King_counter:00000000 p1King_counter
+C:\Users\jdcox\AppData\Local\Temp\cciktpze.s:56     .bss.p2King_flag:00000000 p2King_flag
+C:\Users\jdcox\AppData\Local\Temp\cciktpze.s:45     .bss.p1King_flag:00000000 p1King_flag
+C:\Users\jdcox\AppData\Local\Temp\cciktpze.s:61     .bss.stateChange_flag:00000000 stateChange_flag
+C:\Users\jdcox\AppData\Local\Temp\cciktpze.s:34     .bss.loraRX_flag:00000000 loraRX_flag
+C:\Users\jdcox\AppData\Local\Temp\cciktpze.s:30     .bss.gameState:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\cciktpze.s:35     .bss.loraRX_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\cciktpze.s:37     .bss.p1King_counter:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\cciktpze.s:46     .bss.p1King_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\cciktpze.s:48     .bss.p2King_counter:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\cciktpze.s:57     .bss.p2King_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\cciktpze.s:62     .bss.stateChange_flag:00000000 $d
+
+NO UNDEFINED SYMBOLS
