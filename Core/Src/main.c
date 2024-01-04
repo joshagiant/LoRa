@@ -24,6 +24,9 @@
 /* USER CODE BEGIN Includes */
 #include "extern.h"
 #include "i2c-lcd.h"
+#include "lora_sx1276.h"
+#include <string.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,8 +53,11 @@ osThreadId defaultTaskHandle;
 osThreadId loraRXTaskHandle;
 osThreadId displayTaskHandle;
 osTimerId msTickHandle;
+osTimerId debounceTimerHandle;
 osMutexId lora_mutexHandle;
 /* USER CODE BEGIN PV */
+
+lora_sx1276 lora;
 
 /* USER CODE END PV */
 
@@ -65,6 +71,7 @@ void StartDefaultTask(void const * argument);
 void StartLoraRXTask(void const * argument);
 void StartDisplayTask(void const * argument);
 void msTickCallback(void const * argument);
+void debounceCallback(void const * argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -108,6 +115,11 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
+  
+  uint8_t res = lora_init(&lora, &hspi1, LORA_CS_GPIO_Port, LORA_CS_Pin, LORA_BASE_FREQUENCY_US);
+  if (res != LORA_OK) {
+    // Initialization failed
+  }
   /* USER CODE END 2 */
 
   /* Create the mutex(es) */
@@ -128,8 +140,13 @@ int main(void)
   osTimerDef(msTick, msTickCallback);
   msTickHandle = osTimerCreate(osTimer(msTick), osTimerPeriodic, NULL);
 
+  /* definition and creation of debounceTimer */
+  osTimerDef(debounceTimer, debounceCallback);
+  debounceTimerHandle = osTimerCreate(osTimer(debounceTimer), osTimerOnce, NULL);
+
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
+ 
   /* USER CODE END RTOS_TIMERS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
@@ -362,11 +379,10 @@ void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN 5 */
   lcd_init();
+  lcd_clear();
   lcd_send_string("King of the hill!");
 
   osDelay(2000);
-
-  uint8_t x = 0;
   
 
   /* Infinite loop */
@@ -389,9 +405,10 @@ void StartDefaultTask(void const * argument)
         if(stateChange_flag)
         {
           stateChange_flag = 0;
+          LED_OFF; // The hill is yours
           lcd_clear();
           lcd_put_cur(0,0);
-          lcd_send_string("P1 is king");
+          lcd_send_string("You are king");
           lcd_put_cur(1,0);
           lcd_send_string("of the hill!");
         }
@@ -401,11 +418,10 @@ void StartDefaultTask(void const * argument)
         if(stateChange_flag)
         {
           stateChange_flag = 0;
+          LED_ON; // Better push the button!
           lcd_clear();
           lcd_put_cur(0,0);
-          lcd_send_string("P2 is king");
-          lcd_put_cur(1,0);
-          lcd_send_string("of the hill!");
+          lcd_send_string("Take the hill!!");
         }
       break;
 
@@ -413,6 +429,7 @@ void StartDefaultTask(void const * argument)
         if(stateChange_flag)
         {
           stateChange_flag = 0;
+          LED_OFF;
           lcd_clear();
           lcd_put_cur(0,0);
           lcd_send_string("P1 wins!");
@@ -425,12 +442,25 @@ void StartDefaultTask(void const * argument)
         if(stateChange_flag)
         {
           stateChange_flag = 0;
+          LED_OFF;
           lcd_clear();
           lcd_put_cur(0,0);
           lcd_send_string("P2 wins!");
           lcd_put_cur(1,0);
           lcd_send_string("Score: _ to _");
         }
+      break;
+
+        case penalty:
+        if(stateChange_flag)
+        {
+          stateChange_flag = 0;
+          LED_OFF;
+          lcd_clear();
+          lcd_put_cur(0,0);
+          lcd_send_string("Penalty!");
+        }
+
       break;
       
     }
@@ -456,7 +486,51 @@ void StartLoraRXTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    // Check for a new packet
+    if(lora_is_packet_available(&lora) > 0)
+    {
+      // Get the packet
+      uint8_t result;
+      uint8_t RXlength = lora_receive_packet(&lora,loraRXbuf,10,&result);
+    
+      // Parse the data
+      if(strstr(loraRXbuf, "KOTH"))
+      {
+        long opcode;
+        char * trashCatcher[10]; 
+      
+        opcode = strtol(loraRXbuf, trashCatcher,10);
+
+        // Do opcode
+
+        switch (opcode)
+        {
+          case START:
+          // Clear counters
+          p1King_counter = 0;
+          p2King_counter = 0;
+          // Send confirmation
+          break;
+
+          case CONFIRM_START:
+
+          break; 
+
+          case CLAIM_KING: 
+            gameState = p2King;
+            // Send confirmation
+          break; 
+
+          case CONFIRM_KING: // other player confirms my status
+            gameState = p1King;
+          break;
+          
+        }
+      }
+    }
+
+    osDelay(25);
+
   }
   /* USER CODE END StartLoraRXTask */
 }
@@ -486,6 +560,26 @@ void msTickCallback(void const * argument)
   /* USER CODE BEGIN msTickCallback */
 
   /* USER CODE END msTickCallback */
+}
+
+/* debounceCallback function */
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if( (!debouncing_Flag) && (GPIO_Pin == BTN_IN_Pin) ) 
+  {
+    debouncing_Flag = 1;
+    stateChange_flag = 1; 
+    if(++gameState > p2Winner) gameState = waiting;
+    osTimerStart(debounceTimerHandle, pdMS_TO_TICKS(250));
+  }
+}
+
+void debounceCallback(void const * argument)
+{
+  /* USER CODE BEGIN debounceCallback */
+  debouncing_Flag = 0;
+  /* USER CODE END debounceCallback */
 }
 
 /**

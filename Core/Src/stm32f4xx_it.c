@@ -220,13 +220,6 @@ void I2C1_EV_IRQHandler(void)
 
 /* USER CODE BEGIN 1 */
 
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-  if(GPIO_Pin == BTN_IN_Pin) 
-  {
-    stateChange_flag = 1; 
-    if(++gameState > p2Winner) gameState = waiting;
-  }
-}
+
 
 /* USER CODE END 1 */

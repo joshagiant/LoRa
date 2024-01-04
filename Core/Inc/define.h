@@ -1,0 +1,2 @@
+#define LED_ON HAL_GPIO_WritePin(LED1_GPIO_Port,LED1_Pin, RESET)
+#define LED_OFF HAL_GPIO_WritePin(LED1_GPIO_Port,LED1_Pin, SET)
