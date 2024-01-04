@@ -501,27 +501,26 @@ void StartLoraRXTask(void const * argument)
       
         opcode = strtol(loraRXbuf, trashCatcher,10);
 
-        // Do opcode
-
+        // Process opcode and respond if necessary
         switch (opcode)
         {
           case START:
-          // Clear counters
-          p1King_counter = 0;
-          p2King_counter = 0;
-          // Send confirmation
+            // Reset and start
+            resetGame();
+            // Send confirmation
+            sendOpcode(CONFIRM_START);
+            gameState = p2King;
           break;
 
-          case CONFIRM_START:
-
-          break; 
-
           case CLAIM_KING: 
+            sendOpcode(CONFIRM_KING);
             gameState = p2King;
             // Send confirmation
           break; 
 
-          case CONFIRM_KING: // other player confirms my status
+          // Confirmations received
+          case CONFIRM_START:
+          case CONFIRM_KING:
             gameState = p1King;
           break;
           

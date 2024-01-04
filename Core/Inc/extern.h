@@ -2,6 +2,8 @@
 #include "define.h"
 #include "main.h"
 
+extern lora_sx1276 lora;
+
 extern uint8_t loraRX_flag;
 extern uint8_t stateChange_flag;
 extern uint8_t p1King_flag;
@@ -17,3 +19,6 @@ extern uint8_t loraTXbuf[255];
 extern uint8_t gameState;
 extern enum gameStates {waiting,p1King,p2King,p1Winner,p2Winner,penalty};
 extern enum opcodes {START, CONFIRM_START, CLAIM_KING, CONFIRM_KING};
+
+
+void resetGame();
