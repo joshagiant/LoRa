@@ -377,8 +377,10 @@ static void MX_GPIO_Init(void)
 void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN 5 */
+  LED_OFF;
   lcd_init();
   lcd_clear();
+  lcd_put_cur(0,0);
   lcd_send_string("King of the hill!");
 
   osDelay(2000);
@@ -432,8 +434,12 @@ void StartDefaultTask(void const * argument)
           lcd_clear();
           lcd_put_cur(0,0);
           lcd_send_string("P1 wins!");
+          char score [16];
+          uint16_t difference = p1King_counter - p2King_counter;
+          sprintf(score, "Won by %ums", difference);
           lcd_put_cur(1,0);
-          lcd_send_string("Score: _ to _");
+          lcd_send_string(score);
+
         }
       break;
 
@@ -445,8 +451,11 @@ void StartDefaultTask(void const * argument)
           lcd_clear();
           lcd_put_cur(0,0);
           lcd_send_string("P2 wins!");
+          char score [16];
+          uint16_t difference = p2King_counter - p1King_counter;
+          sprintf(score, "Won by %ums", difference);
           lcd_put_cur(1,0);
-          lcd_send_string("Score: _ to _");
+          lcd_send_string(score);
         }
       break;
 
@@ -530,7 +539,19 @@ void StartDisplayTask(void const * argument)
 void msTickCallback(void const * argument)
 {
   /* USER CODE BEGIN msTickCallback */
+    if(p1King_flag == 1)
+    {
+      if(++p1King_counter >= 10000)
+        p1King_flag = 0;
+        gameState = p1Winner;
+    }
 
+    if(p2King_flag == 1)
+    {
+      if(++p2King_counter >= 10000)
+        p2King_flag = 0;
+        gameState = p2Winner;
+    }
   /* USER CODE END msTickCallback */
 }
 
@@ -541,14 +562,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   if( (!debouncing_Flag) && (GPIO_Pin == BTN_IN_Pin) ) 
   {
 
-
     debouncing_Flag = 1;
-    stateChange_flag = 1; 
-
     btnPressed();
-
     osTimerStart(debounceTimerHandle, pdMS_TO_TICKS(250));
-
 
   }
 }

@@ -9,7 +9,8 @@
 
 void resetGame()
 {
-
+    p1King_flag = 0;
+    p2King_flag = 0;
     p1King_counter = 0;
     p1King_counter = 0;
     gameState = waiting;
@@ -44,6 +45,7 @@ void getKOTHPacket()
             // Send confirmation
             sendOpcode(CONFIRM_START);
             gameState = p2King;
+            stateChange_flag = 1; 
             p1King_flag = 0;
             p2King_flag = 1;
             break;
@@ -51,6 +53,7 @@ void getKOTHPacket()
             case CLAIM_KING: 
             sendOpcode(CONFIRM_KING);
             gameState = p2King;
+            stateChange_flag = 1; 
             p1King_flag = 1;
             p2King_flag = 0;
             break; 
@@ -58,6 +61,7 @@ void getKOTHPacket()
             // Confirmations received
             case CONFIRM_START:
             case CONFIRM_KING:
+            stateChange_flag = 1; 
             gameState = p1King;
             p1King_flag = 1;
             p2King_flag = 0;
@@ -78,6 +82,7 @@ void btnPressed()
         
         case p1King:
             // oops! penalty
+            stateChange_flag = 1; 
             gameState = penalty;
             sendOpcode(CONFIRM_KING);
         break;
@@ -89,6 +94,7 @@ void btnPressed()
 
         case p1Winner:
         case p2Winner:
+            stateChange_flag = 1; 
             gameState = waiting;
         break;
 
@@ -110,12 +116,13 @@ void sendOpcode(uint8_t opcode)
     osMutexWait(lora_mutexHandle, osWaitForever);
 
     // Send it via LoRa
-    uint8_t res = lora_send_packet(&lora, (uint8_t *)"test", 4);
+    uint8_t res = lora_send_packet(&lora, (uint8_t *)opcodeString, 10);
     if (res != LORA_OK) {
     // Send failed
+    }
 
     // Release LoRa availability
     osMutexRelease(lora_mutexHandle);
 
-  }
+  
 }
