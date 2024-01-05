@@ -26,6 +26,10 @@
 #include "i2c-lcd.h"
 #include "lora_sx1276.h"
 #include <string.h>
+#include <stdio.h>
+#include "ssd1306.h"
+#include "semphr.h"
+
 
 /* USER CODE END Includes */
 
@@ -56,6 +60,7 @@ osTimerId msTickHandle;
 osTimerId debounceTimerHandle;
 osMutexId lora_mutexHandle;
 /* USER CODE BEGIN PV */
+SemaphoreHandle_t xloraMutex;
 
 lora_sx1276 lora;
 
@@ -115,19 +120,20 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
-  uint8_t res = lora_init(&lora, &hspi1, LORA_CS_GPIO_Port, LORA_CS_Pin, LORA_BASE_FREQUENCY_US);
-  if (res != LORA_OK) {
-    // Initialization failed
-  }
+
+
   /* USER CODE END 2 */
 
   /* Create the mutex(es) */
   /* definition and creation of lora_mutex */
-  osMutexDef(lora_mutex);
-  lora_mutexHandle = osMutexCreate(osMutex(lora_mutex));
+  //debug osMutexDef(lora_mutex);
+  //debug lora_mutexHandle = osMutexCreate(osMutex(lora_mutex));
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
+
+  xloraMutex = xSemaphoreCreateMutex();
+
   /* USER CODE END RTOS_MUTEX */
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
@@ -377,18 +383,54 @@ static void MX_GPIO_Init(void)
 void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN 5 */
-  LED_OFF;
-  lcd_init();
-  lcd_clear();
-  lcd_put_cur(0,0);
-  lcd_send_string("King of the hill!");
+  xloraMutex = xSemaphoreCreateMutex();
+  // debug osMutexWait(lora_mutexHandle, osWaitForever);
+  xSemaphoreTake(xloraMutex, portMAX_DELAY);
+  uint8_t res = lora_init(&lora, &hspi1, LORA_CS_GPIO_Port, LORA_CS_Pin, LORA_BASE_FREQUENCY_CH);
+  if (res != LORA_OK) {
+    // Initialization failed
+    uint8_t debugBuddy;
+    debugBuddy = res;
+    debugBuddy++;
+  }
+  xSemaphoreGive(xloraMutex);
+  //debug osMutexRelease(lora_mutexHandle);
+
+
+  P1LED_OFF;
+  ssd1306_Init();
+  ssd1306_SetCursor(0,0);
+  ssd1306_WriteString("KING",Font_16x24,1);
+  ssd1306_UpdateScreen();
+  osDelay(750);
+  ssd1306_Fill(0);
+  ssd1306_SetCursor(64,0);
+  ssd1306_WriteString("OF",Font_16x24,1);
+  ssd1306_UpdateScreen();
+  osDelay(750);
+  ssd1306_Fill(0);
+  ssd1306_SetCursor(0,8);
+  ssd1306_WriteString("THE",Font_16x24,1);
+  ssd1306_UpdateScreen();
+  osDelay(750);
+  ssd1306_Fill(0);
+  ssd1306_SetCursor(64,8);
+  ssd1306_WriteString("HILL",Font_16x24,1);
+  ssd1306_UpdateScreen();
+
+  lora_mode_receive_continuous(&lora);
 
   osDelay(2000);
+
+  gameState = waiting;
+  stateChange_flag = 1;
   
 
   /* Infinite loop */
   for(;;)
   {
+    //debug
+    HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
     
     switch (gameState)
     {
@@ -396,9 +438,10 @@ void StartDefaultTask(void const * argument)
         if(stateChange_flag)
         {
           stateChange_flag = 0;
-          lcd_clear();
-          lcd_put_cur(0,0);
-          lcd_send_string("Push to play");
+          ssd1306_Fill(0); 
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("Push to play",Font_7x10,1);
+          ssd1306_UpdateScreen();
         }
       break;
 
@@ -406,12 +449,13 @@ void StartDefaultTask(void const * argument)
         if(stateChange_flag)
         {
           stateChange_flag = 0;
-          LED_OFF; // The hill is yours
-          lcd_clear();
-          lcd_put_cur(0,0);
-          lcd_send_string("You are king");
-          lcd_put_cur(1,0);
-          lcd_send_string("of the hill!");
+          P1LED_OFF; // The hill is yours
+          ssd1306_Fill(0);
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("You are king",Font_7x10,1);
+          ssd1306_SetCursor(0,10);
+          ssd1306_WriteString("of the hill!",Font_7x10,1);
+          ssd1306_UpdateScreen();
         }
       break;
 
@@ -419,10 +463,11 @@ void StartDefaultTask(void const * argument)
         if(stateChange_flag)
         {
           stateChange_flag = 0;
-          LED_ON; // Better push the button!
-          lcd_clear();
-          lcd_put_cur(0,0);
-          lcd_send_string("Take the hill!!");
+          P1LED_ON; // Better push the button!
+          ssd1306_Fill(0);
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("Take the hill!!",Font_7x10,1);
+          ssd1306_UpdateScreen();
         }
       break;
 
@@ -430,15 +475,16 @@ void StartDefaultTask(void const * argument)
         if(stateChange_flag)
         {
           stateChange_flag = 0;
-          LED_OFF;
-          lcd_clear();
-          lcd_put_cur(0,0);
-          lcd_send_string("P1 wins!");
+          P1LED_OFF;
+          ssd1306_Fill(0);
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("P1 wins!",Font_7x10,1);
           char score [16];
           uint16_t difference = p1King_counter - p2King_counter;
           sprintf(score, "Won by %ums", difference);
           lcd_put_cur(1,0);
-          lcd_send_string(score);
+          ssd1306_WriteString(score,Font_7x10,1);
+          ssd1306_UpdateScreen();
 
         }
       break;
@@ -447,15 +493,16 @@ void StartDefaultTask(void const * argument)
         if(stateChange_flag)
         {
           stateChange_flag = 0;
-          LED_OFF;
-          lcd_clear();
-          lcd_put_cur(0,0);
-          lcd_send_string("P2 wins!");
+          P1LED_OFF;
+          ssd1306_Fill(0);
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("P2 wins!",Font_7x10,1);
           char score [16];
           uint16_t difference = p2King_counter - p1King_counter;
           sprintf(score, "Won by %ums", difference);
           lcd_put_cur(1,0);
-          lcd_send_string(score);
+          ssd1306_WriteString(score,Font_7x10,1);
+          ssd1306_UpdateScreen();
         }
       break;
 
@@ -463,15 +510,17 @@ void StartDefaultTask(void const * argument)
         if(stateChange_flag)
         {
           stateChange_flag = 0;
-          LED_OFF;
-          lcd_clear();
-          lcd_put_cur(0,0);
-          lcd_send_string("Penalty!");
+          P1LED_OFF;
+          ssd1306_Fill(0); 
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("Penalty!",Font_7x10,1);
+          ssd1306_UpdateScreen();
         }
 
       break;
       
     }
+
 
     osDelay(1);
    
@@ -494,14 +543,17 @@ void StartLoraRXTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
+    //debug
+    HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
+
     // Wait for LoRa availability
-    osMutexWait(lora_mutexHandle, osWaitForever);
+    xSemaphoreTake(xloraMutex, portMAX_DELAY);
 
     // Check for a new packet
     if(lora_is_packet_available(&lora) > 0)
     {
       //release mutex
-      osMutexRelease(lora_mutexHandle);
+      xSemaphoreGive(xloraMutex);
       
       // Get the data
       getKOTHPacket();
@@ -542,15 +594,19 @@ void msTickCallback(void const * argument)
     if(p1King_flag == 1)
     {
       if(++p1King_counter >= 10000)
+      {
         p1King_flag = 0;
         gameState = p1Winner;
+      }
     }
 
     if(p2King_flag == 1)
     {
       if(++p2King_counter >= 10000)
+      { 
         p2King_flag = 0;
         gameState = p2Winner;
+      }
     }
   /* USER CODE END msTickCallback */
 }

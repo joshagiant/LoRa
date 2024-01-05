@@ -3,6 +3,7 @@
 #include "define.h"
 #include "extern.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include "cmsis_os.h"
 #include "lora_sx1276.h"
 
@@ -45,6 +46,8 @@ void getKOTHPacket()
             // Send confirmation
             sendOpcode(CONFIRM_START);
             gameState = p2King;
+            P2LED_ON;
+            P1LED_OFF;
             stateChange_flag = 1; 
             p1King_flag = 0;
             p2King_flag = 1;
@@ -53,6 +56,8 @@ void getKOTHPacket()
             case CLAIM_KING: 
             sendOpcode(CONFIRM_KING);
             gameState = p2King;
+            P2LED_ON;
+            P1LED_OFF;
             stateChange_flag = 1; 
             p1King_flag = 1;
             p2King_flag = 0;
@@ -63,6 +68,8 @@ void getKOTHPacket()
             case CONFIRM_KING:
             stateChange_flag = 1; 
             gameState = p1King;
+            P1LED_ON;
+            P2LED_OFF;
             p1King_flag = 1;
             p2King_flag = 0;
             break;
@@ -84,6 +91,8 @@ void btnPressed()
             // oops! penalty
             stateChange_flag = 1; 
             gameState = penalty;
+            P2LED_ON;
+            P1LED_OFF;
             sendOpcode(CONFIRM_KING);
         break;
 
@@ -96,6 +105,8 @@ void btnPressed()
         case p2Winner:
             stateChange_flag = 1; 
             gameState = waiting;
+            P1LED_OFF;
+            P2LED_OFF;
         break;
 
         case penalty:
@@ -108,21 +119,24 @@ void btnPressed()
 
 void sendOpcode(uint8_t opcode)
 {
+    memset(opcodeString, 0, sizeof(opcodeString));
     // Create encoded string
-    char opcodeString [10];
     sprintf(opcodeString, "%uKOTH", opcode);
 
     // Wait for LoRa availability
-    osMutexWait(lora_mutexHandle, osWaitForever);
+    xSemaphoreTake(xloraMutex, portMAX_DELAY);
 
     // Send it via LoRa
-    uint8_t res = lora_send_packet(&lora, (uint8_t *)opcodeString, 10);
+    uint8_t res = lora_send_packet_dma_start(&lora, (uint8_t *)opcodeString, 10);
     if (res != LORA_OK) {
     // Send failed
+    debugBuddy = res;
+
     }
 
     // Release LoRa availability
-    osMutexRelease(lora_mutexHandle);
+    xSemaphoreGive(xloraMutex);
+    // osMutexRelease(lora_mutexHandle);
 
   
 }
