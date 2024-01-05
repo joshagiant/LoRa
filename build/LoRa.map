@@ -7,7 +7,7 @@ c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp
 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-init.o)
                               c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crt0.o (__libc_init_array)
 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-memcpy-stub.o)
-                              build/queue.o (memcpy)
+                              build/ssd1306.o (memcpy)
 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-memset.o)
                               c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crt0.o (memset)
 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sprintf.o)
@@ -42,10 +42,40 @@ c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp
                               c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-reallocr.o) (_malloc_usable_size_r)
 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-reent.o)
                               c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sbrkr.o) (errno)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+                              build/ssd1306.o (cos)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+                              build/ssd1306.o (sin)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+                              c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o) (__ieee754_rem_pio2)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+                              c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o) (__kernel_cos)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+                              c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o) (__kernel_rem_pio2)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+                              c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o) (__kernel_sin)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+                              c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o) (fabs)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+                              c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o) (floor)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+                              c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o) (scalbn)
 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libnosys.a(sbrk.o)
                               c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sbrkr.o) (_sbrk)
 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libnosys.a(_exit.o)
                               c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-exit.o) (_exit)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
+                              build/ssd1306.o (__aeabi_dmul)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+                              c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o) (__aeabi_dsub)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+                              build/ssd1306.o (__aeabi_ddiv)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+                              c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o) (__aeabi_dcmpeq)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+                              build/ssd1306.o (__aeabi_d2iz)
+c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+                              build/ssd1306.o (__aeabi_d2f)
 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
                               build/lora_sx1276.o (__aeabi_uldivmod)
 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
@@ -92,6 +122,74 @@ Discarded input sections
  .text          0x00000000        0x0 build/main.o
  .data          0x00000000        0x0 build/main.o
  .bss           0x00000000        0x0 build/main.o
+ .text          0x00000000        0x0 build/ssd1306.o
+ .data          0x00000000        0x0 build/ssd1306.o
+ .bss           0x00000000        0x0 build/ssd1306.o
+ .text.ssd1306_DegToRad
+                0x00000000       0x34 build/ssd1306.o
+ .text.ssd1306_NormalizeTo0_360
+                0x00000000       0x10 build/ssd1306.o
+ .text.ssd1306_Reset
+                0x00000000        0x2 build/ssd1306.o
+ .text.ssd1306_WriteCommand
+                0x00000000       0x2c build/ssd1306.o
+ .text.ssd1306_WriteData
+                0x00000000       0x28 build/ssd1306.o
+ .text.ssd1306_FillBuffer
+                0x00000000       0x20 build/ssd1306.o
+ .text.ssd1306_Fill
+                0x00000000       0x1c build/ssd1306.o
+ .text.ssd1306_UpdateScreen
+                0x00000000       0x38 build/ssd1306.o
+ .text.ssd1306_DrawPixel
+                0x00000000       0x44 build/ssd1306.o
+ .text.ssd1306_WriteChar
+                0x00000000       0xb0 build/ssd1306.o
+ .text.ssd1306_WriteString
+                0x00000000       0x2e build/ssd1306.o
+ .text.ssd1306_SetCursor
+                0x00000000        0xc build/ssd1306.o
+ .text.ssd1306_Line
+                0x00000000       0x8e build/ssd1306.o
+ .text.ssd1306_Polyline
+                0x00000000       0x40 build/ssd1306.o
+ .text.ssd1306_DrawArc
+                0x00000000      0x164 build/ssd1306.o
+ .text.ssd1306_DrawArcWithRadiusLine
+                0x00000000      0x1e8 build/ssd1306.o
+ .text.ssd1306_DrawCircle
+                0x00000000       0xac build/ssd1306.o
+ .text.ssd1306_FillCircle
+                0x00000000       0x94 build/ssd1306.o
+ .text.ssd1306_DrawRectangle
+                0x00000000       0x52 build/ssd1306.o
+ .text.ssd1306_FillRectangle
+                0x00000000       0x56 build/ssd1306.o
+ .text.ssd1306_DrawBitmap
+                0x00000000       0x82 build/ssd1306.o
+ .text.ssd1306_SetContrast
+                0x00000000       0x12 build/ssd1306.o
+ .text.ssd1306_SetDisplayOn
+                0x00000000       0x20 build/ssd1306.o
+ .text.ssd1306_Init
+                0x00000000       0xc8 build/ssd1306.o
+ .text.ssd1306_GetDisplayOn
+                0x00000000        0xc build/ssd1306.o
+ .bss.SSD1306   0x00000000        0x6 build/ssd1306.o
+ .bss.SSD1306_Buffer
+                0x00000000      0x200 build/ssd1306.o
+ .debug_info    0x00000000     0x1f87 build/ssd1306.o
+ .debug_abbrev  0x00000000      0x3f4 build/ssd1306.o
+ .debug_loc     0x00000000     0x16b2 build/ssd1306.o
+ .debug_aranges
+                0x00000000       0xe0 build/ssd1306.o
+ .debug_ranges  0x00000000      0x148 build/ssd1306.o
+ .debug_line    0x00000000      0xbf5 build/ssd1306.o
+ .debug_str     0x00000000      0xb54 build/ssd1306.o
+ .comment       0x00000000       0x58 build/ssd1306.o
+ .debug_frame   0x00000000      0x354 build/ssd1306.o
+ .ARM.attributes
+                0x00000000       0x34 build/ssd1306.o
  .text          0x00000000        0x0 build/i2c-lcd.o
  .data          0x00000000        0x0 build/i2c-lcd.o
  .bss           0x00000000        0x0 build/i2c-lcd.o
@@ -1471,6 +1569,179 @@ Discarded input sections
                 0x00000000       0x1a c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-reent.o)
  .text._reclaim_reent
                 0x00000000       0xb8 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-reent.o)
+ .text          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+ .text.cos      0x00000000       0x90 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+ .debug_info    0x00000000      0x25b c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+ .debug_abbrev  0x00000000      0x17f c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+ .debug_loclists
+                0x00000000       0xa7 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+ .debug_rnglists
+                0x00000000       0x14 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+ .debug_line    0x00000000      0x26c c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+ .debug_str     0x00000000      0x284 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+ .comment       0x00000000       0x58 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+ .debug_frame   0x00000000       0x40 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+ .ARM.attributes
+                0x00000000       0x34 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+ .text          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+ .text.sin      0x00000000       0x90 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+ .debug_info    0x00000000      0x268 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+ .debug_abbrev  0x00000000      0x187 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+ .debug_loclists
+                0x00000000       0xb5 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+ .debug_rnglists
+                0x00000000       0x14 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+ .debug_line    0x00000000      0x26f c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+ .debug_str     0x00000000      0x284 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+ .comment       0x00000000       0x58 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+ .debug_frame   0x00000000       0x3c c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+ .ARM.attributes
+                0x00000000       0x34 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+ .text          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .text.__ieee754_rem_pio2
+                0x00000000      0x44c c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .rodata.npio2_hw
+                0x00000000       0x80 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .rodata.two_over_pi
+                0x00000000      0x108 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .debug_info    0x00000000      0x650 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .debug_abbrev  0x00000000      0x1c2 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .debug_loclists
+                0x00000000      0x430 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .debug_rnglists
+                0x00000000       0x43 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .debug_line    0x00000000      0x58f c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .debug_str     0x00000000      0x336 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .comment       0x00000000       0x58 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .debug_frame   0x00000000       0x7c c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .ARM.attributes
+                0x00000000       0x34 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .text          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+ .text.__kernel_cos
+                0x00000000      0x27c c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+ .debug_info    0x00000000      0x3d7 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+ .debug_abbrev  0x00000000      0x138 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+ .debug_loclists
+                0x00000000      0x1ca c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+ .debug_rnglists
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+ .debug_line    0x00000000      0x2a2 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+ .debug_str     0x00000000      0x290 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+ .comment       0x00000000       0x58 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+ .debug_frame   0x00000000       0x70 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+ .ARM.attributes
+                0x00000000       0x34 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+ .text          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .text.__kernel_rem_pio2
+                0x00000000      0x848 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .rodata.PIo2   0x00000000       0x40 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .rodata.init_jk
+                0x00000000       0x10 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .debug_info    0x00000000      0x5f9 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .debug_abbrev  0x00000000      0x184 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .debug_loclists
+                0x00000000      0x9a4 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .debug_rnglists
+                0x00000000       0x14 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .debug_line    0x00000000      0xac7 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .debug_str     0x00000000      0x2d3 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .comment       0x00000000       0x58 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .debug_frame   0x00000000       0x58 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .ARM.attributes
+                0x00000000       0x34 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .text          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+ .text.__kernel_sin
+                0x00000000      0x17c c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+ .debug_info    0x00000000      0x316 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+ .debug_abbrev  0x00000000      0x12d c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+ .debug_loclists
+                0x00000000      0x12b c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+ .debug_rnglists
+                0x00000000       0x14 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+ .debug_line    0x00000000      0x231 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+ .debug_str     0x00000000      0x290 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+ .comment       0x00000000       0x58 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+ .debug_frame   0x00000000       0x48 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+ .ARM.attributes
+                0x00000000       0x34 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+ .text          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+ .text.fabs     0x00000000       0x14 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+ .debug_info    0x00000000      0x14b c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+ .debug_abbrev  0x00000000       0xec c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+ .debug_loclists
+                0x00000000       0x3c c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+ .debug_rnglists
+                0x00000000       0x13 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+ .debug_line    0x00000000      0x1dc c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+ .debug_str     0x00000000      0x250 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+ .comment       0x00000000       0x58 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+ .debug_frame   0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+ .ARM.attributes
+                0x00000000       0x34 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+ .text          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+ .text.floor    0x00000000      0x118 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+ .debug_info    0x00000000      0x216 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+ .debug_abbrev  0x00000000      0x12a c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+ .debug_loclists
+                0x00000000      0x1b5 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+ .debug_rnglists
+                0x00000000       0x2f c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+ .debug_line    0x00000000      0x32d c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+ .debug_str     0x00000000      0x286 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+ .comment       0x00000000       0x58 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+ .debug_frame   0x00000000       0x34 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+ .ARM.attributes
+                0x00000000       0x34 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+ .text          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+ .text.scalbn   0x00000000      0x104 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+ .debug_info    0x00000000      0x276 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+ .debug_abbrev  0x00000000      0x167 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+ .debug_loclists
+                0x00000000      0x161 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+ .debug_rnglists
+                0x00000000       0x32 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+ .debug_line    0x00000000      0x29b c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+ .debug_str     0x00000000      0x2a9 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+ .comment       0x00000000       0x58 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+ .debug_frame   0x00000000       0x2c c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+ .ARM.attributes
+                0x00000000       0x34 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
  .text          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libnosys.a(sbrk.o)
  .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libnosys.a(sbrk.o)
  .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libnosys.a(sbrk.o)
@@ -1492,6 +1763,90 @@ Discarded input sections
  .debug_frame   0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libnosys.a(_exit.o)
  .ARM.attributes
                 0x00000000       0x34 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libnosys.a(_exit.o)
+ .text          0x00000000      0x254 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
+ .debug_line    0x00000000       0xf5 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
+ .debug_line_str
+                0x00000000       0xa8 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
+ .debug_info    0x00000000       0x25 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
+ .debug_abbrev  0x00000000       0x14 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
+ .debug_str     0x00000000       0x93 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
+ .debug_frame   0x00000000       0x30 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
+ .ARM.attributes
+                0x00000000       0x1e c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
+ .text          0x00000000      0x378 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_line    0x00000000      0x16f c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_line_str
+                0x00000000       0xa8 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_info    0x00000000       0x25 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_abbrev  0x00000000       0x14 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_str     0x00000000       0x93 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00000000       0xac c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .ARM.attributes
+                0x00000000       0x1e c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .text          0x00000000      0x424 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+ .debug_line    0x00000000      0x184 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+ .debug_line_str
+                0x00000000       0xa8 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+ .debug_info    0x00000000       0x25 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+ .debug_abbrev  0x00000000       0x14 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+ .debug_str     0x00000000       0x93 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+ .debug_frame   0x00000000       0x50 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+ .ARM.attributes
+                0x00000000       0x1e c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+ .text          0x00000000      0x110 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+ .debug_line    0x00000000       0xa6 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+ .debug_line_str
+                0x00000000       0xa8 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+ .debug_info    0x00000000       0x25 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+ .debug_abbrev  0x00000000       0x14 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+ .debug_str     0x00000000       0x93 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+ .debug_frame   0x00000000       0xc4 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+ .ARM.attributes
+                0x00000000       0x1e c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+ .text          0x00000000       0x50 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+ .debug_line    0x00000000       0x62 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+ .debug_line_str
+                0x00000000       0xa8 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+ .debug_info    0x00000000       0x24 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+ .debug_abbrev  0x00000000       0x14 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+ .debug_str     0x00000000       0x93 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+ .debug_frame   0x00000000       0x24 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+ .ARM.attributes
+                0x00000000       0x1e c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+ .text          0x00000000       0xa0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .debug_line    0x00000000       0x76 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .debug_line_str
+                0x00000000       0xa8 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .debug_info    0x00000000       0x25 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .debug_abbrev  0x00000000       0x14 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .debug_aranges
+                0x00000000       0x20 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .debug_str     0x00000000       0x93 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .debug_frame   0x00000000       0x24 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .ARM.attributes
+                0x00000000       0x1e c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
  .data          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
  .bss           0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
  .text          0x00000000        0x0 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
@@ -1525,6 +1880,7 @@ LOAD c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e
 LOAD c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crt0.o
 LOAD build/globals.o
 LOAD build/main.o
+LOAD build/ssd1306.o
 LOAD build/i2c-lcd.o
 LOAD build/lora_sx1276.o
 LOAD build/koth_game.o
@@ -3566,6 +3922,7 @@ HAL_DMA_Start_IT                                  build/stm32f4xx_hal_dma.o
 HAL_DMA_UnRegisterCallback                        build/stm32f4xx_hal_dma.o
 HAL_DeInit                                        build/stm32f4xx_hal.o
 HAL_Delay                                         build/stm32f4xx_hal.o
+                                                  build/ssd1306.o
 HAL_DisableCompensationCell                       build/stm32f4xx_hal.o
 HAL_EXTI_ClearConfigLine                          build/stm32f4xx_hal_exti.o
 HAL_EXTI_ClearPending                             build/stm32f4xx_hal_exti.o
@@ -3665,6 +4022,7 @@ HAL_I2C_Mem_Read                                  build/stm32f4xx_hal_i2c.o
 HAL_I2C_Mem_Read_DMA                              build/stm32f4xx_hal_i2c.o
 HAL_I2C_Mem_Read_IT                               build/stm32f4xx_hal_i2c.o
 HAL_I2C_Mem_Write                                 build/stm32f4xx_hal_i2c.o
+                                                  build/ssd1306.o
 HAL_I2C_Mem_Write_DMA                             build/stm32f4xx_hal_i2c.o
 HAL_I2C_Mem_Write_IT                              build/stm32f4xx_hal_i2c.o
 HAL_I2C_MspDeInit                                 build/stm32f4xx_hal_msp.o
@@ -4025,25 +4383,104 @@ _ITM_deregisterTMCloneTable                       c:/libraries/gcc/11.2 2022.02/
 _ITM_registerTMCloneTable                         c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 __TMC_END__                                       c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crtend.o
                                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+__adddf3                                          c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__aeabi_cdcmpeq                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+__aeabi_cdcmple                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+__aeabi_cdrcmple                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+__aeabi_d2f                                       c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+                                                  build/ssd1306.o
+__aeabi_d2iz                                      c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+                                                  build/ssd1306.o
+__aeabi_dadd                                      c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+__aeabi_dcmpeq                                    c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+__aeabi_dcmpge                                    c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+__aeabi_dcmpgt                                    c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+__aeabi_dcmple                                    c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+__aeabi_dcmplt                                    c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+__aeabi_ddiv                                      c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+                                                  build/ssd1306.o
+__aeabi_dmul                                      c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+                                                  build/ssd1306.o
+__aeabi_drsub                                     c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__aeabi_dsub                                      c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+__aeabi_f2d                                       c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+                                                  build/ssd1306.o
+__aeabi_i2d                                       c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+                                                  build/ssd1306.o
 __aeabi_idiv0                                     c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
+__aeabi_l2d                                       c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
 __aeabi_ldiv0                                     c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
                                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+__aeabi_ui2d                                      c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__aeabi_ul2d                                      c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
 __aeabi_uldivmod                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
                                                   build/stm32f4xx_hal_rcc.o
                                                   build/lora_sx1276.o
 __bss_end__                                       c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crt0.o
 __bss_start__                                     c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crt0.o
 __call_exitprocs                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-exit.o)
+__cmpdf2                                          c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
 __deregister_frame_info                           c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+__divdf3                                          c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
 __dso_handle                                      c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+__eqdf2                                           c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
 __errno                                           c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-errno.o)
                                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-strtol.o)
+__extendsfdf2                                     c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__fixdfsi                                         c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_fixdfsi.o)
+__floatdidf                                       c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__floatsidf                                       c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__floatundidf                                     c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__floatunsidf                                     c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__gedf2                                           c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+__gtdf2                                           c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+__ieee754_rem_pio2                                c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
 __init_array_end                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-init.o)
 __init_array_start                                c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-init.o)
+__kernel_cos                                      c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_cos.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+__kernel_rem_pio2                                 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+__kernel_sin                                      c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_sin.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+__ledf2                                           c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
 __libc_fini_array                                 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crt0.o
 __libc_init_array                                 c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-init.o)
                                                   build/startup_stm32f401xc.o
                                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crt0.o
+__ltdf2                                           c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
 __malloc_free_list                                c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-mallocr.o)
                                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-freer.o)
 __malloc_lock                                     c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-mlock.o)
@@ -4053,6 +4490,9 @@ __malloc_sbrk_start                               c:/libraries/gcc/11.2 2022.02/
 __malloc_unlock                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-mlock.o)
                                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-mallocr.o)
                                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-freer.o)
+__muldf3                                          c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldf3.o)
+__nedf2                                           c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
 __preinit_array_end                               c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-init.o)
 __preinit_array_start                             c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-init.o)
 __register_frame_info                             c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -4062,6 +4502,8 @@ __sf_fake_stdout                                  c:/libraries/gcc/11.2 2022.02/
 __ssprint_r                                       c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-svfprintf.o)
 __ssputs_r                                        c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-svfprintf.o)
 __stack                                           c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crt0.o
+__subdf3                                          c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+__truncdfsf2                                      c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
 __udivmoddi4                                      c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
                                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
 _ctype_                                           c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-ctype_.o)
@@ -4117,6 +4559,8 @@ atexit                                            c:/libraries/gcc/11.2 2022.02/
 btnPressed                                        build/koth_game.o
                                                   build/main.o
 cleanup_glue                                      c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-reent.o)
+cos                                               c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_cos.o)
+                                                  build/ssd1306.o
 debouce_timer                                     build/globals.o
 debounceCallback                                  build/main.o
 debounceTimerHandle                               build/main.o
@@ -4129,6 +4573,10 @@ errno                                             c:/libraries/gcc/11.2 2022.02/
                                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sbrkr.o)
 exit                                              c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-exit.o)
                                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crt0.o
+fabs                                              c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_fabs.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-e_rem_pio2.o)
+floor                                             c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_floor.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
 g_pfnVectors                                      build/startup_stm32f401xc.o
 gameState                                         build/globals.o
                                                   build/koth_game.o
@@ -4142,6 +4590,7 @@ hdma_i2c1_tx                                      build/main.o
 hi2c1                                             build/main.o
                                                   build/stm32f4xx_it.o
                                                   build/i2c-lcd.o
+                                                  build/ssd1306.o
 hspi1                                             build/main.o
 htim1                                             build/stm32f4xx_hal_timebase_tim.o
                                                   build/stm32f4xx_it.o
@@ -4212,10 +4661,12 @@ memcpy                                            c:/libraries/gcc/11.2 2022.02/
                                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-svfprintf.o)
                                                   build/stream_buffer.o
                                                   build/queue.o
+                                                  build/ssd1306.o
 memmove                                           c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-memmove.o)
                                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-nano-svfprintf.o)
 memset                                            c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-memset.o)
                                                   build/stream_buffer.o
+                                                  build/ssd1306.o
                                                   build/main.o
                                                   c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crt0.o
 msTickCallback                                    build/main.o
@@ -4318,12 +4769,39 @@ pxCurrentTCB                                      build/tasks.o
 pxPortInitialiseStack                             build/port.o
                                                   build/tasks.o
 resetGame                                         build/koth_game.o
+scalbn                                            c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_scalbn.o)
+                                                  c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-k_rem_pio2.o)
 sendOpcode                                        build/koth_game.o
+sin                                               c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libm.a(lib_a-s_sin.o)
+                                                  build/ssd1306.o
 siprintf                                          c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sprintf.o)
 software_init_hook                                c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard/crt0.o
 sprintf                                           c:/libraries/gcc/11.2 2022.02/bin/../lib/gcc/arm-none-eabi/11.2.1/thumb/v7e-m+fp/hard\libc_nano.a(lib_a-sprintf.o)
                                                   build/koth_game.o
                                                   build/main.o
+ssd1306_DrawArc                                   build/ssd1306.o
+ssd1306_DrawArcWithRadiusLine                     build/ssd1306.o
+ssd1306_DrawBitmap                                build/ssd1306.o
+ssd1306_DrawCircle                                build/ssd1306.o
+ssd1306_DrawPixel                                 build/ssd1306.o
+ssd1306_DrawRectangle                             build/ssd1306.o
+ssd1306_Fill                                      build/ssd1306.o
+ssd1306_FillBuffer                                build/ssd1306.o
+ssd1306_FillCircle                                build/ssd1306.o
+ssd1306_FillRectangle                             build/ssd1306.o
+ssd1306_GetDisplayOn                              build/ssd1306.o
+ssd1306_Init                                      build/ssd1306.o
+ssd1306_Line                                      build/ssd1306.o
+ssd1306_Polyline                                  build/ssd1306.o
+ssd1306_Reset                                     build/ssd1306.o
+ssd1306_SetContrast                               build/ssd1306.o
+ssd1306_SetCursor                                 build/ssd1306.o
+ssd1306_SetDisplayOn                              build/ssd1306.o
+ssd1306_UpdateScreen                              build/ssd1306.o
+ssd1306_WriteChar                                 build/ssd1306.o
+ssd1306_WriteCommand                              build/ssd1306.o
+ssd1306_WriteData                                 build/ssd1306.o
+ssd1306_WriteString                               build/ssd1306.o
 stateChange_flag                                  build/globals.o
                                                   build/koth_game.o
                                                   build/main.o

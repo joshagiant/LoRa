@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 1
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 1
   13:Core/Src/i2c-lcd.c **** 	data_u = (cmd&0xf0);
   44              		.loc 1 13 2 view .LVU4
   45              		.loc 1 13 9 is_stmt 0 view .LVU5
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 2
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s 			page 2
 
 
   46 0004 00F0F003 		and	r3, r0, #240
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 1
   93 0044 00000000 		.word	hi2c1
   94              		.cfi_endproc
   95              	.LFE130:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 3
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s 			page 3
 
 
   97              		.section	.text.lcd_send_data,"ax",%progbits
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 1
  142              		.loc 1 30 2 is_stmt 1 view .LVU35
  143              		.loc 1 30 12 is_stmt 0 view .LVU36
  144 001c 40F00D03 		orr	r3, r0, #13
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 4
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s 			page 4
 
 
  145 0020 8DF80E30 		strb	r3, [sp, #14]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 1
  194 0004 FFF7FEFF 		bl	lcd_send_cmd
  195              	.LVL14:
   38:Core/Src/i2c-lcd.c **** 	for (int i=0; i<70; i++)
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 5
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s 			page 5
 
 
  196              		.loc 1 38 2 view .LVU44
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 1
   46:Core/Src/i2c-lcd.c ****     switch (row)
  243              		.loc 1 46 5 is_stmt 1 view .LVU55
  244 0002 28B1     		cbz	r0, .L14
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 6
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s 			page 6
 
 
  245 0004 0128     		cmp	r0, #1
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 1
   59:Core/Src/i2c-lcd.c **** 
   60:Core/Src/i2c-lcd.c **** void lcd_init (void)
   61:Core/Src/i2c-lcd.c **** {
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 7
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s 			page 7
 
 
  283              		.loc 1 61 1 view -0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 1
  327              	.LVL32:
   72:Core/Src/i2c-lcd.c **** 
   73:Core/Src/i2c-lcd.c ****   // dislay initialisation
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 8
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s 			page 8
 
 
   74:Core/Src/i2c-lcd.c **** 	lcd_send_cmd (0x28); // Function set --> DL=0 (4 bit mode), N = 1 (2 line display) F = 0 (5x8 char
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 1
  371              	.LFE134:
  373              		.section	.text.lcd_send_string,"ax",%progbits
  374              		.align	1
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 9
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s 			page 9
 
 
  375              		.global	lcd_send_string
@@ -534,25 +534,25 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 1
  422              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
  423              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
  424              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s 			page 10
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 i2c-lcd.c
-C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s:20     .text.lcd_send_cmd:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s:26     .text.lcd_send_cmd:00000000 lcd_send_cmd
-C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s:93     .text.lcd_send_cmd:00000044 $d
-C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s:98     .text.lcd_send_data:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s:104    .text.lcd_send_data:00000000 lcd_send_data
-C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s:170    .text.lcd_send_data:00000044 $d
-C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s:175    .text.lcd_clear:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s:181    .text.lcd_clear:00000000 lcd_clear
-C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s:224    .text.lcd_put_cur:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s:230    .text.lcd_put_cur:00000000 lcd_put_cur
-C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s:275    .text.lcd_init:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s:281    .text.lcd_init:00000000 lcd_init
-C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s:374    .text.lcd_send_string:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccuUB0ls.s:380    .text.lcd_send_string:00000000 lcd_send_string
+C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s:20     .text.lcd_send_cmd:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s:26     .text.lcd_send_cmd:00000000 lcd_send_cmd
+C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s:93     .text.lcd_send_cmd:00000044 $d
+C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s:98     .text.lcd_send_data:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s:104    .text.lcd_send_data:00000000 lcd_send_data
+C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s:170    .text.lcd_send_data:00000044 $d
+C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s:175    .text.lcd_clear:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s:181    .text.lcd_clear:00000000 lcd_clear
+C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s:224    .text.lcd_put_cur:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s:230    .text.lcd_put_cur:00000000 lcd_put_cur
+C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s:275    .text.lcd_init:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s:281    .text.lcd_init:00000000 lcd_init
+C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s:374    .text.lcd_send_string:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccEQUPUb.s:380    .text.lcd_send_string:00000000 lcd_send_string
 
 UNDEFINED SYMBOLS
 HAL_I2C_Master_Transmit

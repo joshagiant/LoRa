@@ -38,6 +38,7 @@ BUILD_DIR = build
 C_SOURCES =  \
 Core/Inc/globals.c \
 Core/Src/main.c \
+Core/Src/ssd1306.c \
 Core/Src/i2c-lcd.c \
 Core/Src/lora_sx1276.c\
 Core/Src/koth_game.c\

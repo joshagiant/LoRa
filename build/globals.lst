@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s 			page 1
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s 			page 1
   63              		.section	.bss.p1King_counter,"aw",%nobits
   64              		.align	2
   67              	p1King_counter:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s 			page 2
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s 			page 2
 
 
   68 0000 00000000 		.space	4
@@ -80,32 +80,32 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s 			page 1
   92              		.file 1 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\machine\\_default_types.h"
   93              		.file 2 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\sys\\_stdint.h"
   94              		.file 3 "Core/Inc/globals.c"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s 			page 3
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 globals.c
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:44     .bss.gameState:00000000 gameState
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:61     .bss.loraTXbuf:00000000 loraTXbuf
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:55     .bss.loraRXbuf:00000000 loraRXbuf
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:34     .bss.debouce_timer:00000000 debouce_timer
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:78     .bss.p2King_counter:00000000 p2King_counter
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:67     .bss.p1King_counter:00000000 p1King_counter
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:39     .bss.debouncing_Flag:00000000 debouncing_Flag
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:83     .bss.p2King_flag:00000000 p2King_flag
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:72     .bss.p1King_flag:00000000 p1King_flag
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:88     .bss.stateChange_flag:00000000 stateChange_flag
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:49     .bss.loraRX_flag:00000000 loraRX_flag
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:31     .bss.debouce_timer:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:40     .bss.debouncing_Flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:45     .bss.gameState:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:50     .bss.loraRX_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:52     .bss.loraRXbuf:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:58     .bss.loraTXbuf:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:64     .bss.p1King_counter:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:73     .bss.p1King_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:75     .bss.p2King_counter:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:84     .bss.p2King_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:89     .bss.stateChange_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:44     .bss.gameState:00000000 gameState
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:61     .bss.loraTXbuf:00000000 loraTXbuf
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:55     .bss.loraRXbuf:00000000 loraRXbuf
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:34     .bss.debouce_timer:00000000 debouce_timer
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:78     .bss.p2King_counter:00000000 p2King_counter
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:67     .bss.p1King_counter:00000000 p1King_counter
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:39     .bss.debouncing_Flag:00000000 debouncing_Flag
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:83     .bss.p2King_flag:00000000 p2King_flag
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:72     .bss.p1King_flag:00000000 p1King_flag
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:88     .bss.stateChange_flag:00000000 stateChange_flag
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:49     .bss.loraRX_flag:00000000 loraRX_flag
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:31     .bss.debouce_timer:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:40     .bss.debouncing_Flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:45     .bss.gameState:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:50     .bss.loraRX_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:52     .bss.loraRXbuf:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:58     .bss.loraTXbuf:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:64     .bss.p1King_counter:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:73     .bss.p1King_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:75     .bss.p2King_counter:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:84     .bss.p2King_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccwsVFtN.s:89     .bss.stateChange_flag:00000000 $d
 
 NO UNDEFINED SYMBOLS

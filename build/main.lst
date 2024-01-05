@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
   27:Core/Src/main.c **** #include "lora_sx1276.h"
   28:Core/Src/main.c **** #include <string.h>
   29:Core/Src/main.c **** 
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 2
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 2
 
 
   30:Core/Src/main.c **** /* USER CODE END Includes */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
   84:Core/Src/main.c **** 
   85:Core/Src/main.c **** /**
   86:Core/Src/main.c ****   * @brief  The application entry point.
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 3
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 3
 
 
   87:Core/Src/main.c ****   * @retval int
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  141:Core/Src/main.c **** 
  142:Core/Src/main.c ****   /* definition and creation of debounceTimer */
  143:Core/Src/main.c ****   osTimerDef(debounceTimer, debounceCallback);
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 4
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 4
 
 
  144:Core/Src/main.c ****   debounceTimerHandle = osTimerCreate(osTimer(debounceTimer), osTimerOnce, NULL);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  198:Core/Src/main.c ****   __HAL_RCC_PWR_CLK_ENABLE();
  199:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
  200:Core/Src/main.c **** 
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 5
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 5
 
 
  201:Core/Src/main.c ****   /** Initializes the RCC Oscillators according to the specified parameters
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  255:Core/Src/main.c ****   hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
  256:Core/Src/main.c ****   if (HAL_I2C_Init(&hi2c1) != HAL_OK)
  257:Core/Src/main.c ****   {
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 6
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 6
 
 
  258:Core/Src/main.c ****     Error_Handler();
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  312:Core/Src/main.c **** 
  313:Core/Src/main.c ****   /* DMA interrupt init */
  314:Core/Src/main.c ****   /* DMA1_Stream6_IRQn interrupt configuration */
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 7
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 7
 
 
  315:Core/Src/main.c ****   HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 5, 0);
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  369:Core/Src/main.c **** 
  370:Core/Src/main.c **** /* USER CODE BEGIN Header_StartDefaultTask */
  371:Core/Src/main.c **** /**
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 8
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 8
 
 
  372:Core/Src/main.c ****   * @brief  Function implementing the defaultTask thread.
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  426:Core/Src/main.c ****         }
  427:Core/Src/main.c ****       break;
  428:Core/Src/main.c **** 
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 9
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 9
 
 
  429:Core/Src/main.c ****       case p1Winner:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  483:Core/Src/main.c **** 
  484:Core/Src/main.c **** /* USER CODE BEGIN Header_StartLoraRXTask */
  485:Core/Src/main.c **** /**
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 10
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 10
 
 
  486:Core/Src/main.c **** * @brief Function implementing the loraRXTask thread.
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  540:Core/Src/main.c **** {
   30              		.loc 1 540 1 view -0
   31              		.cfi_startproc
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 11
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 11
 
 
   32              		@ args = 0, pretend = 0, frame = 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
   65              		.loc 1 545 21 is_stmt 0 view .LVU12
   66 0022 0B4B     		ldr	r3, .L8
   67 0024 0022     		movs	r2, #0
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 12
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 12
 
 
   68 0026 1A70     		strb	r2, [r3]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  114              		.syntax unified
  115              		.thumb
  116              		.thumb_func
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 13
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 13
 
 
  118              	debounceCallback:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  152 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
  153              	.LCFI0:
  154              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 14
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 14
 
 
  155              		.cfi_offset 4, -24
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  197              		.loc 1 331 3 view .LVU39
  198 0032 1A6B     		ldr	r2, [r3, #48]
  199 0034 02F00102 		and	r2, r2, #1
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 15
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 15
 
 
  200 0038 0192     		str	r2, [sp, #4]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  240              		.loc 1 342 24 is_stmt 0 view .LVU53
  241 0070 4FF40413 		mov	r3, #2162688
  242 0074 0493     		str	r3, [sp, #16]
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 16
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 16
 
 
  343:Core/Src/main.c ****   HAL_GPIO_Init(BTN_IN_GPIO_Port, &GPIO_InitStruct);
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  357:Core/Src/main.c ****   HAL_GPIO_Init(LORA_CS_GPIO_Port, &GPIO_InitStruct);
  279              		.loc 1 357 3 is_stmt 1 view .LVU72
  357:Core/Src/main.c ****   HAL_GPIO_Init(LORA_CS_GPIO_Port, &GPIO_InitStruct);
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 17
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 17
 
 
  280              		.loc 1 357 25 is_stmt 0 view .LVU73
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  311:Core/Src/main.c **** 
  331              		.loc 1 311 3 view .LVU79
  332              	.LBB7:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 18
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 18
 
 
  311:Core/Src/main.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  380              		.loc 1 527 1 is_stmt 1 view -0
  381              		.cfi_startproc
  382              		@ Volatile: function does not return.
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 19
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 19
 
 
  383              		@ args = 0, pretend = 0, frame = 0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  419      2068696C 
  419      6C212100 
  420              		.align	2
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 20
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 20
 
 
  421              	.LC11:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  463              		.loc 1 381 3 is_stmt 1 view .LVU97
  464 000e FFF7FEFF 		bl	lcd_init
  465              	.LVL17:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 21
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 21
 
 
  382:Core/Src/main.c ****   lcd_put_cur(0,0);
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  509 0050 B5000000 		.word	.L30+1
  510 0054 E1000000 		.word	.L29+1
  511 0058 2F010000 		.word	.L28+1
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 22
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 22
 
 
  512 005c 7F010000 		.word	.L26+1
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  554              	.LVL27:
  411:Core/Src/main.c ****           lcd_send_string("You are king");
  555              		.loc 1 411 11 view .LVU121
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 23
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 23
 
 
  556 0096 2146     		mov	r1, r4
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  599 00d4 FFF7FEFF 		bl	lcd_put_cur
  600              	.LVL34:
  425:Core/Src/main.c ****         }
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 24
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 24
 
 
  601              		.loc 1 425 11 view .LVU133
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  643 010e 314B     		ldr	r3, .L37+40
  644 0110 1B88     		ldrh	r3, [r3]
  438:Core/Src/main.c ****           sprintf(score, "Won by %ums", difference);
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 25
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 25
 
 
  645              		.loc 1 438 20 view .LVU146
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  687              		.loc 1 451 11 view .LVU158
  688 0148 FFF7FEFF 		bl	lcd_clear
  689              	.LVL45:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 26
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 26
 
 
  452:Core/Src/main.c ****           lcd_send_string("P2 wins!");
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  731 017e 0D4B     		ldr	r3, .L37+8
  732 0180 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  463:Core/Src/main.c ****         {
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 27
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 27
 
 
  733              		.loc 1 463 11 view .LVU172
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  782              		.global	StartLoraRXTask
  783              		.syntax unified
  784              		.thumb
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 28
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 28
 
 
  785              		.thumb_func
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  830              	.LVL62:
  501:Core/Src/main.c ****     {
  831              		.loc 1 501 7 view .LVU189
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 29
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 29
 
 
  832 0028 0028     		cmp	r0, #0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  879              		.loc 1 565 21 is_stmt 0 view .LVU198
  880 000e 054B     		ldr	r3, .L50
  881 0010 0122     		movs	r2, #1
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 30
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 30
 
 
  882 0012 1A70     		strb	r2, [r3]
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  591:Core/Src/main.c ****   /* USER CODE END Callback 0 */
  592:Core/Src/main.c ****   if (htim->Instance == TIM1) {
  922              		.loc 1 592 3 is_stmt 1 view .LVU204
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 31
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 31
 
 
  923              		.loc 1 592 11 is_stmt 0 view .LVU205
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  962              		.loc 1 608 3 view .LVU211
  963              	.LBB10:
  964              	.LBI10:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 32
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 32
 
 
  965              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
   54:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   55:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __USED
   56:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 33
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 33
 
 
   57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  111:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
  112:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  113:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 34
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 34
 
 
  114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  988              		.thumb
  989              		.thumb_func
  991              	MX_SPI1_Init:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 35
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 35
 
 
  992              	.LFB138:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  1029              		.loc 1 289 32 is_stmt 0 view .LVU233
  1030 001e 1822     		movs	r2, #24
  1031 0020 C261     		str	r2, [r0, #28]
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 36
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 36
 
 
  290:Core/Src/main.c ****   hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  1074              		.cfi_startproc
  1075              		@ args = 0, pretend = 0, frame = 0
  1076              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 37
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 37
 
 
  1077 0000 08B5     		push	{r3, lr}
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  1113              		.loc 1 255 28 is_stmt 0 view .LVU265
  1114 0020 0362     		str	r3, [r0, #32]
  256:Core/Src/main.c ****   {
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 38
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 38
 
 
  1115              		.loc 1 256 3 is_stmt 1 view .LVU266
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  1163              		.loc 1 194 3 is_stmt 1 view .LVU274
  194:Core/Src/main.c **** 
  1164              		.loc 1 194 22 is_stmt 0 view .LVU275
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 39
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 39
 
 
  1165 000e 0023     		movs	r3, #0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  1206              		.loc 1 204 3 view .LVU288
  204:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
  1207              		.loc 1 204 36 is_stmt 0 view .LVU289
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 40
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 40
 
 
  1208 004a 0123     		movs	r3, #1
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  219:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
  1245              		.loc 1 219 3 is_stmt 1 view .LVU307
  219:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 41
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 41
 
 
  1246              		.loc 1 219 31 is_stmt 0 view .LVU308
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  1286 009e FFF7FEFF 		bl	Error_Handler
  1287              	.LVL80:
  1288              	.L79:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 42
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 42
 
 
  1289 00a2 00BF     		.align	2
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  118:Core/Src/main.c ****   if (res != LORA_OK) {
  1337              		.loc 1 118 17 is_stmt 0 view .LVU331
  1338 001c 3CA3     		adr	r3, .L83+48
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 43
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 43
 
 
  1339 001e D3E90023 		ldrd	r2, [r3]
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  1380              		.loc 1 144 25 is_stmt 0 view .LVU344
  1381 005e 2A46     		mov	r2, r5
  1382 0060 2946     		mov	r1, r5
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 44
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 44
 
 
  1383 0062 18A8     		add	r0, sp, #96
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  1427 00c4 9CE80700 		ldm	ip, {r0, r1, r2}
  1428 00c8 8EE80700 		stm	lr, {r0, r1, r2}
  166:Core/Src/main.c **** 
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 45
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 45
 
 
  1429              		.loc 1 166 3 view .LVU355
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  1474              	.LC0:
  1475 0018 64656661 		.ascii	"defaultTask\000"
  1475      756C7454 
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 46
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 46
 
 
  1475      61736B00 
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  1535              	displayTaskHandle:
  1536 0000 00000000 		.space	4
  1537              		.section	.bss.hdma_i2c1_tx,"aw",%nobits
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 47
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 47
 
 
  1538              		.align	2
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  1590              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
  1591              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
  1592              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 48
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 48
 
 
  1593              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
@@ -2841,79 +2841,79 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 1
  1610              		.file 26 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  1611              		.file 27 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
  1612              		.file 28 "<built-in>"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 49
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 49
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:20     .text.msTickCallback:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:26     .text.msTickCallback:00000000 msTickCallback
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:103    .text.msTickCallback:00000050 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:112    .text.debounceCallback:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:118    .text.debounceCallback:00000000 debounceCallback
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:136    .text.debounceCallback:00000008 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:141    .text.MX_GPIO_Init:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:146    .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:306    .text.MX_GPIO_Init:000000bc $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:313    .text.MX_DMA_Init:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:318    .text.MX_DMA_Init:00000000 MX_DMA_Init
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:367    .text.MX_DMA_Init:00000030 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:372    .text.StartDisplayTask:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:378    .text.StartDisplayTask:00000000 StartDisplayTask
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:405    .rodata.StartDefaultTask.str1.4:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:433    .text.StartDefaultTask:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:439    .text.StartDefaultTask:00000000 StartDefaultTask
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:507    .text.StartDefaultTask:00000048 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:513    .text.StartDefaultTask:00000060 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:763    .text.StartDefaultTask:000001ac $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:781    .text.StartLoraRXTask:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:787    .text.StartLoraRXTask:00000000 StartLoraRXTask
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:838    .text.StartLoraRXTask:00000030 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:844    .text.HAL_GPIO_EXTI_Callback:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:850    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:897    .text.HAL_GPIO_EXTI_Callback:00000024 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:903    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:909    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:943    .text.HAL_TIM_PeriodElapsedCallback:00000014 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:948    .text.Error_Handler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:954    .text.Error_Handler:00000000 Error_Handler
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:986    .text.MX_SPI1_Init:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:991    .text.MX_SPI1_Init:00000000 MX_SPI1_Init
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1060   .text.MX_SPI1_Init:00000038 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1066   .text.MX_I2C1_Init:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1071   .text.MX_I2C1_Init:00000000 MX_I2C1_Init
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1130   .text.MX_I2C1_Init:00000030 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1137   .text.SystemClock_Config:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1143   .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1291   .text.SystemClock_Config:000000a4 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1297   .text.main:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1303   .text.main:00000000 main
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1449   .text.main:000000e0 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1467   .rodata.str1.4:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1562   .bss.lora:00000000 lora
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1576   .bss.lora_mutexHandle:00000000 lora_mutexHandle
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1521   .bss.debounceTimerHandle:00000000 debounceTimerHandle
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1583   .bss.msTickHandle:00000000 msTickHandle
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1535   .bss.displayTaskHandle:00000000 displayTaskHandle
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1569   .bss.loraRXTaskHandle:00000000 loraRXTaskHandle
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1528   .bss.defaultTaskHandle:00000000 defaultTaskHandle
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1555   .bss.hspi1:00000000 hspi1
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1541   .bss.hdma_i2c1_tx:00000000 hdma_i2c1_tx
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1548   .bss.hi2c1:00000000 hi2c1
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1487   .rodata:00000000 $d
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s 			page 50
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:20     .text.msTickCallback:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:26     .text.msTickCallback:00000000 msTickCallback
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:103    .text.msTickCallback:00000050 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:112    .text.debounceCallback:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:118    .text.debounceCallback:00000000 debounceCallback
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:136    .text.debounceCallback:00000008 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:141    .text.MX_GPIO_Init:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:146    .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:306    .text.MX_GPIO_Init:000000bc $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:313    .text.MX_DMA_Init:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:318    .text.MX_DMA_Init:00000000 MX_DMA_Init
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:367    .text.MX_DMA_Init:00000030 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:372    .text.StartDisplayTask:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:378    .text.StartDisplayTask:00000000 StartDisplayTask
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:405    .rodata.StartDefaultTask.str1.4:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:433    .text.StartDefaultTask:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:439    .text.StartDefaultTask:00000000 StartDefaultTask
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:507    .text.StartDefaultTask:00000048 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:513    .text.StartDefaultTask:00000060 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:763    .text.StartDefaultTask:000001ac $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:781    .text.StartLoraRXTask:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:787    .text.StartLoraRXTask:00000000 StartLoraRXTask
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:838    .text.StartLoraRXTask:00000030 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:844    .text.HAL_GPIO_EXTI_Callback:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:850    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:897    .text.HAL_GPIO_EXTI_Callback:00000024 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:903    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:909    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:943    .text.HAL_TIM_PeriodElapsedCallback:00000014 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:948    .text.Error_Handler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:954    .text.Error_Handler:00000000 Error_Handler
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:986    .text.MX_SPI1_Init:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:991    .text.MX_SPI1_Init:00000000 MX_SPI1_Init
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1060   .text.MX_SPI1_Init:00000038 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1066   .text.MX_I2C1_Init:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1071   .text.MX_I2C1_Init:00000000 MX_I2C1_Init
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1130   .text.MX_I2C1_Init:00000030 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1137   .text.SystemClock_Config:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1143   .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1291   .text.SystemClock_Config:000000a4 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1297   .text.main:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1303   .text.main:00000000 main
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1449   .text.main:000000e0 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1467   .rodata.str1.4:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1562   .bss.lora:00000000 lora
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1576   .bss.lora_mutexHandle:00000000 lora_mutexHandle
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1521   .bss.debounceTimerHandle:00000000 debounceTimerHandle
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1583   .bss.msTickHandle:00000000 msTickHandle
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1535   .bss.displayTaskHandle:00000000 displayTaskHandle
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1569   .bss.loraRXTaskHandle:00000000 loraRXTaskHandle
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1528   .bss.defaultTaskHandle:00000000 defaultTaskHandle
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1555   .bss.hspi1:00000000 hspi1
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1541   .bss.hdma_i2c1_tx:00000000 hdma_i2c1_tx
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1548   .bss.hi2c1:00000000 hi2c1
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1487   .rodata:00000000 $d
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s 			page 50
 
 
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1517   .bss.debounceTimerHandle:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1524   .bss.defaultTaskHandle:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1531   .bss.displayTaskHandle:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1538   .bss.hdma_i2c1_tx:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1544   .bss.hi2c1:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1551   .bss.hspi1:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1558   .bss.lora:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1565   .bss.loraRXTaskHandle:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1572   .bss.lora_mutexHandle:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccxuchWm.s:1579   .bss.msTickHandle:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1517   .bss.debounceTimerHandle:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1524   .bss.defaultTaskHandle:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1531   .bss.displayTaskHandle:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1538   .bss.hdma_i2c1_tx:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1544   .bss.hi2c1:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1551   .bss.hspi1:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1558   .bss.lora:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1565   .bss.loraRXTaskHandle:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1572   .bss.lora_mutexHandle:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccqLryqQ.s:1579   .bss.msTickHandle:00000000 $d
 
 UNDEFINED SYMBOLS
 p1King_flag

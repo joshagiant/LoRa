@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 1
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 1
   14:Core/Src/koth_game.c ****     p1King_counter = 0;
   43              		.loc 1 14 5 is_stmt 1 view .LVU5
   44              		.loc 1 14 20 is_stmt 0 view .LVU6
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 2
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s 			page 2
 
 
   45 000a 044A     		ldr	r2, .L2+8
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 1
   37:Core/Src/koth_game.c ****         opcode = strtol(loraRXbuf, trashCatcher,10);
   38:Core/Src/koth_game.c **** 
   39:Core/Src/koth_game.c ****         // Process opcode and respond if necessary
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 3
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s 			page 3
 
 
   40:Core/Src/koth_game.c ****         switch (opcode)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 1
   94:Core/Src/koth_game.c **** 
   95:Core/Src/koth_game.c ****         case p1Winner:
   96:Core/Src/koth_game.c ****         case p2Winner:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 4
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s 			page 4
 
 
   97:Core/Src/koth_game.c ****             stateChange_flag = 1; 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 1
  109 001c 01A9     		add	r1, sp, #4
  110 001e 0648     		ldr	r0, .L6+8
  111 0020 FFF7FEFF 		bl	lora_send_packet
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 5
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s 			page 5
 
 
  112              	.LVL4:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 1
  157 0002 8DB0     		sub	sp, sp, #52
  158              	.LCFI4:
  159              		.cfi_def_cfa_offset 64
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 6
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s 			page 6
 
 
   23:Core/Src/koth_game.c ****     osSemaphoreWait(lora_mutexHandle, osWaitForever);
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 1
  202 0042 02       		.byte	(.L14-.L12)/2
  203 0043 23       		.byte	(.L11-.L12)/2
  204 0044 14       		.byte	(.L13-.L12)/2
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 7
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s 			page 7
 
 
  205 0045 23       		.byte	(.L11-.L12)/2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 1
  246              	.L13:
  247              	.LCFI6:
  248              		.cfi_restore_state
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 8
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s 			page 8
 
 
  249              	.LBB3:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 1
   66:Core/Src/koth_game.c ****             p1King_flag = 1;
  288              		.loc 1 66 13 is_stmt 1 view .LVU64
   66:Core/Src/koth_game.c ****             p1King_flag = 1;
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 9
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s 			page 9
 
 
  289              		.loc 1 66 25 is_stmt 0 view .LVU65
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 1
  339              	.L22:
  340 000e 03       		.byte	(.L25-.L22)/2
  341 000f 07       		.byte	(.L24-.L22)/2
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 10
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s 			page 10
 
 
  342 0010 11       		.byte	(.L23-.L22)/2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 1
  383 003a 0122     		movs	r2, #1
  384 003c 1A70     		strb	r2, [r3]
   98:Core/Src/koth_game.c ****             gameState = waiting;
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 11
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s 			page 11
 
 
  385              		.loc 1 98 13 is_stmt 1 view .LVU85
@@ -634,30 +634,30 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 1
  413              		.file 12 "Core/Inc/extern.h"
  414              		.file 13 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\stdio.h"
  415              		.file 14 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\string.h"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s 			page 12
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 koth_game.c
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:20     .text.resetGame:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:26     .text.resetGame:00000000 resetGame
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:57     .text.resetGame:00000014 $d
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:65     .rodata.sendOpcode.str1.4:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:69     .text.sendOpcode:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:75     .text.sendOpcode:00000000 sendOpcode
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:128    .text.sendOpcode:00000030 $d
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:135    .rodata.getKOTHPacket.str1.4:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:139    .text.getKOTHPacket:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:145    .text.getKOTHPacket:00000000 getKOTHPacket
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:202    .text.getKOTHPacket:00000042 $d
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:206    .text.getKOTHPacket:00000046 $t
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:304    .text.getKOTHPacket:000000a0 $d
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:316    .text.btnPressed:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:322    .text.btnPressed:00000000 btnPressed
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:340    .text.btnPressed:0000000e $d
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:396    .text.btnPressed:00000048 $d
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:345    .text.btnPressed:00000013 $d
-C:\Users\jdcox\AppData\Local\Temp\cc3y14ED.s:345    .text.btnPressed:00000014 $t
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:20     .text.resetGame:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:26     .text.resetGame:00000000 resetGame
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:57     .text.resetGame:00000014 $d
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:65     .rodata.sendOpcode.str1.4:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:69     .text.sendOpcode:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:75     .text.sendOpcode:00000000 sendOpcode
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:128    .text.sendOpcode:00000030 $d
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:135    .rodata.getKOTHPacket.str1.4:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:139    .text.getKOTHPacket:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:145    .text.getKOTHPacket:00000000 getKOTHPacket
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:202    .text.getKOTHPacket:00000042 $d
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:206    .text.getKOTHPacket:00000046 $t
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:304    .text.getKOTHPacket:000000a0 $d
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:316    .text.btnPressed:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:322    .text.btnPressed:00000000 btnPressed
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:340    .text.btnPressed:0000000e $d
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:396    .text.btnPressed:00000048 $d
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:345    .text.btnPressed:00000013 $d
+C:\Users\jdcox\AppData\Local\Temp\ccoUHZ7B.s:345    .text.btnPressed:00000014 $t
 
 UNDEFINED SYMBOLS
 p1King_flag
