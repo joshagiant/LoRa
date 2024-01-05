@@ -11,8 +11,8 @@ uint32_t p1King_counter;
 uint32_t p2King_counter;
 uint16_t debouce_timer;
 
-uint8_t loraRXbuf[255]; 
-uint8_t loraTXbuf[255]; 
+uint8_t loraRXbuf[10]; 
+uint8_t loraTXbuf[10]; 
 
 uint8_t gameState;
 enum gameStates {waiting,p1King,p2King,p1Winner,p2Winner,penalty,unconfirmed};

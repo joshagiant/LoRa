@@ -115,7 +115,6 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
-  
   uint8_t res = lora_init(&lora, &hspi1, LORA_CS_GPIO_Port, LORA_CS_Pin, LORA_BASE_FREQUENCY_US);
   if (res != LORA_OK) {
     // Initialization failed
@@ -486,48 +485,22 @@ void StartLoraRXTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
+    // Wait for LoRa availability
+    osMutexWait(lora_mutexHandle, osWaitForever);
+
     // Check for a new packet
     if(lora_is_packet_available(&lora) > 0)
     {
-      // Get the packet
-      uint8_t result;
-      uint8_t RXlength = lora_receive_packet(&lora,loraRXbuf,10,&result);
-    
-      // Parse the data
-      if(strstr(loraRXbuf, "KOTH"))
-      {
-        long opcode;
-        char * trashCatcher[10]; 
+      //release mutex
+      osMutexRelease(lora_mutexHandle);
       
-        opcode = strtol(loraRXbuf, trashCatcher,10);
+      // Get the data
+      getKOTHPacket();
 
-        // Process opcode and respond if necessary
-        switch (opcode)
-        {
-          case START:
-            // Reset and start
-            resetGame();
-            // Send confirmation
-            sendOpcode(CONFIRM_START);
-            gameState = p2King;
-          break;
-
-          case CLAIM_KING: 
-            sendOpcode(CONFIRM_KING);
-            gameState = p2King;
-            // Send confirmation
-          break; 
-
-          // Confirmations received
-          case CONFIRM_START:
-          case CONFIRM_KING:
-            gameState = p1King;
-          break;
-          
-        }
-      }
     }
 
+    
+    
     osDelay(25);
 
   }
@@ -567,10 +540,16 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   if( (!debouncing_Flag) && (GPIO_Pin == BTN_IN_Pin) ) 
   {
+
+
     debouncing_Flag = 1;
     stateChange_flag = 1; 
-    if(++gameState > p2Winner) gameState = waiting;
+
+    btnPressed();
+
     osTimerStart(debounceTimerHandle, pdMS_TO_TICKS(250));
+
+
   }
 }
 

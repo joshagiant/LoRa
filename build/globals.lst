@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s 			page 1
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,74 +20,92 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s 			page 1
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
   19              		.global	gameState
-  20              		.global	debouce_timer
-  21              		.global	p2King_counter
-  22              		.global	p1King_counter
-  23              		.global	debouncing_Flag
-  24              		.global	p2King_flag
-  25              		.global	p1King_flag
-  26              		.global	stateChange_flag
-  27              		.global	loraRX_flag
-  28              		.section	.bss.debouce_timer,"aw",%nobits
-  29              		.align	1
-  32              	debouce_timer:
-  33 0000 0000     		.space	2
-  34              		.section	.bss.debouncing_Flag,"aw",%nobits
-  37              	debouncing_Flag:
-  38 0000 00       		.space	1
-  39              		.section	.bss.gameState,"aw",%nobits
-  42              	gameState:
-  43 0000 00       		.space	1
-  44              		.section	.bss.loraRX_flag,"aw",%nobits
-  47              	loraRX_flag:
-  48 0000 00       		.space	1
-  49              		.section	.bss.p1King_counter,"aw",%nobits
-  50              		.align	2
-  53              	p1King_counter:
-  54 0000 00000000 		.space	4
-  55              		.section	.bss.p1King_flag,"aw",%nobits
-  58              	p1King_flag:
-  59 0000 00       		.space	1
-  60              		.section	.bss.p2King_counter,"aw",%nobits
-  61              		.align	2
-  64              	p2King_counter:
-  65 0000 00000000 		.space	4
-  66              		.section	.bss.p2King_flag,"aw",%nobits
-  69              	p2King_flag:
-  70 0000 00       		.space	1
-  71              		.section	.bss.stateChange_flag,"aw",%nobits
-  74              	stateChange_flag:
-  75 0000 00       		.space	1
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s 			page 2
+  20              		.global	loraTXbuf
+  21              		.global	loraRXbuf
+  22              		.global	debouce_timer
+  23              		.global	p2King_counter
+  24              		.global	p1King_counter
+  25              		.global	debouncing_Flag
+  26              		.global	p2King_flag
+  27              		.global	p1King_flag
+  28              		.global	stateChange_flag
+  29              		.global	loraRX_flag
+  30              		.section	.bss.debouce_timer,"aw",%nobits
+  31              		.align	1
+  34              	debouce_timer:
+  35 0000 0000     		.space	2
+  36              		.section	.bss.debouncing_Flag,"aw",%nobits
+  39              	debouncing_Flag:
+  40 0000 00       		.space	1
+  41              		.section	.bss.gameState,"aw",%nobits
+  44              	gameState:
+  45 0000 00       		.space	1
+  46              		.section	.bss.loraRX_flag,"aw",%nobits
+  49              	loraRX_flag:
+  50 0000 00       		.space	1
+  51              		.section	.bss.loraRXbuf,"aw",%nobits
+  52              		.align	2
+  55              	loraRXbuf:
+  56 0000 00000000 		.space	10
+  56      00000000 
+  56      0000
+  57              		.section	.bss.loraTXbuf,"aw",%nobits
+  58              		.align	2
+  61              	loraTXbuf:
+  62 0000 00000000 		.space	10
+  62      00000000 
+  62      0000
+  63              		.section	.bss.p1King_counter,"aw",%nobits
+  64              		.align	2
+  67              	p1King_counter:
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s 			page 2
 
 
-  76              		.text
-  77              	.Letext0:
-  78              		.file 1 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\machine\\_default_types.h"
-  79              		.file 2 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\sys\\_stdint.h"
-  80              		.file 3 "Core/Inc/globals.c"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s 			page 3
+  68 0000 00000000 		.space	4
+  69              		.section	.bss.p1King_flag,"aw",%nobits
+  72              	p1King_flag:
+  73 0000 00       		.space	1
+  74              		.section	.bss.p2King_counter,"aw",%nobits
+  75              		.align	2
+  78              	p2King_counter:
+  79 0000 00000000 		.space	4
+  80              		.section	.bss.p2King_flag,"aw",%nobits
+  83              	p2King_flag:
+  84 0000 00       		.space	1
+  85              		.section	.bss.stateChange_flag,"aw",%nobits
+  88              	stateChange_flag:
+  89 0000 00       		.space	1
+  90              		.text
+  91              	.Letext0:
+  92              		.file 1 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\machine\\_default_types.h"
+  93              		.file 2 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\sys\\_stdint.h"
+  94              		.file 3 "Core/Inc/globals.c"
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 globals.c
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:42     .bss.gameState:00000000 gameState
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:32     .bss.debouce_timer:00000000 debouce_timer
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:64     .bss.p2King_counter:00000000 p2King_counter
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:53     .bss.p1King_counter:00000000 p1King_counter
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:37     .bss.debouncing_Flag:00000000 debouncing_Flag
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:69     .bss.p2King_flag:00000000 p2King_flag
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:58     .bss.p1King_flag:00000000 p1King_flag
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:74     .bss.stateChange_flag:00000000 stateChange_flag
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:47     .bss.loraRX_flag:00000000 loraRX_flag
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:29     .bss.debouce_timer:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:38     .bss.debouncing_Flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:43     .bss.gameState:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:48     .bss.loraRX_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:50     .bss.p1King_counter:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:59     .bss.p1King_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:61     .bss.p2King_counter:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:70     .bss.p2King_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cc0wwX7S.s:75     .bss.stateChange_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:44     .bss.gameState:00000000 gameState
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:61     .bss.loraTXbuf:00000000 loraTXbuf
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:55     .bss.loraRXbuf:00000000 loraRXbuf
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:34     .bss.debouce_timer:00000000 debouce_timer
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:78     .bss.p2King_counter:00000000 p2King_counter
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:67     .bss.p1King_counter:00000000 p1King_counter
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:39     .bss.debouncing_Flag:00000000 debouncing_Flag
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:83     .bss.p2King_flag:00000000 p2King_flag
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:72     .bss.p1King_flag:00000000 p1King_flag
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:88     .bss.stateChange_flag:00000000 stateChange_flag
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:49     .bss.loraRX_flag:00000000 loraRX_flag
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:31     .bss.debouce_timer:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:40     .bss.debouncing_Flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:45     .bss.gameState:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:50     .bss.loraRX_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:52     .bss.loraRXbuf:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:58     .bss.loraTXbuf:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:64     .bss.p1King_counter:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:73     .bss.p1King_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:75     .bss.p2King_counter:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:84     .bss.p2King_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccDb2kak.s:89     .bss.stateChange_flag:00000000 $d
 
 NO UNDEFINED SYMBOLS

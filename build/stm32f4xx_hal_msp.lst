@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
   28:Core/Src/stm32f4xx_hal_msp.c **** /* Private typedef -----------------------------------------------------------*/
   29:Core/Src/stm32f4xx_hal_msp.c **** /* USER CODE BEGIN TD */
   30:Core/Src/stm32f4xx_hal_msp.c **** 
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 2
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 2
 
 
   31:Core/Src/stm32f4xx_hal_msp.c **** /* USER CODE END TD */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
   43 0004 0022     		movs	r2, #0
   44 0006 0092     		str	r2, [sp]
   45              		.loc 1 70 3 view .LVU3
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 3
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 3
 
 
   46 0008 0D4B     		ldr	r3, .L3
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
   90              	.LFE130:
   92              		.section	.text.HAL_I2C_MspInit,"ax",%progbits
   93              		.align	1
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 4
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 4
 
 
   94              		.global	HAL_I2C_MspInit
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
   96:Core/Src/stm32f4xx_hal_msp.c **** 
   97:Core/Src/stm32f4xx_hal_msp.c ****     __HAL_RCC_GPIOB_CLK_ENABLE();
   98:Core/Src/stm32f4xx_hal_msp.c ****     /**I2C1 GPIO Configuration
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 5
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 5
 
 
   99:Core/Src/stm32f4xx_hal_msp.c ****     PB6     ------> I2C1_SCL
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
   97:Core/Src/stm32f4xx_hal_msp.c ****     /**I2C1 GPIO Configuration
  147              		.loc 1 97 5 is_stmt 1 view .LVU24
  148              	.LBB4:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 6
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 6
 
 
   97:Core/Src/stm32f4xx_hal_msp.c ****     /**I2C1 GPIO Configuration
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
  187 004a FFF7FEFF 		bl	HAL_GPIO_Init
  188              	.LVL5:
  110:Core/Src/stm32f4xx_hal_msp.c **** 
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 7
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 7
 
 
  189              		.loc 1 110 5 is_stmt 1 view .LVU41
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
  226              		.loc 1 119 43 is_stmt 0 view .LVU58
  227 007a 4561     		str	r5, [r0, #20]
  120:Core/Src/stm32f4xx_hal_msp.c ****     hdma_i2c1_tx.Init.Mode = DMA_NORMAL;
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 8
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 8
 
 
  228              		.loc 1 120 5 is_stmt 1 view .LVU59
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
  266              	.L10:
  126:Core/Src/stm32f4xx_hal_msp.c ****     }
  267              		.loc 1 126 7 is_stmt 1 view .LVU77
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 9
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 9
 
 
  268 00a2 FFF7FEFF 		bl	Error_Handler
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
  151:Core/Src/stm32f4xx_hal_msp.c ****   /* USER CODE BEGIN I2C1_MspDeInit 0 */
  152:Core/Src/stm32f4xx_hal_msp.c **** 
  153:Core/Src/stm32f4xx_hal_msp.c ****   /* USER CODE END I2C1_MspDeInit 0 */
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 10
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 10
 
 
  154:Core/Src/stm32f4xx_hal_msp.c ****     /* Peripheral clock disable */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
  340              	.LVL16:
  169:Core/Src/stm32f4xx_hal_msp.c ****   /* USER CODE BEGIN I2C1_MspDeInit 1 */
  341              		.loc 1 169 5 view .LVU90
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 11
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 11
 
 
  342 0030 1F20     		movs	r0, #31
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
  387              		.loc 1 186 10 is_stmt 0 view .LVU97
  388 0010 0268     		ldr	r2, [r0]
  389              		.loc 1 186 5 view .LVU98
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 12
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 12
 
 
  390 0012 154B     		ldr	r3, .L23
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
  415 002c 5A64     		str	r2, [r3, #68]
  192:Core/Src/stm32f4xx_hal_msp.c **** 
  416              		.loc 1 192 5 view .LVU103
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 13
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 13
 
 
  417 002e 5A6C     		ldr	r2, [r3, #68]
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
  454              		.loc 1 204 31 is_stmt 0 view .LVU120
  455 0058 0523     		movs	r3, #5
  456 005a 0793     		str	r3, [sp, #28]
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 14
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 14
 
 
  205:Core/Src/stm32f4xx_hal_msp.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
  501              	.LVL24:
  502              	.L25:
  223:Core/Src/stm32f4xx_hal_msp.c ****   {
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 15
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 15
 
 
  224:Core/Src/stm32f4xx_hal_msp.c ****   /* USER CODE BEGIN SPI1_MspDeInit 0 */
@@ -898,32 +898,32 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 1
  536              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
  537              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
  538              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 16
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 16
 
 
  539              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
  540              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
  541              		.file 11 "Core/Inc/main.h"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s 			page 17
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_hal_msp.c
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:20     .text.HAL_MspInit:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:26     .text.HAL_MspInit:00000000 HAL_MspInit
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:88     .text.HAL_MspInit:00000040 $d
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:93     .text.HAL_I2C_MspInit:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:99     .text.HAL_I2C_MspInit:00000000 HAL_I2C_MspInit
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:274    .text.HAL_I2C_MspInit:000000a8 $d
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:283    .text.HAL_I2C_MspDeInit:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:289    .text.HAL_I2C_MspDeInit:00000000 HAL_I2C_MspDeInit
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:350    .text.HAL_I2C_MspDeInit:00000038 $d
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:357    .text.HAL_SPI_MspInit:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:363    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:469    .text.HAL_SPI_MspInit:00000068 $d
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:475    .text.HAL_SPI_MspDeInit:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:481    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
-C:\Users\jdcox\AppData\Local\Temp\ccRfF0nJ.s:524    .text.HAL_SPI_MspDeInit:00000020 $d
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:20     .text.HAL_MspInit:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:26     .text.HAL_MspInit:00000000 HAL_MspInit
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:88     .text.HAL_MspInit:00000040 $d
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:93     .text.HAL_I2C_MspInit:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:99     .text.HAL_I2C_MspInit:00000000 HAL_I2C_MspInit
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:274    .text.HAL_I2C_MspInit:000000a8 $d
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:283    .text.HAL_I2C_MspDeInit:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:289    .text.HAL_I2C_MspDeInit:00000000 HAL_I2C_MspDeInit
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:350    .text.HAL_I2C_MspDeInit:00000038 $d
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:357    .text.HAL_SPI_MspInit:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:363    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:469    .text.HAL_SPI_MspInit:00000068 $d
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:475    .text.HAL_SPI_MspDeInit:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:481    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
+C:\Users\jdcox\AppData\Local\Temp\cchDXzR4.s:524    .text.HAL_SPI_MspDeInit:00000020 $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriority
