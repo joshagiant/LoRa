@@ -172,7 +172,7 @@ int main(void)
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of loraRXTask */
-
+  
 
   /* definition and creation of displayTask */
   osThreadDef(displayTask, StartDisplayTask, osPriorityNormal, 0, 128);
@@ -355,10 +355,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOB, LED1_Pin|LED2_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LORA_RST_GPIO_Port, LORA_RST_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LORA_CS_GPIO_Port, LORA_CS_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA, LORA_RST_Pin|LORA_CS_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin : BTN_IN_Pin */
   GPIO_InitStruct.Pin = BTN_IN_Pin;
@@ -476,95 +473,7 @@ void StartDefaultTask(void const * argument)
     //debug
     HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
     
-    switch (gameState)
-    {
-      case waiting:
-        if(stateChange_flag)
-        {
-          stateChange_flag = 0;
-          ssd1306_Fill(0); 
-          ssd1306_SetCursor(0,0);
-          ssd1306_WriteString("Push to play",Font_7x10,1);
-          ssd1306_UpdateScreen();
-        }
-      break;
-
-      case p1King:
-        if(stateChange_flag)
-        {
-          stateChange_flag = 0;
-          P1LED_OFF; // The hill is yours
-          ssd1306_Fill(0);
-          ssd1306_SetCursor(0,0);
-          ssd1306_WriteString("You are king",Font_7x10,1);
-          ssd1306_SetCursor(0,10);
-          ssd1306_WriteString("of the hill!",Font_7x10,1);
-          ssd1306_UpdateScreen();
-        }
-      break;
-
-      case p2King:
-        if(stateChange_flag)
-        {
-          stateChange_flag = 0;
-          P1LED_ON; // Better push the button!
-          ssd1306_Fill(0);
-          ssd1306_SetCursor(0,0);
-          ssd1306_WriteString("Take the hill!!",Font_7x10,1);
-          ssd1306_UpdateScreen();
-        }
-      break;
-
-      case p1Winner:
-        if(stateChange_flag)
-        {
-          stateChange_flag = 0;
-          P1LED_OFF;
-          ssd1306_Fill(0);
-          ssd1306_SetCursor(0,0);
-          ssd1306_WriteString("P1 wins!",Font_7x10,1);
-          char score [16];
-          uint16_t difference = p1King_counter - p2King_counter;
-          sprintf(score, "Won by %ums", difference);
-          lcd_put_cur(1,0);
-          ssd1306_WriteString(score,Font_7x10,1);
-          ssd1306_UpdateScreen();
-
-        }
-      break;
-
-      case p2Winner:
-        if(stateChange_flag)
-        {
-          stateChange_flag = 0;
-          P1LED_OFF;
-          ssd1306_Fill(0);
-          ssd1306_SetCursor(0,0);
-          ssd1306_WriteString("P2 wins!",Font_7x10,1);
-          char score [16];
-          uint16_t difference = p2King_counter - p1King_counter;
-          sprintf(score, "Won by %ums", difference);
-          lcd_put_cur(1,0);
-          ssd1306_WriteString(score,Font_7x10,1);
-          ssd1306_UpdateScreen();
-        }
-      break;
-
-        case penalty:
-        if(stateChange_flag)
-        {
-          stateChange_flag = 0;
-          P1LED_OFF;
-          ssd1306_Fill(0); 
-          ssd1306_SetCursor(0,0);
-          ssd1306_WriteString("Penalty!",Font_7x10,1);
-          ssd1306_UpdateScreen();
-        }
-
-      break;
-      
-    }
-
+    checkGameState();
 
     osDelay(1);
    
@@ -644,8 +553,6 @@ void msTickCallback(void const * argument)
 }
 
 /* debounceCallback function */
-
-
 void debounceCallback(void const * argument)
 {
   /* USER CODE BEGIN debounceCallback */

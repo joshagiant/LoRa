@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 1
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 1
   28:Core/Src/stm32f4xx_it.c **** /* Private typedef -----------------------------------------------------------*/
   29:Core/Src/stm32f4xx_it.c **** /* USER CODE BEGIN TD */
   30:Core/Src/stm32f4xx_it.c **** 
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 2
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 2
 
 
   31:Core/Src/stm32f4xx_it.c **** /* USER CODE END TD */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 1
   78:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
   79:Core/Src/stm32f4xx_it.c **** 
   80:Core/Src/stm32f4xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 0 */
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 3
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 3
 
 
   81:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 1
   71              		.thumb_func
   73              	MemManage_Handler:
   74              	.LFB137:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 4
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 4
 
 
  101:Core/Src/stm32f4xx_it.c **** }
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 1
  126:Core/Src/stm32f4xx_it.c ****   while (1)
  105              		.loc 1 126 3 discriminator 1 view .LVU13
  127:Core/Src/stm32f4xx_it.c ****   {
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 5
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 5
 
 
  128:Core/Src/stm32f4xx_it.c ****     /* USER CODE BEGIN W1_BusFault_IRQn 0 */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 1
  146:Core/Src/stm32f4xx_it.c **** }
  147:Core/Src/stm32f4xx_it.c **** 
  148:Core/Src/stm32f4xx_it.c **** /**
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 6
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 6
 
 
  149:Core/Src/stm32f4xx_it.c ****   * @brief This function handles Debug monitor.
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 1
  172              		.loc 1 176 3 view .LVU23
  173 0002 0120     		movs	r0, #1
  174 0004 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 7
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 7
 
 
  175              	.LVL0:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 1
  214              		.global	TIM1_UP_TIM10_IRQHandler
  215              		.syntax unified
  216              		.thumb
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 8
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 8
 
 
  217              		.thumb_func
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 1
  254              		@ args = 0, pretend = 0, frame = 0
  255              		@ frame_needed = 0, uses_anonymous_args = 0
  256 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 9
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 9
 
 
  257              	.LCFI3:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 1
  295              	.LVL4:
  233:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN SPI1_IRQn 1 */
  234:Core/Src/stm32f4xx_it.c **** 
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 10
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 10
 
 
  235:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SPI1_IRQn 1 */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 1
  337              		.align	1
  338              		.global	DMA2_Stream3_IRQHandler
  339              		.syntax unified
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 11
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 11
 
 
  340              		.thumb
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 1
  378              		.cfi_startproc
  379              		@ args = 0, pretend = 0, frame = 0
  380              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 12
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 12
 
 
  381              		@ link register save eliminated.
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 1
  428              		.loc 1 280 8 is_stmt 0 view .LVU50
  429 0002 084B     		ldr	r3, .L44
  430 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 13
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 13
 
 
  431              		.loc 1 280 5 view .LVU51
@@ -778,57 +778,57 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 1
  474              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
  475              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
  476              		.file 10 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 14
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 14
 
 
  477              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/include/timers.h"
  478              		.file 12 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
  479              		.file 13 "Core/Inc/extern.h"
  480              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 15
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_it.c
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:20     .text.NMI_Handler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:26     .text.NMI_Handler:00000000 NMI_Handler
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:44     .text.HardFault_Handler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:67     .text.MemManage_Handler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:90     .text.BusFault_Handler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:113    .text.UsageFault_Handler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:136    .text.DebugMon_Handler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:142    .text.DebugMon_Handler:00000000 DebugMon_Handler
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:155    .text.EXTI0_IRQHandler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:161    .text.EXTI0_IRQHandler:00000000 EXTI0_IRQHandler
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:182    .text.DMA1_Stream6_IRQHandler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:188    .text.DMA1_Stream6_IRQHandler:00000000 DMA1_Stream6_IRQHandler
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:208    .text.DMA1_Stream6_IRQHandler:0000000c $d
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:213    .text.TIM1_UP_TIM10_IRQHandler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:219    .text.TIM1_UP_TIM10_IRQHandler:00000000 TIM1_UP_TIM10_IRQHandler
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:239    .text.TIM1_UP_TIM10_IRQHandler:0000000c $d
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:244    .text.I2C1_EV_IRQHandler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:250    .text.I2C1_EV_IRQHandler:00000000 I2C1_EV_IRQHandler
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:270    .text.I2C1_EV_IRQHandler:0000000c $d
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:275    .text.SPI1_IRQHandler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:281    .text.SPI1_IRQHandler:00000000 SPI1_IRQHandler
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:301    .text.SPI1_IRQHandler:0000000c $d
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:306    .text.DMA2_Stream0_IRQHandler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:312    .text.DMA2_Stream0_IRQHandler:00000000 DMA2_Stream0_IRQHandler
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:332    .text.DMA2_Stream0_IRQHandler:0000000c $d
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:337    .text.DMA2_Stream3_IRQHandler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:343    .text.DMA2_Stream3_IRQHandler:00000000 DMA2_Stream3_IRQHandler
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:363    .text.DMA2_Stream3_IRQHandler:0000000c $d
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:368    .text.HAL_SPI_TxCpltCallback:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:374    .text.HAL_SPI_TxCpltCallback:00000000 HAL_SPI_TxCpltCallback
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:388    .text.HAL_SPI_RxCpltCallback:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:394    .text.HAL_SPI_RxCpltCallback:00000000 HAL_SPI_RxCpltCallback
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:408    .text.HAL_GPIO_EXTI_Callback:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:414    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
-C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s:461    .text.HAL_GPIO_EXTI_Callback:00000024 $d
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:20     .text.NMI_Handler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:26     .text.NMI_Handler:00000000 NMI_Handler
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:44     .text.HardFault_Handler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:67     .text.MemManage_Handler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:90     .text.BusFault_Handler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:113    .text.UsageFault_Handler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:136    .text.DebugMon_Handler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:142    .text.DebugMon_Handler:00000000 DebugMon_Handler
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:155    .text.EXTI0_IRQHandler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:161    .text.EXTI0_IRQHandler:00000000 EXTI0_IRQHandler
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:182    .text.DMA1_Stream6_IRQHandler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:188    .text.DMA1_Stream6_IRQHandler:00000000 DMA1_Stream6_IRQHandler
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:208    .text.DMA1_Stream6_IRQHandler:0000000c $d
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:213    .text.TIM1_UP_TIM10_IRQHandler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:219    .text.TIM1_UP_TIM10_IRQHandler:00000000 TIM1_UP_TIM10_IRQHandler
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:239    .text.TIM1_UP_TIM10_IRQHandler:0000000c $d
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:244    .text.I2C1_EV_IRQHandler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:250    .text.I2C1_EV_IRQHandler:00000000 I2C1_EV_IRQHandler
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:270    .text.I2C1_EV_IRQHandler:0000000c $d
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:275    .text.SPI1_IRQHandler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:281    .text.SPI1_IRQHandler:00000000 SPI1_IRQHandler
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:301    .text.SPI1_IRQHandler:0000000c $d
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:306    .text.DMA2_Stream0_IRQHandler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:312    .text.DMA2_Stream0_IRQHandler:00000000 DMA2_Stream0_IRQHandler
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:332    .text.DMA2_Stream0_IRQHandler:0000000c $d
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:337    .text.DMA2_Stream3_IRQHandler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:343    .text.DMA2_Stream3_IRQHandler:00000000 DMA2_Stream3_IRQHandler
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:363    .text.DMA2_Stream3_IRQHandler:0000000c $d
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:368    .text.HAL_SPI_TxCpltCallback:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:374    .text.HAL_SPI_TxCpltCallback:00000000 HAL_SPI_TxCpltCallback
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:388    .text.HAL_SPI_RxCpltCallback:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:394    .text.HAL_SPI_RxCpltCallback:00000000 HAL_SPI_RxCpltCallback
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:408    .text.HAL_GPIO_EXTI_Callback:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:414    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
+C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s:461    .text.HAL_GPIO_EXTI_Callback:00000024 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_EXTI_IRQHandler
@@ -845,7 +845,7 @@ hdma_spi1_tx
 btnPressed
 osTimerStart
 debouncing_Flag
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccbkldQv.s 			page 16
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccy8zmIh.s 			page 16
 
 
 debounceTimerHandle

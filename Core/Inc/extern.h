@@ -21,6 +21,7 @@ extern uint32_t p1King_counter;
 extern uint32_t p2King_counter;
 
 extern uint8_t packet_size;
+extern uint8_t receivedPacket[10]; 
 extern uint8_t loraRXbuf[10]; 
 extern char opcodeString [10];
 
@@ -33,3 +34,4 @@ void resetGame();
 void sendOpcode(uint8_t);
 void getKOTHPacket();
 void btnPressed();
+void checkGameState();

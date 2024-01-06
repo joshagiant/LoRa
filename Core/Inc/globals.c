@@ -14,8 +14,9 @@ uint16_t debouce_timer;
 
 uint8_t packet_size;
 uint8_t loraRXbuf[10]; 
+uint8_t receivedPacket[10]; 
 char opcodeString [10];
 
 uint8_t gameState;
 enum gameStates {waiting,p1King,p2King,p1Winner,p2Winner,penalty,unconfirmed};
-enum opcodes {START, CONFIRM_START, CLAIM_KING, CONFIRM_KING};
+enum opcodes {START, P1KING, P2KING, P1WINNER, P2WINNER};

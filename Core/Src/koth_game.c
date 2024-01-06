@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include "cmsis_os.h"
 #include "lora.h"
+#include "ssd1306.h"
 
 
 void resetGame()
@@ -18,6 +19,99 @@ void resetGame()
 
 }
 
+void checkGameState()
+{
+    
+    switch (gameState)
+    {
+      case waiting:
+        if(stateChange_flag)
+        {
+          stateChange_flag = 0;
+          ssd1306_Fill(0); 
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("Push to play",Font_7x10,1);
+          ssd1306_UpdateScreen();
+        }
+      break;
+
+      case p1King:
+        if(stateChange_flag)
+        {
+          stateChange_flag = 0;
+          P1LED_OFF; // The hill is yours
+          ssd1306_Fill(0);
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("You are king",Font_7x10,1);
+          ssd1306_SetCursor(0,10);
+          ssd1306_WriteString("of the hill!",Font_7x10,1);
+          ssd1306_UpdateScreen();
+        }
+      break;
+
+      case p2King:
+        if(stateChange_flag)
+        {
+          stateChange_flag = 0;
+          P1LED_ON; // Better push the button!
+          ssd1306_Fill(0);
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("Take the hill!!",Font_7x10,1);
+          ssd1306_UpdateScreen();
+        }
+      break;
+
+      case p1Winner:
+        if(stateChange_flag)
+        {
+          stateChange_flag = 0;
+          P1LED_OFF;
+          ssd1306_Fill(0);
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("P1 wins!",Font_7x10,1);
+          char score [16];
+          uint16_t difference = p1King_counter - p2King_counter;
+          sprintf(score, "Won by %ums", difference);
+          lcd_put_cur(1,0);
+          ssd1306_WriteString(score,Font_7x10,1);
+          ssd1306_UpdateScreen();
+
+        }
+      break;
+
+      case p2Winner:
+        if(stateChange_flag)
+        {
+          stateChange_flag = 0;
+          P1LED_OFF;
+          ssd1306_Fill(0);
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("P2 wins!",Font_7x10,1);
+          char score [16];
+          uint16_t difference = p2King_counter - p1King_counter;
+          sprintf(score, "Won by %ums", difference);
+          lcd_put_cur(1,0);
+          ssd1306_WriteString(score,Font_7x10,1);
+          ssd1306_UpdateScreen();
+        }
+      break;
+
+        case penalty:
+        if(stateChange_flag)
+        {
+          stateChange_flag = 0;
+          P1LED_OFF;
+          ssd1306_Fill(0); 
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("Penalty!",Font_7x10,1);
+          ssd1306_UpdateScreen();
+        }
+
+      break;
+      
+    }
+}
+
 void getKOTHPacket()
 {
     // Wait for LoRa availability
@@ -26,15 +120,22 @@ void getKOTHPacket()
     // Get the packet
     packet_size = LoRa_receive(&myLoRa, loraRXbuf, 10);
 
+    if(packet_size > 0)
+    {
+        if(loraRXbuf[0] != receivedPacket[0])
+        {
+            memcpy(receivedPacket,loraRXbuf,10);
+        }
+    }
     //xSemaphoreGive(xloraMutex);
     
     // Parse the data
-    if(strstr((char*)loraRXbuf, "KOTH"))
+    if(strstr((char*)receivedPacket, "KOTH"))
     {
         long opcode;
         char * trashCatcher[10]; 
         
-        opcode = strtol((char*)loraRXbuf, trashCatcher,10);
+        opcode = strtol((char*)receivedPacket, trashCatcher,10);
 
         // Process opcode and respond if necessary
         switch (opcode)
@@ -43,8 +144,8 @@ void getKOTHPacket()
             // Reset and start
             resetGame();
             // Send confirmation
-            sendOpcode(CONFIRM_START);
-            gameState = p2King;
+            sendOpcode(START);
+            gameState = p1King;
             P2LED_ON;
             P1LED_OFF;
             stateChange_flag = 1; 
@@ -65,8 +166,8 @@ void getKOTHPacket()
             // Confirmations received
             case CONFIRM_START:
             case CONFIRM_KING:
-            stateChange_flag = 1; 
             gameState = p1King;
+            stateChange_flag = 1; 
             P1LED_ON;
             P2LED_OFF;
             p1King_flag = 1;
@@ -83,8 +184,16 @@ void btnPressed()
     switch (gameState)
     {
         case waiting:
-            // send message to opponent, start on confirmation
-            sendOpcode(START);
+            // send message to opponent, wait on confirmation
+
+            while(gameState == waiting)
+            { 
+                ssd1306_SetCursor(0,0);
+                ssd1306_WriteString("Syncing..",Font_16x24,1);
+                ssd1306_UpdateScreen();
+                sendOpcode(START);
+                osDelay(100);
+            }
         break;
         
         case p1King:
@@ -127,7 +236,9 @@ void sendOpcode(uint8_t opcode)
     //xSemaphoreTake(xloraMutex, portMAX_DELAY);
 
     // Send it via LoRa
-    //uint8_t res = lora_send_packet_dma_start(&lora, (uint8_t *)opcodeString, 10);
+    LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 10, 100);
+
+    LoRa_startReceiving(&myLoRa);
     //if (res != LORA_OK) {
     // Send failed
     //debugBuddy = res;
