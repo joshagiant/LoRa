@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 1
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -45,808 +45,1502 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 1
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
   32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33              		@ link register save eliminated.
-  14:Core/Src/koth_game.c ****     p1King_flag = 0;
-  34              		.loc 1 14 5 view .LVU1
-  35              		.loc 1 14 17 is_stmt 0 view .LVU2
-  36 0000 0023     		movs	r3, #0
-  37 0002 044A     		ldr	r2, .L2
-  38 0004 1370     		strb	r3, [r2]
-  15:Core/Src/koth_game.c ****     p2King_flag = 0;
-  39              		.loc 1 15 5 is_stmt 1 view .LVU3
-  40              		.loc 1 15 17 is_stmt 0 view .LVU4
-  41 0006 044A     		ldr	r2, .L2+4
-  42 0008 1370     		strb	r3, [r2]
-  16:Core/Src/koth_game.c ****     p1King_counter = 0;
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 2
+  33 0000 10B5     		push	{r4, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 4, -8
+  37              		.cfi_offset 14, -4
+  14:Core/Src/koth_game.c ****     REDLED_OFF;
+  38              		.loc 1 14 5 view .LVU1
+  39 0002 0D4C     		ldr	r4, .L3
+  40 0004 0122     		movs	r2, #1
+  41 0006 0221     		movs	r1, #2
+  42 0008 2046     		mov	r0, r4
+  43 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
+  44              	.LVL0:
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 2
 
 
-  43              		.loc 1 16 5 is_stmt 1 view .LVU5
-  44              		.loc 1 16 20 is_stmt 0 view .LVU6
-  45 000a 044A     		ldr	r2, .L2+8
-  46 000c 1360     		str	r3, [r2]
-  17:Core/Src/koth_game.c ****     p1King_counter = 0;
-  47              		.loc 1 17 5 is_stmt 1 view .LVU7
-  18:Core/Src/koth_game.c ****     gameState = waiting;
-  48              		.loc 1 18 5 view .LVU8
-  49              		.loc 1 18 15 is_stmt 0 view .LVU9
-  50 000e 044A     		ldr	r2, .L2+12
-  51 0010 1370     		strb	r3, [r2]
-  19:Core/Src/koth_game.c **** 
-  20:Core/Src/koth_game.c **** }
-  52              		.loc 1 20 1 view .LVU10
-  53 0012 7047     		bx	lr
-  54              	.L3:
-  55              		.align	2
-  56              	.L2:
-  57 0014 00000000 		.word	p1King_flag
-  58 0018 00000000 		.word	p2King_flag
-  59 001c 00000000 		.word	p1King_counter
-  60 0020 00000000 		.word	gameState
-  61              		.cfi_endproc
-  62              	.LFE138:
-  64              		.section	.rodata.sendOpcode.str1.4,"aMS",%progbits,1
-  65              		.align	2
-  66              	.LC0:
-  67 0000 25754B4F 		.ascii	"%uKOTH\000"
-  67      544800
-  68              		.section	.text.sendOpcode,"ax",%progbits
-  69              		.align	1
-  70              		.global	sendOpcode
-  71              		.syntax unified
-  72              		.thumb
-  73              		.thumb_func
-  75              	sendOpcode:
-  76              	.LVL0:
-  77              	.LFB141:
-  21:Core/Src/koth_game.c **** 
-  22:Core/Src/koth_game.c **** void getKOTHPacket()
-  23:Core/Src/koth_game.c **** {
-  24:Core/Src/koth_game.c ****     // Wait for LoRa availability
-  25:Core/Src/koth_game.c ****     //xSemaphoreTake(xloraMutex, portMAX_DELAY);
-  26:Core/Src/koth_game.c **** 
-  27:Core/Src/koth_game.c ****     // Get the packet
-  28:Core/Src/koth_game.c ****     packet_size = LoRa_receive(&myLoRa, loraRXbuf, 10);
-  29:Core/Src/koth_game.c **** 
-  30:Core/Src/koth_game.c ****     if(packet_size > 0)
-  31:Core/Src/koth_game.c ****     {
-  32:Core/Src/koth_game.c ****         if(loraRXbuf[0] != receivedPacket[0])
-  33:Core/Src/koth_game.c ****         {
-  34:Core/Src/koth_game.c ****             memcpy(receivedPacket,loraRXbuf,10);
-  35:Core/Src/koth_game.c ****         }
-  36:Core/Src/koth_game.c ****     }
-  37:Core/Src/koth_game.c ****     //xSemaphoreGive(xloraMutex);
-  38:Core/Src/koth_game.c ****     
-  39:Core/Src/koth_game.c ****     // Parse the data
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 3
+  15:Core/Src/koth_game.c ****     BLUELED_OFF;
+  45              		.loc 1 15 5 view .LVU2
+  46 000e 0122     		movs	r2, #1
+  47 0010 0421     		movs	r1, #4
+  48 0012 2046     		mov	r0, r4
+  49 0014 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  50              	.LVL1:
+  16:Core/Src/koth_game.c ****     red_flag = 0;
+  51              		.loc 1 16 5 view .LVU3
+  52              		.loc 1 16 14 is_stmt 0 view .LVU4
+  53 0018 0023     		movs	r3, #0
+  54 001a 084A     		ldr	r2, .L3+4
+  55 001c 1370     		strb	r3, [r2]
+  17:Core/Src/koth_game.c ****     blue_flag = 0;
+  56              		.loc 1 17 5 is_stmt 1 view .LVU5
+  57              		.loc 1 17 15 is_stmt 0 view .LVU6
+  58 001e 084A     		ldr	r2, .L3+8
+  59 0020 1370     		strb	r3, [r2]
+  18:Core/Src/koth_game.c ****     red_counter = 0;
+  60              		.loc 1 18 5 is_stmt 1 view .LVU7
+  61              		.loc 1 18 17 is_stmt 0 view .LVU8
+  62 0022 084A     		ldr	r2, .L3+12
+  63 0024 1360     		str	r3, [r2]
+  19:Core/Src/koth_game.c ****     blue_counter = 0;
+  64              		.loc 1 19 5 is_stmt 1 view .LVU9
+  65              		.loc 1 19 18 is_stmt 0 view .LVU10
+  66 0026 084A     		ldr	r2, .L3+16
+  67 0028 1360     		str	r3, [r2]
+  20:Core/Src/koth_game.c ****     gameState = WAITING;
+  68              		.loc 1 20 5 is_stmt 1 view .LVU11
+  69              		.loc 1 20 15 is_stmt 0 view .LVU12
+  70 002a 084B     		ldr	r3, .L3+20
+  71 002c 0822     		movs	r2, #8
+  72 002e 1A70     		strb	r2, [r3]
+  21:Core/Src/koth_game.c ****     stateChange_flag = 1;
+  73              		.loc 1 21 5 is_stmt 1 view .LVU13
+  74              		.loc 1 21 22 is_stmt 0 view .LVU14
+  75 0030 074B     		ldr	r3, .L3+24
+  76 0032 0122     		movs	r2, #1
+  77 0034 1A70     		strb	r2, [r3]
+  22:Core/Src/koth_game.c **** 
+  23:Core/Src/koth_game.c **** }
+  78              		.loc 1 23 1 view .LVU15
+  79 0036 10BD     		pop	{r4, pc}
+  80              	.L4:
+  81              		.align	2
+  82              	.L3:
+  83 0038 00040240 		.word	1073873920
+  84 003c 00000000 		.word	red_flag
+  85 0040 00000000 		.word	blue_flag
+  86 0044 00000000 		.word	red_counter
+  87 0048 00000000 		.word	blue_counter
+  88 004c 00000000 		.word	gameState
+  89 0050 00000000 		.word	stateChange_flag
+  90              		.cfi_endproc
+  91              	.LFE138:
+  93              		.section	.text.btnPressed,"ax",%progbits
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 3
 
 
-  40:Core/Src/koth_game.c ****     if(strstr((char*)receivedPacket, "KOTH"))
-  41:Core/Src/koth_game.c ****     {
-  42:Core/Src/koth_game.c ****         long opcode;
-  43:Core/Src/koth_game.c ****         char * trashCatcher[10]; 
-  44:Core/Src/koth_game.c ****         
-  45:Core/Src/koth_game.c ****         opcode = strtol((char*)receivedPacket, trashCatcher,10);
-  46:Core/Src/koth_game.c **** 
-  47:Core/Src/koth_game.c ****         // Process opcode and respond if necessary
-  48:Core/Src/koth_game.c ****         switch (opcode)
-  49:Core/Src/koth_game.c ****         {
-  50:Core/Src/koth_game.c ****             case START:
-  51:Core/Src/koth_game.c ****             // Reset and start
-  52:Core/Src/koth_game.c ****             resetGame();
-  53:Core/Src/koth_game.c ****             // Send confirmation
-  54:Core/Src/koth_game.c ****             sendOpcode(CONFIRM_START);
-  55:Core/Src/koth_game.c ****             gameState = p2King;
-  56:Core/Src/koth_game.c ****             P2LED_ON;
-  57:Core/Src/koth_game.c ****             P1LED_OFF;
-  58:Core/Src/koth_game.c ****             stateChange_flag = 1; 
-  59:Core/Src/koth_game.c ****             p1King_flag = 0;
-  60:Core/Src/koth_game.c ****             p2King_flag = 1;
-  61:Core/Src/koth_game.c ****             break;
+  94              		.align	1
+  95              		.global	btnPressed
+  96              		.syntax unified
+  97              		.thumb
+  98              		.thumb_func
+ 100              	btnPressed:
+ 101              	.LFB141:
+  24:Core/Src/koth_game.c **** 
+  25:Core/Src/koth_game.c **** void doGameState()
+  26:Core/Src/koth_game.c **** {
+  27:Core/Src/koth_game.c ****     
+  28:Core/Src/koth_game.c ****     switch (gameState)
+  29:Core/Src/koth_game.c ****     {
+  30:Core/Src/koth_game.c ****         case WAITING:
+  31:Core/Src/koth_game.c ****             if(stateChange_flag) // do once
+  32:Core/Src/koth_game.c ****             { 
+  33:Core/Src/koth_game.c ****                 stateChange_flag = 0;
+  34:Core/Src/koth_game.c ****                 ssd1306_Fill(0); 
+  35:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,0);
+  36:Core/Src/koth_game.c ****                 if (THIS_PLAYER == RED) ssd1306_WriteString("RED",Font_11x18,1);
+  37:Core/Src/koth_game.c ****                 else ssd1306_WriteString("BLUE",Font_11x18,1);
+  38:Core/Src/koth_game.c ****                 ssd1306_SetCursor(25,21);
+  39:Core/Src/koth_game.c ****                 ssd1306_WriteString("Push to play!",Font_7x10,1);
+  40:Core/Src/koth_game.c ****                 ssd1306_UpdateScreen();
+  41:Core/Src/koth_game.c ****             }
+  42:Core/Src/koth_game.c ****         break;
+  43:Core/Src/koth_game.c **** 
+  44:Core/Src/koth_game.c ****         case goSTART:
+  45:Core/Src/koth_game.c ****         case goRED:
+  46:Core/Src/koth_game.c ****         case goBLUE:
+  47:Core/Src/koth_game.c **** 
+  48:Core/Src/koth_game.c ****             // Limbo state, don't increment stuff until other player syncs
+  49:Core/Src/koth_game.c ****             stateChange_flag = 0;
+  50:Core/Src/koth_game.c ****             red_flag = 0;
+  51:Core/Src/koth_game.c ****             blue_flag = 0;
+  52:Core/Src/koth_game.c ****             REDLED_OFF;
+  53:Core/Src/koth_game.c ****             BLUELED_OFF;
+  54:Core/Src/koth_game.c **** 
+  55:Core/Src/koth_game.c ****             while( (gameState == goSTART) || (gameState == goRED) || (gameState == goBLUE) )
+  56:Core/Src/koth_game.c ****             {
+  57:Core/Src/koth_game.c ****                 sendOpcode(gameState);
+  58:Core/Src/koth_game.c ****                 osDelay(50);
+  59:Core/Src/koth_game.c ****             }
+  60:Core/Src/koth_game.c **** 
+  61:Core/Src/koth_game.c ****         break;
   62:Core/Src/koth_game.c **** 
-  63:Core/Src/koth_game.c ****             case CLAIM_KING: 
-  64:Core/Src/koth_game.c ****             sendOpcode(CONFIRM_KING);
-  65:Core/Src/koth_game.c ****             gameState = p2King;
-  66:Core/Src/koth_game.c ****             P2LED_ON;
-  67:Core/Src/koth_game.c ****             P1LED_OFF;
-  68:Core/Src/koth_game.c ****             stateChange_flag = 1; 
-  69:Core/Src/koth_game.c ****             p1King_flag = 1;
-  70:Core/Src/koth_game.c ****             p2King_flag = 0;
-  71:Core/Src/koth_game.c ****             break; 
-  72:Core/Src/koth_game.c **** 
-  73:Core/Src/koth_game.c ****             // Confirmations received
-  74:Core/Src/koth_game.c ****             case CONFIRM_START:
-  75:Core/Src/koth_game.c ****             case CONFIRM_KING:
-  76:Core/Src/koth_game.c ****             gameState = p1King;
-  77:Core/Src/koth_game.c ****             stateChange_flag = 1; 
-  78:Core/Src/koth_game.c ****             P1LED_ON;
-  79:Core/Src/koth_game.c ****             P2LED_OFF;
-  80:Core/Src/koth_game.c ****             p1King_flag = 1;
-  81:Core/Src/koth_game.c ****             p2King_flag = 0;
-  82:Core/Src/koth_game.c ****             break;
-  83:Core/Src/koth_game.c ****             
-  84:Core/Src/koth_game.c ****             }
-  85:Core/Src/koth_game.c ****         }
-  86:Core/Src/koth_game.c ****         
-  87:Core/Src/koth_game.c **** }
-  88:Core/Src/koth_game.c **** 
-  89:Core/Src/koth_game.c **** void btnPressed()
-  90:Core/Src/koth_game.c **** {
-  91:Core/Src/koth_game.c ****     switch (gameState)
-  92:Core/Src/koth_game.c ****     {
-  93:Core/Src/koth_game.c ****         case waiting:
-  94:Core/Src/koth_game.c ****             // send message to opponent, wait on confirmation
-  95:Core/Src/koth_game.c **** 
-  96:Core/Src/koth_game.c ****             while(gameState == waiting)
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 4
+  63:Core/Src/koth_game.c **** 
+  64:Core/Src/koth_game.c ****         case RED:
+  65:Core/Src/koth_game.c ****             if(stateChange_flag)
+  66:Core/Src/koth_game.c ****             {
+  67:Core/Src/koth_game.c ****                 stateChange_flag = 0;
+  68:Core/Src/koth_game.c ****                 red_flag = 1;
+  69:Core/Src/koth_game.c ****                 blue_flag = 0;
+  70:Core/Src/koth_game.c ****                 REDLED_ON;
+  71:Core/Src/koth_game.c ****                 BLUELED_OFF;
+  72:Core/Src/koth_game.c ****                 ssd1306_Fill(0);
+  73:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,0);
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 4
 
 
-  97:Core/Src/koth_game.c ****             { 
-  98:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,0);
-  99:Core/Src/koth_game.c ****                 ssd1306_WriteString("Syncing..",Font_16x24,1);
- 100:Core/Src/koth_game.c ****                 ssd1306_UpdateScreen();
- 101:Core/Src/koth_game.c ****                 sendOpcode(START);
- 102:Core/Src/koth_game.c ****                 osDelay(100);
- 103:Core/Src/koth_game.c ****             }
- 104:Core/Src/koth_game.c ****         break;
- 105:Core/Src/koth_game.c ****         
- 106:Core/Src/koth_game.c ****         case p1King:
- 107:Core/Src/koth_game.c ****             // oops! penalty
- 108:Core/Src/koth_game.c ****             stateChange_flag = 1; 
- 109:Core/Src/koth_game.c ****             gameState = penalty;
- 110:Core/Src/koth_game.c ****             P2LED_ON;
- 111:Core/Src/koth_game.c ****             P1LED_OFF;
- 112:Core/Src/koth_game.c ****             sendOpcode(CONFIRM_KING);
- 113:Core/Src/koth_game.c ****         break;
- 114:Core/Src/koth_game.c **** 
- 115:Core/Src/koth_game.c ****         case p2King:
- 116:Core/Src/koth_game.c ****             // Take the hill
- 117:Core/Src/koth_game.c ****             sendOpcode(CLAIM_KING);
- 118:Core/Src/koth_game.c ****         break;
- 119:Core/Src/koth_game.c **** 
- 120:Core/Src/koth_game.c ****         case p1Winner:
- 121:Core/Src/koth_game.c ****         case p2Winner:
- 122:Core/Src/koth_game.c ****             stateChange_flag = 1; 
- 123:Core/Src/koth_game.c ****             gameState = waiting;
- 124:Core/Src/koth_game.c ****             P1LED_OFF;
- 125:Core/Src/koth_game.c ****             P2LED_OFF;
- 126:Core/Src/koth_game.c ****         break;
- 127:Core/Src/koth_game.c **** 
- 128:Core/Src/koth_game.c ****         case penalty:
- 129:Core/Src/koth_game.c ****             // nothing
- 130:Core/Src/koth_game.c ****         break;
- 131:Core/Src/koth_game.c ****     }
- 132:Core/Src/koth_game.c **** 
- 133:Core/Src/koth_game.c **** 
- 134:Core/Src/koth_game.c **** }
+  74:Core/Src/koth_game.c ****                 ssd1306_WriteString("RED is king",Font_7x10,1);
+  75:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,10);
+  76:Core/Src/koth_game.c ****                 ssd1306_WriteString("of the hill!",Font_7x10,1);
+  77:Core/Src/koth_game.c ****                 ssd1306_UpdateScreen();
+  78:Core/Src/koth_game.c ****             }
+  79:Core/Src/koth_game.c **** 
+  80:Core/Src/koth_game.c **** 
+  81:Core/Src/koth_game.c ****         break;
+  82:Core/Src/koth_game.c **** 
+  83:Core/Src/koth_game.c ****         case BLUE:
+  84:Core/Src/koth_game.c ****             if(stateChange_flag)
+  85:Core/Src/koth_game.c ****             {
+  86:Core/Src/koth_game.c ****                 stateChange_flag = 0;
+  87:Core/Src/koth_game.c ****                 red_flag = 0;
+  88:Core/Src/koth_game.c ****                 blue_flag = 1;
+  89:Core/Src/koth_game.c ****                 REDLED_OFF;
+  90:Core/Src/koth_game.c ****                 BLUELED_ON;
+  91:Core/Src/koth_game.c ****                 ssd1306_Fill(0);
+  92:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,0);
+  93:Core/Src/koth_game.c ****                 ssd1306_WriteString("BLUE is king",Font_7x10,1);
+  94:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,10);
+  95:Core/Src/koth_game.c ****                 ssd1306_WriteString("of the hill!",Font_7x10,1);
+  96:Core/Src/koth_game.c ****                 ssd1306_UpdateScreen();
+  97:Core/Src/koth_game.c ****             }
+  98:Core/Src/koth_game.c ****         break;
+  99:Core/Src/koth_game.c **** 
+ 100:Core/Src/koth_game.c ****         case REDWINS:
+ 101:Core/Src/koth_game.c ****             if(stateChange_flag)
+ 102:Core/Src/koth_game.c ****             {
+ 103:Core/Src/koth_game.c ****                 stateChange_flag = 0;
+ 104:Core/Src/koth_game.c ****                 REDLED_ON;
+ 105:Core/Src/koth_game.c ****                 BLUELED_OFF;
+ 106:Core/Src/koth_game.c ****                 ssd1306_Fill(0);
+ 107:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,0);
+ 108:Core/Src/koth_game.c ****                 ssd1306_WriteString("Red wins!",Font_7x10,1);
+ 109:Core/Src/koth_game.c ****                 char score [16];
+ 110:Core/Src/koth_game.c ****                 uint16_t difference = red_counter - blue_counter;
+ 111:Core/Src/koth_game.c ****                 sprintf(score, "Won by %ums", difference);
+ 112:Core/Src/koth_game.c ****                 lcd_put_cur(1,0);
+ 113:Core/Src/koth_game.c ****                 ssd1306_WriteString(score,Font_7x10,1);
+ 114:Core/Src/koth_game.c ****                 ssd1306_UpdateScreen();
+ 115:Core/Src/koth_game.c ****             }
+ 116:Core/Src/koth_game.c ****         break;
+ 117:Core/Src/koth_game.c **** 
+ 118:Core/Src/koth_game.c ****         case BLUEWINS:
+ 119:Core/Src/koth_game.c ****             if(stateChange_flag)
+ 120:Core/Src/koth_game.c ****             {
+ 121:Core/Src/koth_game.c ****                 stateChange_flag = 0;
+ 122:Core/Src/koth_game.c ****                 REDLED_OFF;
+ 123:Core/Src/koth_game.c ****                 BLUELED_ON;
+ 124:Core/Src/koth_game.c ****                 ssd1306_Fill(0);
+ 125:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,0);
+ 126:Core/Src/koth_game.c ****                 ssd1306_WriteString("Blue wins!",Font_7x10,1);
+ 127:Core/Src/koth_game.c ****                 char score [16];
+ 128:Core/Src/koth_game.c ****                 uint16_t difference = blue_counter - red_counter;
+ 129:Core/Src/koth_game.c ****                 sprintf(score, "Won by %ums", difference);
+ 130:Core/Src/koth_game.c ****                 lcd_put_cur(1,0);
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 5
+
+
+ 131:Core/Src/koth_game.c ****                 ssd1306_WriteString(score,Font_7x10,1);
+ 132:Core/Src/koth_game.c ****                 ssd1306_UpdateScreen();
+ 133:Core/Src/koth_game.c ****             }
+ 134:Core/Src/koth_game.c ****         break;
  135:Core/Src/koth_game.c **** 
- 136:Core/Src/koth_game.c **** void sendOpcode(uint8_t opcode)
- 137:Core/Src/koth_game.c **** {
-  78              		.loc 1 137 1 is_stmt 1 view -0
-  79              		.cfi_startproc
-  80              		@ args = 0, pretend = 0, frame = 0
-  81              		@ frame_needed = 0, uses_anonymous_args = 0
-  82              		.loc 1 137 1 is_stmt 0 view .LVU12
-  83 0000 10B5     		push	{r4, lr}
-  84              	.LCFI0:
-  85              		.cfi_def_cfa_offset 8
-  86              		.cfi_offset 4, -8
-  87              		.cfi_offset 14, -4
-  88 0002 0246     		mov	r2, r0
- 138:Core/Src/koth_game.c ****     memset(opcodeString, 0, sizeof(opcodeString));
-  89              		.loc 1 138 5 is_stmt 1 view .LVU13
-  90 0004 074C     		ldr	r4, .L6
-  91 0006 0023     		movs	r3, #0
-  92 0008 2360     		str	r3, [r4]	@ unaligned
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 5
+ 136:Core/Src/koth_game.c **** /*
+ 137:Core/Src/koth_game.c ****             case penalty:
+ 138:Core/Src/koth_game.c ****             if(stateChange_flag)
+ 139:Core/Src/koth_game.c ****             {
+ 140:Core/Src/koth_game.c ****             stateChange_flag = 0;
+ 141:Core/Src/koth_game.c ****             REDLED_OFF;
+ 142:Core/Src/koth_game.c ****             ssd1306_Fill(0); 
+ 143:Core/Src/koth_game.c ****             ssd1306_SetCursor(0,0);
+ 144:Core/Src/koth_game.c ****             ssd1306_WriteString("Penalty!",Font_7x10,1);
+ 145:Core/Src/koth_game.c ****             ssd1306_UpdateScreen();
+ 146:Core/Src/koth_game.c ****             }
+ 147:Core/Src/koth_game.c **** 
+ 148:Core/Src/koth_game.c ****         break;
+ 149:Core/Src/koth_game.c **** */
+ 150:Core/Src/koth_game.c ****       
+ 151:Core/Src/koth_game.c ****     }
+ 152:Core/Src/koth_game.c **** }
+ 153:Core/Src/koth_game.c **** 
+ 154:Core/Src/koth_game.c **** void getKOTHPacket()
+ 155:Core/Src/koth_game.c **** {
+ 156:Core/Src/koth_game.c ****     // Wait for LoRa availability
+ 157:Core/Src/koth_game.c ****     //xSemaphoreTake(xloraMutex, portMAX_DELAY);
+ 158:Core/Src/koth_game.c **** 
+ 159:Core/Src/koth_game.c ****     // Get the packet
+ 160:Core/Src/koth_game.c ****     packet_size = LoRa_receive(&myLoRa, loraRXbuf, 10);
+ 161:Core/Src/koth_game.c **** 
+ 162:Core/Src/koth_game.c ****     if(packet_size > 0)
+ 163:Core/Src/koth_game.c ****     {
+ 164:Core/Src/koth_game.c ****         if(loraRXbuf[0] != receivedPacket[0])
+ 165:Core/Src/koth_game.c ****         {
+ 166:Core/Src/koth_game.c ****             memcpy(receivedPacket,loraRXbuf,10);
+ 167:Core/Src/koth_game.c ****         }
+ 168:Core/Src/koth_game.c ****     }
+ 169:Core/Src/koth_game.c ****     //xSemaphoreGive(xloraMutex);
+ 170:Core/Src/koth_game.c ****     
+ 171:Core/Src/koth_game.c ****     // Parse the data
+ 172:Core/Src/koth_game.c ****     if(strstr((char*)receivedPacket, "KOTH"))
+ 173:Core/Src/koth_game.c ****     {
+ 174:Core/Src/koth_game.c ****         long opcodeRX;
+ 175:Core/Src/koth_game.c ****         char * trashCatcher[10]; 
+ 176:Core/Src/koth_game.c ****         
+ 177:Core/Src/koth_game.c ****         opcodeRX = strtol((char*)receivedPacket, trashCatcher,10);
+ 178:Core/Src/koth_game.c **** 
+ 179:Core/Src/koth_game.c ****         // Process opcode and respond if necessary
+ 180:Core/Src/koth_game.c ****         // make a readable copy
+ 181:Core/Src/koth_game.c ****         memcpy(rxReadable,&gameStateNames[opcodeRX], sizeof(&gameStateNames[opcodeRX]));
+ 182:Core/Src/koth_game.c **** 
+ 183:Core/Src/koth_game.c ****         // process
+ 184:Core/Src/koth_game.c ****         if(gameState != opcodeRX)
+ 185:Core/Src/koth_game.c ****         {
+ 186:Core/Src/koth_game.c ****             switch (opcodeRX)
+ 187:Core/Src/koth_game.c ****             {
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 6
 
 
-  93 000a 6360     		str	r3, [r4, #4]	@ unaligned
-  94 000c 2381     		strh	r3, [r4, #8]	@ unaligned
- 139:Core/Src/koth_game.c ****     // Create encoded string
- 140:Core/Src/koth_game.c ****     sprintf(opcodeString, "%uKOTH", opcode);
-  95              		.loc 1 140 5 view .LVU14
-  96 000e 0649     		ldr	r1, .L6+4
-  97 0010 2046     		mov	r0, r4
-  98              	.LVL1:
-  99              		.loc 1 140 5 is_stmt 0 view .LVU15
- 100 0012 FFF7FEFF 		bl	sprintf
- 101              	.LVL2:
- 141:Core/Src/koth_game.c **** 
- 142:Core/Src/koth_game.c ****     // Wait for LoRa availability
- 143:Core/Src/koth_game.c ****     //xSemaphoreTake(xloraMutex, portMAX_DELAY);
- 144:Core/Src/koth_game.c **** 
- 145:Core/Src/koth_game.c ****     // Send it via LoRa
- 146:Core/Src/koth_game.c ****     LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 10, 100);
- 102              		.loc 1 146 5 is_stmt 1 view .LVU16
- 103 0016 6423     		movs	r3, #100
- 104 0018 0A22     		movs	r2, #10
- 105 001a 2146     		mov	r1, r4
- 106 001c 0348     		ldr	r0, .L6+8
- 107 001e FFF7FEFF 		bl	LoRa_transmit
- 108              	.LVL3:
- 147:Core/Src/koth_game.c ****     //if (res != LORA_OK) {
- 148:Core/Src/koth_game.c ****     // Send failed
- 149:Core/Src/koth_game.c ****     //debugBuddy = res;
- 150:Core/Src/koth_game.c **** 
- 151:Core/Src/koth_game.c ****    // }
+ 188:Core/Src/koth_game.c ****                 case START:
+ 189:Core/Src/koth_game.c ****                 case goSTART:
+ 190:Core/Src/koth_game.c ****                     gameState = START;
+ 191:Core/Src/koth_game.c ****                     stateChange_flag = 1; 
+ 192:Core/Src/koth_game.c ****                 break;
+ 193:Core/Src/koth_game.c **** 
+ 194:Core/Src/koth_game.c ****                 case BLUE:
+ 195:Core/Src/koth_game.c ****                 case goBLUE: 
+ 196:Core/Src/koth_game.c ****                     sendOpcode(BLUE);
+ 197:Core/Src/koth_game.c ****                     gameState = BLUE;
+ 198:Core/Src/koth_game.c ****                     stateChange_flag = 1; 
+ 199:Core/Src/koth_game.c ****                 break; 
+ 200:Core/Src/koth_game.c **** 
+ 201:Core/Src/koth_game.c ****                 case RED:
+ 202:Core/Src/koth_game.c ****                 case goRED: 
+ 203:Core/Src/koth_game.c ****                     sendOpcode(RED);
+ 204:Core/Src/koth_game.c ****                     gameState = RED;
+ 205:Core/Src/koth_game.c ****                     stateChange_flag = 1; 
+ 206:Core/Src/koth_game.c ****                 break; 
+ 207:Core/Src/koth_game.c **** 
+ 208:Core/Src/koth_game.c ****                 case REDWINS:
+ 209:Core/Src/koth_game.c ****                 case BLUEWINS:
+ 210:Core/Src/koth_game.c ****                     gameState = opcodeRX;
+ 211:Core/Src/koth_game.c ****                     stateChange_flag = 1; 
+ 212:Core/Src/koth_game.c ****                 
+ 213:Core/Src/koth_game.c ****                 break;
+ 214:Core/Src/koth_game.c ****                 
+ 215:Core/Src/koth_game.c ****                 }
+ 216:Core/Src/koth_game.c ****             }
+ 217:Core/Src/koth_game.c ****     }
+ 218:Core/Src/koth_game.c ****         
+ 219:Core/Src/koth_game.c **** }
+ 220:Core/Src/koth_game.c **** 
+ 221:Core/Src/koth_game.c **** void btnPressed()
+ 222:Core/Src/koth_game.c **** {
+ 102              		.loc 1 222 1 is_stmt 1 view -0
+ 103              		.cfi_startproc
+ 104              		@ args = 0, pretend = 0, frame = 0
+ 105              		@ frame_needed = 0, uses_anonymous_args = 0
+ 106              		@ link register save eliminated.
+ 223:Core/Src/koth_game.c ****     switch (gameState)
+ 107              		.loc 1 223 5 view .LVU17
+ 108 0000 124B     		ldr	r3, .L14
+ 109 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 110 0004 931E     		subs	r3, r2, #2
+ 111 0006 062B     		cmp	r3, #6
+ 112 0008 1ED8     		bhi	.L5
+ 113 000a DFE803F0 		tbb	[pc, r3]
+ 114              	.L8:
+ 115 000e 0A       		.byte	(.L10-.L8)/2
+ 116 000f 1D       		.byte	(.L5-.L8)/2
+ 117 0010 0A       		.byte	(.L10-.L8)/2
+ 118 0011 1D       		.byte	(.L5-.L8)/2
+ 119 0012 17       		.byte	(.L9-.L8)/2
+ 120 0013 17       		.byte	(.L9-.L8)/2
+ 121 0014 04       		.byte	(.L7-.L8)/2
+ 122 0015 00       		.p2align 1
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 7
+
+
+ 123              	.L7:
+ 224:Core/Src/koth_game.c ****     {
+ 225:Core/Src/koth_game.c ****         case WAITING:
+ 226:Core/Src/koth_game.c ****             stateChange_flag = 1; 
+ 124              		.loc 1 226 13 view .LVU18
+ 125              		.loc 1 226 30 is_stmt 0 view .LVU19
+ 126 0016 0123     		movs	r3, #1
+ 127 0018 0D4A     		ldr	r2, .L14+4
+ 128 001a 1370     		strb	r3, [r2]
+ 227:Core/Src/koth_game.c ****             gameState = goSTART;    
+ 129              		.loc 1 227 13 is_stmt 1 view .LVU20
+ 130              		.loc 1 227 23 is_stmt 0 view .LVU21
+ 131 001c 0B4A     		ldr	r2, .L14
+ 132 001e 1370     		strb	r3, [r2]
+ 228:Core/Src/koth_game.c ****             
+ 229:Core/Src/koth_game.c ****         break;
+ 133              		.loc 1 229 9 is_stmt 1 view .LVU22
+ 134 0020 7047     		bx	lr
+ 135              	.L10:
+ 230:Core/Src/koth_game.c ****         
+ 231:Core/Src/koth_game.c ****         case RED:
+ 232:Core/Src/koth_game.c ****         case BLUE:
+ 233:Core/Src/koth_game.c **** 
+ 234:Core/Src/koth_game.c ****             stateChange_flag = 1; 
+ 136              		.loc 1 234 13 view .LVU23
+ 137              		.loc 1 234 30 is_stmt 0 view .LVU24
+ 138 0022 0B4B     		ldr	r3, .L14+4
+ 139 0024 0121     		movs	r1, #1
+ 140 0026 1970     		strb	r1, [r3]
+ 235:Core/Src/koth_game.c ****             
+ 236:Core/Src/koth_game.c ****             if(THIS_PLAYER == gameState) // oops! button masher penalty!
+ 141              		.loc 1 236 13 is_stmt 1 view .LVU25
+ 142              		.loc 1 236 15 is_stmt 0 view .LVU26
+ 143 0028 022A     		cmp	r2, #2
+ 144 002a 03D0     		beq	.L13
+ 237:Core/Src/koth_game.c ****             {
+ 238:Core/Src/koth_game.c ****                 if(THIS_PLAYER == RED) gameState = goBLUE;
+ 239:Core/Src/koth_game.c ****                 else gameState = goRED;
+ 240:Core/Src/koth_game.c **** 
+ 241:Core/Src/koth_game.c ****                 // TBD: disable button for a bit, penalty
+ 242:Core/Src/koth_game.c ****             }
+ 243:Core/Src/koth_game.c ****             
+ 244:Core/Src/koth_game.c ****             else // Took the hill!
+ 245:Core/Src/koth_game.c ****             {
+ 246:Core/Src/koth_game.c ****                 if(THIS_PLAYER == RED) gameState = goRED;
+ 145              		.loc 1 246 17 is_stmt 1 discriminator 1 view .LVU27
+ 146              		.loc 1 246 40 discriminator 1 view .LVU28
+ 147              		.loc 1 246 50 is_stmt 0 discriminator 1 view .LVU29
+ 148 002c 074B     		ldr	r3, .L14
+ 149 002e 0322     		movs	r2, #3
+ 150 0030 1A70     		strb	r2, [r3]
+ 151 0032 7047     		bx	lr
+ 152              	.L13:
+ 238:Core/Src/koth_game.c ****                 else gameState = goRED;
+ 153              		.loc 1 238 17 is_stmt 1 discriminator 1 view .LVU30
+ 238:Core/Src/koth_game.c ****                 else gameState = goRED;
+ 154              		.loc 1 238 40 discriminator 1 view .LVU31
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 8
+
+
+ 238:Core/Src/koth_game.c ****                 else gameState = goRED;
+ 155              		.loc 1 238 50 is_stmt 0 discriminator 1 view .LVU32
+ 156 0034 054B     		ldr	r3, .L14
+ 157 0036 0522     		movs	r2, #5
+ 158 0038 1A70     		strb	r2, [r3]
+ 159 003a 7047     		bx	lr
+ 160              	.L9:
+ 247:Core/Src/koth_game.c ****                 else gameState = goBLUE;
+ 248:Core/Src/koth_game.c ****             }
+ 249:Core/Src/koth_game.c **** 
+ 250:Core/Src/koth_game.c ****         break;
+ 251:Core/Src/koth_game.c **** 
+ 252:Core/Src/koth_game.c ****         
+ 253:Core/Src/koth_game.c ****         case REDWINS:
+ 254:Core/Src/koth_game.c ****         case BLUEWINS:
+ 255:Core/Src/koth_game.c ****             stateChange_flag = 1; 
+ 161              		.loc 1 255 13 is_stmt 1 view .LVU33
+ 162              		.loc 1 255 30 is_stmt 0 view .LVU34
+ 163 003c 044B     		ldr	r3, .L14+4
+ 164 003e 0122     		movs	r2, #1
+ 165 0040 1A70     		strb	r2, [r3]
+ 256:Core/Src/koth_game.c ****             gameState = WAITING;
+ 166              		.loc 1 256 13 is_stmt 1 view .LVU35
+ 167              		.loc 1 256 23 is_stmt 0 view .LVU36
+ 168 0042 024B     		ldr	r3, .L14
+ 169 0044 0822     		movs	r2, #8
+ 170 0046 1A70     		strb	r2, [r3]
+ 257:Core/Src/koth_game.c ****         break;
+ 171              		.loc 1 257 9 is_stmt 1 view .LVU37
+ 172              	.L5:
+ 258:Core/Src/koth_game.c **** 
+ 259:Core/Src/koth_game.c ****     }
+ 260:Core/Src/koth_game.c **** 
+ 261:Core/Src/koth_game.c **** 
+ 262:Core/Src/koth_game.c **** }
+ 173              		.loc 1 262 1 is_stmt 0 view .LVU38
+ 174 0048 7047     		bx	lr
+ 175              	.L15:
+ 176 004a 00BF     		.align	2
+ 177              	.L14:
+ 178 004c 00000000 		.word	gameState
+ 179 0050 00000000 		.word	stateChange_flag
+ 180              		.cfi_endproc
+ 181              	.LFE141:
+ 183              		.section	.rodata.sendOpcode.str1.4,"aMS",%progbits,1
+ 184              		.align	2
+ 185              	.LC0:
+ 186 0000 25754B4F 		.ascii	"%uKOTH\000"
+ 186      544800
+ 187              		.section	.text.sendOpcode,"ax",%progbits
+ 188              		.align	1
+ 189              		.global	sendOpcode
+ 190              		.syntax unified
+ 191              		.thumb
+ 192              		.thumb_func
+ 194              	sendOpcode:
+ 195              	.LVL2:
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 9
+
+
+ 196              	.LFB142:
+ 263:Core/Src/koth_game.c **** 
+ 264:Core/Src/koth_game.c **** void sendOpcode(uint8_t opcodeTX)
+ 265:Core/Src/koth_game.c **** {
+ 197              		.loc 1 265 1 is_stmt 1 view -0
+ 198              		.cfi_startproc
+ 199              		@ args = 0, pretend = 0, frame = 0
+ 200              		@ frame_needed = 0, uses_anonymous_args = 0
+ 201              		.loc 1 265 1 is_stmt 0 view .LVU40
+ 202 0000 38B5     		push	{r3, r4, r5, lr}
+ 203              	.LCFI1:
+ 204              		.cfi_def_cfa_offset 16
+ 205              		.cfi_offset 3, -16
+ 206              		.cfi_offset 4, -12
+ 207              		.cfi_offset 5, -8
+ 208              		.cfi_offset 14, -4
+ 209 0002 0546     		mov	r5, r0
+ 266:Core/Src/koth_game.c ****     memset(opcodeString, 0, sizeof(opcodeString));
+ 210              		.loc 1 266 5 is_stmt 1 view .LVU41
+ 211 0004 0C4C     		ldr	r4, .L18
+ 212 0006 0023     		movs	r3, #0
+ 213 0008 2360     		str	r3, [r4]	@ unaligned
+ 214 000a 6360     		str	r3, [r4, #4]	@ unaligned
+ 215 000c 2381     		strh	r3, [r4, #8]	@ unaligned
+ 267:Core/Src/koth_game.c **** 
+ 268:Core/Src/koth_game.c ****     // Create encoded string
+ 269:Core/Src/koth_game.c ****     sprintf(opcodeString, "%uKOTH", opcodeTX);
+ 216              		.loc 1 269 5 view .LVU42
+ 217 000e 0246     		mov	r2, r0
+ 218 0010 0A49     		ldr	r1, .L18+4
+ 219 0012 2046     		mov	r0, r4
+ 220              	.LVL3:
+ 221              		.loc 1 269 5 is_stmt 0 view .LVU43
+ 222 0014 FFF7FEFF 		bl	sprintf
+ 223              	.LVL4:
+ 270:Core/Src/koth_game.c **** 
+ 271:Core/Src/koth_game.c ****     // Wait for LoRa availability
+ 272:Core/Src/koth_game.c ****     //xSemaphoreTake(xloraMutex, portMAX_DELAY);
+ 273:Core/Src/koth_game.c **** 
+ 274:Core/Src/koth_game.c ****     memcpy(txReadable, &gameStateNames[opcodeTX], sizeof(&gameStateNames[opcodeTX]));
+ 224              		.loc 1 274 5 is_stmt 1 view .LVU44
+ 225 0018 094B     		ldr	r3, .L18+8
+ 226 001a 1B68     		ldr	r3, [r3]
+ 227 001c 5A59     		ldr	r2, [r3, r5]	@ unaligned
+ 228 001e 094B     		ldr	r3, .L18+12
+ 229 0020 1A60     		str	r2, [r3]	@ unaligned
+ 275:Core/Src/koth_game.c **** 
+ 276:Core/Src/koth_game.c ****     // Send it via LoRa
+ 277:Core/Src/koth_game.c ****     LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 10, 100);
+ 230              		.loc 1 277 5 view .LVU45
+ 231 0022 094D     		ldr	r5, .L18+16
+ 232 0024 6423     		movs	r3, #100
+ 233 0026 0A22     		movs	r2, #10
+ 234 0028 2146     		mov	r1, r4
+ 235 002a 2846     		mov	r0, r5
+ 236 002c FFF7FEFF 		bl	LoRa_transmit
+ 237              	.LVL5:
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 10
+
+
+ 278:Core/Src/koth_game.c **** 
+ 279:Core/Src/koth_game.c ****     LoRa_startReceiving(&myLoRa);
+ 238              		.loc 1 279 5 view .LVU46
+ 239 0030 2846     		mov	r0, r5
+ 240 0032 FFF7FEFF 		bl	LoRa_startReceiving
+ 241              	.LVL6:
+ 280:Core/Src/koth_game.c **** 
+ 281:Core/Src/koth_game.c ****     // Release LoRa availability
+ 282:Core/Src/koth_game.c ****     //xSemaphoreGive(xloraMutex);
+ 283:Core/Src/koth_game.c ****     // osMutexRelease(lora_mutexHandle);
+ 284:Core/Src/koth_game.c **** 
+ 285:Core/Src/koth_game.c ****   
+ 286:Core/Src/koth_game.c **** }
+ 242              		.loc 1 286 1 is_stmt 0 view .LVU47
+ 243 0036 38BD     		pop	{r3, r4, r5, pc}
+ 244              	.L19:
+ 245              		.align	2
+ 246              	.L18:
+ 247 0038 00000000 		.word	opcodeString
+ 248 003c 00000000 		.word	.LC0
+ 249 0040 00000000 		.word	gameStateNames
+ 250 0044 00000000 		.word	txReadable
+ 251 0048 00000000 		.word	myLoRa
+ 252              		.cfi_endproc
+ 253              	.LFE142:
+ 255              		.section	.rodata.doGameState.str1.4,"aMS",%progbits,1
+ 256              		.align	2
+ 257              	.LC1:
+ 258 0000 52454400 		.ascii	"RED\000"
+ 259              		.align	2
+ 260              	.LC2:
+ 261 0004 50757368 		.ascii	"Push to play!\000"
+ 261      20746F20 
+ 261      706C6179 
+ 261      2100
+ 262 0012 0000     		.align	2
+ 263              	.LC3:
+ 264 0014 52454420 		.ascii	"RED is king\000"
+ 264      6973206B 
+ 264      696E6700 
+ 265              		.align	2
+ 266              	.LC4:
+ 267 0020 6F662074 		.ascii	"of the hill!\000"
+ 267      68652068 
+ 267      696C6C21 
+ 267      00
+ 268 002d 000000   		.align	2
+ 269              	.LC5:
+ 270 0030 424C5545 		.ascii	"BLUE is king\000"
+ 270      20697320 
+ 270      6B696E67 
+ 270      00
+ 271 003d 000000   		.align	2
+ 272              	.LC6:
+ 273 0040 52656420 		.ascii	"Red wins!\000"
+ 273      77696E73 
+ 273      2100
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 11
+
+
+ 274 004a 0000     		.align	2
+ 275              	.LC7:
+ 276 004c 576F6E20 		.ascii	"Won by %ums\000"
+ 276      62792025 
+ 276      756D7300 
+ 277              		.align	2
+ 278              	.LC8:
+ 279 0058 426C7565 		.ascii	"Blue wins!\000"
+ 279      2077696E 
+ 279      732100
+ 280              		.section	.text.doGameState,"ax",%progbits
+ 281              		.align	1
+ 282              		.global	doGameState
+ 283              		.syntax unified
+ 284              		.thumb
+ 285              		.thumb_func
+ 287              	doGameState:
+ 288              	.LFB139:
+  26:Core/Src/koth_game.c ****     
+ 289              		.loc 1 26 1 is_stmt 1 view -0
+ 290              		.cfi_startproc
+ 291              		@ args = 0, pretend = 0, frame = 16
+ 292              		@ frame_needed = 0, uses_anonymous_args = 0
+ 293 0000 70B5     		push	{r4, r5, r6, lr}
+ 294              	.LCFI2:
+ 295              		.cfi_def_cfa_offset 16
+ 296              		.cfi_offset 4, -16
+ 297              		.cfi_offset 5, -12
+ 298              		.cfi_offset 6, -8
+ 299              		.cfi_offset 14, -4
+ 300 0002 84B0     		sub	sp, sp, #16
+ 301              	.LCFI3:
+ 302              		.cfi_def_cfa_offset 32
+  28:Core/Src/koth_game.c ****     {
+ 303              		.loc 1 28 5 view .LVU49
+ 304 0004 924B     		ldr	r3, .L33
+ 305 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 306 0008 013B     		subs	r3, r3, #1
+ 307 000a 072B     		cmp	r3, #7
+ 308 000c 4AD8     		bhi	.L20
+ 309 000e DFE813F0 		tbh	[pc, r3, lsl #1]
+ 310              	.L23:
+ 311 0012 2900     		.2byte	(.L26-.L23)/2
+ 312 0014 4B00     		.2byte	(.L28-.L23)/2
+ 313 0016 2900     		.2byte	(.L26-.L23)/2
+ 314 0018 7D00     		.2byte	(.L27-.L23)/2
+ 315 001a 2900     		.2byte	(.L26-.L23)/2
+ 316 001c E600     		.2byte	(.L25-.L23)/2
+ 317 001e AF00     		.2byte	(.L24-.L23)/2
+ 318 0020 0800     		.2byte	(.L22-.L23)/2
+ 319              		.p2align 1
+ 320              	.L22:
+  31:Core/Src/koth_game.c ****             { 
+ 321              		.loc 1 31 13 view .LVU50
+  31:Core/Src/koth_game.c ****             { 
+ 322              		.loc 1 31 16 is_stmt 0 view .LVU51
+ 323 0022 8C4B     		ldr	r3, .L33+4
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 12
+
+
+ 324 0024 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  31:Core/Src/koth_game.c ****             { 
+ 325              		.loc 1 31 15 view .LVU52
+ 326 0026 002B     		cmp	r3, #0
+ 327 0028 3CD0     		beq	.L20
+  33:Core/Src/koth_game.c ****                 ssd1306_Fill(0); 
+ 328              		.loc 1 33 17 is_stmt 1 view .LVU53
+  33:Core/Src/koth_game.c ****                 ssd1306_Fill(0); 
+ 329              		.loc 1 33 34 is_stmt 0 view .LVU54
+ 330 002a 0024     		movs	r4, #0
+ 331 002c 894B     		ldr	r3, .L33+4
+ 332 002e 1C70     		strb	r4, [r3]
+  34:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,0);
+ 333              		.loc 1 34 17 is_stmt 1 view .LVU55
+ 334 0030 2046     		mov	r0, r4
+ 335 0032 FFF7FEFF 		bl	ssd1306_Fill
+ 336              	.LVL7:
+  35:Core/Src/koth_game.c ****                 if (THIS_PLAYER == RED) ssd1306_WriteString("RED",Font_11x18,1);
+ 337              		.loc 1 35 17 view .LVU56
+ 338 0036 2146     		mov	r1, r4
+ 339 0038 2046     		mov	r0, r4
+ 340 003a FFF7FEFF 		bl	ssd1306_SetCursor
+ 341              	.LVL8:
+  36:Core/Src/koth_game.c ****                 else ssd1306_WriteString("BLUE",Font_11x18,1);
+ 342              		.loc 1 36 17 view .LVU57
+  36:Core/Src/koth_game.c ****                 else ssd1306_WriteString("BLUE",Font_11x18,1);
+ 343              		.loc 1 36 41 view .LVU58
+ 344 003e 864A     		ldr	r2, .L33+8
+ 345 0040 0123     		movs	r3, #1
+ 346 0042 06CA     		ldm	r2, {r1, r2}
+ 347 0044 8548     		ldr	r0, .L33+12
+ 348 0046 FFF7FEFF 		bl	ssd1306_WriteString
+ 349              	.LVL9:
+  38:Core/Src/koth_game.c ****                 ssd1306_WriteString("Push to play!",Font_7x10,1);
+ 350              		.loc 1 38 17 view .LVU59
+ 351 004a 1521     		movs	r1, #21
+ 352 004c 1920     		movs	r0, #25
+ 353 004e FFF7FEFF 		bl	ssd1306_SetCursor
+ 354              	.LVL10:
+  39:Core/Src/koth_game.c ****                 ssd1306_UpdateScreen();
+ 355              		.loc 1 39 17 view .LVU60
+ 356 0052 834A     		ldr	r2, .L33+16
+ 357 0054 0123     		movs	r3, #1
+ 358 0056 06CA     		ldm	r2, {r1, r2}
+ 359 0058 8248     		ldr	r0, .L33+20
+ 360 005a FFF7FEFF 		bl	ssd1306_WriteString
+ 361              	.LVL11:
+  40:Core/Src/koth_game.c ****             }
+ 362              		.loc 1 40 17 view .LVU61
+ 363 005e FFF7FEFF 		bl	ssd1306_UpdateScreen
+ 364              	.LVL12:
+ 365 0062 1FE0     		b	.L20
+ 366              	.L26:
+  49:Core/Src/koth_game.c ****             red_flag = 0;
+ 367              		.loc 1 49 13 view .LVU62
+  49:Core/Src/koth_game.c ****             red_flag = 0;
+ 368              		.loc 1 49 30 is_stmt 0 view .LVU63
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 13
+
+
+ 369 0064 0023     		movs	r3, #0
+ 370 0066 7B4A     		ldr	r2, .L33+4
+ 371 0068 1370     		strb	r3, [r2]
+  50:Core/Src/koth_game.c ****             blue_flag = 0;
+ 372              		.loc 1 50 13 is_stmt 1 view .LVU64
+  50:Core/Src/koth_game.c ****             blue_flag = 0;
+ 373              		.loc 1 50 22 is_stmt 0 view .LVU65
+ 374 006a 7F4A     		ldr	r2, .L33+24
+ 375 006c 1370     		strb	r3, [r2]
+  51:Core/Src/koth_game.c ****             REDLED_OFF;
+ 376              		.loc 1 51 13 is_stmt 1 view .LVU66
+  51:Core/Src/koth_game.c ****             REDLED_OFF;
+ 377              		.loc 1 51 23 is_stmt 0 view .LVU67
+ 378 006e 7F4A     		ldr	r2, .L33+28
+ 379 0070 1370     		strb	r3, [r2]
+  52:Core/Src/koth_game.c ****             BLUELED_OFF;
+ 380              		.loc 1 52 13 is_stmt 1 view .LVU68
+ 381 0072 7F4C     		ldr	r4, .L33+32
+ 382 0074 0122     		movs	r2, #1
+ 383 0076 0221     		movs	r1, #2
+ 384 0078 2046     		mov	r0, r4
+ 385 007a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 386              	.LVL13:
+  53:Core/Src/koth_game.c **** 
+ 387              		.loc 1 53 13 view .LVU69
+ 388 007e 0122     		movs	r2, #1
+ 389 0080 0421     		movs	r1, #4
+ 390 0082 2046     		mov	r0, r4
+ 391 0084 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 392              	.LVL14:
+  55:Core/Src/koth_game.c ****             {
+ 393              		.loc 1 55 13 view .LVU70
+  55:Core/Src/koth_game.c ****             {
+ 394              		.loc 1 55 18 is_stmt 0 view .LVU71
+ 395 0088 04E0     		b	.L29
+ 396              	.L30:
+  57:Core/Src/koth_game.c ****                 osDelay(50);
+ 397              		.loc 1 57 17 is_stmt 1 view .LVU72
+ 398 008a FFF7FEFF 		bl	sendOpcode
+ 399              	.LVL15:
+  58:Core/Src/koth_game.c ****             }
+ 400              		.loc 1 58 17 view .LVU73
+ 401 008e 3220     		movs	r0, #50
+ 402 0090 FFF7FEFF 		bl	osDelay
+ 403              	.LVL16:
+ 404              	.L29:
+  55:Core/Src/koth_game.c ****             {
+ 405              		.loc 1 55 67 view .LVU74
+  55:Core/Src/koth_game.c ****             {
+ 406              		.loc 1 55 31 is_stmt 0 view .LVU75
+ 407 0094 6E4B     		ldr	r3, .L33
+ 408 0096 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+  55:Core/Src/koth_game.c ****             {
+ 409              		.loc 1 55 67 view .LVU76
+ 410 0098 0128     		cmp	r0, #1
+ 411 009a F6D0     		beq	.L30
+  55:Core/Src/koth_game.c ****             {
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 14
+
+
+ 412              		.loc 1 55 43 discriminator 1 view .LVU77
+ 413 009c 0328     		cmp	r0, #3
+ 414 009e F4D0     		beq	.L30
+  55:Core/Src/koth_game.c ****             {
+ 415              		.loc 1 55 67 discriminator 2 view .LVU78
+ 416 00a0 0528     		cmp	r0, #5
+ 417 00a2 F2D0     		beq	.L30
+ 418              	.L20:
  152:Core/Src/koth_game.c **** 
- 153:Core/Src/koth_game.c ****     // Release LoRa availability
- 154:Core/Src/koth_game.c ****     //xSemaphoreGive(xloraMutex);
- 155:Core/Src/koth_game.c ****     // osMutexRelease(lora_mutexHandle);
- 156:Core/Src/koth_game.c **** 
- 157:Core/Src/koth_game.c ****   
- 158:Core/Src/koth_game.c **** }...
- 109              		.loc 1 158 1 is_stmt 0 view .LVU17
- 110 0022 10BD     		pop	{r4, pc}
- 111              	.L7:
- 112              		.align	2
- 113              	.L6:
- 114 0024 00000000 		.word	opcodeString
- 115 0028 00000000 		.word	.LC0
- 116 002c 00000000 		.word	myLoRa
- 117              		.cfi_endproc
- 118              	.LFE141:
- 120              		.section	.rodata.getKOTHPacket.str1.4,"aMS",%progbits,1
- 121              		.align	2
- 122              	.LC1:
- 123 0000 4B4F5448 		.ascii	"KOTH\000"
- 123      00
- 124              		.section	.text.getKOTHPacket,"ax",%progbits
- 125              		.align	1
- 126              		.global	getKOTHPacket
- 127              		.syntax unified
- 128              		.thumb
- 129              		.thumb_func
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 6
+ 419              		.loc 1 152 1 view .LVU79
+ 420 00a4 04B0     		add	sp, sp, #16
+ 421              	.LCFI4:
+ 422              		.cfi_remember_state
+ 423              		.cfi_def_cfa_offset 16
+ 424              		@ sp needed
+ 425 00a6 70BD     		pop	{r4, r5, r6, pc}
+ 426              	.L28:
+ 427              	.LCFI5:
+ 428              		.cfi_restore_state
+  65:Core/Src/koth_game.c ****             {
+ 429              		.loc 1 65 13 is_stmt 1 view .LVU80
+  65:Core/Src/koth_game.c ****             {
+ 430              		.loc 1 65 16 is_stmt 0 view .LVU81
+ 431 00a8 6A4B     		ldr	r3, .L33+4
+ 432 00aa 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  65:Core/Src/koth_game.c ****             {
+ 433              		.loc 1 65 15 view .LVU82
+ 434 00ac 002B     		cmp	r3, #0
+ 435 00ae F9D0     		beq	.L20
+  67:Core/Src/koth_game.c ****                 red_flag = 1;
+ 436              		.loc 1 67 17 is_stmt 1 view .LVU83
+  67:Core/Src/koth_game.c ****                 red_flag = 1;
+ 437              		.loc 1 67 34 is_stmt 0 view .LVU84
+ 438 00b0 0024     		movs	r4, #0
+ 439 00b2 684B     		ldr	r3, .L33+4
+ 440 00b4 1C70     		strb	r4, [r3]
+  68:Core/Src/koth_game.c ****                 blue_flag = 0;
+ 441              		.loc 1 68 17 is_stmt 1 view .LVU85
+  68:Core/Src/koth_game.c ****                 blue_flag = 0;
+ 442              		.loc 1 68 26 is_stmt 0 view .LVU86
+ 443 00b6 0126     		movs	r6, #1
+ 444 00b8 6B4B     		ldr	r3, .L33+24
+ 445 00ba 1E70     		strb	r6, [r3]
+  69:Core/Src/koth_game.c ****                 REDLED_ON;
+ 446              		.loc 1 69 17 is_stmt 1 view .LVU87
+  69:Core/Src/koth_game.c ****                 REDLED_ON;
+ 447              		.loc 1 69 27 is_stmt 0 view .LVU88
+ 448 00bc 6B4B     		ldr	r3, .L33+28
+ 449 00be 1C70     		strb	r4, [r3]
+  70:Core/Src/koth_game.c ****                 BLUELED_OFF;
+ 450              		.loc 1 70 17 is_stmt 1 view .LVU89
+ 451 00c0 6B4D     		ldr	r5, .L33+32
+ 452 00c2 2246     		mov	r2, r4
+ 453 00c4 0221     		movs	r1, #2
+ 454 00c6 2846     		mov	r0, r5
+ 455 00c8 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 456              	.LVL17:
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 15
 
 
- 131              	getKOTHPacket:
- 132              	.LFB139:
-  23:Core/Src/koth_game.c **** {
- 133              		.loc 1 23 1 is_stmt 1 view -0
- 134              		.cfi_startproc
- 135              		@ args = 0, pretend = 0, frame = 40
- 136              		@ frame_needed = 0, uses_anonymous_args = 0
- 137 0000 30B5     		push	{r4, r5, lr}
- 138              	.LCFI1:
- 139              		.cfi_def_cfa_offset 12
- 140              		.cfi_offset 4, -12
- 141              		.cfi_offset 5, -8
- 142              		.cfi_offset 14, -4
- 143 0002 8BB0     		sub	sp, sp, #44
- 144              	.LCFI2:
- 145              		.cfi_def_cfa_offset 56
-  28:Core/Src/koth_game.c ****     packet_size = LoRa_receive(&myLoRa, loraRXbuf, 10);
- 146              		.loc 1 28 5 view .LVU19
-  28:Core/Src/koth_game.c ****     packet_size = LoRa_receive(&myLoRa, loraRXbuf, 10);
- 147              		.loc 1 28 19 is_stmt 0 view .LVU20
- 148 0004 0A22     		movs	r2, #10
- 149 0006 3949     		ldr	r1, .L18
- 150 0008 3948     		ldr	r0, .L18+4
- 151 000a FFF7FEFF 		bl	LoRa_receive
- 152              	.LVL4:
-  28:Core/Src/koth_game.c ****     packet_size = LoRa_receive(&myLoRa, loraRXbuf, 10);
- 153              		.loc 1 28 17 view .LVU21
- 154 000e 394B     		ldr	r3, .L18+8
- 155 0010 1870     		strb	r0, [r3]
-  30:Core/Src/koth_game.c ****     if(packet_size > 0)
- 156              		.loc 1 30 5 is_stmt 1 view .LVU22
-  30:Core/Src/koth_game.c ****     if(packet_size > 0)
- 157              		.loc 1 30 7 is_stmt 0 view .LVU23
- 158 0012 68B1     		cbz	r0, .L9
-  32:Core/Src/koth_game.c ****         if(loraRXbuf[0] != receivedPacket[0])
- 159              		.loc 1 32 9 is_stmt 1 view .LVU24
-  32:Core/Src/koth_game.c ****         if(loraRXbuf[0] != receivedPacket[0])
- 160              		.loc 1 32 21 is_stmt 0 view .LVU25
- 161 0014 354B     		ldr	r3, .L18
- 162 0016 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
-  32:Core/Src/koth_game.c ****         if(loraRXbuf[0] != receivedPacket[0])
- 163              		.loc 1 32 42 view .LVU26
- 164 0018 374B     		ldr	r3, .L18+12
- 165 001a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  32:Core/Src/koth_game.c ****         if(loraRXbuf[0] != receivedPacket[0])
- 166              		.loc 1 32 11 view .LVU27
- 167 001c 9A42     		cmp	r2, r3
- 168 001e 07D0     		beq	.L9
-  34:Core/Src/koth_game.c ****             memcpy(receivedPacket,loraRXbuf,10);
- 169              		.loc 1 34 13 is_stmt 1 view .LVU28
- 170 0020 354B     		ldr	r3, .L18+12
- 171 0022 324A     		ldr	r2, .L18
- 172 0024 1068     		ldr	r0, [r2]	@ unaligned
- 173 0026 5168     		ldr	r1, [r2, #4]	@ unaligned
- 174 0028 1860     		str	r0, [r3]	@ unaligned
- 175 002a 5960     		str	r1, [r3, #4]	@ unaligned
- 176 002c 1289     		ldrh	r2, [r2, #8]	@ unaligned
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 7
+  71:Core/Src/koth_game.c ****                 ssd1306_Fill(0);
+ 457              		.loc 1 71 17 view .LVU90
+ 458 00cc 3246     		mov	r2, r6
+ 459 00ce 0421     		movs	r1, #4
+ 460 00d0 2846     		mov	r0, r5
+ 461 00d2 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 462              	.LVL18:
+  72:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,0);
+ 463              		.loc 1 72 17 view .LVU91
+ 464 00d6 2046     		mov	r0, r4
+ 465 00d8 FFF7FEFF 		bl	ssd1306_Fill
+ 466              	.LVL19:
+  73:Core/Src/koth_game.c ****                 ssd1306_WriteString("RED is king",Font_7x10,1);
+ 467              		.loc 1 73 17 view .LVU92
+ 468 00dc 2146     		mov	r1, r4
+ 469 00de 2046     		mov	r0, r4
+ 470 00e0 FFF7FEFF 		bl	ssd1306_SetCursor
+ 471              	.LVL20:
+  74:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,10);
+ 472              		.loc 1 74 17 view .LVU93
+ 473 00e4 5E4D     		ldr	r5, .L33+16
+ 474 00e6 3346     		mov	r3, r6
+ 475 00e8 95E80600 		ldm	r5, {r1, r2}
+ 476 00ec 6148     		ldr	r0, .L33+36
+ 477 00ee FFF7FEFF 		bl	ssd1306_WriteString
+ 478              	.LVL21:
+  75:Core/Src/koth_game.c ****                 ssd1306_WriteString("of the hill!",Font_7x10,1);
+ 479              		.loc 1 75 17 view .LVU94
+ 480 00f2 0A21     		movs	r1, #10
+ 481 00f4 2046     		mov	r0, r4
+ 482 00f6 FFF7FEFF 		bl	ssd1306_SetCursor
+ 483              	.LVL22:
+  76:Core/Src/koth_game.c ****                 ssd1306_UpdateScreen();
+ 484              		.loc 1 76 17 view .LVU95
+ 485 00fa 3346     		mov	r3, r6
+ 486 00fc 95E80600 		ldm	r5, {r1, r2}
+ 487 0100 5D48     		ldr	r0, .L33+40
+ 488 0102 FFF7FEFF 		bl	ssd1306_WriteString
+ 489              	.LVL23:
+  77:Core/Src/koth_game.c ****             }
+ 490              		.loc 1 77 17 view .LVU96
+ 491 0106 FFF7FEFF 		bl	ssd1306_UpdateScreen
+ 492              	.LVL24:
+ 493 010a CBE7     		b	.L20
+ 494              	.L27:
+  84:Core/Src/koth_game.c ****             {
+ 495              		.loc 1 84 13 view .LVU97
+  84:Core/Src/koth_game.c ****             {
+ 496              		.loc 1 84 16 is_stmt 0 view .LVU98
+ 497 010c 514B     		ldr	r3, .L33+4
+ 498 010e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  84:Core/Src/koth_game.c ****             {
+ 499              		.loc 1 84 15 view .LVU99
+ 500 0110 002B     		cmp	r3, #0
+ 501 0112 C7D0     		beq	.L20
+  86:Core/Src/koth_game.c ****                 red_flag = 0;
+ 502              		.loc 1 86 17 is_stmt 1 view .LVU100
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 16
 
 
- 177 002e 1A81     		strh	r2, [r3, #8]	@ unaligned
- 178              	.L9:
-  40:Core/Src/koth_game.c ****     if(strstr((char*)receivedPacket, "KOTH"))
- 179              		.loc 1 40 5 view .LVU29
-  40:Core/Src/koth_game.c ****     if(strstr((char*)receivedPacket, "KOTH"))
- 180              		.loc 1 40 8 is_stmt 0 view .LVU30
- 181 0030 3249     		ldr	r1, .L18+16
- 182 0032 3148     		ldr	r0, .L18+12
- 183 0034 FFF7FEFF 		bl	strstr
- 184              	.LVL5:
-  40:Core/Src/koth_game.c ****     if(strstr((char*)receivedPacket, "KOTH"))
- 185              		.loc 1 40 7 view .LVU31
- 186 0038 28B3     		cbz	r0, .L8
- 187              	.LBB2:
-  42:Core/Src/koth_game.c ****         long opcode;
- 188              		.loc 1 42 9 is_stmt 1 view .LVU32
-  43:Core/Src/koth_game.c ****         char * trashCatcher[10]; 
- 189              		.loc 1 43 9 view .LVU33
-  45:Core/Src/koth_game.c ****         opcode = strtol((char*)receivedPacket, trashCatcher,10);
- 190              		.loc 1 45 9 view .LVU34
-  45:Core/Src/koth_game.c ****         opcode = strtol((char*)receivedPacket, trashCatcher,10);
- 191              		.loc 1 45 18 is_stmt 0 view .LVU35
- 192 003a 0A22     		movs	r2, #10
- 193 003c 6946     		mov	r1, sp
- 194 003e 2E48     		ldr	r0, .L18+12
- 195 0040 FFF7FEFF 		bl	strtol
- 196              	.LVL6:
-  48:Core/Src/koth_game.c ****         switch (opcode)
- 197              		.loc 1 48 9 is_stmt 1 view .LVU36
- 198 0044 0328     		cmp	r0, #3
- 199 0046 1ED8     		bhi	.L8
- 200 0048 DFE800F0 		tbb	[pc, r0]
- 201              	.L13:
- 202 004c 02       		.byte	(.L15-.L13)/2
- 203 004d 39       		.byte	(.L12-.L13)/2
- 204 004e 1F       		.byte	(.L14-.L13)/2
- 205 004f 39       		.byte	(.L12-.L13)/2
- 206              		.p2align 1
- 207              	.L15:
-  52:Core/Src/koth_game.c ****             resetGame();
- 208              		.loc 1 52 13 view .LVU37
- 209 0050 FFF7FEFF 		bl	resetGame
- 210              	.LVL7:
-  54:Core/Src/koth_game.c ****             sendOpcode(CONFIRM_START);
- 211              		.loc 1 54 13 view .LVU38
- 212 0054 0120     		movs	r0, #1
- 213 0056 FFF7FEFF 		bl	sendOpcode
- 214              	.LVL8:
-  55:Core/Src/koth_game.c ****             gameState = p2King;
- 215              		.loc 1 55 13 view .LVU39
-  55:Core/Src/koth_game.c ****             gameState = p2King;
- 216              		.loc 1 55 23 is_stmt 0 view .LVU40
- 217 005a 0225     		movs	r5, #2
- 218 005c 284B     		ldr	r3, .L18+20
- 219 005e 1D70     		strb	r5, [r3]
-  56:Core/Src/koth_game.c ****             P2LED_ON;
- 220              		.loc 1 56 13 is_stmt 1 view .LVU41
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 8
+  86:Core/Src/koth_game.c ****                 red_flag = 0;
+ 503              		.loc 1 86 34 is_stmt 0 view .LVU101
+ 504 0114 0024     		movs	r4, #0
+ 505 0116 4F4B     		ldr	r3, .L33+4
+ 506 0118 1C70     		strb	r4, [r3]
+  87:Core/Src/koth_game.c ****                 blue_flag = 1;
+ 507              		.loc 1 87 17 is_stmt 1 view .LVU102
+  87:Core/Src/koth_game.c ****                 blue_flag = 1;
+ 508              		.loc 1 87 26 is_stmt 0 view .LVU103
+ 509 011a 534B     		ldr	r3, .L33+24
+ 510 011c 1C70     		strb	r4, [r3]
+  88:Core/Src/koth_game.c ****                 REDLED_OFF;
+ 511              		.loc 1 88 17 is_stmt 1 view .LVU104
+  88:Core/Src/koth_game.c ****                 REDLED_OFF;
+ 512              		.loc 1 88 27 is_stmt 0 view .LVU105
+ 513 011e 0126     		movs	r6, #1
+ 514 0120 524B     		ldr	r3, .L33+28
+ 515 0122 1E70     		strb	r6, [r3]
+  89:Core/Src/koth_game.c ****                 BLUELED_ON;
+ 516              		.loc 1 89 17 is_stmt 1 view .LVU106
+ 517 0124 524D     		ldr	r5, .L33+32
+ 518 0126 3246     		mov	r2, r6
+ 519 0128 0221     		movs	r1, #2
+ 520 012a 2846     		mov	r0, r5
+ 521 012c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 522              	.LVL25:
+  90:Core/Src/koth_game.c ****                 ssd1306_Fill(0);
+ 523              		.loc 1 90 17 view .LVU107
+ 524 0130 2246     		mov	r2, r4
+ 525 0132 0221     		movs	r1, #2
+ 526 0134 2846     		mov	r0, r5
+ 527 0136 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 528              	.LVL26:
+  91:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,0);
+ 529              		.loc 1 91 17 view .LVU108
+ 530 013a 2046     		mov	r0, r4
+ 531 013c FFF7FEFF 		bl	ssd1306_Fill
+ 532              	.LVL27:
+  92:Core/Src/koth_game.c ****                 ssd1306_WriteString("BLUE is king",Font_7x10,1);
+ 533              		.loc 1 92 17 view .LVU109
+ 534 0140 2146     		mov	r1, r4
+ 535 0142 2046     		mov	r0, r4
+ 536 0144 FFF7FEFF 		bl	ssd1306_SetCursor
+ 537              	.LVL28:
+  93:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,10);
+ 538              		.loc 1 93 17 view .LVU110
+ 539 0148 454D     		ldr	r5, .L33+16
+ 540 014a 3346     		mov	r3, r6
+ 541 014c 95E80600 		ldm	r5, {r1, r2}
+ 542 0150 4A48     		ldr	r0, .L33+44
+ 543 0152 FFF7FEFF 		bl	ssd1306_WriteString
+ 544              	.LVL29:
+  94:Core/Src/koth_game.c ****                 ssd1306_WriteString("of the hill!",Font_7x10,1);
+ 545              		.loc 1 94 17 view .LVU111
+ 546 0156 0A21     		movs	r1, #10
+ 547 0158 2046     		mov	r0, r4
+ 548 015a FFF7FEFF 		bl	ssd1306_SetCursor
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 17
 
 
- 221 0060 284C     		ldr	r4, .L18+24
- 222 0062 0022     		movs	r2, #0
- 223 0064 0421     		movs	r1, #4
- 224 0066 2046     		mov	r0, r4
- 225 0068 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 226              	.LVL9:
-  57:Core/Src/koth_game.c ****             P1LED_OFF;
- 227              		.loc 1 57 13 view .LVU42
- 228 006c 0122     		movs	r2, #1
- 229 006e 2946     		mov	r1, r5
- 230 0070 2046     		mov	r0, r4
- 231 0072 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 232              	.LVL10:
-  58:Core/Src/koth_game.c ****             stateChange_flag = 1; 
- 233              		.loc 1 58 13 view .LVU43
-  58:Core/Src/koth_game.c ****             stateChange_flag = 1; 
- 234              		.loc 1 58 30 is_stmt 0 view .LVU44
- 235 0076 0123     		movs	r3, #1
- 236 0078 234A     		ldr	r2, .L18+28
- 237 007a 1370     		strb	r3, [r2]
-  59:Core/Src/koth_game.c ****             p1King_flag = 0;
- 238              		.loc 1 59 13 is_stmt 1 view .LVU45
-  59:Core/Src/koth_game.c ****             p1King_flag = 0;
- 239              		.loc 1 59 25 is_stmt 0 view .LVU46
- 240 007c 234A     		ldr	r2, .L18+32
- 241 007e 0021     		movs	r1, #0
- 242 0080 1170     		strb	r1, [r2]
-  60:Core/Src/koth_game.c ****             p2King_flag = 1;
- 243              		.loc 1 60 13 is_stmt 1 view .LVU47
-  60:Core/Src/koth_game.c ****             p2King_flag = 1;
- 244              		.loc 1 60 25 is_stmt 0 view .LVU48
- 245 0082 234A     		ldr	r2, .L18+36
- 246 0084 1370     		strb	r3, [r2]
-  61:Core/Src/koth_game.c ****             break;
- 247              		.loc 1 61 13 is_stmt 1 view .LVU49
- 248              	.L8:
-  61:Core/Src/koth_game.c ****             break;
- 249              		.loc 1 61 13 is_stmt 0 view .LVU50
- 250              	.LBE2:
-  87:Core/Src/koth_game.c **** }
- 251              		.loc 1 87 1 view .LVU51
- 252 0086 0BB0     		add	sp, sp, #44
- 253              	.LCFI3:
- 254              		.cfi_remember_state
- 255              		.cfi_def_cfa_offset 12
- 256              		@ sp needed
- 257 0088 30BD     		pop	{r4, r5, pc}
- 258              	.LVL11:
- 259              	.L14:
- 260              	.LCFI4:
- 261              		.cfi_restore_state
- 262              	.LBB3:
-  64:Core/Src/koth_game.c ****             sendOpcode(CONFIRM_KING);
- 263              		.loc 1 64 13 is_stmt 1 view .LVU52
- 264 008a 0320     		movs	r0, #3
- 265              	.LVL12:
-  64:Core/Src/koth_game.c ****             sendOpcode(CONFIRM_KING);
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 9
+ 549              	.LVL30:
+  95:Core/Src/koth_game.c ****                 ssd1306_UpdateScreen();
+ 550              		.loc 1 95 17 view .LVU112
+ 551 015e 3346     		mov	r3, r6
+ 552 0160 95E80600 		ldm	r5, {r1, r2}
+ 553 0164 4448     		ldr	r0, .L33+40
+ 554 0166 FFF7FEFF 		bl	ssd1306_WriteString
+ 555              	.LVL31:
+  96:Core/Src/koth_game.c ****             }
+ 556              		.loc 1 96 17 view .LVU113
+ 557 016a FFF7FEFF 		bl	ssd1306_UpdateScreen
+ 558              	.LVL32:
+ 559 016e 99E7     		b	.L20
+ 560              	.L24:
+ 101:Core/Src/koth_game.c ****             {
+ 561              		.loc 1 101 13 view .LVU114
+ 101:Core/Src/koth_game.c ****             {
+ 562              		.loc 1 101 16 is_stmt 0 view .LVU115
+ 563 0170 384B     		ldr	r3, .L33+4
+ 564 0172 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 101:Core/Src/koth_game.c ****             {
+ 565              		.loc 1 101 15 view .LVU116
+ 566 0174 002B     		cmp	r3, #0
+ 567 0176 95D0     		beq	.L20
+ 568              	.LBB2:
+ 103:Core/Src/koth_game.c ****                 REDLED_ON;
+ 569              		.loc 1 103 17 is_stmt 1 view .LVU117
+ 103:Core/Src/koth_game.c ****                 REDLED_ON;
+ 570              		.loc 1 103 34 is_stmt 0 view .LVU118
+ 571 0178 0024     		movs	r4, #0
+ 572 017a 364B     		ldr	r3, .L33+4
+ 573 017c 1C70     		strb	r4, [r3]
+ 104:Core/Src/koth_game.c ****                 BLUELED_OFF;
+ 574              		.loc 1 104 17 is_stmt 1 view .LVU119
+ 575 017e 3C4D     		ldr	r5, .L33+32
+ 576 0180 2246     		mov	r2, r4
+ 577 0182 0221     		movs	r1, #2
+ 578 0184 2846     		mov	r0, r5
+ 579 0186 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 580              	.LVL33:
+ 105:Core/Src/koth_game.c ****                 ssd1306_Fill(0);
+ 581              		.loc 1 105 17 view .LVU120
+ 582 018a 0122     		movs	r2, #1
+ 583 018c 0421     		movs	r1, #4
+ 584 018e 2846     		mov	r0, r5
+ 585 0190 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 586              	.LVL34:
+ 106:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,0);
+ 587              		.loc 1 106 17 view .LVU121
+ 588 0194 2046     		mov	r0, r4
+ 589 0196 FFF7FEFF 		bl	ssd1306_Fill
+ 590              	.LVL35:
+ 107:Core/Src/koth_game.c ****                 ssd1306_WriteString("Red wins!",Font_7x10,1);
+ 591              		.loc 1 107 17 view .LVU122
+ 592 019a 2146     		mov	r1, r4
+ 593 019c 2046     		mov	r0, r4
+ 594 019e FFF7FEFF 		bl	ssd1306_SetCursor
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 18
 
 
- 266              		.loc 1 64 13 is_stmt 0 view .LVU53
- 267 008c FFF7FEFF 		bl	sendOpcode
- 268              	.LVL13:
-  65:Core/Src/koth_game.c ****             gameState = p2King;
- 269              		.loc 1 65 13 is_stmt 1 view .LVU54
-  65:Core/Src/koth_game.c ****             gameState = p2King;
- 270              		.loc 1 65 23 is_stmt 0 view .LVU55
- 271 0090 0225     		movs	r5, #2
- 272 0092 1B4B     		ldr	r3, .L18+20
- 273 0094 1D70     		strb	r5, [r3]
-  66:Core/Src/koth_game.c ****             P2LED_ON;
- 274              		.loc 1 66 13 is_stmt 1 view .LVU56
- 275 0096 1B4C     		ldr	r4, .L18+24
- 276 0098 0022     		movs	r2, #0
- 277 009a 0421     		movs	r1, #4
- 278 009c 2046     		mov	r0, r4
- 279 009e FFF7FEFF 		bl	HAL_GPIO_WritePin
- 280              	.LVL14:
-  67:Core/Src/koth_game.c ****             P1LED_OFF;
- 281              		.loc 1 67 13 view .LVU57
- 282 00a2 0122     		movs	r2, #1
- 283 00a4 2946     		mov	r1, r5
- 284 00a6 2046     		mov	r0, r4
- 285 00a8 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 286              	.LVL15:
-  68:Core/Src/koth_game.c ****             stateChange_flag = 1; 
- 287              		.loc 1 68 13 view .LVU58
-  68:Core/Src/koth_game.c ****             stateChange_flag = 1; 
- 288              		.loc 1 68 30 is_stmt 0 view .LVU59
- 289 00ac 0123     		movs	r3, #1
- 290 00ae 164A     		ldr	r2, .L18+28
- 291 00b0 1370     		strb	r3, [r2]
-  69:Core/Src/koth_game.c ****             p1King_flag = 1;
- 292              		.loc 1 69 13 is_stmt 1 view .LVU60
-  69:Core/Src/koth_game.c ****             p1King_flag = 1;
- 293              		.loc 1 69 25 is_stmt 0 view .LVU61
- 294 00b2 164A     		ldr	r2, .L18+32
- 295 00b4 1370     		strb	r3, [r2]
-  70:Core/Src/koth_game.c ****             p2King_flag = 0;
- 296              		.loc 1 70 13 is_stmt 1 view .LVU62
-  70:Core/Src/koth_game.c ****             p2King_flag = 0;
- 297              		.loc 1 70 25 is_stmt 0 view .LVU63
- 298 00b6 164B     		ldr	r3, .L18+36
- 299 00b8 0022     		movs	r2, #0
- 300 00ba 1A70     		strb	r2, [r3]
-  71:Core/Src/koth_game.c ****             break; 
- 301              		.loc 1 71 13 is_stmt 1 view .LVU64
- 302 00bc E3E7     		b	.L8
- 303              	.LVL16:
- 304              	.L12:
-  76:Core/Src/koth_game.c ****             gameState = p1King;
- 305              		.loc 1 76 13 view .LVU65
-  76:Core/Src/koth_game.c ****             gameState = p1King;
- 306              		.loc 1 76 23 is_stmt 0 view .LVU66
- 307 00be 0124     		movs	r4, #1
- 308 00c0 0F4B     		ldr	r3, .L18+20
- 309 00c2 1C70     		strb	r4, [r3]
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 10
+ 595              	.LVL36:
+ 108:Core/Src/koth_game.c ****                 char score [16];
+ 596              		.loc 1 108 17 view .LVU123
+ 597 01a2 2F4D     		ldr	r5, .L33+16
+ 598 01a4 0123     		movs	r3, #1
+ 599 01a6 95E80600 		ldm	r5, {r1, r2}
+ 600 01aa 3548     		ldr	r0, .L33+48
+ 601 01ac FFF7FEFF 		bl	ssd1306_WriteString
+ 602              	.LVL37:
+ 109:Core/Src/koth_game.c ****                 uint16_t difference = red_counter - blue_counter;
+ 603              		.loc 1 109 17 view .LVU124
+ 110:Core/Src/koth_game.c ****                 sprintf(score, "Won by %ums", difference);
+ 604              		.loc 1 110 17 view .LVU125
+ 110:Core/Src/koth_game.c ****                 sprintf(score, "Won by %ums", difference);
+ 605              		.loc 1 110 51 is_stmt 0 view .LVU126
+ 606 01b0 344B     		ldr	r3, .L33+52
+ 607 01b2 1A88     		ldrh	r2, [r3]
+ 608 01b4 344B     		ldr	r3, .L33+56
+ 609 01b6 1B88     		ldrh	r3, [r3]
+ 110:Core/Src/koth_game.c ****                 sprintf(score, "Won by %ums", difference);
+ 610              		.loc 1 110 26 view .LVU127
+ 611 01b8 D21A     		subs	r2, r2, r3
+ 612              	.LVL38:
+ 111:Core/Src/koth_game.c ****                 lcd_put_cur(1,0);
+ 613              		.loc 1 111 17 is_stmt 1 view .LVU128
+ 614 01ba 92B2     		uxth	r2, r2
+ 111:Core/Src/koth_game.c ****                 lcd_put_cur(1,0);
+ 615              		.loc 1 111 17 is_stmt 0 view .LVU129
+ 616 01bc 3349     		ldr	r1, .L33+60
+ 617 01be 6846     		mov	r0, sp
+ 618 01c0 FFF7FEFF 		bl	sprintf
+ 619              	.LVL39:
+ 112:Core/Src/koth_game.c ****                 ssd1306_WriteString(score,Font_7x10,1);
+ 620              		.loc 1 112 17 is_stmt 1 view .LVU130
+ 621 01c4 2146     		mov	r1, r4
+ 622 01c6 0120     		movs	r0, #1
+ 623 01c8 FFF7FEFF 		bl	lcd_put_cur
+ 624              	.LVL40:
+ 113:Core/Src/koth_game.c ****                 ssd1306_UpdateScreen();
+ 625              		.loc 1 113 17 view .LVU131
+ 626 01cc 0123     		movs	r3, #1
+ 627 01ce 95E80600 		ldm	r5, {r1, r2}
+ 628 01d2 6846     		mov	r0, sp
+ 629 01d4 FFF7FEFF 		bl	ssd1306_WriteString
+ 630              	.LVL41:
+ 114:Core/Src/koth_game.c ****             }
+ 631              		.loc 1 114 17 view .LVU132
+ 632 01d8 FFF7FEFF 		bl	ssd1306_UpdateScreen
+ 633              	.LVL42:
+ 634 01dc 62E7     		b	.L20
+ 635              	.L25:
+ 114:Core/Src/koth_game.c ****             }
+ 636              		.loc 1 114 17 is_stmt 0 view .LVU133
+ 637              	.LBE2:
+ 119:Core/Src/koth_game.c ****             {
+ 638              		.loc 1 119 13 is_stmt 1 view .LVU134
+ 119:Core/Src/koth_game.c ****             {
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 19
 
 
-  77:Core/Src/koth_game.c ****             stateChange_flag = 1; 
- 310              		.loc 1 77 13 is_stmt 1 view .LVU67
-  77:Core/Src/koth_game.c ****             stateChange_flag = 1; 
- 311              		.loc 1 77 30 is_stmt 0 view .LVU68
- 312 00c4 104B     		ldr	r3, .L18+28
- 313 00c6 1C70     		strb	r4, [r3]
-  78:Core/Src/koth_game.c ****             P1LED_ON;
- 314              		.loc 1 78 13 is_stmt 1 view .LVU69
- 315 00c8 0E4D     		ldr	r5, .L18+24
- 316 00ca 0022     		movs	r2, #0
- 317 00cc 0221     		movs	r1, #2
- 318 00ce 2846     		mov	r0, r5
- 319              	.LVL17:
-  78:Core/Src/koth_game.c ****             P1LED_ON;
- 320              		.loc 1 78 13 is_stmt 0 view .LVU70
- 321 00d0 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 322              	.LVL18:
-  79:Core/Src/koth_game.c ****             P2LED_OFF;
- 323              		.loc 1 79 13 is_stmt 1 view .LVU71
- 324 00d4 2246     		mov	r2, r4
- 325 00d6 0421     		movs	r1, #4
- 326 00d8 2846     		mov	r0, r5
- 327 00da FFF7FEFF 		bl	HAL_GPIO_WritePin
- 328              	.LVL19:
-  80:Core/Src/koth_game.c ****             p1King_flag = 1;
- 329              		.loc 1 80 13 view .LVU72
-  80:Core/Src/koth_game.c ****             p1King_flag = 1;
- 330              		.loc 1 80 25 is_stmt 0 view .LVU73
- 331 00de 0B4B     		ldr	r3, .L18+32
- 332 00e0 1C70     		strb	r4, [r3]
-  81:Core/Src/koth_game.c ****             p2King_flag = 0;
- 333              		.loc 1 81 13 is_stmt 1 view .LVU74
-  81:Core/Src/koth_game.c ****             p2King_flag = 0;
- 334              		.loc 1 81 25 is_stmt 0 view .LVU75
- 335 00e2 0B4B     		ldr	r3, .L18+36
- 336 00e4 0022     		movs	r2, #0
- 337 00e6 1A70     		strb	r2, [r3]
-  82:Core/Src/koth_game.c ****             break;
- 338              		.loc 1 82 13 is_stmt 1 view .LVU76
- 339              	.LBE3:
-  87:Core/Src/koth_game.c **** }
- 340              		.loc 1 87 1 is_stmt 0 view .LVU77
- 341 00e8 CDE7     		b	.L8
- 342              	.L19:
- 343 00ea 00BF     		.align	2
- 344              	.L18:
- 345 00ec 00000000 		.word	loraRXbuf
- 346 00f0 00000000 		.word	myLoRa
- 347 00f4 00000000 		.word	packet_size
- 348 00f8 00000000 		.word	receivedPacket
- 349 00fc 00000000 		.word	.LC1
- 350 0100 00000000 		.word	gameState
- 351 0104 00040240 		.word	1073873920
- 352 0108 00000000 		.word	stateChange_flag
- 353 010c 00000000 		.word	p1King_flag
- 354 0110 00000000 		.word	p2King_flag
- 355              		.cfi_endproc
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 11
+ 639              		.loc 1 119 16 is_stmt 0 view .LVU135
+ 640 01de 1D4B     		ldr	r3, .L33+4
+ 641 01e0 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 119:Core/Src/koth_game.c ****             {
+ 642              		.loc 1 119 15 view .LVU136
+ 643 01e2 002B     		cmp	r3, #0
+ 644 01e4 3FF45EAF 		beq	.L20
+ 645              	.LBB3:
+ 121:Core/Src/koth_game.c ****                 REDLED_OFF;
+ 646              		.loc 1 121 17 is_stmt 1 view .LVU137
+ 121:Core/Src/koth_game.c ****                 REDLED_OFF;
+ 647              		.loc 1 121 34 is_stmt 0 view .LVU138
+ 648 01e8 0024     		movs	r4, #0
+ 649 01ea 1A4B     		ldr	r3, .L33+4
+ 650 01ec 1C70     		strb	r4, [r3]
+ 122:Core/Src/koth_game.c ****                 BLUELED_ON;
+ 651              		.loc 1 122 17 is_stmt 1 view .LVU139
+ 652 01ee 204D     		ldr	r5, .L33+32
+ 653 01f0 0122     		movs	r2, #1
+ 654 01f2 0221     		movs	r1, #2
+ 655 01f4 2846     		mov	r0, r5
+ 656 01f6 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 657              	.LVL43:
+ 123:Core/Src/koth_game.c ****                 ssd1306_Fill(0);
+ 658              		.loc 1 123 17 view .LVU140
+ 659 01fa 2246     		mov	r2, r4
+ 660 01fc 0221     		movs	r1, #2
+ 661 01fe 2846     		mov	r0, r5
+ 662 0200 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 663              	.LVL44:
+ 124:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,0);
+ 664              		.loc 1 124 17 view .LVU141
+ 665 0204 2046     		mov	r0, r4
+ 666 0206 FFF7FEFF 		bl	ssd1306_Fill
+ 667              	.LVL45:
+ 125:Core/Src/koth_game.c ****                 ssd1306_WriteString("Blue wins!",Font_7x10,1);
+ 668              		.loc 1 125 17 view .LVU142
+ 669 020a 2146     		mov	r1, r4
+ 670 020c 2046     		mov	r0, r4
+ 671 020e FFF7FEFF 		bl	ssd1306_SetCursor
+ 672              	.LVL46:
+ 126:Core/Src/koth_game.c ****                 char score [16];
+ 673              		.loc 1 126 17 view .LVU143
+ 674 0212 134D     		ldr	r5, .L33+16
+ 675 0214 0123     		movs	r3, #1
+ 676 0216 95E80600 		ldm	r5, {r1, r2}
+ 677 021a 1D48     		ldr	r0, .L33+64
+ 678 021c FFF7FEFF 		bl	ssd1306_WriteString
+ 679              	.LVL47:
+ 127:Core/Src/koth_game.c ****                 uint16_t difference = blue_counter - red_counter;
+ 680              		.loc 1 127 17 view .LVU144
+ 128:Core/Src/koth_game.c ****                 sprintf(score, "Won by %ums", difference);
+ 681              		.loc 1 128 17 view .LVU145
+ 128:Core/Src/koth_game.c ****                 sprintf(score, "Won by %ums", difference);
+ 682              		.loc 1 128 52 is_stmt 0 view .LVU146
+ 683 0220 194B     		ldr	r3, .L33+56
+ 684 0222 1A88     		ldrh	r2, [r3]
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 20
 
 
- 356              	.LFE139:
- 358              		.section	.rodata.btnPressed.str1.4,"aMS",%progbits,1
- 359              		.align	2
- 360              	.LC2:
- 361 0000 53796E63 		.ascii	"Syncing..\000"
- 361      696E672E 
- 361      2E00
- 362              		.section	.text.btnPressed,"ax",%progbits
- 363              		.align	1
- 364              		.global	btnPressed
- 365              		.syntax unified
- 366              		.thumb
- 367              		.thumb_func
- 369              	btnPressed:
- 370              	.LFB140:
-  90:Core/Src/koth_game.c **** {
- 371              		.loc 1 90 1 is_stmt 1 view -0
- 372              		.cfi_startproc
- 373              		@ args = 0, pretend = 0, frame = 0
- 374              		@ frame_needed = 0, uses_anonymous_args = 0
- 375 0000 38B5     		push	{r3, r4, r5, lr}
- 376              	.LCFI5:
- 377              		.cfi_def_cfa_offset 16
- 378              		.cfi_offset 3, -16
- 379              		.cfi_offset 4, -12
- 380              		.cfi_offset 5, -8
- 381              		.cfi_offset 14, -4
-  91:Core/Src/koth_game.c ****     switch (gameState)
- 382              		.loc 1 91 5 view .LVU79
- 383 0002 254B     		ldr	r3, .L31
- 384 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 385 0006 042B     		cmp	r3, #4
- 386 0008 1AD8     		bhi	.L20
- 387 000a DFE803F0 		tbb	[pc, r3]
- 388              	.L23:
- 389 000e 15       		.byte	(.L26-.L23)/2
- 390 000f 1A       		.byte	(.L25-.L23)/2
- 391 0010 2F       		.byte	(.L24-.L23)/2
- 392 0011 33       		.byte	(.L22-.L23)/2
- 393 0012 33       		.byte	(.L22-.L23)/2
- 394 0013 00       		.p2align 1
- 395              	.L27:
-  98:Core/Src/koth_game.c ****                 ssd1306_SetCursor(0,0);
- 396              		.loc 1 98 17 view .LVU80
- 397 0014 0021     		movs	r1, #0
- 398 0016 0846     		mov	r0, r1
- 399 0018 FFF7FEFF 		bl	ssd1306_SetCursor
- 400              	.LVL20:
-  99:Core/Src/koth_game.c ****                 ssd1306_WriteString("Syncing..",Font_16x24,1);
- 401              		.loc 1 99 17 view .LVU81
- 402 001c 1F4A     		ldr	r2, .L31+4
- 403 001e 0123     		movs	r3, #1
- 404 0020 06CA     		ldm	r2, {r1, r2}
- 405 0022 1F48     		ldr	r0, .L31+8
- 406 0024 FFF7FEFF 		bl	ssd1306_WriteString
- 407              	.LVL21:
- 100:Core/Src/koth_game.c ****                 ssd1306_UpdateScreen();
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 12
+ 685 0224 174B     		ldr	r3, .L33+52
+ 686 0226 1B88     		ldrh	r3, [r3]
+ 128:Core/Src/koth_game.c ****                 sprintf(score, "Won by %ums", difference);
+ 687              		.loc 1 128 26 view .LVU147
+ 688 0228 D21A     		subs	r2, r2, r3
+ 689              	.LVL48:
+ 129:Core/Src/koth_game.c ****                 lcd_put_cur(1,0);
+ 690              		.loc 1 129 17 is_stmt 1 view .LVU148
+ 691 022a 92B2     		uxth	r2, r2
+ 129:Core/Src/koth_game.c ****                 lcd_put_cur(1,0);
+ 692              		.loc 1 129 17 is_stmt 0 view .LVU149
+ 693 022c 1749     		ldr	r1, .L33+60
+ 694 022e 6846     		mov	r0, sp
+ 695 0230 FFF7FEFF 		bl	sprintf
+ 696              	.LVL49:
+ 130:Core/Src/koth_game.c ****                 ssd1306_WriteString(score,Font_7x10,1);
+ 697              		.loc 1 130 17 is_stmt 1 view .LVU150
+ 698 0234 2146     		mov	r1, r4
+ 699 0236 0120     		movs	r0, #1
+ 700 0238 FFF7FEFF 		bl	lcd_put_cur
+ 701              	.LVL50:
+ 131:Core/Src/koth_game.c ****                 ssd1306_UpdateScreen();
+ 702              		.loc 1 131 17 view .LVU151
+ 703 023c 0123     		movs	r3, #1
+ 704 023e 95E80600 		ldm	r5, {r1, r2}
+ 705 0242 6846     		mov	r0, sp
+ 706 0244 FFF7FEFF 		bl	ssd1306_WriteString
+ 707              	.LVL51:
+ 132:Core/Src/koth_game.c ****             }
+ 708              		.loc 1 132 17 view .LVU152
+ 709 0248 FFF7FEFF 		bl	ssd1306_UpdateScreen
+ 710              	.LVL52:
+ 711              	.LBE3:
+ 152:Core/Src/koth_game.c **** 
+ 712              		.loc 1 152 1 is_stmt 0 view .LVU153
+ 713 024c 2AE7     		b	.L20
+ 714              	.L34:
+ 715 024e 00BF     		.align	2
+ 716              	.L33:
+ 717 0250 00000000 		.word	gameState
+ 718 0254 00000000 		.word	stateChange_flag
+ 719 0258 00000000 		.word	Font_11x18
+ 720 025c 00000000 		.word	.LC1
+ 721 0260 00000000 		.word	Font_7x10
+ 722 0264 04000000 		.word	.LC2
+ 723 0268 00000000 		.word	red_flag
+ 724 026c 00000000 		.word	blue_flag
+ 725 0270 00040240 		.word	1073873920
+ 726 0274 14000000 		.word	.LC3
+ 727 0278 20000000 		.word	.LC4
+ 728 027c 30000000 		.word	.LC5
+ 729 0280 40000000 		.word	.LC6
+ 730 0284 00000000 		.word	red_counter
+ 731 0288 00000000 		.word	blue_counter
+ 732 028c 4C000000 		.word	.LC7
+ 733 0290 58000000 		.word	.LC8
+ 734              		.cfi_endproc
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 21
 
 
- 408              		.loc 1 100 17 view .LVU82
- 409 0028 FFF7FEFF 		bl	ssd1306_UpdateScreen
- 410              	.LVL22:
- 101:Core/Src/koth_game.c ****                 sendOpcode(START);
- 411              		.loc 1 101 17 view .LVU83
- 412 002c 0020     		movs	r0, #0
- 413 002e FFF7FEFF 		bl	sendOpcode
- 414              	.LVL23:
- 102:Core/Src/koth_game.c ****                 osDelay(100);
- 415              		.loc 1 102 17 view .LVU84
- 416 0032 6420     		movs	r0, #100
- 417 0034 FFF7FEFF 		bl	osDelay
- 418              	.LVL24:
- 419              	.L26:
-  96:Core/Src/koth_game.c ****             while(gameState == waiting)
- 420              		.loc 1 96 29 view .LVU85
- 421 0038 174B     		ldr	r3, .L31
- 422 003a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 423 003c 002B     		cmp	r3, #0
- 424 003e E9D0     		beq	.L27
- 425              	.L20:
- 134:Core/Src/koth_game.c **** }
- 426              		.loc 1 134 1 is_stmt 0 view .LVU86
- 427 0040 38BD     		pop	{r3, r4, r5, pc}
- 428              	.L25:
- 108:Core/Src/koth_game.c ****             stateChange_flag = 1; 
- 429              		.loc 1 108 13 is_stmt 1 view .LVU87
- 108:Core/Src/koth_game.c ****             stateChange_flag = 1; 
- 430              		.loc 1 108 30 is_stmt 0 view .LVU88
- 431 0042 0125     		movs	r5, #1
- 432 0044 174B     		ldr	r3, .L31+12
- 433 0046 1D70     		strb	r5, [r3]
- 109:Core/Src/koth_game.c ****             gameState = penalty;
- 434              		.loc 1 109 13 is_stmt 1 view .LVU89
- 109:Core/Src/koth_game.c ****             gameState = penalty;
- 435              		.loc 1 109 23 is_stmt 0 view .LVU90
- 436 0048 134B     		ldr	r3, .L31
- 437 004a 0522     		movs	r2, #5
- 438 004c 1A70     		strb	r2, [r3]
- 110:Core/Src/koth_game.c ****             P2LED_ON;
- 439              		.loc 1 110 13 is_stmt 1 view .LVU91
- 440 004e 164C     		ldr	r4, .L31+16
- 441 0050 0022     		movs	r2, #0
- 442 0052 0421     		movs	r1, #4
- 443 0054 2046     		mov	r0, r4
- 444 0056 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 445              	.LVL25:
- 111:Core/Src/koth_game.c ****             P1LED_OFF;
- 446              		.loc 1 111 13 view .LVU92
- 447 005a 2A46     		mov	r2, r5
- 448 005c 0221     		movs	r1, #2
- 449 005e 2046     		mov	r0, r4
- 450 0060 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 451              	.LVL26:
- 112:Core/Src/koth_game.c ****             sendOpcode(CONFIRM_KING);
- 452              		.loc 1 112 13 view .LVU93
- 453 0064 0320     		movs	r0, #3
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 13
+ 735              	.LFE139:
+ 737              		.section	.rodata.getKOTHPacket.str1.4,"aMS",%progbits,1
+ 738              		.align	2
+ 739              	.LC9:
+ 740 0000 4B4F5448 		.ascii	"KOTH\000"
+ 740      00
+ 741              		.section	.text.getKOTHPacket,"ax",%progbits
+ 742              		.align	1
+ 743              		.global	getKOTHPacket
+ 744              		.syntax unified
+ 745              		.thumb
+ 746              		.thumb_func
+ 748              	getKOTHPacket:
+ 749              	.LFB140:
+ 155:Core/Src/koth_game.c ****     // Wait for LoRa availability
+ 750              		.loc 1 155 1 is_stmt 1 view -0
+ 751              		.cfi_startproc
+ 752              		@ args = 0, pretend = 0, frame = 40
+ 753              		@ frame_needed = 0, uses_anonymous_args = 0
+ 754 0000 00B5     		push	{lr}
+ 755              	.LCFI6:
+ 756              		.cfi_def_cfa_offset 4
+ 757              		.cfi_offset 14, -4
+ 758 0002 8BB0     		sub	sp, sp, #44
+ 759              	.LCFI7:
+ 760              		.cfi_def_cfa_offset 48
+ 160:Core/Src/koth_game.c **** 
+ 761              		.loc 1 160 5 view .LVU155
+ 160:Core/Src/koth_game.c **** 
+ 762              		.loc 1 160 19 is_stmt 0 view .LVU156
+ 763 0004 0A22     		movs	r2, #10
+ 764 0006 2949     		ldr	r1, .L46
+ 765 0008 2948     		ldr	r0, .L46+4
+ 766 000a FFF7FEFF 		bl	LoRa_receive
+ 767              	.LVL53:
+ 160:Core/Src/koth_game.c **** 
+ 768              		.loc 1 160 17 view .LVU157
+ 769 000e 294B     		ldr	r3, .L46+8
+ 770 0010 1870     		strb	r0, [r3]
+ 162:Core/Src/koth_game.c ****     {
+ 771              		.loc 1 162 5 is_stmt 1 view .LVU158
+ 162:Core/Src/koth_game.c ****     {
+ 772              		.loc 1 162 7 is_stmt 0 view .LVU159
+ 773 0012 68B1     		cbz	r0, .L36
+ 164:Core/Src/koth_game.c ****         {
+ 774              		.loc 1 164 9 is_stmt 1 view .LVU160
+ 164:Core/Src/koth_game.c ****         {
+ 775              		.loc 1 164 21 is_stmt 0 view .LVU161
+ 776 0014 254B     		ldr	r3, .L46
+ 777 0016 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 164:Core/Src/koth_game.c ****         {
+ 778              		.loc 1 164 42 view .LVU162
+ 779 0018 274B     		ldr	r3, .L46+12
+ 780 001a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 164:Core/Src/koth_game.c ****         {
+ 781              		.loc 1 164 11 view .LVU163
+ 782 001c 9A42     		cmp	r2, r3
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 22
 
 
- 454 0066 FFF7FEFF 		bl	sendOpcode
- 455              	.LVL27:
- 113:Core/Src/koth_game.c ****         break;
- 456              		.loc 1 113 9 view .LVU94
- 457 006a E9E7     		b	.L20
- 458              	.L24:
- 117:Core/Src/koth_game.c ****             sendOpcode(CLAIM_KING);
- 459              		.loc 1 117 13 view .LVU95
- 460 006c 0220     		movs	r0, #2
- 461 006e FFF7FEFF 		bl	sendOpcode
- 462              	.LVL28:
- 118:Core/Src/koth_game.c ****         break;
- 463              		.loc 1 118 9 view .LVU96
- 464 0072 E5E7     		b	.L20
- 465              	.L22:
- 122:Core/Src/koth_game.c ****             stateChange_flag = 1; 
- 466              		.loc 1 122 13 view .LVU97
- 122:Core/Src/koth_game.c ****             stateChange_flag = 1; 
- 467              		.loc 1 122 30 is_stmt 0 view .LVU98
- 468 0074 0124     		movs	r4, #1
- 469 0076 0B4B     		ldr	r3, .L31+12
- 470 0078 1C70     		strb	r4, [r3]
- 123:Core/Src/koth_game.c ****             gameState = waiting;
- 471              		.loc 1 123 13 is_stmt 1 view .LVU99
- 123:Core/Src/koth_game.c ****             gameState = waiting;
- 472              		.loc 1 123 23 is_stmt 0 view .LVU100
- 473 007a 074B     		ldr	r3, .L31
- 474 007c 0022     		movs	r2, #0
- 475 007e 1A70     		strb	r2, [r3]
- 124:Core/Src/koth_game.c ****             P1LED_OFF;
- 476              		.loc 1 124 13 is_stmt 1 view .LVU101
- 477 0080 094D     		ldr	r5, .L31+16
- 478 0082 2246     		mov	r2, r4
- 479 0084 0221     		movs	r1, #2
- 480 0086 2846     		mov	r0, r5
- 481 0088 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 482              	.LVL29:
- 125:Core/Src/koth_game.c ****             P2LED_OFF;
- 483              		.loc 1 125 13 view .LVU102
- 484 008c 2246     		mov	r2, r4
- 485 008e 0421     		movs	r1, #4
- 486 0090 2846     		mov	r0, r5
- 487 0092 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 488              	.LVL30:
- 126:Core/Src/koth_game.c ****         break;
- 489              		.loc 1 126 9 view .LVU103
- 134:Core/Src/koth_game.c **** }
- 490              		.loc 1 134 1 is_stmt 0 view .LVU104
- 491 0096 D3E7     		b	.L20
- 492              	.L32:
- 493              		.align	2
- 494              	.L31:
- 495 0098 00000000 		.word	gameState
- 496 009c 00000000 		.word	Font_16x24
- 497 00a0 00000000 		.word	.LC2
- 498 00a4 00000000 		.word	stateChange_flag
- 499 00a8 00040240 		.word	1073873920
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 14
+ 783 001e 07D0     		beq	.L36
+ 166:Core/Src/koth_game.c ****         }
+ 784              		.loc 1 166 13 is_stmt 1 view .LVU164
+ 785 0020 254B     		ldr	r3, .L46+12
+ 786 0022 224A     		ldr	r2, .L46
+ 787 0024 1068     		ldr	r0, [r2]	@ unaligned
+ 788 0026 5168     		ldr	r1, [r2, #4]	@ unaligned
+ 789 0028 1860     		str	r0, [r3]	@ unaligned
+ 790 002a 5960     		str	r1, [r3, #4]	@ unaligned
+ 791 002c 1289     		ldrh	r2, [r2, #8]	@ unaligned
+ 792 002e 1A81     		strh	r2, [r3, #8]	@ unaligned
+ 793              	.L36:
+ 172:Core/Src/koth_game.c ****     {
+ 794              		.loc 1 172 5 view .LVU165
+ 172:Core/Src/koth_game.c ****     {
+ 795              		.loc 1 172 8 is_stmt 0 view .LVU166
+ 796 0030 2249     		ldr	r1, .L46+16
+ 797 0032 2148     		ldr	r0, .L46+12
+ 798 0034 FFF7FEFF 		bl	strstr
+ 799              	.LVL54:
+ 172:Core/Src/koth_game.c ****     {
+ 800              		.loc 1 172 7 view .LVU167
+ 801 0038 D8B1     		cbz	r0, .L35
+ 802              	.LBB4:
+ 174:Core/Src/koth_game.c ****         char * trashCatcher[10]; 
+ 803              		.loc 1 174 9 is_stmt 1 view .LVU168
+ 175:Core/Src/koth_game.c ****         
+ 804              		.loc 1 175 9 view .LVU169
+ 177:Core/Src/koth_game.c **** 
+ 805              		.loc 1 177 9 view .LVU170
+ 177:Core/Src/koth_game.c **** 
+ 806              		.loc 1 177 20 is_stmt 0 view .LVU171
+ 807 003a 0A22     		movs	r2, #10
+ 808 003c 6946     		mov	r1, sp
+ 809 003e 1E48     		ldr	r0, .L46+12
+ 810 0040 FFF7FEFF 		bl	strtol
+ 811              	.LVL55:
+ 181:Core/Src/koth_game.c **** 
+ 812              		.loc 1 181 9 is_stmt 1 view .LVU172
+ 813 0044 1E4B     		ldr	r3, .L46+20
+ 814 0046 1B68     		ldr	r3, [r3]
+ 815 0048 1A58     		ldr	r2, [r3, r0]	@ unaligned
+ 816 004a 1E4B     		ldr	r3, .L46+24
+ 817 004c 1A60     		str	r2, [r3]	@ unaligned
+ 184:Core/Src/koth_game.c ****         {
+ 818              		.loc 1 184 9 view .LVU173
+ 184:Core/Src/koth_game.c ****         {
+ 819              		.loc 1 184 22 is_stmt 0 view .LVU174
+ 820 004e 1E4B     		ldr	r3, .L46+28
+ 821 0050 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 184:Core/Src/koth_game.c ****         {
+ 822              		.loc 1 184 11 view .LVU175
+ 823 0052 8342     		cmp	r3, r0
+ 824 0054 0DD0     		beq	.L35
+ 186:Core/Src/koth_game.c ****             {
+ 825              		.loc 1 186 13 is_stmt 1 view .LVU176
+ 826 0056 0728     		cmp	r0, #7
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 23
 
 
- 500              		.cfi_endproc
- 501              	.LFE140:
- 503              		.text
- 504              	.Letext0:
- 505              		.file 2 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\machine\\_default_types.h"
- 506              		.file 3 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\sys\\_stdint.h"
- 507              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h"
- 508              		.file 5 "c:\\libraries\\gcc\\11.2 2022.02\\lib\\gcc\\arm-none-eabi\\11.2.1\\include\\stddef.h"
- 509              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
- 510              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 511              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 512              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 513              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
- 514              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
- 515              		.file 12 "Core/Inc/lora.h"
- 516              		.file 13 "Core/Inc/extern.h"
- 517              		.file 14 "Core/Inc/ssd1306_fonts.h"
- 518              		.file 15 "Core/Inc/ssd1306.h"
- 519              		.file 16 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\stdio.h"
- 520              		.file 17 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\string.h"
- 521              		.file 18 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\stdlib.h"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s 			page 15
+ 827 0058 0BD8     		bhi	.L35
+ 828 005a DFE800F0 		tbb	[pc, r0]
+ 829              	.L40:
+ 830 005e 04       		.byte	(.L43-.L40)/2
+ 831 005f 04       		.byte	(.L43-.L40)/2
+ 832 0060 17       		.byte	(.L42-.L40)/2
+ 833 0061 17       		.byte	(.L42-.L40)/2
+ 834 0062 0D       		.byte	(.L41-.L40)/2
+ 835 0063 0D       		.byte	(.L41-.L40)/2
+ 836 0064 21       		.byte	(.L39-.L40)/2
+ 837 0065 21       		.byte	(.L39-.L40)/2
+ 838              		.p2align 1
+ 839              	.L43:
+ 190:Core/Src/koth_game.c ****                     stateChange_flag = 1; 
+ 840              		.loc 1 190 21 view .LVU177
+ 190:Core/Src/koth_game.c ****                     stateChange_flag = 1; 
+ 841              		.loc 1 190 31 is_stmt 0 view .LVU178
+ 842 0066 184B     		ldr	r3, .L46+28
+ 843 0068 0022     		movs	r2, #0
+ 844 006a 1A70     		strb	r2, [r3]
+ 191:Core/Src/koth_game.c ****                 break;
+ 845              		.loc 1 191 21 is_stmt 1 view .LVU179
+ 191:Core/Src/koth_game.c ****                 break;
+ 846              		.loc 1 191 38 is_stmt 0 view .LVU180
+ 847 006c 174B     		ldr	r3, .L46+32
+ 848 006e 0122     		movs	r2, #1
+ 849 0070 1A70     		strb	r2, [r3]
+ 192:Core/Src/koth_game.c **** 
+ 850              		.loc 1 192 17 is_stmt 1 view .LVU181
+ 851              	.LVL56:
+ 852              	.L35:
+ 192:Core/Src/koth_game.c **** 
+ 853              		.loc 1 192 17 is_stmt 0 view .LVU182
+ 854              	.LBE4:
+ 219:Core/Src/koth_game.c **** 
+ 855              		.loc 1 219 1 view .LVU183
+ 856 0072 0BB0     		add	sp, sp, #44
+ 857              	.LCFI8:
+ 858              		.cfi_remember_state
+ 859              		.cfi_def_cfa_offset 4
+ 860              		@ sp needed
+ 861 0074 5DF804FB 		ldr	pc, [sp], #4
+ 862              	.LVL57:
+ 863              	.L41:
+ 864              	.LCFI9:
+ 865              		.cfi_restore_state
+ 866              	.LBB5:
+ 196:Core/Src/koth_game.c ****                     gameState = BLUE;
+ 867              		.loc 1 196 21 is_stmt 1 view .LVU184
+ 868 0078 0420     		movs	r0, #4
+ 869              	.LVL58:
+ 196:Core/Src/koth_game.c ****                     gameState = BLUE;
+ 870              		.loc 1 196 21 is_stmt 0 view .LVU185
+ 871 007a FFF7FEFF 		bl	sendOpcode
+ 872              	.LVL59:
+ 197:Core/Src/koth_game.c ****                     stateChange_flag = 1; 
+ 873              		.loc 1 197 21 is_stmt 1 view .LVU186
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 24
+
+
+ 197:Core/Src/koth_game.c ****                     stateChange_flag = 1; 
+ 874              		.loc 1 197 31 is_stmt 0 view .LVU187
+ 875 007e 124B     		ldr	r3, .L46+28
+ 876 0080 0422     		movs	r2, #4
+ 877 0082 1A70     		strb	r2, [r3]
+ 198:Core/Src/koth_game.c ****                 break; 
+ 878              		.loc 1 198 21 is_stmt 1 view .LVU188
+ 198:Core/Src/koth_game.c ****                 break; 
+ 879              		.loc 1 198 38 is_stmt 0 view .LVU189
+ 880 0084 114B     		ldr	r3, .L46+32
+ 881 0086 0122     		movs	r2, #1
+ 882 0088 1A70     		strb	r2, [r3]
+ 199:Core/Src/koth_game.c **** 
+ 883              		.loc 1 199 17 is_stmt 1 view .LVU190
+ 884 008a F2E7     		b	.L35
+ 885              	.LVL60:
+ 886              	.L42:
+ 203:Core/Src/koth_game.c ****                     gameState = RED;
+ 887              		.loc 1 203 21 view .LVU191
+ 888 008c 0220     		movs	r0, #2
+ 889              	.LVL61:
+ 203:Core/Src/koth_game.c ****                     gameState = RED;
+ 890              		.loc 1 203 21 is_stmt 0 view .LVU192
+ 891 008e FFF7FEFF 		bl	sendOpcode
+ 892              	.LVL62:
+ 204:Core/Src/koth_game.c ****                     stateChange_flag = 1; 
+ 893              		.loc 1 204 21 is_stmt 1 view .LVU193
+ 204:Core/Src/koth_game.c ****                     stateChange_flag = 1; 
+ 894              		.loc 1 204 31 is_stmt 0 view .LVU194
+ 895 0092 0D4B     		ldr	r3, .L46+28
+ 896 0094 0222     		movs	r2, #2
+ 897 0096 1A70     		strb	r2, [r3]
+ 205:Core/Src/koth_game.c ****                 break; 
+ 898              		.loc 1 205 21 is_stmt 1 view .LVU195
+ 205:Core/Src/koth_game.c ****                 break; 
+ 899              		.loc 1 205 38 is_stmt 0 view .LVU196
+ 900 0098 0C4B     		ldr	r3, .L46+32
+ 901 009a 0122     		movs	r2, #1
+ 902 009c 1A70     		strb	r2, [r3]
+ 206:Core/Src/koth_game.c **** 
+ 903              		.loc 1 206 17 is_stmt 1 view .LVU197
+ 904 009e E8E7     		b	.L35
+ 905              	.LVL63:
+ 906              	.L39:
+ 210:Core/Src/koth_game.c ****                     stateChange_flag = 1; 
+ 907              		.loc 1 210 21 view .LVU198
+ 210:Core/Src/koth_game.c ****                     stateChange_flag = 1; 
+ 908              		.loc 1 210 31 is_stmt 0 view .LVU199
+ 909 00a0 094B     		ldr	r3, .L46+28
+ 910 00a2 1870     		strb	r0, [r3]
+ 211:Core/Src/koth_game.c ****                 
+ 911              		.loc 1 211 21 is_stmt 1 view .LVU200
+ 211:Core/Src/koth_game.c ****                 
+ 912              		.loc 1 211 38 is_stmt 0 view .LVU201
+ 913 00a4 094B     		ldr	r3, .L46+32
+ 914 00a6 0122     		movs	r2, #1
+ 915 00a8 1A70     		strb	r2, [r3]
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 25
+
+
+ 213:Core/Src/koth_game.c ****                 
+ 916              		.loc 1 213 17 is_stmt 1 view .LVU202
+ 917              	.LBE5:
+ 219:Core/Src/koth_game.c **** 
+ 918              		.loc 1 219 1 is_stmt 0 view .LVU203
+ 919 00aa E2E7     		b	.L35
+ 920              	.L47:
+ 921              		.align	2
+ 922              	.L46:
+ 923 00ac 00000000 		.word	loraRXbuf
+ 924 00b0 00000000 		.word	myLoRa
+ 925 00b4 00000000 		.word	packet_size
+ 926 00b8 00000000 		.word	receivedPacket
+ 927 00bc 00000000 		.word	.LC9
+ 928 00c0 00000000 		.word	gameStateNames
+ 929 00c4 00000000 		.word	rxReadable
+ 930 00c8 00000000 		.word	gameState
+ 931 00cc 00000000 		.word	stateChange_flag
+ 932              		.cfi_endproc
+ 933              	.LFE140:
+ 935              		.text
+ 936              	.Letext0:
+ 937              		.file 2 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 938              		.file 3 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 939              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h"
+ 940              		.file 5 "c:\\libraries\\gcc\\11.2 2022.02\\lib\\gcc\\arm-none-eabi\\11.2.1\\include\\stddef.h"
+ 941              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 942              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 943              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 944              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 945              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
+ 946              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
+ 947              		.file 12 "Core/Inc/lora.h"
+ 948              		.file 13 "Core/Inc/extern.h"
+ 949              		.file 14 "Core/Inc/ssd1306_fonts.h"
+ 950              		.file 15 "Core/Inc/ssd1306.h"
+ 951              		.file 16 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\string.h"
+ 952              		.file 17 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\stdlib.h"
+ 953              		.file 18 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\stdio.h"
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 26
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 koth_game.c
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:20     .text.resetGame:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:26     .text.resetGame:00000000 resetGame
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:57     .text.resetGame:00000014 $d
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:65     .rodata.sendOpcode.str1.4:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:69     .text.sendOpcode:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:75     .text.sendOpcode:00000000 sendOpcode
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:114    .text.sendOpcode:00000024 $d
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:121    .rodata.getKOTHPacket.str1.4:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:125    .text.getKOTHPacket:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:131    .text.getKOTHPacket:00000000 getKOTHPacket
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:202    .text.getKOTHPacket:0000004c $d
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:206    .text.getKOTHPacket:00000050 $t
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:345    .text.getKOTHPacket:000000ec $d
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:359    .rodata.btnPressed.str1.4:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:363    .text.btnPressed:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:369    .text.btnPressed:00000000 btnPressed
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:389    .text.btnPressed:0000000e $d
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:495    .text.btnPressed:00000098 $d
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:394    .text.btnPressed:00000013 $d
-C:\Users\jdcox\AppData\Local\Temp\ccFSkBXJ.s:394    .text.btnPressed:00000014 $t
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:20     .text.resetGame:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:26     .text.resetGame:00000000 resetGame
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:83     .text.resetGame:00000038 $d
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:94     .text.btnPressed:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:100    .text.btnPressed:00000000 btnPressed
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:115    .text.btnPressed:0000000e $d
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:178    .text.btnPressed:0000004c $d
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:184    .rodata.sendOpcode.str1.4:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:188    .text.sendOpcode:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:194    .text.sendOpcode:00000000 sendOpcode
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:247    .text.sendOpcode:00000038 $d
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:256    .rodata.doGameState.str1.4:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:281    .text.doGameState:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:287    .text.doGameState:00000000 doGameState
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:311    .text.doGameState:00000012 $d
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:319    .text.doGameState:00000022 $t
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:717    .text.doGameState:00000250 $d
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:738    .rodata.getKOTHPacket.str1.4:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:742    .text.getKOTHPacket:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:748    .text.getKOTHPacket:00000000 getKOTHPacket
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:830    .text.getKOTHPacket:0000005e $d
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:838    .text.getKOTHPacket:00000066 $t
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:923    .text.getKOTHPacket:000000ac $d
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:122    .text.btnPressed:00000015 $d
+C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s:122    .text.btnPressed:00000016 $t
 
 UNDEFINED SYMBOLS
-p1King_flag
-p2King_flag
-p1King_counter
+HAL_GPIO_WritePin
+red_flag
+blue_flag
+red_counter
+blue_counter
 gameState
+stateChange_flag
 sprintf
 LoRa_transmit
+LoRa_startReceiving
 opcodeString
+gameStateNames
+txReadable
 myLoRa
-LoRa_receive
-strstr
-strtol
-HAL_GPIO_WritePin
-loraRXbuf
-packet_size
-receivedPacket
-stateChange_flag
+ssd1306_Fill
 ssd1306_SetCursor
 ssd1306_WriteString
 ssd1306_UpdateScreen
 osDelay
-Font_16x24
+lcd_put_cur
+Font_11x18
+Font_7x10
+LoRa_receive
+strstr
+strtol
+loraRXbuf
+packet_size
+receivedPacket
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccTZr5Ql.s 			page 27
+
+
+rxReadable

@@ -11,103 +11,142 @@
 
 void resetGame()
 {
-    p1King_flag = 0;
-    p2King_flag = 0;
-    p1King_counter = 0;
-    p1King_counter = 0;
-    gameState = waiting;
+    REDLED_OFF;
+    BLUELED_OFF;
+    red_flag = 0;
+    blue_flag = 0;
+    red_counter = 0;
+    blue_counter = 0;
+    gameState = WAITING;
+    stateChange_flag = 1;
 
 }
 
-void checkGameState()
+void doGameState()
 {
     
     switch (gameState)
     {
-      case waiting:
-        if(stateChange_flag)
-        {
-          stateChange_flag = 0;
-          ssd1306_Fill(0); 
-          ssd1306_SetCursor(0,0);
-          ssd1306_WriteString("Push to play",Font_7x10,1);
-          ssd1306_UpdateScreen();
-        }
-      break;
+        case WAITING:
+            if(stateChange_flag) // do once
+            { 
+                stateChange_flag = 0;
+                ssd1306_Fill(0); 
+                ssd1306_SetCursor(0,0);
+                if (THIS_PLAYER == RED) ssd1306_WriteString("RED",Font_11x18,1);
+                else ssd1306_WriteString("BLUE",Font_11x18,1);
+                ssd1306_SetCursor(25,21);
+                ssd1306_WriteString("Push to play!",Font_7x10,1);
+                ssd1306_UpdateScreen();
+            }
+        break;
 
-      case p1King:
-        if(stateChange_flag)
-        {
-          stateChange_flag = 0;
-          P1LED_OFF; // The hill is yours
-          ssd1306_Fill(0);
-          ssd1306_SetCursor(0,0);
-          ssd1306_WriteString("You are king",Font_7x10,1);
-          ssd1306_SetCursor(0,10);
-          ssd1306_WriteString("of the hill!",Font_7x10,1);
-          ssd1306_UpdateScreen();
-        }
-      break;
+        case goSTART:
+        case goRED:
+        case goBLUE:
 
-      case p2King:
-        if(stateChange_flag)
-        {
-          stateChange_flag = 0;
-          P1LED_ON; // Better push the button!
-          ssd1306_Fill(0);
-          ssd1306_SetCursor(0,0);
-          ssd1306_WriteString("Take the hill!!",Font_7x10,1);
-          ssd1306_UpdateScreen();
-        }
-      break;
+            // Limbo state, don't increment stuff until other player syncs
+            stateChange_flag = 0;
+            red_flag = 0;
+            blue_flag = 0;
+            REDLED_OFF;
+            BLUELED_OFF;
 
-      case p1Winner:
-        if(stateChange_flag)
-        {
-          stateChange_flag = 0;
-          P1LED_OFF;
-          ssd1306_Fill(0);
-          ssd1306_SetCursor(0,0);
-          ssd1306_WriteString("P1 wins!",Font_7x10,1);
-          char score [16];
-          uint16_t difference = p1King_counter - p2King_counter;
-          sprintf(score, "Won by %ums", difference);
-          lcd_put_cur(1,0);
-          ssd1306_WriteString(score,Font_7x10,1);
-          ssd1306_UpdateScreen();
+            while( (gameState == goSTART) || (gameState == goRED) || (gameState == goBLUE) )
+            {
+                sendOpcode(gameState);
+                osDelay(50);
+            }
 
-        }
-      break;
+        break;
 
-      case p2Winner:
-        if(stateChange_flag)
-        {
-          stateChange_flag = 0;
-          P1LED_OFF;
-          ssd1306_Fill(0);
-          ssd1306_SetCursor(0,0);
-          ssd1306_WriteString("P2 wins!",Font_7x10,1);
-          char score [16];
-          uint16_t difference = p2King_counter - p1King_counter;
-          sprintf(score, "Won by %ums", difference);
-          lcd_put_cur(1,0);
-          ssd1306_WriteString(score,Font_7x10,1);
-          ssd1306_UpdateScreen();
-        }
-      break;
 
-        case penalty:
-        if(stateChange_flag)
-        {
-          stateChange_flag = 0;
-          P1LED_OFF;
-          ssd1306_Fill(0); 
-          ssd1306_SetCursor(0,0);
-          ssd1306_WriteString("Penalty!",Font_7x10,1);
-          ssd1306_UpdateScreen();
-        }
+        case RED:
+            if(stateChange_flag)
+            {
+                stateChange_flag = 0;
+                red_flag = 1;
+                blue_flag = 0;
+                REDLED_ON;
+                BLUELED_OFF;
+                ssd1306_Fill(0);
+                ssd1306_SetCursor(0,0);
+                ssd1306_WriteString("RED is king",Font_7x10,1);
+                ssd1306_SetCursor(0,10);
+                ssd1306_WriteString("of the hill!",Font_7x10,1);
+                ssd1306_UpdateScreen();
+            }
 
-      break;
+
+        break;
+
+        case BLUE:
+            if(stateChange_flag)
+            {
+                stateChange_flag = 0;
+                red_flag = 0;
+                blue_flag = 1;
+                REDLED_OFF;
+                BLUELED_ON;
+                ssd1306_Fill(0);
+                ssd1306_SetCursor(0,0);
+                ssd1306_WriteString("BLUE is king",Font_7x10,1);
+                ssd1306_SetCursor(0,10);
+                ssd1306_WriteString("of the hill!",Font_7x10,1);
+                ssd1306_UpdateScreen();
+            }
+        break;
+
+        case REDWINS:
+            if(stateChange_flag)
+            {
+                stateChange_flag = 0;
+                REDLED_ON;
+                BLUELED_OFF;
+                ssd1306_Fill(0);
+                ssd1306_SetCursor(0,0);
+                ssd1306_WriteString("Red wins!",Font_7x10,1);
+                char score [16];
+                uint16_t difference = red_counter - blue_counter;
+                sprintf(score, "Won by %ums", difference);
+                lcd_put_cur(1,0);
+                ssd1306_WriteString(score,Font_7x10,1);
+                ssd1306_UpdateScreen();
+            }
+        break;
+
+        case BLUEWINS:
+            if(stateChange_flag)
+            {
+                stateChange_flag = 0;
+                REDLED_OFF;
+                BLUELED_ON;
+                ssd1306_Fill(0);
+                ssd1306_SetCursor(0,0);
+                ssd1306_WriteString("Blue wins!",Font_7x10,1);
+                char score [16];
+                uint16_t difference = blue_counter - red_counter;
+                sprintf(score, "Won by %ums", difference);
+                lcd_put_cur(1,0);
+                ssd1306_WriteString(score,Font_7x10,1);
+                ssd1306_UpdateScreen();
+            }
+        break;
+
+/*
+            case penalty:
+            if(stateChange_flag)
+            {
+            stateChange_flag = 0;
+            REDLED_OFF;
+            ssd1306_Fill(0); 
+            ssd1306_SetCursor(0,0);
+            ssd1306_WriteString("Penalty!",Font_7x10,1);
+            ssd1306_UpdateScreen();
+            }
+
+        break;
+*/
       
     }
 }
@@ -132,50 +171,50 @@ void getKOTHPacket()
     // Parse the data
     if(strstr((char*)receivedPacket, "KOTH"))
     {
-        long opcode;
+        long opcodeRX;
         char * trashCatcher[10]; 
         
-        opcode = strtol((char*)receivedPacket, trashCatcher,10);
+        opcodeRX = strtol((char*)receivedPacket, trashCatcher,10);
 
         // Process opcode and respond if necessary
-        switch (opcode)
+        // make a readable copy
+        memcpy(rxReadable,&gameStateNames[opcodeRX], sizeof(&gameStateNames[opcodeRX]));
+
+        // process
+        if(gameState != opcodeRX)
         {
-            case START:
-            // Reset and start
-            resetGame();
-            // Send confirmation
-            sendOpcode(START);
-            gameState = p1King;
-            P2LED_ON;
-            P1LED_OFF;
-            stateChange_flag = 1; 
-            p1King_flag = 0;
-            p2King_flag = 1;
-            break;
+            switch (opcodeRX)
+            {
+                case START:
+                case goSTART:
+                    gameState = START;
+                    stateChange_flag = 1; 
+                break;
 
-            case CLAIM_KING: 
-            sendOpcode(CONFIRM_KING);
-            gameState = p2King;
-            P2LED_ON;
-            P1LED_OFF;
-            stateChange_flag = 1; 
-            p1King_flag = 1;
-            p2King_flag = 0;
-            break; 
+                case BLUE:
+                case goBLUE: 
+                    sendOpcode(BLUE);
+                    gameState = BLUE;
+                    stateChange_flag = 1; 
+                break; 
 
-            // Confirmations received
-            case CONFIRM_START:
-            case CONFIRM_KING:
-            gameState = p1King;
-            stateChange_flag = 1; 
-            P1LED_ON;
-            P2LED_OFF;
-            p1King_flag = 1;
-            p2King_flag = 0;
-            break;
-            
+                case RED:
+                case goRED: 
+                    sendOpcode(RED);
+                    gameState = RED;
+                    stateChange_flag = 1; 
+                break; 
+
+                case REDWINS:
+                case BLUEWINS:
+                    gameState = opcodeRX;
+                    stateChange_flag = 1; 
+                
+                break;
+                
+                }
             }
-        }
+    }
         
 }
 
@@ -183,67 +222,61 @@ void btnPressed()
 {
     switch (gameState)
     {
-        case waiting:
-            // send message to opponent, wait on confirmation
-
-            while(gameState == waiting)
-            { 
-                ssd1306_SetCursor(0,0);
-                ssd1306_WriteString("Syncing..",Font_16x24,1);
-                ssd1306_UpdateScreen();
-                sendOpcode(START);
-                osDelay(100);
-            }
+        case WAITING:
+            stateChange_flag = 1; 
+            gameState = goSTART;    
+            
         break;
         
-        case p1King:
-            // oops! penalty
+        case RED:
+        case BLUE:
+
             stateChange_flag = 1; 
-            gameState = penalty;
-            P2LED_ON;
-            P1LED_OFF;
-            sendOpcode(CONFIRM_KING);
+            
+            if(THIS_PLAYER == gameState) // oops! button masher penalty!
+            {
+                if(THIS_PLAYER == RED) gameState = goBLUE;
+                else gameState = goRED;
+
+                // TBD: disable button for a bit, penalty
+            }
+            
+            else // Took the hill!
+            {
+                if(THIS_PLAYER == RED) gameState = goRED;
+                else gameState = goBLUE;
+            }
+
         break;
 
-        case p2King:
-            // Take the hill
-            sendOpcode(CLAIM_KING);
-        break;
-
-        case p1Winner:
-        case p2Winner:
+        
+        case REDWINS:
+        case BLUEWINS:
             stateChange_flag = 1; 
-            gameState = waiting;
-            P1LED_OFF;
-            P2LED_OFF;
+            gameState = WAITING;
         break;
 
-        case penalty:
-            // nothing
-        break;
     }
 
 
 }
 
-void sendOpcode(uint8_t opcode)
+void sendOpcode(uint8_t opcodeTX)
 {
     memset(opcodeString, 0, sizeof(opcodeString));
+
     // Create encoded string
-    sprintf(opcodeString, "%uKOTH", opcode);
+    sprintf(opcodeString, "%uKOTH", opcodeTX);
 
     // Wait for LoRa availability
     //xSemaphoreTake(xloraMutex, portMAX_DELAY);
+
+    memcpy(txReadable, &gameStateNames[opcodeTX], sizeof(&gameStateNames[opcodeTX]));
 
     // Send it via LoRa
     LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 10, 100);
 
     LoRa_startReceiving(&myLoRa);
-    //if (res != LORA_OK) {
-    // Send failed
-    //debugBuddy = res;
-
-   // }
 
     // Release LoRa availability
     //xSemaphoreGive(xloraMutex);

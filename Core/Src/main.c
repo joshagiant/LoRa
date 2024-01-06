@@ -438,7 +438,7 @@ void StartDefaultTask(void const * argument)
   osThreadDef(loraRXTask, StartLoraRXTask, osPriorityAboveNormal, 0, 128);
   loraRXTaskHandle = osThreadCreate(osThread(loraRXTask), NULL);
 
-  P1LED_OFF;
+  REDLED_OFF;
   ssd1306_Init();
   ssd1306_SetCursor(0,0);
   ssd1306_WriteString("KING",Font_16x24,1);
@@ -463,17 +463,15 @@ void StartDefaultTask(void const * argument)
 
   osDelay(1000);
 
-  gameState = waiting;
-  stateChange_flag = 1;
+  resetGame();
+  osTimerStart(msTickHandle, pdMS_TO_TICKS(1));
   
 
   /* Infinite loop */
   for(;;)
   {
-    //debug
-    HAL_GPIO_TogglePin(LED1_GPIO_Port,LED1_Pin);
-    
-    checkGameState();
+
+    doGameState();
 
     osDelay(1);
    
@@ -496,14 +494,10 @@ void StartLoraRXTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    //debug
-    HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
-
     // Get the data
     getKOTHPacket();
-
     
-    osDelay(200);
+    osDelay(100);
 
   }
   /* USER CODE END StartLoraRXTask */
@@ -532,21 +526,23 @@ void StartDisplayTask(void const * argument)
 void msTickCallback(void const * argument)
 {
   /* USER CODE BEGIN msTickCallback */
-    if(p1King_flag == 1)
+    if(red_flag == 1)
     {
-      if(++p1King_counter >= 10000)
+      if(++red_counter >= 10000)
       {
-        p1King_flag = 0;
-        gameState = p1Winner;
+        red_flag = 0;
+        blue_flag = 0;
+        gameState = REDWINS;
       }
     }
 
-    if(p2King_flag == 1)
+    if(blue_flag == 1)
     {
-      if(++p2King_counter >= 10000)
+      if(++blue_counter >= 10000)
       { 
-        p2King_flag = 0;
-        gameState = p2Winner;
+        red_flag = 0;
+        blue_flag = 0;
+        gameState = BLUEWINS;
       }
     }
   /* USER CODE END msTickCallback */

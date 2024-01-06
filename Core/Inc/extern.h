@@ -13,25 +13,27 @@ extern osTimerId blinkTimerHandle;
 
 extern uint8_t loraRX_flag;
 extern uint8_t stateChange_flag;
-extern uint8_t p1King_flag;
-extern uint8_t p2King_flag;
+extern uint8_t red_flag;
+extern uint8_t blue_flag;
 extern uint8_t debouncing_Flag;
 
-extern uint32_t p1King_counter;
-extern uint32_t p2King_counter;
+extern uint32_t red_counter;
+extern uint32_t blue_counter;
 
 extern uint8_t packet_size;
 extern uint8_t receivedPacket[10]; 
 extern uint8_t loraRXbuf[10]; 
 extern char opcodeString [10];
+extern char rxReadable[20];
+extern char txReadable[20];
 
 extern uint8_t gameState;
-extern enum gameStates {waiting,p1King,p2King,p1Winner,p2Winner,penalty};
-extern enum opcodes {START, CONFIRM_START, CLAIM_KING, CONFIRM_KING};
+extern enum opcodes {START, goSTART, RED, goRED, BLUE, goBLUE, BLUEWINS, REDWINS, WAITING, PENALTY};// Prototypes
+extern const char * const gameStateNames;
 
-// Prototypes
 void resetGame();
 void sendOpcode(uint8_t);
 void getKOTHPacket();
 void btnPressed();
-void checkGameState();
+void doGameState();
+char* readableOpcode(uint8_t opcode);
