@@ -12,8 +12,8 @@ uint32_t p1King_counter;
 uint32_t p2King_counter;
 uint16_t debouce_timer;
 
-char loraRXbuf[10]; 
-char loraTXbuf[10]; 
+uint8_t packet_size;
+uint8_t loraRXbuf[10]; 
 char opcodeString [10];
 
 uint8_t gameState;

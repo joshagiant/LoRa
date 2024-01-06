@@ -1,11 +1,11 @@
 #include <stdint.h>
 #include "define.h"
-#include "lora_sx1276.h"
 #include "main.h"
 #include "cmsis_os.h"
+#include "lora.h"
 
 extern uint16_t debugBuddy;
-extern lora_sx1276 lora;
+extern LoRa myLoRa;
 extern osMutexId lora_mutexHandle, lora_mutex;
 extern SemaphoreHandle_t xloraMutex;
 extern osTimerId debounceTimerHandle;
@@ -20,8 +20,8 @@ extern uint8_t debouncing_Flag;
 extern uint32_t p1King_counter;
 extern uint32_t p2King_counter;
 
-extern char loraRXbuf[10]; 
-extern char loraTXbuf[10]; 
+extern uint8_t packet_size;
+extern uint8_t loraRXbuf[10]; 
 extern char opcodeString [10];
 
 extern uint8_t gameState;

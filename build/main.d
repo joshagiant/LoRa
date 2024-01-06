@@ -44,9 +44,9 @@ build/main.o: Core/Src/main.c Core/Inc/main.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- Core/Inc/extern.h Core/Inc/define.h Core/Inc/lora_sx1276.h \
- Core/Inc/main.h Core/Inc/i2c-lcd.h Core/Inc/lora_sx1276.h \
- Core/Inc/ssd1306.h Core/Inc/ssd1306_conf.h Core/Inc/ssd1306_fonts.h
+ Core/Inc/extern.h Core/Inc/define.h Core/Inc/main.h Core/Inc/lora.h \
+ Core/Inc/i2c-lcd.h Core/Inc/lora.h Core/Inc/ssd1306.h \
+ Core/Inc/ssd1306_conf.h Core/Inc/ssd1306_fonts.h
 Core/Inc/main.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 Core/Inc/stm32f4xx_hal_conf.h:
@@ -97,10 +97,10 @@ Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 Core/Inc/extern.h:
 Core/Inc/define.h:
-Core/Inc/lora_sx1276.h:
 Core/Inc/main.h:
+Core/Inc/lora.h:
 Core/Inc/i2c-lcd.h:
-Core/Inc/lora_sx1276.h:
+Core/Inc/lora.h:
 Core/Inc/ssd1306.h:
 Core/Inc/ssd1306_conf.h:
 Core/Inc/ssd1306_fonts.h:

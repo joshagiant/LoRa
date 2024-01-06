@@ -24,7 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "extern.h"
 #include "i2c-lcd.h"
-#include "lora_sx1276.h"
+#include "lora.h"
 #include <string.h>
 #include <stdio.h>
 #include "ssd1306.h"
@@ -64,8 +64,8 @@ osTimerId blinkTimerHandle;
 osMutexId lora_mutexHandle;
 /* USER CODE BEGIN PV */
 SemaphoreHandle_t xloraMutex;
+LoRa myLoRa;
 
-lora_sx1276 lora;
 
 /* USER CODE END PV */
 
@@ -172,8 +172,7 @@ int main(void)
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* definition and creation of loraRXTask */
-  osThreadDef(loraRXTask, StartLoraRXTask, osPriorityAboveNormal, 0, 128);
-  loraRXTaskHandle = osThreadCreate(osThread(loraRXTask), NULL);
+
 
   /* definition and creation of displayTask */
   osThreadDef(displayTask, StartDisplayTask, osPriorityNormal, 0, 128);
@@ -410,42 +409,62 @@ void StartDefaultTask(void const * argument)
   xloraMutex = xSemaphoreCreateMutex();
   //xSemaphoreTake(xloraMutex, portMAX_DELAY);
 
-  uint8_t res = lora_init(&lora, &hspi1, LORA_CS_GPIO_Port, LORA_CS_Pin, LORA_BASE_FREQUENCY_CH);
-  if (res != LORA_OK) {
-    // Initialization failed
-    uint8_t debugBuddy;
-    debugBuddy = res;
-    debugBuddy++;
+  // Create LoRa instance
+  myLoRa = newLoRa();
+
+  // configure
+    myLoRa.CS_port         = LORA_CS_GPIO_Port;
+    myLoRa.CS_pin          = LORA_CS_Pin;
+    myLoRa.reset_port      = LORA_RST_GPIO_Port;
+    myLoRa.reset_pin       = LORA_RST_Pin;
+    myLoRa.DIO0_port       = LORA_EXTI_GPIO_Port;
+    myLoRa.DIO0_pin        = LORA_EXTI_Pin;
+    myLoRa.hSPIx           = &hspi1;
+
+  // Kick it
+  uint16_t LoRa_Status = LoRa_init(&myLoRa);
+  sprintf(opcodeString,"Josh wins", 10);
+  if(LoRa_Status == LORA_OK)
+  {
+    LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 12, 100);
   }
+  else
+  {
+    debugBuddy = 9;
+  }
+
+  LoRa_startReceiving(&myLoRa);
   
   //xSemaphoreGive(xloraMutex);
   //debug osMutexRelease(lora_mutexHandle);
 
+  osThreadDef(loraRXTask, StartLoraRXTask, osPriorityAboveNormal, 0, 128);
+  loraRXTaskHandle = osThreadCreate(osThread(loraRXTask), NULL);
 
   P1LED_OFF;
   ssd1306_Init();
   ssd1306_SetCursor(0,0);
   ssd1306_WriteString("KING",Font_16x24,1);
   ssd1306_UpdateScreen();
-  osDelay(750);
+  osDelay(500);
   ssd1306_Fill(0);
   ssd1306_SetCursor(64,0);
   ssd1306_WriteString("OF",Font_16x24,1);
   ssd1306_UpdateScreen();
-  osDelay(750);
+  osDelay(500);
   ssd1306_Fill(0);
   ssd1306_SetCursor(0,8);
   ssd1306_WriteString("THE",Font_16x24,1);
   ssd1306_UpdateScreen();
-  osDelay(750);
+  osDelay(500);
   ssd1306_Fill(0);
   ssd1306_SetCursor(64,8);
   ssd1306_WriteString("HILL",Font_16x24,1);
   ssd1306_UpdateScreen();
 
-  lora_mode_receive_continuous(&lora);
+  
 
-  osDelay(2000);
+  osDelay(1000);
 
   gameState = waiting;
   stateChange_flag = 1;
@@ -571,23 +590,11 @@ void StartLoraRXTask(void const * argument)
     //debug
     HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
 
-    // Wait for LoRa availability
-    //xSemaphoreTake(xloraMutex, portMAX_DELAY);
-
-    // Check for a new packet
-    if(lora_is_packet_available(&lora) > 0)
-    {
-      //release mutex
-      //xSemaphoreGive(xloraMutex);
-      
-      // Get the data
-      getKOTHPacket();
-
-    }
+    // Get the data
+    getKOTHPacket();
 
     
-    
-    osDelay(25);
+    osDelay(200);
 
   }
   /* USER CODE END StartLoraRXTask */

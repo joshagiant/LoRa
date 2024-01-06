@@ -41,7 +41,7 @@ Core/Inc/globals.c \
 Core/Src/ssd1306.c \
 Core/Src/ssd1306_fonts.c\
 Core/Src/i2c-lcd.c \
-Core/Src/lora_sx1276.c\
+Core/Src/lora.c\
 Core/Src/koth_game.c\
 Core/Src/freertos.c \
 Core/Src/stm32f4xx_it.c \

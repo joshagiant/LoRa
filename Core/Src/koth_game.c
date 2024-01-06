@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "cmsis_os.h"
-#include "lora_sx1276.h"
+#include "lora.h"
 
 
 void resetGame()
@@ -24,18 +24,17 @@ void getKOTHPacket()
     //xSemaphoreTake(xloraMutex, portMAX_DELAY);
 
     // Get the packet
-    uint8_t result;
-    lora_receive_packet_dma_start(&lora,loraRXbuf,10,&result);
+    packet_size = LoRa_receive(&myLoRa, loraRXbuf, 10);
 
     //xSemaphoreGive(xloraMutex);
     
     // Parse the data
-    if(strstr(loraRXbuf, "KOTH"))
+    if(strstr((char*)loraRXbuf, "KOTH"))
     {
         long opcode;
         char * trashCatcher[10]; 
         
-        opcode = strtol(loraRXbuf, trashCatcher,10);
+        opcode = strtol((char*)loraRXbuf, trashCatcher,10);
 
         // Process opcode and respond if necessary
         switch (opcode)
@@ -76,6 +75,7 @@ void getKOTHPacket()
             
             }
         }
+        
 }
 
 void btnPressed()
@@ -127,12 +127,12 @@ void sendOpcode(uint8_t opcode)
     //xSemaphoreTake(xloraMutex, portMAX_DELAY);
 
     // Send it via LoRa
-    uint8_t res = lora_send_packet_dma_start(&lora, (uint8_t *)opcodeString, 10);
-    if (res != LORA_OK) {
+    //uint8_t res = lora_send_packet_dma_start(&lora, (uint8_t *)opcodeString, 10);
+    //if (res != LORA_OK) {
     // Send failed
-    debugBuddy = res;
+    //debugBuddy = res;
 
-    }
+   // }
 
     // Release LoRa availability
     //xSemaphoreGive(xloraMutex);
