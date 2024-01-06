@@ -52,12 +52,15 @@ I2C_HandleTypeDef hi2c1;
 DMA_HandleTypeDef hdma_i2c1_tx;
 
 SPI_HandleTypeDef hspi1;
+DMA_HandleTypeDef hdma_spi1_tx;
+DMA_HandleTypeDef hdma_spi1_rx;
 
 osThreadId defaultTaskHandle;
 osThreadId loraRXTaskHandle;
 osThreadId displayTaskHandle;
 osTimerId msTickHandle;
 osTimerId debounceTimerHandle;
+osTimerId blinkTimerHandle;
 osMutexId lora_mutexHandle;
 /* USER CODE BEGIN PV */
 SemaphoreHandle_t xloraMutex;
@@ -77,6 +80,7 @@ void StartLoraRXTask(void const * argument);
 void StartDisplayTask(void const * argument);
 void msTickCallback(void const * argument);
 void debounceCallback(void const * argument);
+void blinkTimerCallback(void const * argument);
 
 /* USER CODE BEGIN PFP */
 
@@ -148,6 +152,10 @@ int main(void)
   /* definition and creation of debounceTimer */
   osTimerDef(debounceTimer, debounceCallback);
   debounceTimerHandle = osTimerCreate(osTimer(debounceTimer), osTimerOnce, NULL);
+
+  /* definition and creation of blinkTimer */
+  osTimerDef(blinkTimer, blinkTimerCallback);
+  blinkTimerHandle = osTimerCreate(osTimer(blinkTimer), osTimerOnce, NULL);
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
@@ -315,11 +323,18 @@ static void MX_DMA_Init(void)
 
   /* DMA controller clock enable */
   __HAL_RCC_DMA1_CLK_ENABLE();
+  __HAL_RCC_DMA2_CLK_ENABLE();
 
   /* DMA interrupt init */
   /* DMA1_Stream6_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream6_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream6_IRQn);
+  /* DMA2_Stream0_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
+  /* DMA2_Stream3_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream3_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream3_IRQn);
 
 }
 
@@ -338,10 +353,13 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, LED1_Pin|LED2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, LED1_Pin|LED2_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LORA_CS_GPIO_Port, LORA_CS_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LORA_RST_GPIO_Port, LORA_RST_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(LORA_CS_GPIO_Port, LORA_CS_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin : BTN_IN_Pin */
   GPIO_InitStruct.Pin = BTN_IN_Pin;
@@ -356,12 +374,18 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : LORA_CS_Pin */
-  GPIO_InitStruct.Pin = LORA_CS_Pin;
+  /*Configure GPIO pin : LORA_EXTI_Pin */
+  GPIO_InitStruct.Pin = LORA_EXTI_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(LORA_EXTI_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LORA_RST_Pin LORA_CS_Pin */
+  GPIO_InitStruct.Pin = LORA_RST_Pin|LORA_CS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LORA_CS_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI0_IRQn, 5, 0);
@@ -384,8 +408,8 @@ void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN 5 */
   xloraMutex = xSemaphoreCreateMutex();
-  // debug osMutexWait(lora_mutexHandle, osWaitForever);
-  xSemaphoreTake(xloraMutex, portMAX_DELAY);
+  //xSemaphoreTake(xloraMutex, portMAX_DELAY);
+
   uint8_t res = lora_init(&lora, &hspi1, LORA_CS_GPIO_Port, LORA_CS_Pin, LORA_BASE_FREQUENCY_CH);
   if (res != LORA_OK) {
     // Initialization failed
@@ -393,7 +417,8 @@ void StartDefaultTask(void const * argument)
     debugBuddy = res;
     debugBuddy++;
   }
-  xSemaphoreGive(xloraMutex);
+  
+  //xSemaphoreGive(xloraMutex);
   //debug osMutexRelease(lora_mutexHandle);
 
 
@@ -547,13 +572,13 @@ void StartLoraRXTask(void const * argument)
     HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
 
     // Wait for LoRa availability
-    xSemaphoreTake(xloraMutex, portMAX_DELAY);
+    //xSemaphoreTake(xloraMutex, portMAX_DELAY);
 
     // Check for a new packet
     if(lora_is_packet_available(&lora) > 0)
     {
       //release mutex
-      xSemaphoreGive(xloraMutex);
+      //xSemaphoreGive(xloraMutex);
       
       // Get the data
       getKOTHPacket();
@@ -613,23 +638,20 @@ void msTickCallback(void const * argument)
 
 /* debounceCallback function */
 
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-  if( (!debouncing_Flag) && (GPIO_Pin == BTN_IN_Pin) ) 
-  {
-
-    debouncing_Flag = 1;
-    btnPressed();
-    osTimerStart(debounceTimerHandle, pdMS_TO_TICKS(250));
-
-  }
-}
 
 void debounceCallback(void const * argument)
 {
   /* USER CODE BEGIN debounceCallback */
   debouncing_Flag = 0;
   /* USER CODE END debounceCallback */
+}
+
+/* blinkTimerCallback function */
+void blinkTimerCallback(void const * argument)
+{
+  /* USER CODE BEGIN blinkTimerCallback */
+
+  /* USER CODE END blinkTimerCallback */
 }
 
 /**

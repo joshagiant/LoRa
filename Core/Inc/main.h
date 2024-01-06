@@ -64,6 +64,10 @@ void Error_Handler(void);
 #define LED1_GPIO_Port GPIOB
 #define LED2_Pin GPIO_PIN_2
 #define LED2_GPIO_Port GPIOB
+#define LORA_EXTI_Pin GPIO_PIN_8
+#define LORA_EXTI_GPIO_Port GPIOA
+#define LORA_RST_Pin GPIO_PIN_9
+#define LORA_RST_GPIO_Port GPIOA
 #define LORA_CS_Pin GPIO_PIN_10
 #define LORA_CS_GPIO_Port GPIOA
 

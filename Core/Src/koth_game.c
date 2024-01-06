@@ -21,13 +21,13 @@ void resetGame()
 void getKOTHPacket()
 {
     // Wait for LoRa availability
-    osSemaphoreWait(lora_mutexHandle, osWaitForever);
+    //xSemaphoreTake(xloraMutex, portMAX_DELAY);
 
     // Get the packet
     uint8_t result;
-    lora_receive_packet(&lora,loraRXbuf,10,&result);
+    lora_receive_packet_dma_start(&lora,loraRXbuf,10,&result);
 
-    osSemaphoreRelease(lora_mutexHandle);
+    //xSemaphoreGive(xloraMutex);
     
     // Parse the data
     if(strstr(loraRXbuf, "KOTH"))
@@ -124,7 +124,7 @@ void sendOpcode(uint8_t opcode)
     sprintf(opcodeString, "%uKOTH", opcode);
 
     // Wait for LoRa availability
-    xSemaphoreTake(xloraMutex, portMAX_DELAY);
+    //xSemaphoreTake(xloraMutex, portMAX_DELAY);
 
     // Send it via LoRa
     uint8_t res = lora_send_packet_dma_start(&lora, (uint8_t *)opcodeString, 10);
@@ -135,7 +135,7 @@ void sendOpcode(uint8_t opcode)
     }
 
     // Release LoRa availability
-    xSemaphoreGive(xloraMutex);
+    //xSemaphoreGive(xloraMutex);
     // osMutexRelease(lora_mutexHandle);
 
   

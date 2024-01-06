@@ -8,6 +8,8 @@ extern uint16_t debugBuddy;
 extern lora_sx1276 lora;
 extern osMutexId lora_mutexHandle, lora_mutex;
 extern SemaphoreHandle_t xloraMutex;
+extern osTimerId debounceTimerHandle;
+extern osTimerId blinkTimerHandle;
 
 extern uint8_t loraRX_flag;
 extern uint8_t stateChange_flag;
