@@ -57,6 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define PLAYER_SEL_Pin GPIO_PIN_13
+#define PLAYER_SEL_GPIO_Port GPIOC
 #define BTN_IN_Pin GPIO_PIN_0
 #define BTN_IN_GPIO_Port GPIOB
 #define BTN_IN_EXTI_IRQn EXTI0_IRQn

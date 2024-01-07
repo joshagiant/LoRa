@@ -347,6 +347,7 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
@@ -356,6 +357,12 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, LORA_RST_Pin|LORA_CS_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin : PLAYER_SEL_Pin */
+  GPIO_InitStruct.Pin = PLAYER_SEL_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(PLAYER_SEL_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : BTN_IN_Pin */
   GPIO_InitStruct.Pin = BTN_IN_Pin;
@@ -410,6 +417,18 @@ void StartDefaultTask(void const * argument)
 
   osThreadDef(loraTask, StartLoraTask, osPriorityAboveNormal, 0, 128);
   loraTaskHandle = osThreadCreate(osThread(loraTask), NULL);
+
+  if ( HAL_GPIO_ReadPin(PLAYER_SEL_GPIO_Port,PLAYER_SEL_Pin) == 0 )
+  {
+    THIS_PLAYER = BLUE;
+    OTHER_PLAYER = RED;
+  }
+
+  else
+  {
+    THIS_PLAYER = RED;
+    OTHER_PLAYER = BLUE;
+  }
 
   REDLED_OFF;
   BLUELED_OFF;
@@ -468,7 +487,7 @@ void StartDefaultTask(void const * argument)
 void StartLoraTask(void const * argument)
 {
   /* USER CODE BEGIN StartLoraTask */
-    
+
     // Create LoRa instance
     myLoRa = newLoRa();
 

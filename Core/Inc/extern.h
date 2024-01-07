@@ -8,6 +8,9 @@ extern uint16_t debugBuddy;
 extern uint16_t txCount, rxCount;
 extern LoRa myLoRa;
 
+extern uint8_t THIS_PLAYER;
+extern uint8_t OTHER_PLAYER;
+
 extern osTimerId debounceTimerHandle;
 
 extern uint8_t loraRX_flag;

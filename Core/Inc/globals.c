@@ -9,6 +9,8 @@ uint8_t blue_flag;
 uint8_t debouncing_Flag;
 uint8_t newTX_flag;
 uint8_t newRX_flag;
+uint8_t THIS_PLAYER;
+uint8_t OTHER_PLAYER;
 
 
 uint32_t red_counter;
