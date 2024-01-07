@@ -24,6 +24,44 @@ void resetGame()
 
 void doGameState()
 {
+    // New opcode rx
+    if((loraRXopcode >=0) && (loraRXopcode != gameState) )
+    {
+        switch (loraRXopcode)
+            {
+
+                case goSTART: // other player started game
+                    if(THIS_PLAYER == RED) gameState = goBLUE;
+                    else gameState = goRED;
+                    stateChange_flag = 1; 
+                break;
+
+                case goBLUE: 
+                    gameState = BLUE;
+                    stateChange_flag = 1; 
+                break; 
+                
+                case goRED:
+                    gameState = RED;
+                    stateChange_flag = 1; 
+                break; 
+
+                case RED:
+                case BLUE:
+                    gameState = loraRXopcode;
+                    stateChange_flag = 0; 
+                break;
+
+
+                case REDWINS:
+                case BLUEWINS:
+                    gameState = loraRXopcode;
+                    stateChange_flag = 1; 
+                
+                break;
+                
+        }
+    }
     
     switch (gameState)
     {
@@ -40,6 +78,23 @@ void doGameState()
                 ssd1306_UpdateScreen();
             }
         break;
+
+        /*
+        case START: // Other player initiated
+            if(stateChange_flag) // do once
+            { 
+                stateChange_flag = 0;
+                // resetGame();
+                ssd1306_Fill(0); 
+                ssd1306_SetCursor(0,0);
+                if (THIS_PLAYER == RED) ssd1306_WriteString("RED",Font_11x18,1);
+                else ssd1306_WriteString("BLUE",Font_11x18,1);
+                ssd1306_SetCursor(25,21);
+                ssd1306_WriteString("Push to play!",Font_7x10,1);
+                ssd1306_UpdateScreen();
+            }
+        break;
+        */
 
         case goSTART:
         case goRED:
@@ -64,6 +119,7 @@ void doGameState()
         case RED:
             if(stateChange_flag)
             {
+                sendOpcode(RED);
                 stateChange_flag = 0;
                 red_flag = 1;
                 blue_flag = 0;
@@ -75,6 +131,7 @@ void doGameState()
                 ssd1306_SetCursor(0,10);
                 ssd1306_WriteString("of the hill!",Font_7x10,1);
                 ssd1306_UpdateScreen();
+                
             }
 
 
@@ -83,6 +140,7 @@ void doGameState()
         case BLUE:
             if(stateChange_flag)
             {
+                sendOpcode(BLUE);
                 stateChange_flag = 0;
                 red_flag = 0;
                 blue_flag = 1;
@@ -100,6 +158,7 @@ void doGameState()
         case REDWINS:
             if(stateChange_flag)
             {
+                sendOpcode(REDWINS);
                 stateChange_flag = 0;
                 REDLED_ON;
                 BLUELED_OFF;
@@ -118,6 +177,7 @@ void doGameState()
         case BLUEWINS:
             if(stateChange_flag)
             {
+                sendOpcode(BLUEWINS);
                 stateChange_flag = 0;
                 REDLED_OFF;
                 BLUELED_ON;
@@ -181,40 +241,11 @@ void getKOTHPacket()
         memcpy(rxReadable,&gameStateNames[opcodeRX], sizeof(&gameStateNames[opcodeRX]));
 
         // process
-        if(gameState != opcodeRX)
-        {
-            switch (opcodeRX)
-            {
-                case START:
-                case goSTART:
-                    gameState = START;
-                    stateChange_flag = 1; 
-                break;
+        if(gameState != opcodeRX) loraRXopcode = opcodeRX;
 
-                case BLUE:
-                case goBLUE: 
-                    sendOpcode(BLUE);
-                    gameState = BLUE;
-                    stateChange_flag = 1; 
-                break; 
-
-                case RED:
-                case goRED: 
-                    sendOpcode(RED);
-                    gameState = RED;
-                    stateChange_flag = 1; 
-                break; 
-
-                case REDWINS:
-                case BLUEWINS:
-                    gameState = opcodeRX;
-                    stateChange_flag = 1; 
-                
-                break;
-                
-                }
-            }
+        //Do something about it in the main thread!
     }
+
         
 }
 

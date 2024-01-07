@@ -464,7 +464,7 @@ void StartDefaultTask(void const * argument)
   osDelay(1000);
 
   resetGame();
-  osTimerStart(msTickHandle, pdMS_TO_TICKS(1));
+  osTimerStart(msTickHandle, pdMS_TO_TICKS(10));
   
 
   /* Infinite loop */
@@ -528,7 +528,8 @@ void msTickCallback(void const * argument)
   /* USER CODE BEGIN msTickCallback */
     if(red_flag == 1)
     {
-      if(++red_counter >= 10000)
+      red_counter += 10;
+      if(red_counter >= 10000)
       {
         red_flag = 0;
         blue_flag = 0;
@@ -538,7 +539,8 @@ void msTickCallback(void const * argument)
 
     if(blue_flag == 1)
     {
-      if(++blue_counter >= 10000)
+      blue_counter += 10;
+      if(blue_counter >= 10000)
       { 
         red_flag = 0;
         blue_flag = 0;

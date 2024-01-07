@@ -21,6 +21,7 @@ extern uint32_t red_counter;
 extern uint32_t blue_counter;
 
 extern uint8_t packet_size;
+extern uint8_t loraRXopcode;
 extern uint8_t receivedPacket[10]; 
 extern uint8_t loraRXbuf[10]; 
 extern char opcodeString [10];

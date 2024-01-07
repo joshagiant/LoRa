@@ -13,6 +13,7 @@ uint32_t blue_counter;
 uint16_t debouce_timer;
 
 uint8_t packet_size;
+uint8_t loraRXopcode;
 uint8_t loraRXbuf[10]; 
 uint8_t receivedPacket[10]; 
 char opcodeString [10];
