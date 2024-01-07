@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s 			page 1
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s 			page 1
   47 0040 57414954 		.ascii	"WAITING\000"
   47      494E4700 
   48              		.align	2
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s 			page 2
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s 			page 2
 
 
   49              	.LC9:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s 			page 1
  118              		.align	2
  121              	opcodeString:
  122 0000 00000000 		.space	10
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s 			page 3
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s 			page 3
 
 
  122      00000000 
@@ -176,47 +176,47 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s 			page 1
  179              		.file 1 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\machine\\_default_types.h"
  180              		.file 2 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\sys\\_stdint.h"
  181              		.file 3 "Core/Inc/globals.c"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s 			page 4
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 globals.c
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:166    .rodata.gameStateNames:00000000 gameStateNames
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:21     .rodata.str1.4:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:99     .bss.gameState:00000000 gameState
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:160    .bss.txReadable:00000000 txReadable
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:149    .bss.rxReadable:00000000 rxReadable
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:121    .bss.opcodeString:00000000 opcodeString
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:132    .bss.receivedPacket:00000000 receivedPacket
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:110    .bss.loraRXbuf:00000000 loraRXbuf
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:115    .bss.loraRXopcode:00000000 loraRXopcode
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:126    .bss.packet_size:00000000 packet_size
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:83     .bss.debouce_timer:00000000 debouce_timer
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:72     .bss.blue_counter:00000000 blue_counter
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:138    .bss.red_counter:00000000 red_counter
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:88     .bss.debouncing_Flag:00000000 debouncing_Flag
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:77     .bss.blue_flag:00000000 blue_flag
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:143    .bss.red_flag:00000000 red_flag
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:154    .bss.stateChange_flag:00000000 stateChange_flag
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:104    .bss.loraRX_flag:00000000 loraRX_flag
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:94     .bss.debugBuddy:00000000 debugBuddy
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:69     .bss.blue_counter:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:78     .bss.blue_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:80     .bss.debouce_timer:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:89     .bss.debouncing_Flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:91     .bss.debugBuddy:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:100    .bss.gameState:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:105    .bss.loraRX_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:107    .bss.loraRXbuf:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:116    .bss.loraRXopcode:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:118    .bss.opcodeString:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:127    .bss.packet_size:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:129    .bss.receivedPacket:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:135    .bss.red_counter:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:144    .bss.red_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:146    .bss.rxReadable:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:155    .bss.stateChange_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:157    .bss.txReadable:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\cchaGpfJ.s:163    .rodata.gameStateNames:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:166    .rodata.gameStateNames:00000000 gameStateNames
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:21     .rodata.str1.4:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:99     .bss.gameState:00000000 gameState
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:160    .bss.txReadable:00000000 txReadable
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:149    .bss.rxReadable:00000000 rxReadable
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:121    .bss.opcodeString:00000000 opcodeString
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:132    .bss.receivedPacket:00000000 receivedPacket
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:110    .bss.loraRXbuf:00000000 loraRXbuf
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:115    .bss.loraRXopcode:00000000 loraRXopcode
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:126    .bss.packet_size:00000000 packet_size
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:83     .bss.debouce_timer:00000000 debouce_timer
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:72     .bss.blue_counter:00000000 blue_counter
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:138    .bss.red_counter:00000000 red_counter
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:88     .bss.debouncing_Flag:00000000 debouncing_Flag
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:77     .bss.blue_flag:00000000 blue_flag
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:143    .bss.red_flag:00000000 red_flag
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:154    .bss.stateChange_flag:00000000 stateChange_flag
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:104    .bss.loraRX_flag:00000000 loraRX_flag
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:94     .bss.debugBuddy:00000000 debugBuddy
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:69     .bss.blue_counter:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:78     .bss.blue_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:80     .bss.debouce_timer:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:89     .bss.debouncing_Flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:91     .bss.debugBuddy:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:100    .bss.gameState:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:105    .bss.loraRX_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:107    .bss.loraRXbuf:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:116    .bss.loraRXopcode:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:118    .bss.opcodeString:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:127    .bss.packet_size:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:129    .bss.receivedPacket:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:135    .bss.red_counter:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:144    .bss.red_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:146    .bss.rxReadable:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:155    .bss.stateChange_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:157    .bss.txReadable:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccScU4HD.s:163    .rodata.gameStateNames:00000000 $d
 
 NO UNDEFINED SYMBOLS

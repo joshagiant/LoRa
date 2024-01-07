@@ -403,7 +403,7 @@ static void MX_GPIO_Init(void)
 void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN 5 */
-  xloraMutex = xSemaphoreCreateMutex();
+  //xloraMutex = xSemaphoreCreateMutex();
   //xSemaphoreTake(xloraMutex, portMAX_DELAY);
 
   // Create LoRa instance
@@ -436,7 +436,7 @@ void StartDefaultTask(void const * argument)
   //debug osMutexRelease(lora_mutexHandle);
 
   osThreadDef(loraRXTask, StartLoraRXTask, osPriorityAboveNormal, 0, 128);
-  loraRXTaskHandle = osThreadCreate(osThread(loraRXTask), NULL);
+  //loraRXTaskHandle = osThreadCreate(osThread(loraRXTask), NULL);
 
   REDLED_OFF;
   ssd1306_Init();
@@ -471,9 +471,13 @@ void StartDefaultTask(void const * argument)
   for(;;)
   {
 
-    doGameState();
+    //doGameState();
+    doGameStateSimple();
 
-    osDelay(1);
+    getKOTHPacket();
+
+
+    osDelay(20);
    
 
 

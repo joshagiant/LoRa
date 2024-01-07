@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
   27:Core/Src/main.c **** #include "lora.h"
   28:Core/Src/main.c **** #include <string.h>
   29:Core/Src/main.c **** #include <stdio.h>
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 2
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 2
 
 
   30:Core/Src/main.c **** #include "ssd1306.h"
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
   84:Core/Src/main.c **** 
   85:Core/Src/main.c **** /* USER CODE BEGIN PFP */
   86:Core/Src/main.c **** 
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 3
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 3
 
 
   87:Core/Src/main.c **** /* USER CODE END PFP */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  141:Core/Src/main.c ****   /* USER CODE END RTOS_MUTEX */
  142:Core/Src/main.c **** 
  143:Core/Src/main.c ****   /* USER CODE BEGIN RTOS_SEMAPHORES */
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 4
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 4
 
 
  144:Core/Src/main.c ****   /* add semaphores, ... */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  198:Core/Src/main.c **** }
  199:Core/Src/main.c **** 
  200:Core/Src/main.c **** /**
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 5
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 5
 
 
  201:Core/Src/main.c ****   * @brief System Clock Configuration
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  255:Core/Src/main.c ****   /* USER CODE END I2C1_Init 0 */
  256:Core/Src/main.c **** 
  257:Core/Src/main.c ****   /* USER CODE BEGIN I2C1_Init 1 */
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 6
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 6
 
 
  258:Core/Src/main.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  312:Core/Src/main.c **** 
  313:Core/Src/main.c ****   /* USER CODE END SPI1_Init 2 */
  314:Core/Src/main.c **** 
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 7
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 7
 
 
  315:Core/Src/main.c **** }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  369:Core/Src/main.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
  370:Core/Src/main.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
  371:Core/Src/main.c ****   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 8
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 8
 
 
  372:Core/Src/main.c **** 
@@ -455,7 +455,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  403:Core/Src/main.c **** void StartDefaultTask(void const * argument)
  404:Core/Src/main.c **** {
  405:Core/Src/main.c ****   /* USER CODE BEGIN 5 */
- 406:Core/Src/main.c ****   xloraMutex = xSemaphoreCreateMutex();
+ 406:Core/Src/main.c ****   //xloraMutex = xSemaphoreCreateMutex();
  407:Core/Src/main.c ****   //xSemaphoreTake(xloraMutex, portMAX_DELAY);
  408:Core/Src/main.c **** 
  409:Core/Src/main.c ****   // Create LoRa instance
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  426:Core/Src/main.c ****     LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 12, 100);
  427:Core/Src/main.c ****   }
  428:Core/Src/main.c ****   else
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 9
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 9
 
 
  429:Core/Src/main.c ****   {
@@ -491,7 +491,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  436:Core/Src/main.c ****   //debug osMutexRelease(lora_mutexHandle);
  437:Core/Src/main.c **** 
  438:Core/Src/main.c ****   osThreadDef(loraRXTask, StartLoraRXTask, osPriorityAboveNormal, 0, 128);
- 439:Core/Src/main.c ****   loraRXTaskHandle = osThreadCreate(osThread(loraRXTask), NULL);
+ 439:Core/Src/main.c ****   //loraRXTaskHandle = osThreadCreate(osThread(loraRXTask), NULL);
  440:Core/Src/main.c **** 
  441:Core/Src/main.c ****   REDLED_OFF;
  442:Core/Src/main.c ****   ssd1306_Init();
@@ -526,201 +526,205 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  471:Core/Src/main.c ****   for(;;)
  472:Core/Src/main.c ****   {
  473:Core/Src/main.c **** 
- 474:Core/Src/main.c ****     doGameState();
- 475:Core/Src/main.c **** 
- 476:Core/Src/main.c ****     osDelay(1);
- 477:Core/Src/main.c ****    
+ 474:Core/Src/main.c ****     //doGameState();
+ 475:Core/Src/main.c ****     doGameStateSimple();
+ 476:Core/Src/main.c **** 
+ 477:Core/Src/main.c ****     getKOTHPacket();
  478:Core/Src/main.c **** 
  479:Core/Src/main.c **** 
- 480:Core/Src/main.c ****   }
- 481:Core/Src/main.c ****   /* USER CODE END 5 */
- 482:Core/Src/main.c **** }
+ 480:Core/Src/main.c ****     osDelay(20);
+ 481:Core/Src/main.c ****    
+ 482:Core/Src/main.c **** 
  483:Core/Src/main.c **** 
- 484:Core/Src/main.c **** /* USER CODE BEGIN Header_StartLoraRXTask */
- 485:Core/Src/main.c **** /**
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 10
+ 484:Core/Src/main.c ****   }
+ 485:Core/Src/main.c ****   /* USER CODE END 5 */
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 10
 
 
- 486:Core/Src/main.c **** * @brief Function implementing the loraRXTask thread.
- 487:Core/Src/main.c **** * @param argument: Not used
- 488:Core/Src/main.c **** * @retval None
- 489:Core/Src/main.c **** */
- 490:Core/Src/main.c **** /* USER CODE END Header_StartLoraRXTask */
- 491:Core/Src/main.c **** void StartLoraRXTask(void const * argument)
- 492:Core/Src/main.c **** {
- 493:Core/Src/main.c ****   /* USER CODE BEGIN StartLoraRXTask */
- 494:Core/Src/main.c ****   /* Infinite loop */
- 495:Core/Src/main.c ****   for(;;)
- 496:Core/Src/main.c ****   {
- 497:Core/Src/main.c ****     // Get the data
- 498:Core/Src/main.c ****     getKOTHPacket();
- 499:Core/Src/main.c ****     
- 500:Core/Src/main.c ****     osDelay(100);
- 501:Core/Src/main.c **** 
- 502:Core/Src/main.c ****   }
- 503:Core/Src/main.c ****   /* USER CODE END StartLoraRXTask */
- 504:Core/Src/main.c **** }
+ 486:Core/Src/main.c **** }
+ 487:Core/Src/main.c **** 
+ 488:Core/Src/main.c **** /* USER CODE BEGIN Header_StartLoraRXTask */
+ 489:Core/Src/main.c **** /**
+ 490:Core/Src/main.c **** * @brief Function implementing the loraRXTask thread.
+ 491:Core/Src/main.c **** * @param argument: Not used
+ 492:Core/Src/main.c **** * @retval None
+ 493:Core/Src/main.c **** */
+ 494:Core/Src/main.c **** /* USER CODE END Header_StartLoraRXTask */
+ 495:Core/Src/main.c **** void StartLoraRXTask(void const * argument)
+ 496:Core/Src/main.c **** {
+ 497:Core/Src/main.c ****   /* USER CODE BEGIN StartLoraRXTask */
+ 498:Core/Src/main.c ****   /* Infinite loop */
+ 499:Core/Src/main.c ****   for(;;)
+ 500:Core/Src/main.c ****   {
+ 501:Core/Src/main.c ****     // Get the data
+ 502:Core/Src/main.c ****     getKOTHPacket();
+ 503:Core/Src/main.c ****     
+ 504:Core/Src/main.c ****     osDelay(100);
  505:Core/Src/main.c **** 
- 506:Core/Src/main.c **** /* USER CODE BEGIN Header_StartDisplayTask */
- 507:Core/Src/main.c **** /**
- 508:Core/Src/main.c **** * @brief Function implementing the displayTask thread.
- 509:Core/Src/main.c **** * @param argument: Not used
- 510:Core/Src/main.c **** * @retval None
- 511:Core/Src/main.c **** */
- 512:Core/Src/main.c **** /* USER CODE END Header_StartDisplayTask */
- 513:Core/Src/main.c **** void StartDisplayTask(void const * argument)
- 514:Core/Src/main.c **** {
- 515:Core/Src/main.c ****   /* USER CODE BEGIN StartDisplayTask */
- 516:Core/Src/main.c ****   /* Infinite loop */
- 517:Core/Src/main.c ****   for(;;)
- 518:Core/Src/main.c ****   {
- 519:Core/Src/main.c **** 
- 520:Core/Src/main.c ****     osDelay(100);
- 521:Core/Src/main.c ****   }
- 522:Core/Src/main.c ****   /* USER CODE END StartDisplayTask */
- 523:Core/Src/main.c **** }
- 524:Core/Src/main.c **** 
- 525:Core/Src/main.c **** /* msTickCallback function */
- 526:Core/Src/main.c **** void msTickCallback(void const * argument)
- 527:Core/Src/main.c **** {
-  30              		.loc 1 527 1 view -0
+ 506:Core/Src/main.c ****   }
+ 507:Core/Src/main.c ****   /* USER CODE END StartLoraRXTask */
+ 508:Core/Src/main.c **** }
+ 509:Core/Src/main.c **** 
+ 510:Core/Src/main.c **** /* USER CODE BEGIN Header_StartDisplayTask */
+ 511:Core/Src/main.c **** /**
+ 512:Core/Src/main.c **** * @brief Function implementing the displayTask thread.
+ 513:Core/Src/main.c **** * @param argument: Not used
+ 514:Core/Src/main.c **** * @retval None
+ 515:Core/Src/main.c **** */
+ 516:Core/Src/main.c **** /* USER CODE END Header_StartDisplayTask */
+ 517:Core/Src/main.c **** void StartDisplayTask(void const * argument)
+ 518:Core/Src/main.c **** {
+ 519:Core/Src/main.c ****   /* USER CODE BEGIN StartDisplayTask */
+ 520:Core/Src/main.c ****   /* Infinite loop */
+ 521:Core/Src/main.c ****   for(;;)
+ 522:Core/Src/main.c ****   {
+ 523:Core/Src/main.c **** 
+ 524:Core/Src/main.c ****     osDelay(100);
+ 525:Core/Src/main.c ****   }
+ 526:Core/Src/main.c ****   /* USER CODE END StartDisplayTask */
+ 527:Core/Src/main.c **** }
+ 528:Core/Src/main.c **** 
+ 529:Core/Src/main.c **** /* msTickCallback function */
+ 530:Core/Src/main.c **** void msTickCallback(void const * argument)
+ 531:Core/Src/main.c **** {
+  30              		.loc 1 531 1 view -0
   31              		.cfi_startproc
   32              		@ args = 0, pretend = 0, frame = 0
   33              		@ frame_needed = 0, uses_anonymous_args = 0
   34              		@ link register save eliminated.
- 528:Core/Src/main.c ****   /* USER CODE BEGIN msTickCallback */
- 529:Core/Src/main.c ****     if(red_flag == 1)
-  35              		.loc 1 529 5 view .LVU1
-  36              		.loc 1 529 17 is_stmt 0 view .LVU2
+ 532:Core/Src/main.c ****   /* USER CODE BEGIN msTickCallback */
+ 533:Core/Src/main.c ****     if(red_flag == 1)
+  35              		.loc 1 533 5 view .LVU1
+  36              		.loc 1 533 17 is_stmt 0 view .LVU2
   37 0000 154B     		ldr	r3, .L6
   38 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  39              		.loc 1 529 7 view .LVU3
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 11
+
+
+  39              		.loc 1 533 7 view .LVU3
   40 0004 012B     		cmp	r3, #1
   41 0006 04D0     		beq	.L4
   42              	.L2:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 11
-
-
- 530:Core/Src/main.c ****     {
- 531:Core/Src/main.c ****       red_counter += 10;
- 532:Core/Src/main.c ****       if(red_counter >= 10000)
- 533:Core/Src/main.c ****       {
- 534:Core/Src/main.c ****         red_flag = 0;
- 535:Core/Src/main.c ****         blue_flag = 0;
- 536:Core/Src/main.c ****         gameState = REDWINS;
- 537:Core/Src/main.c ****       }
- 538:Core/Src/main.c ****     }
- 539:Core/Src/main.c **** 
- 540:Core/Src/main.c ****     if(blue_flag == 1)
-  43              		.loc 1 540 5 is_stmt 1 view .LVU4
-  44              		.loc 1 540 18 is_stmt 0 view .LVU5
+ 534:Core/Src/main.c ****     {
+ 535:Core/Src/main.c ****       red_counter += 10;
+ 536:Core/Src/main.c ****       if(red_counter >= 10000)
+ 537:Core/Src/main.c ****       {
+ 538:Core/Src/main.c ****         red_flag = 0;
+ 539:Core/Src/main.c ****         blue_flag = 0;
+ 540:Core/Src/main.c ****         gameState = REDWINS;
+ 541:Core/Src/main.c ****       }
+ 542:Core/Src/main.c ****     }
+ 543:Core/Src/main.c **** 
+ 544:Core/Src/main.c ****     if(blue_flag == 1)
+  43              		.loc 1 544 5 is_stmt 1 view .LVU4
+  44              		.loc 1 544 18 is_stmt 0 view .LVU5
   45 0008 144B     		ldr	r3, .L6+4
   46 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  47              		.loc 1 540 7 view .LVU6
+  47              		.loc 1 544 7 view .LVU6
   48 000c 012B     		cmp	r3, #1
   49 000e 11D0     		beq	.L5
   50              	.L1:
- 541:Core/Src/main.c ****     {
- 542:Core/Src/main.c ****       blue_counter += 10;
- 543:Core/Src/main.c ****       if(blue_counter >= 10000)
- 544:Core/Src/main.c ****       { 
- 545:Core/Src/main.c ****         red_flag = 0;
- 546:Core/Src/main.c ****         blue_flag = 0;
- 547:Core/Src/main.c ****         gameState = BLUEWINS;
- 548:Core/Src/main.c ****       }
- 549:Core/Src/main.c ****     }
- 550:Core/Src/main.c ****   /* USER CODE END msTickCallback */
- 551:Core/Src/main.c **** }
-  51              		.loc 1 551 1 view .LVU7
+ 545:Core/Src/main.c ****     {
+ 546:Core/Src/main.c ****       blue_counter += 10;
+ 547:Core/Src/main.c ****       if(blue_counter >= 10000)
+ 548:Core/Src/main.c ****       { 
+ 549:Core/Src/main.c ****         red_flag = 0;
+ 550:Core/Src/main.c ****         blue_flag = 0;
+ 551:Core/Src/main.c ****         gameState = BLUEWINS;
+ 552:Core/Src/main.c ****       }
+ 553:Core/Src/main.c ****     }
+ 554:Core/Src/main.c ****   /* USER CODE END msTickCallback */
+ 555:Core/Src/main.c **** }
+  51              		.loc 1 555 1 view .LVU7
   52 0010 7047     		bx	lr
   53              	.L4:
- 531:Core/Src/main.c ****       if(red_counter >= 10000)
-  54              		.loc 1 531 7 is_stmt 1 view .LVU8
- 531:Core/Src/main.c ****       if(red_counter >= 10000)
-  55              		.loc 1 531 19 is_stmt 0 view .LVU9
+ 535:Core/Src/main.c ****       if(red_counter >= 10000)
+  54              		.loc 1 535 7 is_stmt 1 view .LVU8
+ 535:Core/Src/main.c ****       if(red_counter >= 10000)
+  55              		.loc 1 535 19 is_stmt 0 view .LVU9
   56 0012 134A     		ldr	r2, .L6+8
   57 0014 1368     		ldr	r3, [r2]
   58 0016 0A33     		adds	r3, r3, #10
   59 0018 1360     		str	r3, [r2]
- 532:Core/Src/main.c ****       {
-  60              		.loc 1 532 7 is_stmt 1 view .LVU10
- 532:Core/Src/main.c ****       {
-  61              		.loc 1 532 9 is_stmt 0 view .LVU11
+ 536:Core/Src/main.c ****       {
+  60              		.loc 1 536 7 is_stmt 1 view .LVU10
+ 536:Core/Src/main.c ****       {
+  61              		.loc 1 536 9 is_stmt 0 view .LVU11
   62 001a 42F20F72 		movw	r2, #9999
   63 001e 9342     		cmp	r3, r2
   64 0020 F2D9     		bls	.L2
- 534:Core/Src/main.c ****         blue_flag = 0;
-  65              		.loc 1 534 9 is_stmt 1 view .LVU12
- 534:Core/Src/main.c ****         blue_flag = 0;
-  66              		.loc 1 534 18 is_stmt 0 view .LVU13
+ 538:Core/Src/main.c ****         blue_flag = 0;
+  65              		.loc 1 538 9 is_stmt 1 view .LVU12
+ 538:Core/Src/main.c ****         blue_flag = 0;
+  66              		.loc 1 538 18 is_stmt 0 view .LVU13
   67 0022 0023     		movs	r3, #0
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 12
+
+
   68 0024 0C4A     		ldr	r2, .L6
   69 0026 1370     		strb	r3, [r2]
- 535:Core/Src/main.c ****         gameState = REDWINS;
-  70              		.loc 1 535 9 is_stmt 1 view .LVU14
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 12
-
-
- 535:Core/Src/main.c ****         gameState = REDWINS;
-  71              		.loc 1 535 19 is_stmt 0 view .LVU15
+ 539:Core/Src/main.c ****         gameState = REDWINS;
+  70              		.loc 1 539 9 is_stmt 1 view .LVU14
+ 539:Core/Src/main.c ****         gameState = REDWINS;
+  71              		.loc 1 539 19 is_stmt 0 view .LVU15
   72 0028 0C4A     		ldr	r2, .L6+4
   73 002a 1370     		strb	r3, [r2]
- 536:Core/Src/main.c ****       }
-  74              		.loc 1 536 9 is_stmt 1 view .LVU16
- 536:Core/Src/main.c ****       }
-  75              		.loc 1 536 19 is_stmt 0 view .LVU17
+ 540:Core/Src/main.c ****       }
+  74              		.loc 1 540 9 is_stmt 1 view .LVU16
+ 540:Core/Src/main.c ****       }
+  75              		.loc 1 540 19 is_stmt 0 view .LVU17
   76 002c 0D4B     		ldr	r3, .L6+12
   77 002e 0722     		movs	r2, #7
   78 0030 1A70     		strb	r2, [r3]
   79 0032 E9E7     		b	.L2
   80              	.L5:
- 542:Core/Src/main.c ****       if(blue_counter >= 10000)
-  81              		.loc 1 542 7 is_stmt 1 view .LVU18
- 542:Core/Src/main.c ****       if(blue_counter >= 10000)
-  82              		.loc 1 542 20 is_stmt 0 view .LVU19
+ 546:Core/Src/main.c ****       if(blue_counter >= 10000)
+  81              		.loc 1 546 7 is_stmt 1 view .LVU18
+ 546:Core/Src/main.c ****       if(blue_counter >= 10000)
+  82              		.loc 1 546 20 is_stmt 0 view .LVU19
   83 0034 0C4A     		ldr	r2, .L6+16
   84 0036 1368     		ldr	r3, [r2]
   85 0038 0A33     		adds	r3, r3, #10
   86 003a 1360     		str	r3, [r2]
- 543:Core/Src/main.c ****       { 
-  87              		.loc 1 543 7 is_stmt 1 view .LVU20
- 543:Core/Src/main.c ****       { 
-  88              		.loc 1 543 9 is_stmt 0 view .LVU21
+ 547:Core/Src/main.c ****       { 
+  87              		.loc 1 547 7 is_stmt 1 view .LVU20
+ 547:Core/Src/main.c ****       { 
+  88              		.loc 1 547 9 is_stmt 0 view .LVU21
   89 003c 42F20F72 		movw	r2, #9999
   90 0040 9342     		cmp	r3, r2
   91 0042 E5D9     		bls	.L1
- 545:Core/Src/main.c ****         blue_flag = 0;
-  92              		.loc 1 545 9 is_stmt 1 view .LVU22
- 545:Core/Src/main.c ****         blue_flag = 0;
-  93              		.loc 1 545 18 is_stmt 0 view .LVU23
+ 549:Core/Src/main.c ****         blue_flag = 0;
+  92              		.loc 1 549 9 is_stmt 1 view .LVU22
+ 549:Core/Src/main.c ****         blue_flag = 0;
+  93              		.loc 1 549 18 is_stmt 0 view .LVU23
   94 0044 0023     		movs	r3, #0
   95 0046 044A     		ldr	r2, .L6
   96 0048 1370     		strb	r3, [r2]
- 546:Core/Src/main.c ****         gameState = BLUEWINS;
-  97              		.loc 1 546 9 is_stmt 1 view .LVU24
- 546:Core/Src/main.c ****         gameState = BLUEWINS;
-  98              		.loc 1 546 19 is_stmt 0 view .LVU25
+ 550:Core/Src/main.c ****         gameState = BLUEWINS;
+  97              		.loc 1 550 9 is_stmt 1 view .LVU24
+ 550:Core/Src/main.c ****         gameState = BLUEWINS;
+  98              		.loc 1 550 19 is_stmt 0 view .LVU25
   99 004a 044A     		ldr	r2, .L6+4
  100 004c 1370     		strb	r3, [r2]
- 547:Core/Src/main.c ****       }
- 101              		.loc 1 547 9 is_stmt 1 view .LVU26
- 547:Core/Src/main.c ****       }
- 102              		.loc 1 547 19 is_stmt 0 view .LVU27
+ 551:Core/Src/main.c ****       }
+ 101              		.loc 1 551 9 is_stmt 1 view .LVU26
+ 551:Core/Src/main.c ****       }
+ 102              		.loc 1 551 19 is_stmt 0 view .LVU27
  103 004e 054B     		ldr	r3, .L6+12
  104 0050 0622     		movs	r2, #6
  105 0052 1A70     		strb	r2, [r3]
- 106              		.loc 1 551 1 view .LVU28
+ 106              		.loc 1 555 1 view .LVU28
  107 0054 DCE7     		b	.L1
  108              	.L7:
  109 0056 00BF     		.align	2
  110              	.L6:
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 13
+
+
  111 0058 00000000 		.word	red_flag
  112 005c 00000000 		.word	blue_flag
  113 0060 00000000 		.word	red_counter
  114 0064 00000000 		.word	gameState
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 13
-
-
  115 0068 00000000 		.word	blue_counter
  116              		.cfi_endproc
  117              	.LFE147:
@@ -733,25 +737,25 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  126              	debounceCallback:
  127              	.LVL1:
  128              	.LFB148:
- 552:Core/Src/main.c **** 
- 553:Core/Src/main.c **** /* debounceCallback function */
- 554:Core/Src/main.c **** void debounceCallback(void const * argument)
- 555:Core/Src/main.c **** {
- 129              		.loc 1 555 1 is_stmt 1 view -0
+ 556:Core/Src/main.c **** 
+ 557:Core/Src/main.c **** /* debounceCallback function */
+ 558:Core/Src/main.c **** void debounceCallback(void const * argument)
+ 559:Core/Src/main.c **** {
+ 129              		.loc 1 559 1 is_stmt 1 view -0
  130              		.cfi_startproc
  131              		@ args = 0, pretend = 0, frame = 0
  132              		@ frame_needed = 0, uses_anonymous_args = 0
  133              		@ link register save eliminated.
- 556:Core/Src/main.c ****   /* USER CODE BEGIN debounceCallback */
- 557:Core/Src/main.c ****   debouncing_Flag = 0;
- 134              		.loc 1 557 3 view .LVU30
- 135              		.loc 1 557 19 is_stmt 0 view .LVU31
+ 560:Core/Src/main.c ****   /* USER CODE BEGIN debounceCallback */
+ 561:Core/Src/main.c ****   debouncing_Flag = 0;
+ 134              		.loc 1 561 3 view .LVU30
+ 135              		.loc 1 561 19 is_stmt 0 view .LVU31
  136 0000 014B     		ldr	r3, .L9
  137 0002 0022     		movs	r2, #0
  138 0004 1A70     		strb	r2, [r3]
- 558:Core/Src/main.c ****   /* USER CODE END debounceCallback */
- 559:Core/Src/main.c **** }
- 139              		.loc 1 559 1 view .LVU32
+ 562:Core/Src/main.c ****   /* USER CODE END debounceCallback */
+ 563:Core/Src/main.c **** }
+ 139              		.loc 1 563 1 view .LVU32
  140 0006 7047     		bx	lr
  141              	.L10:
  142              		.align	2
@@ -768,23 +772,23 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  155              	blinkTimerCallback:
  156              	.LVL2:
  157              	.LFB149:
- 560:Core/Src/main.c **** 
- 561:Core/Src/main.c **** /* blinkTimerCallback function */
- 562:Core/Src/main.c **** void blinkTimerCallback(void const * argument)
- 563:Core/Src/main.c **** {
- 158              		.loc 1 563 1 is_stmt 1 view -0
+ 564:Core/Src/main.c **** 
+ 565:Core/Src/main.c **** /* blinkTimerCallback function */
+ 566:Core/Src/main.c **** void blinkTimerCallback(void const * argument)
+ 567:Core/Src/main.c **** {
+ 158              		.loc 1 567 1 is_stmt 1 view -0
  159              		.cfi_startproc
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 14
+
+
  160              		@ args = 0, pretend = 0, frame = 0
  161              		@ frame_needed = 0, uses_anonymous_args = 0
  162              		@ link register save eliminated.
- 564:Core/Src/main.c ****   /* USER CODE BEGIN blinkTimerCallback */
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 14
-
-
- 565:Core/Src/main.c **** 
- 566:Core/Src/main.c ****   /* USER CODE END blinkTimerCallback */
- 567:Core/Src/main.c **** }
- 163              		.loc 1 567 1 view .LVU34
+ 568:Core/Src/main.c ****   /* USER CODE BEGIN blinkTimerCallback */
+ 569:Core/Src/main.c **** 
+ 570:Core/Src/main.c ****   /* USER CODE END blinkTimerCallback */
+ 571:Core/Src/main.c **** }
+ 163              		.loc 1 571 1 view .LVU34
  164 0000 7047     		bx	lr
  165              		.cfi_endproc
  166              	.LFE149:
@@ -834,13 +838,13 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  206 0016 1A6B     		ldr	r2, [r3, #48]
  207 0018 42F08002 		orr	r2, r2, #128
  208 001c 1A63     		str	r2, [r3, #48]
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 15
+
+
  350:Core/Src/main.c ****   __HAL_RCC_GPIOA_CLK_ENABLE();
  209              		.loc 1 350 3 view .LVU41
  210 001e 1A6B     		ldr	r2, [r3, #48]
  211 0020 02F08002 		and	r2, r2, #128
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 15
-
-
  212 0024 0092     		str	r2, [sp]
  350:Core/Src/main.c ****   __HAL_RCC_GPIOA_CLK_ENABLE();
  213              		.loc 1 350 3 view .LVU42
@@ -894,13 +898,13 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  248              		.loc 1 352 3 view .LVU55
  355:Core/Src/main.c **** 
  249              		.loc 1 355 3 view .LVU56
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 16
+
+
  250 0050 DFF88880 		ldr	r8, .L14+8
  251 0054 0122     		movs	r2, #1
  252 0056 0621     		movs	r1, #6
  253 0058 4046     		mov	r0, r8
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 16
-
-
  254 005a FFF7FEFF 		bl	HAL_GPIO_WritePin
  255              	.LVL3:
  358:Core/Src/main.c **** 
@@ -954,13 +958,13 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  289              		.loc 1 370 3 is_stmt 1 view .LVU71
  370:Core/Src/main.c ****   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
  290              		.loc 1 370 25 is_stmt 0 view .LVU72
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 17
+
+
  291 0088 0694     		str	r4, [sp, #24]
  371:Core/Src/main.c **** 
  292              		.loc 1 371 3 is_stmt 1 view .LVU73
  293 008a 03A9     		add	r1, sp, #12
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 17
-
-
  294 008c 4046     		mov	r0, r8
  295 008e FFF7FEFF 		bl	HAL_GPIO_Init
  296              	.LVL6:
@@ -1014,13 +1018,13 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  328 00b6 3846     		mov	r0, r7
  329 00b8 FFF7FEFF 		bl	HAL_GPIO_Init
  330              	.LVL8:
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 18
+
+
  387:Core/Src/main.c ****   HAL_NVIC_EnableIRQ(EXTI0_IRQn);
  331              		.loc 1 387 3 view .LVU90
  332 00bc 2246     		mov	r2, r4
  333 00be 0521     		movs	r1, #5
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 18
-
-
  334 00c0 3046     		mov	r0, r6
  335 00c2 FFF7FEFF 		bl	HAL_NVIC_SetPriority
  336              	.LVL9:
@@ -1074,13 +1078,13 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  324:Core/Src/main.c ****   __HAL_RCC_DMA2_CLK_ENABLE();
  381              		.loc 1 324 3 view .LVU96
  382 0008 164B     		ldr	r3, .L18
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 19
+
+
  383 000a 1A6B     		ldr	r2, [r3, #48]
  384 000c 42F40012 		orr	r2, r2, #2097152
  385 0010 1A63     		str	r2, [r3, #48]
  324:Core/Src/main.c ****   __HAL_RCC_DMA2_CLK_ENABLE();
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 19
-
-
  386              		.loc 1 324 3 view .LVU97
  387 0012 1A6B     		ldr	r2, [r3, #48]
  388 0014 02F40012 		and	r2, r2, #2097152
@@ -1134,13 +1138,13 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  425              	.LVL13:
  333:Core/Src/main.c ****   /* DMA2_Stream3_IRQn interrupt configuration */
  426              		.loc 1 333 3 view .LVU109
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 20
+
+
  427 004a 3820     		movs	r0, #56
  428 004c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
  429              	.LVL14:
  335:Core/Src/main.c ****   HAL_NVIC_EnableIRQ(DMA2_Stream3_IRQn);
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 20
-
-
  430              		.loc 1 335 3 view .LVU110
  431 0050 2246     		mov	r2, r4
  432 0052 0521     		movs	r1, #5
@@ -1173,15 +1177,15 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  458              		.thumb_func
  460              	StartDisplayTask:
  461              	.LFB146:
- 514:Core/Src/main.c ****   /* USER CODE BEGIN StartDisplayTask */
- 462              		.loc 1 514 1 is_stmt 1 view -0
+ 518:Core/Src/main.c ****   /* USER CODE BEGIN StartDisplayTask */
+ 462              		.loc 1 518 1 is_stmt 1 view -0
  463              		.cfi_startproc
  464              		@ Volatile: function does not return.
  465              		@ args = 0, pretend = 0, frame = 0
  466              		@ frame_needed = 0, uses_anonymous_args = 0
  467              	.LVL17:
- 514:Core/Src/main.c ****   /* USER CODE BEGIN StartDisplayTask */
- 468              		.loc 1 514 1 is_stmt 0 view .LVU114
+ 518:Core/Src/main.c ****   /* USER CODE BEGIN StartDisplayTask */
+ 468              		.loc 1 518 1 is_stmt 0 view .LVU114
  469 0000 08B5     		push	{r3, lr}
  470              	.LCFI6:
  471              		.cfi_def_cfa_offset 8
@@ -1189,39 +1193,39 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  473              		.cfi_offset 14, -4
  474              	.LVL18:
  475              	.L21:
- 517:Core/Src/main.c ****   {
- 476              		.loc 1 517 3 is_stmt 1 discriminator 1 view .LVU115
- 520:Core/Src/main.c ****   }
- 477              		.loc 1 520 5 discriminator 1 view .LVU116
+ 521:Core/Src/main.c ****   {
+ 476              		.loc 1 521 3 is_stmt 1 discriminator 1 view .LVU115
+ 524:Core/Src/main.c ****   }
+ 477              		.loc 1 524 5 discriminator 1 view .LVU116
  478 0002 6420     		movs	r0, #100
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 21
+
+
  479 0004 FFF7FEFF 		bl	osDelay
  480              	.LVL19:
- 517:Core/Src/main.c ****   {
- 481              		.loc 1 517 3 discriminator 1 view .LVU117
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 21
-
-
+ 521:Core/Src/main.c ****   {
+ 481              		.loc 1 521 3 discriminator 1 view .LVU117
  482 0008 FBE7     		b	.L21
  483              		.cfi_endproc
  484              	.LFE146:
  486              		.section	.rodata.StartDefaultTask.str1.4,"aMS",%progbits,1
  487              		.align	2
- 488              	.LC6:
+ 488              	.LC4:
  489 0000 4A6F7368 		.ascii	"Josh wins\000"
  489      2077696E 
  489      7300
  490 000a 0000     		.align	2
- 491              	.LC8:
+ 491              	.LC5:
  492 000c 4B494E47 		.ascii	"KING\000"
  492      00
  493 0011 000000   		.align	2
- 494              	.LC9:
+ 494              	.LC6:
  495 0014 4F4600   		.ascii	"OF\000"
  496 0017 00       		.align	2
- 497              	.LC10:
+ 497              	.LC7:
  498 0018 54484500 		.ascii	"THE\000"
  499              		.align	2
- 500              	.LC11:
+ 500              	.LC8:
  501 001c 48494C4C 		.ascii	"HILL\000"
  501      00
  502              		.section	.text.StartDefaultTask,"ax",%progbits
@@ -1236,7 +1240,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  404:Core/Src/main.c ****   /* USER CODE BEGIN 5 */
  512              		.loc 1 404 1 view -0
  513              		.cfi_startproc
- 514              		@ args = 0, pretend = 0, frame = 80
+ 514              		@ args = 0, pretend = 0, frame = 48
  515              		@ frame_needed = 0, uses_anonymous_args = 0
  404:Core/Src/main.c ****   /* USER CODE BEGIN 5 */
  516              		.loc 1 404 1 is_stmt 0 view .LVU119
@@ -1245,467 +1249,439 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  519              		.cfi_def_cfa_offset 8
  520              		.cfi_offset 4, -8
  521              		.cfi_offset 14, -4
- 522 0002 94B0     		sub	sp, sp, #80
+ 522 0002 8CB0     		sub	sp, sp, #48
  523              	.LCFI8:
- 524              		.cfi_def_cfa_offset 88
- 406:Core/Src/main.c ****   //xSemaphoreTake(xloraMutex, portMAX_DELAY);
- 525              		.loc 1 406 3 is_stmt 1 view .LVU120
- 406:Core/Src/main.c ****   //xSemaphoreTake(xloraMutex, portMAX_DELAY);
- 526              		.loc 1 406 16 is_stmt 0 view .LVU121
- 527 0004 0120     		movs	r0, #1
- 528              	.LVL21:
- 406:Core/Src/main.c ****   //xSemaphoreTake(xloraMutex, portMAX_DELAY);
- 529              		.loc 1 406 16 view .LVU122
- 530 0006 FFF7FEFF 		bl	xQueueCreateMutex
- 531              	.LVL22:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 22
-
-
- 406:Core/Src/main.c ****   //xSemaphoreTake(xloraMutex, portMAX_DELAY);
- 532              		.loc 1 406 14 view .LVU123
- 533 000a 544B     		ldr	r3, .L29
- 534 000c 1860     		str	r0, [r3]
+ 524              		.cfi_def_cfa_offset 56
  410:Core/Src/main.c **** 
- 535              		.loc 1 410 3 is_stmt 1 view .LVU124
+ 525              		.loc 1 410 3 is_stmt 1 view .LVU120
  410:Core/Src/main.c **** 
- 536              		.loc 1 410 12 is_stmt 0 view .LVU125
- 537 000e 544C     		ldr	r4, .L29+4
- 538 0010 6846     		mov	r0, sp
- 539 0012 FFF7FEFF 		bl	newLoRa
- 540              	.LVL23:
- 541 0016 A646     		mov	lr, r4
- 542 0018 EC46     		mov	ip, sp
- 543 001a BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
- 544 001e AEE80F00 		stmia	lr!, {r0, r1, r2, r3}
- 545 0022 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
- 546 0026 AEE80F00 		stmia	lr!, {r0, r1, r2, r3}
- 547 002a 9CE80700 		ldm	ip, {r0, r1, r2}
- 548 002e 8EE80700 		stm	lr, {r0, r1, r2}
- 413:Core/Src/main.c ****     myLoRa.CS_pin          = LORA_CS_Pin;
- 549              		.loc 1 413 5 is_stmt 1 view .LVU126
- 413:Core/Src/main.c ****     myLoRa.CS_pin          = LORA_CS_Pin;
- 550              		.loc 1 413 28 is_stmt 0 view .LVU127
- 551 0032 4C4B     		ldr	r3, .L29+8
- 552 0034 2360     		str	r3, [r4]
- 414:Core/Src/main.c ****     myLoRa.reset_port      = LORA_RST_GPIO_Port;
- 553              		.loc 1 414 5 is_stmt 1 view .LVU128
- 414:Core/Src/main.c ****     myLoRa.reset_port      = LORA_RST_GPIO_Port;
- 554              		.loc 1 414 28 is_stmt 0 view .LVU129
- 555 0036 4FF48062 		mov	r2, #1024
- 556 003a A280     		strh	r2, [r4, #4]	@ movhi
- 415:Core/Src/main.c ****     myLoRa.reset_pin       = LORA_RST_Pin;
- 557              		.loc 1 415 5 is_stmt 1 view .LVU130
- 415:Core/Src/main.c ****     myLoRa.reset_pin       = LORA_RST_Pin;
- 558              		.loc 1 415 28 is_stmt 0 view .LVU131
- 559 003c A360     		str	r3, [r4, #8]
- 416:Core/Src/main.c ****     myLoRa.DIO0_port       = LORA_EXTI_GPIO_Port;
- 560              		.loc 1 416 5 is_stmt 1 view .LVU132
- 416:Core/Src/main.c ****     myLoRa.DIO0_port       = LORA_EXTI_GPIO_Port;
- 561              		.loc 1 416 28 is_stmt 0 view .LVU133
- 562 003e 4FF40072 		mov	r2, #512
- 563 0042 A281     		strh	r2, [r4, #12]	@ movhi
- 417:Core/Src/main.c ****     myLoRa.DIO0_pin        = LORA_EXTI_Pin;
- 564              		.loc 1 417 5 is_stmt 1 view .LVU134
- 417:Core/Src/main.c ****     myLoRa.DIO0_pin        = LORA_EXTI_Pin;
- 565              		.loc 1 417 28 is_stmt 0 view .LVU135
- 566 0044 2361     		str	r3, [r4, #16]
- 418:Core/Src/main.c ****     myLoRa.hSPIx           = &hspi1;
- 567              		.loc 1 418 5 is_stmt 1 view .LVU136
- 418:Core/Src/main.c ****     myLoRa.hSPIx           = &hspi1;
- 568              		.loc 1 418 28 is_stmt 0 view .LVU137
- 569 0046 4FF48073 		mov	r3, #256
- 570 004a A382     		strh	r3, [r4, #20]	@ movhi
- 419:Core/Src/main.c **** 
- 571              		.loc 1 419 5 is_stmt 1 view .LVU138
- 419:Core/Src/main.c **** 
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 23
+ 526              		.loc 1 410 12 is_stmt 0 view .LVU121
+ 527 0004 4C4C     		ldr	r4, .L29
+ 528 0006 6846     		mov	r0, sp
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 22
 
 
- 572              		.loc 1 419 28 is_stmt 0 view .LVU139
- 573 004c 464B     		ldr	r3, .L29+12
- 574 004e A361     		str	r3, [r4, #24]
+ 529              	.LVL21:
+ 410:Core/Src/main.c **** 
+ 530              		.loc 1 410 12 view .LVU122
+ 531 0008 FFF7FEFF 		bl	newLoRa
+ 532              	.LVL22:
+ 533 000c A646     		mov	lr, r4
+ 534 000e EC46     		mov	ip, sp
+ 535 0010 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 536 0014 AEE80F00 		stmia	lr!, {r0, r1, r2, r3}
+ 537 0018 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 538 001c AEE80F00 		stmia	lr!, {r0, r1, r2, r3}
+ 539 0020 9CE80700 		ldm	ip, {r0, r1, r2}
+ 540 0024 8EE80700 		stm	lr, {r0, r1, r2}
+ 413:Core/Src/main.c ****     myLoRa.CS_pin          = LORA_CS_Pin;
+ 541              		.loc 1 413 5 is_stmt 1 view .LVU123
+ 413:Core/Src/main.c ****     myLoRa.CS_pin          = LORA_CS_Pin;
+ 542              		.loc 1 413 28 is_stmt 0 view .LVU124
+ 543 0028 444B     		ldr	r3, .L29+4
+ 544 002a 2360     		str	r3, [r4]
+ 414:Core/Src/main.c ****     myLoRa.reset_port      = LORA_RST_GPIO_Port;
+ 545              		.loc 1 414 5 is_stmt 1 view .LVU125
+ 414:Core/Src/main.c ****     myLoRa.reset_port      = LORA_RST_GPIO_Port;
+ 546              		.loc 1 414 28 is_stmt 0 view .LVU126
+ 547 002c 4FF48062 		mov	r2, #1024
+ 548 0030 A280     		strh	r2, [r4, #4]	@ movhi
+ 415:Core/Src/main.c ****     myLoRa.reset_pin       = LORA_RST_Pin;
+ 549              		.loc 1 415 5 is_stmt 1 view .LVU127
+ 415:Core/Src/main.c ****     myLoRa.reset_pin       = LORA_RST_Pin;
+ 550              		.loc 1 415 28 is_stmt 0 view .LVU128
+ 551 0032 A360     		str	r3, [r4, #8]
+ 416:Core/Src/main.c ****     myLoRa.DIO0_port       = LORA_EXTI_GPIO_Port;
+ 552              		.loc 1 416 5 is_stmt 1 view .LVU129
+ 416:Core/Src/main.c ****     myLoRa.DIO0_port       = LORA_EXTI_GPIO_Port;
+ 553              		.loc 1 416 28 is_stmt 0 view .LVU130
+ 554 0034 4FF40072 		mov	r2, #512
+ 555 0038 A281     		strh	r2, [r4, #12]	@ movhi
+ 417:Core/Src/main.c ****     myLoRa.DIO0_pin        = LORA_EXTI_Pin;
+ 556              		.loc 1 417 5 is_stmt 1 view .LVU131
+ 417:Core/Src/main.c ****     myLoRa.DIO0_pin        = LORA_EXTI_Pin;
+ 557              		.loc 1 417 28 is_stmt 0 view .LVU132
+ 558 003a 2361     		str	r3, [r4, #16]
+ 418:Core/Src/main.c ****     myLoRa.hSPIx           = &hspi1;
+ 559              		.loc 1 418 5 is_stmt 1 view .LVU133
+ 418:Core/Src/main.c ****     myLoRa.hSPIx           = &hspi1;
+ 560              		.loc 1 418 28 is_stmt 0 view .LVU134
+ 561 003c 4FF48073 		mov	r3, #256
+ 562 0040 A382     		strh	r3, [r4, #20]	@ movhi
+ 419:Core/Src/main.c **** 
+ 563              		.loc 1 419 5 is_stmt 1 view .LVU135
+ 419:Core/Src/main.c **** 
+ 564              		.loc 1 419 28 is_stmt 0 view .LVU136
+ 565 0042 3F4B     		ldr	r3, .L29+8
+ 566 0044 A361     		str	r3, [r4, #24]
  422:Core/Src/main.c ****   sprintf(opcodeString,"Josh wins", 10);
- 575              		.loc 1 422 3 is_stmt 1 view .LVU140
+ 567              		.loc 1 422 3 is_stmt 1 view .LVU137
  422:Core/Src/main.c ****   sprintf(opcodeString,"Josh wins", 10);
- 576              		.loc 1 422 26 is_stmt 0 view .LVU141
- 577 0050 2046     		mov	r0, r4
- 578 0052 FFF7FEFF 		bl	LoRa_init
- 579              	.LVL24:
- 580 0056 0446     		mov	r4, r0
- 581              	.LVL25:
+ 568              		.loc 1 422 26 is_stmt 0 view .LVU138
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 23
+
+
+ 569 0046 2046     		mov	r0, r4
+ 570 0048 FFF7FEFF 		bl	LoRa_init
+ 571              	.LVL23:
+ 572 004c 0446     		mov	r4, r0
+ 573              	.LVL24:
  423:Core/Src/main.c ****   if(LoRa_Status == LORA_OK)
- 582              		.loc 1 423 3 is_stmt 1 view .LVU142
- 583 0058 0A22     		movs	r2, #10
- 584 005a 4449     		ldr	r1, .L29+16
- 585 005c 4448     		ldr	r0, .L29+20
- 586 005e FFF7FEFF 		bl	sprintf
- 587              	.LVL26:
+ 574              		.loc 1 423 3 is_stmt 1 view .LVU139
+ 575 004e 0A22     		movs	r2, #10
+ 576 0050 3C49     		ldr	r1, .L29+12
+ 577 0052 3D48     		ldr	r0, .L29+16
+ 578 0054 FFF7FEFF 		bl	sprintf
+ 579              	.LVL25:
  424:Core/Src/main.c ****   {
- 588              		.loc 1 424 3 view .LVU143
+ 580              		.loc 1 424 3 view .LVU140
  424:Core/Src/main.c ****   {
- 589              		.loc 1 424 5 is_stmt 0 view .LVU144
- 590 0062 C82C     		cmp	r4, #200
- 591 0064 73D0     		beq	.L28
+ 581              		.loc 1 424 5 is_stmt 0 view .LVU141
+ 582 0058 C82C     		cmp	r4, #200
+ 583 005a 65D0     		beq	.L28
  430:Core/Src/main.c ****   }
- 592              		.loc 1 430 5 is_stmt 1 view .LVU145
+ 584              		.loc 1 430 5 is_stmt 1 view .LVU142
  430:Core/Src/main.c ****   }
- 593              		.loc 1 430 16 is_stmt 0 view .LVU146
- 594 0066 434B     		ldr	r3, .L29+24
- 595 0068 0922     		movs	r2, #9
- 596 006a 1A80     		strh	r2, [r3]	@ movhi
- 597              	.L25:
+ 585              		.loc 1 430 16 is_stmt 0 view .LVU143
+ 586 005c 3B4B     		ldr	r3, .L29+20
+ 587 005e 0922     		movs	r2, #9
+ 588 0060 1A80     		strh	r2, [r3]	@ movhi
+ 589              	.L25:
  433:Core/Src/main.c ****   
- 598              		.loc 1 433 3 is_stmt 1 view .LVU147
- 599 006c 3C48     		ldr	r0, .L29+4
- 600 006e FFF7FEFF 		bl	LoRa_startReceiving
- 601              	.LVL27:
- 438:Core/Src/main.c ****   loraRXTaskHandle = osThreadCreate(osThread(loraRXTask), NULL);
- 602              		.loc 1 438 3 view .LVU148
- 603 0072 0DF1340C 		add	ip, sp, #52
- 604 0076 404C     		ldr	r4, .L29+28
- 605              	.LVL28:
- 438:Core/Src/main.c ****   loraRXTaskHandle = osThreadCreate(osThread(loraRXTask), NULL);
- 606              		.loc 1 438 3 is_stmt 0 view .LVU149
- 607 0078 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
- 608 007a ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
- 609 007e 94E80700 		ldm	r4, {r0, r1, r2}
- 610 0082 8CE80700 		stm	ip, {r0, r1, r2}
- 439:Core/Src/main.c **** 
- 611              		.loc 1 439 3 is_stmt 1 view .LVU150
- 439:Core/Src/main.c **** 
- 612              		.loc 1 439 22 is_stmt 0 view .LVU151
- 613 0086 0021     		movs	r1, #0
- 614 0088 0DA8     		add	r0, sp, #52
- 615 008a FFF7FEFF 		bl	osThreadCreate
- 616              	.LVL29:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 24
-
-
- 439:Core/Src/main.c **** 
- 617              		.loc 1 439 20 view .LVU152
- 618 008e 3B4B     		ldr	r3, .L29+32
- 619 0090 1860     		str	r0, [r3]
+ 590              		.loc 1 433 3 is_stmt 1 view .LVU144
+ 591 0062 3548     		ldr	r0, .L29
+ 592 0064 FFF7FEFF 		bl	LoRa_startReceiving
+ 593              	.LVL26:
+ 438:Core/Src/main.c ****   //loraRXTaskHandle = osThreadCreate(osThread(loraRXTask), NULL);
+ 594              		.loc 1 438 3 view .LVU145
  441:Core/Src/main.c ****   ssd1306_Init();
- 620              		.loc 1 441 3 is_stmt 1 view .LVU153
- 621 0092 0122     		movs	r2, #1
- 622 0094 0221     		movs	r1, #2
- 623 0096 3A48     		ldr	r0, .L29+36
- 624 0098 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 625              	.LVL30:
+ 595              		.loc 1 441 3 view .LVU146
+ 596 0068 0122     		movs	r2, #1
+ 597 006a 0221     		movs	r1, #2
+ 598 006c 3848     		ldr	r0, .L29+24
+ 599 006e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 600              	.LVL27:
  442:Core/Src/main.c ****   ssd1306_SetCursor(0,0);
- 626              		.loc 1 442 3 view .LVU154
- 627 009c FFF7FEFF 		bl	ssd1306_Init
- 628              	.LVL31:
+ 601              		.loc 1 442 3 view .LVU147
+ 602 0072 FFF7FEFF 		bl	ssd1306_Init
+ 603              	.LVL28:
  443:Core/Src/main.c ****   ssd1306_WriteString("KING",Font_16x24,1);
- 629              		.loc 1 443 3 view .LVU155
- 630 00a0 0021     		movs	r1, #0
- 631 00a2 0846     		mov	r0, r1
- 632 00a4 FFF7FEFF 		bl	ssd1306_SetCursor
- 633              	.LVL32:
+ 604              		.loc 1 443 3 view .LVU148
+ 605 0076 0021     		movs	r1, #0
+ 606 0078 0846     		mov	r0, r1
+ 607 007a FFF7FEFF 		bl	ssd1306_SetCursor
+ 608              	.LVL29:
  444:Core/Src/main.c ****   ssd1306_UpdateScreen();
- 634              		.loc 1 444 3 view .LVU156
- 635 00a8 364C     		ldr	r4, .L29+40
- 636 00aa 0123     		movs	r3, #1
- 637 00ac 94E80600 		ldm	r4, {r1, r2}
- 638 00b0 3548     		ldr	r0, .L29+44
- 639 00b2 FFF7FEFF 		bl	ssd1306_WriteString
- 640              	.LVL33:
+ 609              		.loc 1 444 3 view .LVU149
+ 610 007e 354C     		ldr	r4, .L29+28
+ 611              	.LVL30:
+ 444:Core/Src/main.c ****   ssd1306_UpdateScreen();
+ 612              		.loc 1 444 3 is_stmt 0 view .LVU150
+ 613 0080 0123     		movs	r3, #1
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 24
+
+
+ 614 0082 94E80600 		ldm	r4, {r1, r2}
+ 615 0086 3448     		ldr	r0, .L29+32
+ 616 0088 FFF7FEFF 		bl	ssd1306_WriteString
+ 617              	.LVL31:
  445:Core/Src/main.c ****   osDelay(500);
- 641              		.loc 1 445 3 view .LVU157
- 642 00b6 FFF7FEFF 		bl	ssd1306_UpdateScreen
- 643              	.LVL34:
+ 618              		.loc 1 445 3 is_stmt 1 view .LVU151
+ 619 008c FFF7FEFF 		bl	ssd1306_UpdateScreen
+ 620              	.LVL32:
  446:Core/Src/main.c ****   ssd1306_Fill(0);
- 644              		.loc 1 446 3 view .LVU158
- 645 00ba 4FF4FA70 		mov	r0, #500
- 646 00be FFF7FEFF 		bl	osDelay
- 647              	.LVL35:
+ 621              		.loc 1 446 3 view .LVU152
+ 622 0090 4FF4FA70 		mov	r0, #500
+ 623 0094 FFF7FEFF 		bl	osDelay
+ 624              	.LVL33:
  447:Core/Src/main.c ****   ssd1306_SetCursor(64,0);
- 648              		.loc 1 447 3 view .LVU159
- 649 00c2 0020     		movs	r0, #0
- 650 00c4 FFF7FEFF 		bl	ssd1306_Fill
- 651              	.LVL36:
+ 625              		.loc 1 447 3 view .LVU153
+ 626 0098 0020     		movs	r0, #0
+ 627 009a FFF7FEFF 		bl	ssd1306_Fill
+ 628              	.LVL34:
  448:Core/Src/main.c ****   ssd1306_WriteString("OF",Font_16x24,1);
- 652              		.loc 1 448 3 view .LVU160
- 653 00c8 0021     		movs	r1, #0
- 654 00ca 4020     		movs	r0, #64
- 655 00cc FFF7FEFF 		bl	ssd1306_SetCursor
- 656              	.LVL37:
+ 629              		.loc 1 448 3 view .LVU154
+ 630 009e 0021     		movs	r1, #0
+ 631 00a0 4020     		movs	r0, #64
+ 632 00a2 FFF7FEFF 		bl	ssd1306_SetCursor
+ 633              	.LVL35:
  449:Core/Src/main.c ****   ssd1306_UpdateScreen();
- 657              		.loc 1 449 3 view .LVU161
- 658 00d0 0123     		movs	r3, #1
- 659 00d2 94E80600 		ldm	r4, {r1, r2}
- 660 00d6 2D48     		ldr	r0, .L29+48
- 661 00d8 FFF7FEFF 		bl	ssd1306_WriteString
- 662              	.LVL38:
+ 634              		.loc 1 449 3 view .LVU155
+ 635 00a6 0123     		movs	r3, #1
+ 636 00a8 94E80600 		ldm	r4, {r1, r2}
+ 637 00ac 2B48     		ldr	r0, .L29+36
+ 638 00ae FFF7FEFF 		bl	ssd1306_WriteString
+ 639              	.LVL36:
  450:Core/Src/main.c ****   osDelay(500);
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 25
-
-
- 663              		.loc 1 450 3 view .LVU162
- 664 00dc FFF7FEFF 		bl	ssd1306_UpdateScreen
- 665              	.LVL39:
+ 640              		.loc 1 450 3 view .LVU156
+ 641 00b2 FFF7FEFF 		bl	ssd1306_UpdateScreen
+ 642              	.LVL37:
  451:Core/Src/main.c ****   ssd1306_Fill(0);
- 666              		.loc 1 451 3 view .LVU163
- 667 00e0 4FF4FA70 		mov	r0, #500
- 668 00e4 FFF7FEFF 		bl	osDelay
- 669              	.LVL40:
+ 643              		.loc 1 451 3 view .LVU157
+ 644 00b6 4FF4FA70 		mov	r0, #500
+ 645 00ba FFF7FEFF 		bl	osDelay
+ 646              	.LVL38:
  452:Core/Src/main.c ****   ssd1306_SetCursor(0,8);
- 670              		.loc 1 452 3 view .LVU164
- 671 00e8 0020     		movs	r0, #0
- 672 00ea FFF7FEFF 		bl	ssd1306_Fill
- 673              	.LVL41:
+ 647              		.loc 1 452 3 view .LVU158
+ 648 00be 0020     		movs	r0, #0
+ 649 00c0 FFF7FEFF 		bl	ssd1306_Fill
+ 650              	.LVL39:
  453:Core/Src/main.c ****   ssd1306_WriteString("THE",Font_16x24,1);
- 674              		.loc 1 453 3 view .LVU165
- 675 00ee 0821     		movs	r1, #8
- 676 00f0 0020     		movs	r0, #0
- 677 00f2 FFF7FEFF 		bl	ssd1306_SetCursor
- 678              	.LVL42:
+ 651              		.loc 1 453 3 view .LVU159
+ 652 00c4 0821     		movs	r1, #8
+ 653 00c6 0020     		movs	r0, #0
+ 654 00c8 FFF7FEFF 		bl	ssd1306_SetCursor
+ 655              	.LVL40:
  454:Core/Src/main.c ****   ssd1306_UpdateScreen();
- 679              		.loc 1 454 3 view .LVU166
- 680 00f6 0123     		movs	r3, #1
- 681 00f8 94E80600 		ldm	r4, {r1, r2}
- 682 00fc 2448     		ldr	r0, .L29+52
- 683 00fe FFF7FEFF 		bl	ssd1306_WriteString
- 684              	.LVL43:
+ 656              		.loc 1 454 3 view .LVU160
+ 657 00cc 0123     		movs	r3, #1
+ 658 00ce 94E80600 		ldm	r4, {r1, r2}
+ 659 00d2 2348     		ldr	r0, .L29+40
+ 660 00d4 FFF7FEFF 		bl	ssd1306_WriteString
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 25
+
+
+ 661              	.LVL41:
  455:Core/Src/main.c ****   osDelay(500);
- 685              		.loc 1 455 3 view .LVU167
- 686 0102 FFF7FEFF 		bl	ssd1306_UpdateScreen
- 687              	.LVL44:
+ 662              		.loc 1 455 3 view .LVU161
+ 663 00d8 FFF7FEFF 		bl	ssd1306_UpdateScreen
+ 664              	.LVL42:
  456:Core/Src/main.c ****   ssd1306_Fill(0);
- 688              		.loc 1 456 3 view .LVU168
- 689 0106 4FF4FA70 		mov	r0, #500
- 690 010a FFF7FEFF 		bl	osDelay
- 691              	.LVL45:
+ 665              		.loc 1 456 3 view .LVU162
+ 666 00dc 4FF4FA70 		mov	r0, #500
+ 667 00e0 FFF7FEFF 		bl	osDelay
+ 668              	.LVL43:
  457:Core/Src/main.c ****   ssd1306_SetCursor(64,8);
- 692              		.loc 1 457 3 view .LVU169
- 693 010e 0020     		movs	r0, #0
- 694 0110 FFF7FEFF 		bl	ssd1306_Fill
- 695              	.LVL46:
+ 669              		.loc 1 457 3 view .LVU163
+ 670 00e4 0020     		movs	r0, #0
+ 671 00e6 FFF7FEFF 		bl	ssd1306_Fill
+ 672              	.LVL44:
  458:Core/Src/main.c ****   ssd1306_WriteString("HILL",Font_16x24,1);
- 696              		.loc 1 458 3 view .LVU170
- 697 0114 0821     		movs	r1, #8
- 698 0116 4020     		movs	r0, #64
- 699 0118 FFF7FEFF 		bl	ssd1306_SetCursor
- 700              	.LVL47:
+ 673              		.loc 1 458 3 view .LVU164
+ 674 00ea 0821     		movs	r1, #8
+ 675 00ec 4020     		movs	r0, #64
+ 676 00ee FFF7FEFF 		bl	ssd1306_SetCursor
+ 677              	.LVL45:
  459:Core/Src/main.c ****   ssd1306_UpdateScreen();
- 701              		.loc 1 459 3 view .LVU171
- 702 011c 0123     		movs	r3, #1
- 703 011e 94E80600 		ldm	r4, {r1, r2}
- 704 0122 1C48     		ldr	r0, .L29+56
- 705 0124 FFF7FEFF 		bl	ssd1306_WriteString
- 706              	.LVL48:
+ 678              		.loc 1 459 3 view .LVU165
+ 679 00f2 0123     		movs	r3, #1
+ 680 00f4 94E80600 		ldm	r4, {r1, r2}
+ 681 00f8 1A48     		ldr	r0, .L29+44
+ 682 00fa FFF7FEFF 		bl	ssd1306_WriteString
+ 683              	.LVL46:
  460:Core/Src/main.c **** 
- 707              		.loc 1 460 3 view .LVU172
- 708 0128 FFF7FEFF 		bl	ssd1306_UpdateScreen
- 709              	.LVL49:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 26
-
-
+ 684              		.loc 1 460 3 view .LVU166
+ 685 00fe FFF7FEFF 		bl	ssd1306_UpdateScreen
+ 686              	.LVL47:
  464:Core/Src/main.c **** 
- 710              		.loc 1 464 3 view .LVU173
- 711 012c 4FF47A70 		mov	r0, #1000
- 712 0130 FFF7FEFF 		bl	osDelay
- 713              	.LVL50:
+ 687              		.loc 1 464 3 view .LVU167
+ 688 0102 4FF47A70 		mov	r0, #1000
+ 689 0106 FFF7FEFF 		bl	osDelay
+ 690              	.LVL48:
  466:Core/Src/main.c ****   osTimerStart(msTickHandle, pdMS_TO_TICKS(10));
- 714              		.loc 1 466 3 view .LVU174
- 715 0134 FFF7FEFF 		bl	resetGame
- 716              	.LVL51:
+ 691              		.loc 1 466 3 view .LVU168
+ 692 010a FFF7FEFF 		bl	resetGame
+ 693              	.LVL49:
  467:Core/Src/main.c ****   
- 717              		.loc 1 467 3 view .LVU175
- 718 0138 0A21     		movs	r1, #10
- 719 013a 174B     		ldr	r3, .L29+60
- 720 013c 1868     		ldr	r0, [r3]
- 721 013e FFF7FEFF 		bl	osTimerStart
- 722              	.LVL52:
- 723              	.L26:
+ 694              		.loc 1 467 3 view .LVU169
+ 695 010e 0A21     		movs	r1, #10
+ 696 0110 154B     		ldr	r3, .L29+48
+ 697 0112 1868     		ldr	r0, [r3]
+ 698 0114 FFF7FEFF 		bl	osTimerStart
+ 699              	.LVL50:
+ 700              	.L26:
  471:Core/Src/main.c ****   {
- 724              		.loc 1 471 3 discriminator 1 view .LVU176
- 474:Core/Src/main.c **** 
- 725              		.loc 1 474 5 discriminator 1 view .LVU177
- 726 0142 FFF7FEFF 		bl	doGameState
- 727              	.LVL53:
- 476:Core/Src/main.c ****    
- 728              		.loc 1 476 5 discriminator 1 view .LVU178
- 729 0146 0120     		movs	r0, #1
- 730 0148 FFF7FEFF 		bl	osDelay
- 731              	.LVL54:
+ 701              		.loc 1 471 3 discriminator 1 view .LVU170
+ 475:Core/Src/main.c **** 
+ 702              		.loc 1 475 5 discriminator 1 view .LVU171
+ 703 0118 FFF7FEFF 		bl	doGameStateSimple
+ 704              	.LVL51:
+ 477:Core/Src/main.c **** 
+ 705              		.loc 1 477 5 discriminator 1 view .LVU172
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 26
+
+
+ 706 011c FFF7FEFF 		bl	getKOTHPacket
+ 707              	.LVL52:
+ 480:Core/Src/main.c ****    
+ 708              		.loc 1 480 5 discriminator 1 view .LVU173
+ 709 0120 1420     		movs	r0, #20
+ 710 0122 FFF7FEFF 		bl	osDelay
+ 711              	.LVL53:
  471:Core/Src/main.c ****   {
- 732              		.loc 1 471 3 discriminator 1 view .LVU179
- 733 014c F9E7     		b	.L26
- 734              	.LVL55:
- 735              	.L28:
+ 712              		.loc 1 471 3 discriminator 1 view .LVU174
+ 713 0126 F7E7     		b	.L26
+ 714              	.LVL54:
+ 715              	.L28:
  426:Core/Src/main.c ****   }
- 736              		.loc 1 426 5 view .LVU180
- 737 014e 6423     		movs	r3, #100
- 738 0150 0C22     		movs	r2, #12
- 739 0152 0749     		ldr	r1, .L29+20
- 740 0154 0248     		ldr	r0, .L29+4
- 741 0156 FFF7FEFF 		bl	LoRa_transmit
- 742              	.LVL56:
- 743 015a 87E7     		b	.L25
- 744              	.L30:
- 745              		.align	2
- 746              	.L29:
- 747 015c 00000000 		.word	.LANCHOR0
- 748 0160 00000000 		.word	.LANCHOR1
- 749 0164 00000240 		.word	1073872896
- 750 0168 00000000 		.word	.LANCHOR2
- 751 016c 00000000 		.word	.LC6
- 752 0170 00000000 		.word	opcodeString
- 753 0174 00000000 		.word	debugBuddy
- 754 0178 00000000 		.word	.LANCHOR3
- 755 017c 00000000 		.word	.LANCHOR4
- 756 0180 00040240 		.word	1073873920
- 757 0184 00000000 		.word	Font_16x24
- 758 0188 0C000000 		.word	.LC8
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 27
+ 716              		.loc 1 426 5 view .LVU175
+ 717 0128 6423     		movs	r3, #100
+ 718 012a 0C22     		movs	r2, #12
+ 719 012c 0649     		ldr	r1, .L29+16
+ 720 012e 0248     		ldr	r0, .L29
+ 721 0130 FFF7FEFF 		bl	LoRa_transmit
+ 722              	.LVL55:
+ 723 0134 95E7     		b	.L25
+ 724              	.L30:
+ 725 0136 00BF     		.align	2
+ 726              	.L29:
+ 727 0138 00000000 		.word	.LANCHOR0
+ 728 013c 00000240 		.word	1073872896
+ 729 0140 00000000 		.word	.LANCHOR1
+ 730 0144 00000000 		.word	.LC4
+ 731 0148 00000000 		.word	opcodeString
+ 732 014c 00000000 		.word	debugBuddy
+ 733 0150 00040240 		.word	1073873920
+ 734 0154 00000000 		.word	Font_16x24
+ 735 0158 0C000000 		.word	.LC5
+ 736 015c 14000000 		.word	.LC6
+ 737 0160 18000000 		.word	.LC7
+ 738 0164 1C000000 		.word	.LC8
+ 739 0168 00000000 		.word	.LANCHOR2
+ 740              		.cfi_endproc
+ 741              	.LFE144:
+ 743              		.section	.text.StartLoraRXTask,"ax",%progbits
+ 744              		.align	1
+ 745              		.global	StartLoraRXTask
+ 746              		.syntax unified
+ 747              		.thumb
+ 748              		.thumb_func
+ 750              	StartLoraRXTask:
+ 751              	.LFB145:
+ 496:Core/Src/main.c ****   /* USER CODE BEGIN StartLoraRXTask */
+ 752              		.loc 1 496 1 view -0
+ 753              		.cfi_startproc
+ 754              		@ Volatile: function does not return.
+ 755              		@ args = 0, pretend = 0, frame = 0
+ 756              		@ frame_needed = 0, uses_anonymous_args = 0
+ 757              	.LVL56:
+ 496:Core/Src/main.c ****   /* USER CODE BEGIN StartLoraRXTask */
+ 758              		.loc 1 496 1 is_stmt 0 view .LVU177
+ 759 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 27
 
 
- 759 018c 14000000 		.word	.LC9
- 760 0190 18000000 		.word	.LC10
- 761 0194 1C000000 		.word	.LC11
- 762 0198 00000000 		.word	.LANCHOR5
- 763              		.cfi_endproc
- 764              	.LFE144:
- 766              		.section	.text.StartLoraRXTask,"ax",%progbits
- 767              		.align	1
- 768              		.global	StartLoraRXTask
- 769              		.syntax unified
- 770              		.thumb
- 771              		.thumb_func
- 773              	StartLoraRXTask:
- 774              	.LFB145:
- 492:Core/Src/main.c ****   /* USER CODE BEGIN StartLoraRXTask */
- 775              		.loc 1 492 1 view -0
- 776              		.cfi_startproc
- 777              		@ Volatile: function does not return.
- 778              		@ args = 0, pretend = 0, frame = 0
- 779              		@ frame_needed = 0, uses_anonymous_args = 0
- 780              	.LVL57:
- 492:Core/Src/main.c ****   /* USER CODE BEGIN StartLoraRXTask */
- 781              		.loc 1 492 1 is_stmt 0 view .LVU182
- 782 0000 08B5     		push	{r3, lr}
- 783              	.LCFI9:
- 784              		.cfi_def_cfa_offset 8
- 785              		.cfi_offset 3, -8
- 786              		.cfi_offset 14, -4
- 787              	.LVL58:
- 788              	.L32:
- 495:Core/Src/main.c ****   {
- 789              		.loc 1 495 3 is_stmt 1 discriminator 1 view .LVU183
- 498:Core/Src/main.c ****     
- 790              		.loc 1 498 5 discriminator 1 view .LVU184
- 791 0002 FFF7FEFF 		bl	getKOTHPacket
- 792              	.LVL59:
- 500:Core/Src/main.c **** 
- 793              		.loc 1 500 5 discriminator 1 view .LVU185
- 794 0006 6420     		movs	r0, #100
- 795 0008 FFF7FEFF 		bl	osDelay
- 796              	.LVL60:
- 495:Core/Src/main.c ****   {
- 797              		.loc 1 495 3 discriminator 1 view .LVU186
- 798 000c F9E7     		b	.L32
- 799              		.cfi_endproc
- 800              	.LFE145:
- 802              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
- 803              		.align	1
- 804              		.global	HAL_TIM_PeriodElapsedCallback
- 805              		.syntax unified
- 806              		.thumb
- 807              		.thumb_func
- 809              	HAL_TIM_PeriodElapsedCallback:
- 810              	.LVL61:
- 811              	.LFB150:
- 568:Core/Src/main.c **** 
- 569:Core/Src/main.c **** /**
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 28
+ 760              	.LCFI9:
+ 761              		.cfi_def_cfa_offset 8
+ 762              		.cfi_offset 3, -8
+ 763              		.cfi_offset 14, -4
+ 764              	.LVL57:
+ 765              	.L32:
+ 499:Core/Src/main.c ****   {
+ 766              		.loc 1 499 3 is_stmt 1 discriminator 1 view .LVU178
+ 502:Core/Src/main.c ****     
+ 767              		.loc 1 502 5 discriminator 1 view .LVU179
+ 768 0002 FFF7FEFF 		bl	getKOTHPacket
+ 769              	.LVL58:
+ 504:Core/Src/main.c **** 
+ 770              		.loc 1 504 5 discriminator 1 view .LVU180
+ 771 0006 6420     		movs	r0, #100
+ 772 0008 FFF7FEFF 		bl	osDelay
+ 773              	.LVL59:
+ 499:Core/Src/main.c ****   {
+ 774              		.loc 1 499 3 discriminator 1 view .LVU181
+ 775 000c F9E7     		b	.L32
+ 776              		.cfi_endproc
+ 777              	.LFE145:
+ 779              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
+ 780              		.align	1
+ 781              		.global	HAL_TIM_PeriodElapsedCallback
+ 782              		.syntax unified
+ 783              		.thumb
+ 784              		.thumb_func
+ 786              	HAL_TIM_PeriodElapsedCallback:
+ 787              	.LVL60:
+ 788              	.LFB150:
+ 572:Core/Src/main.c **** 
+ 573:Core/Src/main.c **** /**
+ 574:Core/Src/main.c ****   * @brief  Period elapsed callback in non blocking mode
+ 575:Core/Src/main.c ****   * @note   This function is called  when TIM1 interrupt took place, inside
+ 576:Core/Src/main.c ****   * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+ 577:Core/Src/main.c ****   * a global variable "uwTick" used as application time base.
+ 578:Core/Src/main.c ****   * @param  htim : TIM handle
+ 579:Core/Src/main.c ****   * @retval None
+ 580:Core/Src/main.c ****   */
+ 581:Core/Src/main.c **** void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+ 582:Core/Src/main.c **** {
+ 789              		.loc 1 582 1 view -0
+ 790              		.cfi_startproc
+ 791              		@ args = 0, pretend = 0, frame = 0
+ 792              		@ frame_needed = 0, uses_anonymous_args = 0
+ 793              		.loc 1 582 1 is_stmt 0 view .LVU183
+ 794 0000 08B5     		push	{r3, lr}
+ 795              	.LCFI10:
+ 796              		.cfi_def_cfa_offset 8
+ 797              		.cfi_offset 3, -8
+ 798              		.cfi_offset 14, -4
+ 583:Core/Src/main.c ****   /* USER CODE BEGIN Callback 0 */
+ 584:Core/Src/main.c **** 
+ 585:Core/Src/main.c ****   /* USER CODE END Callback 0 */
+ 586:Core/Src/main.c ****   if (htim->Instance == TIM1) {
+ 799              		.loc 1 586 3 is_stmt 1 view .LVU184
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 28
 
 
- 570:Core/Src/main.c ****   * @brief  Period elapsed callback in non blocking mode
- 571:Core/Src/main.c ****   * @note   This function is called  when TIM1 interrupt took place, inside
- 572:Core/Src/main.c ****   * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
- 573:Core/Src/main.c ****   * a global variable "uwTick" used as application time base.
- 574:Core/Src/main.c ****   * @param  htim : TIM handle
- 575:Core/Src/main.c ****   * @retval None
- 576:Core/Src/main.c ****   */
- 577:Core/Src/main.c **** void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
- 578:Core/Src/main.c **** {
- 812              		.loc 1 578 1 view -0
- 813              		.cfi_startproc
- 814              		@ args = 0, pretend = 0, frame = 0
- 815              		@ frame_needed = 0, uses_anonymous_args = 0
- 816              		.loc 1 578 1 is_stmt 0 view .LVU188
- 817 0000 08B5     		push	{r3, lr}
- 818              	.LCFI10:
- 819              		.cfi_def_cfa_offset 8
- 820              		.cfi_offset 3, -8
- 821              		.cfi_offset 14, -4
- 579:Core/Src/main.c ****   /* USER CODE BEGIN Callback 0 */
- 580:Core/Src/main.c **** 
- 581:Core/Src/main.c ****   /* USER CODE END Callback 0 */
- 582:Core/Src/main.c ****   if (htim->Instance == TIM1) {
- 822              		.loc 1 582 3 is_stmt 1 view .LVU189
- 823              		.loc 1 582 11 is_stmt 0 view .LVU190
- 824 0002 0268     		ldr	r2, [r0]
- 825              		.loc 1 582 6 view .LVU191
- 826 0004 034B     		ldr	r3, .L38
- 827 0006 9A42     		cmp	r2, r3
- 828 0008 00D0     		beq	.L37
- 829              	.LVL62:
- 830              	.L34:
- 583:Core/Src/main.c ****     HAL_IncTick();
- 584:Core/Src/main.c ****   }
- 585:Core/Src/main.c ****   /* USER CODE BEGIN Callback 1 */
- 586:Core/Src/main.c **** 
- 587:Core/Src/main.c ****   /* USER CODE END Callback 1 */
- 588:Core/Src/main.c **** }
- 831              		.loc 1 588 1 view .LVU192
- 832 000a 08BD     		pop	{r3, pc}
- 833              	.LVL63:
- 834              	.L37:
- 583:Core/Src/main.c ****     HAL_IncTick();
- 835              		.loc 1 583 5 is_stmt 1 view .LVU193
- 836 000c FFF7FEFF 		bl	HAL_IncTick
- 837              	.LVL64:
- 838              		.loc 1 588 1 is_stmt 0 view .LVU194
- 839 0010 FBE7     		b	.L34
- 840              	.L39:
- 841 0012 00BF     		.align	2
- 842              	.L38:
- 843 0014 00000140 		.word	1073807360
- 844              		.cfi_endproc
- 845              	.LFE150:
- 847              		.section	.text.Error_Handler,"ax",%progbits
- 848              		.align	1
- 849              		.global	Error_Handler
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 29
+ 800              		.loc 1 586 11 is_stmt 0 view .LVU185
+ 801 0002 0268     		ldr	r2, [r0]
+ 802              		.loc 1 586 6 view .LVU186
+ 803 0004 034B     		ldr	r3, .L38
+ 804 0006 9A42     		cmp	r2, r3
+ 805 0008 00D0     		beq	.L37
+ 806              	.LVL61:
+ 807              	.L34:
+ 587:Core/Src/main.c ****     HAL_IncTick();
+ 588:Core/Src/main.c ****   }
+ 589:Core/Src/main.c ****   /* USER CODE BEGIN Callback 1 */
+ 590:Core/Src/main.c **** 
+ 591:Core/Src/main.c ****   /* USER CODE END Callback 1 */
+ 592:Core/Src/main.c **** }
+ 808              		.loc 1 592 1 view .LVU187
+ 809 000a 08BD     		pop	{r3, pc}
+ 810              	.LVL62:
+ 811              	.L37:
+ 587:Core/Src/main.c ****     HAL_IncTick();
+ 812              		.loc 1 587 5 is_stmt 1 view .LVU188
+ 813 000c FFF7FEFF 		bl	HAL_IncTick
+ 814              	.LVL63:
+ 815              		.loc 1 592 1 is_stmt 0 view .LVU189
+ 816 0010 FBE7     		b	.L34
+ 817              	.L39:
+ 818 0012 00BF     		.align	2
+ 819              	.L38:
+ 820 0014 00000140 		.word	1073807360
+ 821              		.cfi_endproc
+ 822              	.LFE150:
+ 824              		.section	.text.Error_Handler,"ax",%progbits
+ 825              		.align	1
+ 826              		.global	Error_Handler
+ 827              		.syntax unified
+ 828              		.thumb
+ 829              		.thumb_func
+ 831              	Error_Handler:
+ 832              	.LFB151:
+ 593:Core/Src/main.c **** 
+ 594:Core/Src/main.c **** /**
+ 595:Core/Src/main.c ****   * @brief  This function is executed in case of error occurrence.
+ 596:Core/Src/main.c ****   * @retval None
+ 597:Core/Src/main.c ****   */
+ 598:Core/Src/main.c **** void Error_Handler(void)
+ 599:Core/Src/main.c **** {
+ 833              		.loc 1 599 1 is_stmt 1 view -0
+ 834              		.cfi_startproc
+ 835              		@ Volatile: function does not return.
+ 836              		@ args = 0, pretend = 0, frame = 0
+ 837              		@ frame_needed = 0, uses_anonymous_args = 0
+ 838              		@ link register save eliminated.
+ 600:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 601:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
+ 602:Core/Src/main.c ****   __disable_irq();
+ 839              		.loc 1 602 3 view .LVU191
+ 840              	.LBB9:
+ 841              	.LBI9:
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 29
 
 
- 850              		.syntax unified
- 851              		.thumb
- 852              		.thumb_func
- 854              	Error_Handler:
- 855              	.LFB151:
- 589:Core/Src/main.c **** 
- 590:Core/Src/main.c **** /**
- 591:Core/Src/main.c ****   * @brief  This function is executed in case of error occurrence.
- 592:Core/Src/main.c ****   * @retval None
- 593:Core/Src/main.c ****   */
- 594:Core/Src/main.c **** void Error_Handler(void)
- 595:Core/Src/main.c **** {
- 856              		.loc 1 595 1 is_stmt 1 view -0
- 857              		.cfi_startproc
- 858              		@ Volatile: function does not return.
- 859              		@ args = 0, pretend = 0, frame = 0
- 860              		@ frame_needed = 0, uses_anonymous_args = 0
- 861              		@ link register save eliminated.
- 596:Core/Src/main.c ****   /* USER CODE BEGIN Error_Handler_Debug */
- 597:Core/Src/main.c ****   /* User can add his own implementation to report the HAL error return state */
- 598:Core/Src/main.c ****   __disable_irq();
- 862              		.loc 1 598 3 view .LVU196
- 863              	.LBB9:
- 864              	.LBI9:
- 865              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
+ 842              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
    1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
    2:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
    3:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
@@ -1738,9 +1714,6 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
   30:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
   31:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
   32:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 30
-
-
   33:Drivers/CMSIS/Include/cmsis_gcc.h **** 
   34:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Fallback for __has_builtin */
   35:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __has_builtin
@@ -1765,6 +1738,9 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
   54:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   55:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __USED
   56:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 30
+
+
   57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   58:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __WEAK
   59:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
@@ -1798,9 +1774,6 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
   87:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
   88:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
   89:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 31
-
-
   90:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
   91:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
   92:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
@@ -1825,6 +1798,9 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  111:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
  112:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  113:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 31
+
+
  114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
  115:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  116:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1852,919 +1828,904 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 1
  138:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
  139:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  140:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_irq(void)
- 866              		.loc 2 140 27 view .LVU197
- 867              	.LBB10:
+ 843              		.loc 2 140 27 view .LVU192
+ 844              	.LBB10:
  141:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  142:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
- 868              		.loc 2 142 3 view .LVU198
- 869              		.syntax unified
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 32
+ 845              		.loc 2 142 3 view .LVU193
+ 846              		.syntax unified
+ 847              	@ 142 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 848 0000 72B6     		cpsid i
+ 849              	@ 0 "" 2
+ 850              		.thumb
+ 851              		.syntax unified
+ 852              	.L41:
+ 853              	.LBE10:
+ 854              	.LBE9:
+ 603:Core/Src/main.c ****   while (1)
+ 855              		.loc 1 603 3 discriminator 1 view .LVU194
+ 604:Core/Src/main.c ****   {
+ 605:Core/Src/main.c ****   }
+ 856              		.loc 1 605 3 discriminator 1 view .LVU195
+ 603:Core/Src/main.c ****   while (1)
+ 857              		.loc 1 603 9 discriminator 1 view .LVU196
+ 858 0002 FEE7     		b	.L41
+ 859              		.cfi_endproc
+ 860              	.LFE151:
+ 862              		.section	.text.MX_SPI1_Init,"ax",%progbits
+ 863              		.align	1
+ 864              		.syntax unified
+ 865              		.thumb
+ 866              		.thumb_func
+ 868              	MX_SPI1_Init:
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 32
 
 
- 870              	@ 142 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
- 871 0000 72B6     		cpsid i
- 872              	@ 0 "" 2
- 873              		.thumb
- 874              		.syntax unified
- 875              	.L41:
- 876              	.LBE10:
- 877              	.LBE9:
- 599:Core/Src/main.c ****   while (1)
- 878              		.loc 1 599 3 discriminator 1 view .LVU199
- 600:Core/Src/main.c ****   {
- 601:Core/Src/main.c ****   }
- 879              		.loc 1 601 3 discriminator 1 view .LVU200
- 599:Core/Src/main.c ****   while (1)
- 880              		.loc 1 599 9 discriminator 1 view .LVU201
- 881 0002 FEE7     		b	.L41
- 882              		.cfi_endproc
- 883              	.LFE151:
- 885              		.section	.text.MX_SPI1_Init,"ax",%progbits
- 886              		.align	1
- 887              		.syntax unified
- 888              		.thumb
- 889              		.thumb_func
- 891              	MX_SPI1_Init:
- 892              	.LFB141:
+ 869              	.LFB141:
  285:Core/Src/main.c **** 
- 893              		.loc 1 285 1 view -0
- 894              		.cfi_startproc
- 895              		@ args = 0, pretend = 0, frame = 0
- 896              		@ frame_needed = 0, uses_anonymous_args = 0
- 897 0000 08B5     		push	{r3, lr}
- 898              	.LCFI11:
- 899              		.cfi_def_cfa_offset 8
- 900              		.cfi_offset 3, -8
- 901              		.cfi_offset 14, -4
+ 870              		.loc 1 285 1 view -0
+ 871              		.cfi_startproc
+ 872              		@ args = 0, pretend = 0, frame = 0
+ 873              		@ frame_needed = 0, uses_anonymous_args = 0
+ 874 0000 08B5     		push	{r3, lr}
+ 875              	.LCFI11:
+ 876              		.cfi_def_cfa_offset 8
+ 877              		.cfi_offset 3, -8
+ 878              		.cfi_offset 14, -4
  295:Core/Src/main.c ****   hspi1.Init.Mode = SPI_MODE_MASTER;
- 902              		.loc 1 295 3 view .LVU203
+ 879              		.loc 1 295 3 view .LVU198
  295:Core/Src/main.c ****   hspi1.Init.Mode = SPI_MODE_MASTER;
- 903              		.loc 1 295 18 is_stmt 0 view .LVU204
- 904 0002 0D48     		ldr	r0, .L46
- 905 0004 0D4B     		ldr	r3, .L46+4
- 906 0006 0360     		str	r3, [r0]
+ 880              		.loc 1 295 18 is_stmt 0 view .LVU199
+ 881 0002 0D48     		ldr	r0, .L46
+ 882 0004 0D4B     		ldr	r3, .L46+4
+ 883 0006 0360     		str	r3, [r0]
  296:Core/Src/main.c ****   hspi1.Init.Direction = SPI_DIRECTION_2LINES;
- 907              		.loc 1 296 3 is_stmt 1 view .LVU205
+ 884              		.loc 1 296 3 is_stmt 1 view .LVU200
  296:Core/Src/main.c ****   hspi1.Init.Direction = SPI_DIRECTION_2LINES;
- 908              		.loc 1 296 19 is_stmt 0 view .LVU206
- 909 0008 4FF48273 		mov	r3, #260
- 910 000c 4360     		str	r3, [r0, #4]
+ 885              		.loc 1 296 19 is_stmt 0 view .LVU201
+ 886 0008 4FF48273 		mov	r3, #260
+ 887 000c 4360     		str	r3, [r0, #4]
  297:Core/Src/main.c ****   hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
- 911              		.loc 1 297 3 is_stmt 1 view .LVU207
+ 888              		.loc 1 297 3 is_stmt 1 view .LVU202
  297:Core/Src/main.c ****   hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
- 912              		.loc 1 297 24 is_stmt 0 view .LVU208
- 913 000e 0023     		movs	r3, #0
- 914 0010 8360     		str	r3, [r0, #8]
+ 889              		.loc 1 297 24 is_stmt 0 view .LVU203
+ 890 000e 0023     		movs	r3, #0
+ 891 0010 8360     		str	r3, [r0, #8]
  298:Core/Src/main.c ****   hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
- 915              		.loc 1 298 3 is_stmt 1 view .LVU209
+ 892              		.loc 1 298 3 is_stmt 1 view .LVU204
  298:Core/Src/main.c ****   hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 33
+ 893              		.loc 1 298 23 is_stmt 0 view .LVU205
+ 894 0012 C360     		str	r3, [r0, #12]
+ 299:Core/Src/main.c ****   hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
+ 895              		.loc 1 299 3 is_stmt 1 view .LVU206
+ 299:Core/Src/main.c ****   hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
+ 896              		.loc 1 299 26 is_stmt 0 view .LVU207
+ 897 0014 0361     		str	r3, [r0, #16]
+ 300:Core/Src/main.c ****   hspi1.Init.NSS = SPI_NSS_SOFT;
+ 898              		.loc 1 300 3 is_stmt 1 view .LVU208
+ 300:Core/Src/main.c ****   hspi1.Init.NSS = SPI_NSS_SOFT;
+ 899              		.loc 1 300 23 is_stmt 0 view .LVU209
+ 900 0016 4361     		str	r3, [r0, #20]
+ 301:Core/Src/main.c ****   hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_16;
+ 901              		.loc 1 301 3 is_stmt 1 view .LVU210
+ 301:Core/Src/main.c ****   hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_16;
+ 902              		.loc 1 301 18 is_stmt 0 view .LVU211
+ 903 0018 4FF40072 		mov	r2, #512
+ 904 001c 8261     		str	r2, [r0, #24]
+ 302:Core/Src/main.c ****   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
+ 905              		.loc 1 302 3 is_stmt 1 view .LVU212
+ 302:Core/Src/main.c ****   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
+ 906              		.loc 1 302 32 is_stmt 0 view .LVU213
+ 907 001e 1822     		movs	r2, #24
+ 908 0020 C261     		str	r2, [r0, #28]
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 33
 
 
- 916              		.loc 1 298 23 is_stmt 0 view .LVU210
- 917 0012 C360     		str	r3, [r0, #12]
- 299:Core/Src/main.c ****   hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
- 918              		.loc 1 299 3 is_stmt 1 view .LVU211
- 299:Core/Src/main.c ****   hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
- 919              		.loc 1 299 26 is_stmt 0 view .LVU212
- 920 0014 0361     		str	r3, [r0, #16]
- 300:Core/Src/main.c ****   hspi1.Init.NSS = SPI_NSS_SOFT;
- 921              		.loc 1 300 3 is_stmt 1 view .LVU213
- 300:Core/Src/main.c ****   hspi1.Init.NSS = SPI_NSS_SOFT;
- 922              		.loc 1 300 23 is_stmt 0 view .LVU214
- 923 0016 4361     		str	r3, [r0, #20]
- 301:Core/Src/main.c ****   hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_16;
- 924              		.loc 1 301 3 is_stmt 1 view .LVU215
- 301:Core/Src/main.c ****   hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_16;
- 925              		.loc 1 301 18 is_stmt 0 view .LVU216
- 926 0018 4FF40072 		mov	r2, #512
- 927 001c 8261     		str	r2, [r0, #24]
- 302:Core/Src/main.c ****   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
- 928              		.loc 1 302 3 is_stmt 1 view .LVU217
- 302:Core/Src/main.c ****   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
- 929              		.loc 1 302 32 is_stmt 0 view .LVU218
- 930 001e 1822     		movs	r2, #24
- 931 0020 C261     		str	r2, [r0, #28]
  303:Core/Src/main.c ****   hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
- 932              		.loc 1 303 3 is_stmt 1 view .LVU219
+ 909              		.loc 1 303 3 is_stmt 1 view .LVU214
  303:Core/Src/main.c ****   hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
- 933              		.loc 1 303 23 is_stmt 0 view .LVU220
- 934 0022 0362     		str	r3, [r0, #32]
+ 910              		.loc 1 303 23 is_stmt 0 view .LVU215
+ 911 0022 0362     		str	r3, [r0, #32]
  304:Core/Src/main.c ****   hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
- 935              		.loc 1 304 3 is_stmt 1 view .LVU221
+ 912              		.loc 1 304 3 is_stmt 1 view .LVU216
  304:Core/Src/main.c ****   hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
- 936              		.loc 1 304 21 is_stmt 0 view .LVU222
- 937 0024 4362     		str	r3, [r0, #36]
+ 913              		.loc 1 304 21 is_stmt 0 view .LVU217
+ 914 0024 4362     		str	r3, [r0, #36]
  305:Core/Src/main.c ****   hspi1.Init.CRCPolynomial = 10;
- 938              		.loc 1 305 3 is_stmt 1 view .LVU223
+ 915              		.loc 1 305 3 is_stmt 1 view .LVU218
  305:Core/Src/main.c ****   hspi1.Init.CRCPolynomial = 10;
- 939              		.loc 1 305 29 is_stmt 0 view .LVU224
- 940 0026 8362     		str	r3, [r0, #40]
+ 916              		.loc 1 305 29 is_stmt 0 view .LVU219
+ 917 0026 8362     		str	r3, [r0, #40]
  306:Core/Src/main.c ****   if (HAL_SPI_Init(&hspi1) != HAL_OK)
- 941              		.loc 1 306 3 is_stmt 1 view .LVU225
+ 918              		.loc 1 306 3 is_stmt 1 view .LVU220
  306:Core/Src/main.c ****   if (HAL_SPI_Init(&hspi1) != HAL_OK)
- 942              		.loc 1 306 28 is_stmt 0 view .LVU226
- 943 0028 0A23     		movs	r3, #10
- 944 002a C362     		str	r3, [r0, #44]
+ 919              		.loc 1 306 28 is_stmt 0 view .LVU221
+ 920 0028 0A23     		movs	r3, #10
+ 921 002a C362     		str	r3, [r0, #44]
  307:Core/Src/main.c ****   {
- 945              		.loc 1 307 3 is_stmt 1 view .LVU227
+ 922              		.loc 1 307 3 is_stmt 1 view .LVU222
  307:Core/Src/main.c ****   {
- 946              		.loc 1 307 7 is_stmt 0 view .LVU228
- 947 002c FFF7FEFF 		bl	HAL_SPI_Init
- 948              	.LVL65:
+ 923              		.loc 1 307 7 is_stmt 0 view .LVU223
+ 924 002c FFF7FEFF 		bl	HAL_SPI_Init
+ 925              	.LVL64:
  307:Core/Src/main.c ****   {
- 949              		.loc 1 307 6 view .LVU229
- 950 0030 00B9     		cbnz	r0, .L45
+ 926              		.loc 1 307 6 view .LVU224
+ 927 0030 00B9     		cbnz	r0, .L45
  315:Core/Src/main.c **** 
- 951              		.loc 1 315 1 view .LVU230
- 952 0032 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 34
-
-
- 953              	.L45:
+ 928              		.loc 1 315 1 view .LVU225
+ 929 0032 08BD     		pop	{r3, pc}
+ 930              	.L45:
  309:Core/Src/main.c ****   }
- 954              		.loc 1 309 5 is_stmt 1 view .LVU231
- 955 0034 FFF7FEFF 		bl	Error_Handler
- 956              	.LVL66:
- 957              	.L47:
- 958              		.align	2
- 959              	.L46:
- 960 0038 00000000 		.word	.LANCHOR2
- 961 003c 00300140 		.word	1073819648
- 962              		.cfi_endproc
- 963              	.LFE141:
- 965              		.section	.text.MX_I2C1_Init,"ax",%progbits
- 966              		.align	1
- 967              		.syntax unified
- 968              		.thumb
- 969              		.thumb_func
- 971              	MX_I2C1_Init:
- 972              	.LFB140:
+ 931              		.loc 1 309 5 is_stmt 1 view .LVU226
+ 932 0034 FFF7FEFF 		bl	Error_Handler
+ 933              	.LVL65:
+ 934              	.L47:
+ 935              		.align	2
+ 936              	.L46:
+ 937 0038 00000000 		.word	.LANCHOR1
+ 938 003c 00300140 		.word	1073819648
+ 939              		.cfi_endproc
+ 940              	.LFE141:
+ 942              		.section	.text.MX_I2C1_Init,"ax",%progbits
+ 943              		.align	1
+ 944              		.syntax unified
+ 945              		.thumb
+ 946              		.thumb_func
+ 948              	MX_I2C1_Init:
+ 949              	.LFB140:
  251:Core/Src/main.c **** 
- 973              		.loc 1 251 1 view -0
- 974              		.cfi_startproc
- 975              		@ args = 0, pretend = 0, frame = 0
- 976              		@ frame_needed = 0, uses_anonymous_args = 0
- 977 0000 08B5     		push	{r3, lr}
- 978              	.LCFI12:
- 979              		.cfi_def_cfa_offset 8
- 980              		.cfi_offset 3, -8
- 981              		.cfi_offset 14, -4
- 260:Core/Src/main.c ****   hi2c1.Init.ClockSpeed = 100000;
- 982              		.loc 1 260 3 view .LVU233
- 260:Core/Src/main.c ****   hi2c1.Init.ClockSpeed = 100000;
- 983              		.loc 1 260 18 is_stmt 0 view .LVU234
- 984 0002 0B48     		ldr	r0, .L52
- 985 0004 0B4B     		ldr	r3, .L52+4
- 986 0006 0360     		str	r3, [r0]
- 261:Core/Src/main.c ****   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
- 987              		.loc 1 261 3 is_stmt 1 view .LVU235
- 261:Core/Src/main.c ****   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
- 988              		.loc 1 261 25 is_stmt 0 view .LVU236
- 989 0008 0B4B     		ldr	r3, .L52+8
- 990 000a 4360     		str	r3, [r0, #4]
- 262:Core/Src/main.c ****   hi2c1.Init.OwnAddress1 = 78;
- 991              		.loc 1 262 3 is_stmt 1 view .LVU237
- 262:Core/Src/main.c ****   hi2c1.Init.OwnAddress1 = 78;
- 992              		.loc 1 262 24 is_stmt 0 view .LVU238
- 993 000c 0023     		movs	r3, #0
- 994 000e 8360     		str	r3, [r0, #8]
- 263:Core/Src/main.c ****   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
- 995              		.loc 1 263 3 is_stmt 1 view .LVU239
- 263:Core/Src/main.c ****   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
- 996              		.loc 1 263 26 is_stmt 0 view .LVU240
- 997 0010 4E22     		movs	r2, #78
- 998 0012 C260     		str	r2, [r0, #12]
- 264:Core/Src/main.c ****   hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
- 999              		.loc 1 264 3 is_stmt 1 view .LVU241
- 264:Core/Src/main.c ****   hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 35
+ 950              		.loc 1 251 1 view -0
+ 951              		.cfi_startproc
+ 952              		@ args = 0, pretend = 0, frame = 0
+ 953              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 34
 
 
- 1000              		.loc 1 264 29 is_stmt 0 view .LVU242
- 1001 0014 4FF48042 		mov	r2, #16384
- 1002 0018 0261     		str	r2, [r0, #16]
+ 954 0000 08B5     		push	{r3, lr}
+ 955              	.LCFI12:
+ 956              		.cfi_def_cfa_offset 8
+ 957              		.cfi_offset 3, -8
+ 958              		.cfi_offset 14, -4
+ 260:Core/Src/main.c ****   hi2c1.Init.ClockSpeed = 100000;
+ 959              		.loc 1 260 3 view .LVU228
+ 260:Core/Src/main.c ****   hi2c1.Init.ClockSpeed = 100000;
+ 960              		.loc 1 260 18 is_stmt 0 view .LVU229
+ 961 0002 0B48     		ldr	r0, .L52
+ 962 0004 0B4B     		ldr	r3, .L52+4
+ 963 0006 0360     		str	r3, [r0]
+ 261:Core/Src/main.c ****   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+ 964              		.loc 1 261 3 is_stmt 1 view .LVU230
+ 261:Core/Src/main.c ****   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+ 965              		.loc 1 261 25 is_stmt 0 view .LVU231
+ 966 0008 0B4B     		ldr	r3, .L52+8
+ 967 000a 4360     		str	r3, [r0, #4]
+ 262:Core/Src/main.c ****   hi2c1.Init.OwnAddress1 = 78;
+ 968              		.loc 1 262 3 is_stmt 1 view .LVU232
+ 262:Core/Src/main.c ****   hi2c1.Init.OwnAddress1 = 78;
+ 969              		.loc 1 262 24 is_stmt 0 view .LVU233
+ 970 000c 0023     		movs	r3, #0
+ 971 000e 8360     		str	r3, [r0, #8]
+ 263:Core/Src/main.c ****   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+ 972              		.loc 1 263 3 is_stmt 1 view .LVU234
+ 263:Core/Src/main.c ****   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+ 973              		.loc 1 263 26 is_stmt 0 view .LVU235
+ 974 0010 4E22     		movs	r2, #78
+ 975 0012 C260     		str	r2, [r0, #12]
+ 264:Core/Src/main.c ****   hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+ 976              		.loc 1 264 3 is_stmt 1 view .LVU236
+ 264:Core/Src/main.c ****   hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+ 977              		.loc 1 264 29 is_stmt 0 view .LVU237
+ 978 0014 4FF48042 		mov	r2, #16384
+ 979 0018 0261     		str	r2, [r0, #16]
  265:Core/Src/main.c ****   hi2c1.Init.OwnAddress2 = 0;
- 1003              		.loc 1 265 3 is_stmt 1 view .LVU243
+ 980              		.loc 1 265 3 is_stmt 1 view .LVU238
  265:Core/Src/main.c ****   hi2c1.Init.OwnAddress2 = 0;
- 1004              		.loc 1 265 30 is_stmt 0 view .LVU244
- 1005 001a 4361     		str	r3, [r0, #20]
+ 981              		.loc 1 265 30 is_stmt 0 view .LVU239
+ 982 001a 4361     		str	r3, [r0, #20]
  266:Core/Src/main.c ****   hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
- 1006              		.loc 1 266 3 is_stmt 1 view .LVU245
+ 983              		.loc 1 266 3 is_stmt 1 view .LVU240
  266:Core/Src/main.c ****   hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
- 1007              		.loc 1 266 26 is_stmt 0 view .LVU246
- 1008 001c 8361     		str	r3, [r0, #24]
+ 984              		.loc 1 266 26 is_stmt 0 view .LVU241
+ 985 001c 8361     		str	r3, [r0, #24]
  267:Core/Src/main.c ****   hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
- 1009              		.loc 1 267 3 is_stmt 1 view .LVU247
+ 986              		.loc 1 267 3 is_stmt 1 view .LVU242
  267:Core/Src/main.c ****   hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
- 1010              		.loc 1 267 30 is_stmt 0 view .LVU248
- 1011 001e C361     		str	r3, [r0, #28]
+ 987              		.loc 1 267 30 is_stmt 0 view .LVU243
+ 988 001e C361     		str	r3, [r0, #28]
  268:Core/Src/main.c ****   if (HAL_I2C_Init(&hi2c1) != HAL_OK)
- 1012              		.loc 1 268 3 is_stmt 1 view .LVU249
+ 989              		.loc 1 268 3 is_stmt 1 view .LVU244
  268:Core/Src/main.c ****   if (HAL_I2C_Init(&hi2c1) != HAL_OK)
- 1013              		.loc 1 268 28 is_stmt 0 view .LVU250
- 1014 0020 0362     		str	r3, [r0, #32]
+ 990              		.loc 1 268 28 is_stmt 0 view .LVU245
+ 991 0020 0362     		str	r3, [r0, #32]
  269:Core/Src/main.c ****   {
- 1015              		.loc 1 269 3 is_stmt 1 view .LVU251
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 35
+
+
+ 992              		.loc 1 269 3 is_stmt 1 view .LVU246
  269:Core/Src/main.c ****   {
- 1016              		.loc 1 269 7 is_stmt 0 view .LVU252
- 1017 0022 FFF7FEFF 		bl	HAL_I2C_Init
- 1018              	.LVL67:
+ 993              		.loc 1 269 7 is_stmt 0 view .LVU247
+ 994 0022 FFF7FEFF 		bl	HAL_I2C_Init
+ 995              	.LVL66:
  269:Core/Src/main.c ****   {
- 1019              		.loc 1 269 6 view .LVU253
- 1020 0026 00B9     		cbnz	r0, .L51
+ 996              		.loc 1 269 6 view .LVU248
+ 997 0026 00B9     		cbnz	r0, .L51
  277:Core/Src/main.c **** 
- 1021              		.loc 1 277 1 view .LVU254
- 1022 0028 08BD     		pop	{r3, pc}
- 1023              	.L51:
+ 998              		.loc 1 277 1 view .LVU249
+ 999 0028 08BD     		pop	{r3, pc}
+ 1000              	.L51:
  271:Core/Src/main.c ****   }
- 1024              		.loc 1 271 5 is_stmt 1 view .LVU255
- 1025 002a FFF7FEFF 		bl	Error_Handler
- 1026              	.LVL68:
- 1027              	.L53:
- 1028 002e 00BF     		.align	2
- 1029              	.L52:
- 1030 0030 00000000 		.word	.LANCHOR6
- 1031 0034 00540040 		.word	1073763328
- 1032 0038 A0860100 		.word	100000
- 1033              		.cfi_endproc
- 1034              	.LFE140:
- 1036              		.section	.text.SystemClock_Config,"ax",%progbits
- 1037              		.align	1
- 1038              		.global	SystemClock_Config
- 1039              		.syntax unified
- 1040              		.thumb
- 1041              		.thumb_func
- 1043              	SystemClock_Config:
- 1044              	.LFB139:
+ 1001              		.loc 1 271 5 is_stmt 1 view .LVU250
+ 1002 002a FFF7FEFF 		bl	Error_Handler
+ 1003              	.LVL67:
+ 1004              	.L53:
+ 1005 002e 00BF     		.align	2
+ 1006              	.L52:
+ 1007 0030 00000000 		.word	.LANCHOR3
+ 1008 0034 00540040 		.word	1073763328
+ 1009 0038 A0860100 		.word	100000
+ 1010              		.cfi_endproc
+ 1011              	.LFE140:
+ 1013              		.section	.text.SystemClock_Config,"ax",%progbits
+ 1014              		.align	1
+ 1015              		.global	SystemClock_Config
+ 1016              		.syntax unified
+ 1017              		.thumb
+ 1018              		.thumb_func
+ 1020              	SystemClock_Config:
+ 1021              	.LFB139:
  205:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 36
-
-
- 1045              		.loc 1 205 1 view -0
- 1046              		.cfi_startproc
- 1047              		@ args = 0, pretend = 0, frame = 80
- 1048              		@ frame_needed = 0, uses_anonymous_args = 0
- 1049 0000 00B5     		push	{lr}
- 1050              	.LCFI13:
- 1051              		.cfi_def_cfa_offset 4
- 1052              		.cfi_offset 14, -4
- 1053 0002 95B0     		sub	sp, sp, #84
- 1054              	.LCFI14:
- 1055              		.cfi_def_cfa_offset 88
+ 1022              		.loc 1 205 1 view -0
+ 1023              		.cfi_startproc
+ 1024              		@ args = 0, pretend = 0, frame = 80
+ 1025              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1026 0000 00B5     		push	{lr}
+ 1027              	.LCFI13:
+ 1028              		.cfi_def_cfa_offset 4
+ 1029              		.cfi_offset 14, -4
+ 1030 0002 95B0     		sub	sp, sp, #84
+ 1031              	.LCFI14:
+ 1032              		.cfi_def_cfa_offset 88
  206:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 1056              		.loc 1 206 3 view .LVU257
+ 1033              		.loc 1 206 3 view .LVU252
  206:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
- 1057              		.loc 1 206 22 is_stmt 0 view .LVU258
- 1058 0004 3022     		movs	r2, #48
- 1059 0006 0021     		movs	r1, #0
- 1060 0008 08A8     		add	r0, sp, #32
- 1061 000a FFF7FEFF 		bl	memset
- 1062              	.LVL69:
+ 1034              		.loc 1 206 22 is_stmt 0 view .LVU253
+ 1035 0004 3022     		movs	r2, #48
+ 1036 0006 0021     		movs	r1, #0
+ 1037 0008 08A8     		add	r0, sp, #32
+ 1038 000a FFF7FEFF 		bl	memset
+ 1039              	.LVL68:
  207:Core/Src/main.c **** 
- 1063              		.loc 1 207 3 is_stmt 1 view .LVU259
+ 1040              		.loc 1 207 3 is_stmt 1 view .LVU254
  207:Core/Src/main.c **** 
- 1064              		.loc 1 207 22 is_stmt 0 view .LVU260
- 1065 000e 0023     		movs	r3, #0
- 1066 0010 0393     		str	r3, [sp, #12]
- 1067 0012 0493     		str	r3, [sp, #16]
- 1068 0014 0593     		str	r3, [sp, #20]
- 1069 0016 0693     		str	r3, [sp, #24]
- 1070 0018 0793     		str	r3, [sp, #28]
- 211:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
- 1071              		.loc 1 211 3 is_stmt 1 view .LVU261
- 1072              	.LBB11:
- 211:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
- 1073              		.loc 1 211 3 view .LVU262
- 1074 001a 0193     		str	r3, [sp, #4]
- 211:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
- 1075              		.loc 1 211 3 view .LVU263
- 1076 001c 214A     		ldr	r2, .L60
- 1077 001e 116C     		ldr	r1, [r2, #64]
- 1078 0020 41F08051 		orr	r1, r1, #268435456
- 1079 0024 1164     		str	r1, [r2, #64]
- 211:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
- 1080              		.loc 1 211 3 view .LVU264
- 1081 0026 126C     		ldr	r2, [r2, #64]
- 1082 0028 02F08052 		and	r2, r2, #268435456
- 1083 002c 0192     		str	r2, [sp, #4]
- 211:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
- 1084              		.loc 1 211 3 view .LVU265
- 1085 002e 019A     		ldr	r2, [sp, #4]
- 1086              	.LBE11:
- 211:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
- 1087              		.loc 1 211 3 view .LVU266
- 212:Core/Src/main.c **** 
- 1088              		.loc 1 212 3 view .LVU267
- 1089              	.LBB12:
- 212:Core/Src/main.c **** 
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 37
+ 1041              		.loc 1 207 22 is_stmt 0 view .LVU255
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 36
 
 
- 1090              		.loc 1 212 3 view .LVU268
- 1091 0030 0293     		str	r3, [sp, #8]
+ 1042 000e 0023     		movs	r3, #0
+ 1043 0010 0393     		str	r3, [sp, #12]
+ 1044 0012 0493     		str	r3, [sp, #16]
+ 1045 0014 0593     		str	r3, [sp, #20]
+ 1046 0016 0693     		str	r3, [sp, #24]
+ 1047 0018 0793     		str	r3, [sp, #28]
+ 211:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
+ 1048              		.loc 1 211 3 is_stmt 1 view .LVU256
+ 1049              	.LBB11:
+ 211:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
+ 1050              		.loc 1 211 3 view .LVU257
+ 1051 001a 0193     		str	r3, [sp, #4]
+ 211:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
+ 1052              		.loc 1 211 3 view .LVU258
+ 1053 001c 214A     		ldr	r2, .L60
+ 1054 001e 116C     		ldr	r1, [r2, #64]
+ 1055 0020 41F08051 		orr	r1, r1, #268435456
+ 1056 0024 1164     		str	r1, [r2, #64]
+ 211:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
+ 1057              		.loc 1 211 3 view .LVU259
+ 1058 0026 126C     		ldr	r2, [r2, #64]
+ 1059 0028 02F08052 		and	r2, r2, #268435456
+ 1060 002c 0192     		str	r2, [sp, #4]
+ 211:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
+ 1061              		.loc 1 211 3 view .LVU260
+ 1062 002e 019A     		ldr	r2, [sp, #4]
+ 1063              	.LBE11:
+ 211:Core/Src/main.c ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE2);
+ 1064              		.loc 1 211 3 view .LVU261
  212:Core/Src/main.c **** 
- 1092              		.loc 1 212 3 view .LVU269
- 1093 0032 1D4A     		ldr	r2, .L60+4
- 1094 0034 1368     		ldr	r3, [r2]
- 1095 0036 23F44043 		bic	r3, r3, #49152
- 1096 003a 43F40043 		orr	r3, r3, #32768
- 1097 003e 1360     		str	r3, [r2]
+ 1065              		.loc 1 212 3 view .LVU262
+ 1066              	.LBB12:
  212:Core/Src/main.c **** 
- 1098              		.loc 1 212 3 view .LVU270
- 1099 0040 1368     		ldr	r3, [r2]
- 1100 0042 03F44043 		and	r3, r3, #49152
- 1101 0046 0293     		str	r3, [sp, #8]
+ 1067              		.loc 1 212 3 view .LVU263
+ 1068 0030 0293     		str	r3, [sp, #8]
  212:Core/Src/main.c **** 
- 1102              		.loc 1 212 3 view .LVU271
- 1103 0048 029B     		ldr	r3, [sp, #8]
- 1104              	.LBE12:
+ 1069              		.loc 1 212 3 view .LVU264
+ 1070 0032 1D4A     		ldr	r2, .L60+4
+ 1071 0034 1368     		ldr	r3, [r2]
+ 1072 0036 23F44043 		bic	r3, r3, #49152
+ 1073 003a 43F40043 		orr	r3, r3, #32768
+ 1074 003e 1360     		str	r3, [r2]
  212:Core/Src/main.c **** 
- 1105              		.loc 1 212 3 view .LVU272
+ 1075              		.loc 1 212 3 view .LVU265
+ 1076 0040 1368     		ldr	r3, [r2]
+ 1077 0042 03F44043 		and	r3, r3, #49152
+ 1078 0046 0293     		str	r3, [sp, #8]
+ 212:Core/Src/main.c **** 
+ 1079              		.loc 1 212 3 view .LVU266
+ 1080 0048 029B     		ldr	r3, [sp, #8]
+ 1081              	.LBE12:
+ 212:Core/Src/main.c **** 
+ 1082              		.loc 1 212 3 view .LVU267
  217:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
- 1106              		.loc 1 217 3 view .LVU273
+ 1083              		.loc 1 217 3 view .LVU268
  217:Core/Src/main.c ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
- 1107              		.loc 1 217 36 is_stmt 0 view .LVU274
- 1108 004a 0123     		movs	r3, #1
- 1109 004c 0893     		str	r3, [sp, #32]
+ 1084              		.loc 1 217 36 is_stmt 0 view .LVU269
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 37
+
+
+ 1085 004a 0123     		movs	r3, #1
+ 1086 004c 0893     		str	r3, [sp, #32]
  218:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
- 1110              		.loc 1 218 3 is_stmt 1 view .LVU275
+ 1087              		.loc 1 218 3 is_stmt 1 view .LVU270
  218:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
- 1111              		.loc 1 218 30 is_stmt 0 view .LVU276
- 1112 004e 4FF48033 		mov	r3, #65536
- 1113 0052 0993     		str	r3, [sp, #36]
+ 1088              		.loc 1 218 30 is_stmt 0 view .LVU271
+ 1089 004e 4FF48033 		mov	r3, #65536
+ 1090 0052 0993     		str	r3, [sp, #36]
  219:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
- 1114              		.loc 1 219 3 is_stmt 1 view .LVU277
+ 1091              		.loc 1 219 3 is_stmt 1 view .LVU272
  219:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
- 1115              		.loc 1 219 34 is_stmt 0 view .LVU278
- 1116 0054 0223     		movs	r3, #2
- 1117 0056 0E93     		str	r3, [sp, #56]
+ 1092              		.loc 1 219 34 is_stmt 0 view .LVU273
+ 1093 0054 0223     		movs	r3, #2
+ 1094 0056 0E93     		str	r3, [sp, #56]
  220:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLM = 25;
- 1118              		.loc 1 220 3 is_stmt 1 view .LVU279
+ 1095              		.loc 1 220 3 is_stmt 1 view .LVU274
  220:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLM = 25;
- 1119              		.loc 1 220 35 is_stmt 0 view .LVU280
- 1120 0058 4FF48003 		mov	r3, #4194304
- 1121 005c 0F93     		str	r3, [sp, #60]
+ 1096              		.loc 1 220 35 is_stmt 0 view .LVU275
+ 1097 0058 4FF48003 		mov	r3, #4194304
+ 1098 005c 0F93     		str	r3, [sp, #60]
  221:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLN = 336;
- 1122              		.loc 1 221 3 is_stmt 1 view .LVU281
+ 1099              		.loc 1 221 3 is_stmt 1 view .LVU276
  221:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLN = 336;
- 1123              		.loc 1 221 30 is_stmt 0 view .LVU282
- 1124 005e 1923     		movs	r3, #25
- 1125 0060 1093     		str	r3, [sp, #64]
+ 1100              		.loc 1 221 30 is_stmt 0 view .LVU277
+ 1101 005e 1923     		movs	r3, #25
+ 1102 0060 1093     		str	r3, [sp, #64]
  222:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
- 1126              		.loc 1 222 3 is_stmt 1 view .LVU283
+ 1103              		.loc 1 222 3 is_stmt 1 view .LVU278
  222:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
- 1127              		.loc 1 222 30 is_stmt 0 view .LVU284
- 1128 0062 4FF4A873 		mov	r3, #336
- 1129 0066 1193     		str	r3, [sp, #68]
+ 1104              		.loc 1 222 30 is_stmt 0 view .LVU279
+ 1105 0062 4FF4A873 		mov	r3, #336
+ 1106 0066 1193     		str	r3, [sp, #68]
  223:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLQ = 7;
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 38
-
-
- 1130              		.loc 1 223 3 is_stmt 1 view .LVU285
+ 1107              		.loc 1 223 3 is_stmt 1 view .LVU280
  223:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLQ = 7;
- 1131              		.loc 1 223 30 is_stmt 0 view .LVU286
- 1132 0068 0423     		movs	r3, #4
- 1133 006a 1293     		str	r3, [sp, #72]
+ 1108              		.loc 1 223 30 is_stmt 0 view .LVU281
+ 1109 0068 0423     		movs	r3, #4
+ 1110 006a 1293     		str	r3, [sp, #72]
  224:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 1134              		.loc 1 224 3 is_stmt 1 view .LVU287
+ 1111              		.loc 1 224 3 is_stmt 1 view .LVU282
  224:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 1135              		.loc 1 224 30 is_stmt 0 view .LVU288
- 1136 006c 0723     		movs	r3, #7
- 1137 006e 1393     		str	r3, [sp, #76]
+ 1112              		.loc 1 224 30 is_stmt 0 view .LVU283
+ 1113 006c 0723     		movs	r3, #7
+ 1114 006e 1393     		str	r3, [sp, #76]
  225:Core/Src/main.c ****   {
- 1138              		.loc 1 225 3 is_stmt 1 view .LVU289
+ 1115              		.loc 1 225 3 is_stmt 1 view .LVU284
  225:Core/Src/main.c ****   {
- 1139              		.loc 1 225 7 is_stmt 0 view .LVU290
- 1140 0070 08A8     		add	r0, sp, #32
- 1141 0072 FFF7FEFF 		bl	HAL_RCC_OscConfig
- 1142              	.LVL70:
+ 1116              		.loc 1 225 7 is_stmt 0 view .LVU285
+ 1117 0070 08A8     		add	r0, sp, #32
+ 1118 0072 FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 1119              	.LVL69:
  225:Core/Src/main.c ****   {
- 1143              		.loc 1 225 6 view .LVU291
- 1144 0076 80B9     		cbnz	r0, .L58
+ 1120              		.loc 1 225 6 view .LVU286
+ 1121 0076 80B9     		cbnz	r0, .L58
  232:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
- 1145              		.loc 1 232 3 is_stmt 1 view .LVU292
+ 1122              		.loc 1 232 3 is_stmt 1 view .LVU287
  232:Core/Src/main.c ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
- 1146              		.loc 1 232 31 is_stmt 0 view .LVU293
- 1147 0078 0F23     		movs	r3, #15
- 1148 007a 0393     		str	r3, [sp, #12]
- 234:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 1149              		.loc 1 234 3 is_stmt 1 view .LVU294
- 234:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 1150              		.loc 1 234 34 is_stmt 0 view .LVU295
- 1151 007c 0221     		movs	r1, #2
- 1152 007e 0491     		str	r1, [sp, #16]
- 235:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
- 1153              		.loc 1 235 3 is_stmt 1 view .LVU296
- 235:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
- 1154              		.loc 1 235 35 is_stmt 0 view .LVU297
- 1155 0080 0023     		movs	r3, #0
- 1156 0082 0593     		str	r3, [sp, #20]
- 236:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
- 1157              		.loc 1 236 3 is_stmt 1 view .LVU298
- 236:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
- 1158              		.loc 1 236 36 is_stmt 0 view .LVU299
- 1159 0084 4FF48052 		mov	r2, #4096
- 1160 0088 0692     		str	r2, [sp, #24]
- 237:Core/Src/main.c **** 
- 1161              		.loc 1 237 3 is_stmt 1 view .LVU300
- 237:Core/Src/main.c **** 
- 1162              		.loc 1 237 36 is_stmt 0 view .LVU301
- 1163 008a 0793     		str	r3, [sp, #28]
- 239:Core/Src/main.c ****   {
- 1164              		.loc 1 239 3 is_stmt 1 view .LVU302
- 239:Core/Src/main.c ****   {
- 1165              		.loc 1 239 7 is_stmt 0 view .LVU303
- 1166 008c 03A8     		add	r0, sp, #12
- 1167 008e FFF7FEFF 		bl	HAL_RCC_ClockConfig
- 1168              	.LVL71:
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 39
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 38
 
 
+ 1123              		.loc 1 232 31 is_stmt 0 view .LVU288
+ 1124 0078 0F23     		movs	r3, #15
+ 1125 007a 0393     		str	r3, [sp, #12]
+ 234:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 1126              		.loc 1 234 3 is_stmt 1 view .LVU289
+ 234:Core/Src/main.c ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 1127              		.loc 1 234 34 is_stmt 0 view .LVU290
+ 1128 007c 0221     		movs	r1, #2
+ 1129 007e 0491     		str	r1, [sp, #16]
+ 235:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+ 1130              		.loc 1 235 3 is_stmt 1 view .LVU291
+ 235:Core/Src/main.c ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+ 1131              		.loc 1 235 35 is_stmt 0 view .LVU292
+ 1132 0080 0023     		movs	r3, #0
+ 1133 0082 0593     		str	r3, [sp, #20]
+ 236:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 1134              		.loc 1 236 3 is_stmt 1 view .LVU293
+ 236:Core/Src/main.c ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 1135              		.loc 1 236 36 is_stmt 0 view .LVU294
+ 1136 0084 4FF48052 		mov	r2, #4096
+ 1137 0088 0692     		str	r2, [sp, #24]
+ 237:Core/Src/main.c **** 
+ 1138              		.loc 1 237 3 is_stmt 1 view .LVU295
+ 237:Core/Src/main.c **** 
+ 1139              		.loc 1 237 36 is_stmt 0 view .LVU296
+ 1140 008a 0793     		str	r3, [sp, #28]
  239:Core/Src/main.c ****   {
- 1169              		.loc 1 239 6 view .LVU304
- 1170 0092 20B9     		cbnz	r0, .L59
+ 1141              		.loc 1 239 3 is_stmt 1 view .LVU297
+ 239:Core/Src/main.c ****   {
+ 1142              		.loc 1 239 7 is_stmt 0 view .LVU298
+ 1143 008c 03A8     		add	r0, sp, #12
+ 1144 008e FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 1145              	.LVL70:
+ 239:Core/Src/main.c ****   {
+ 1146              		.loc 1 239 6 view .LVU299
+ 1147 0092 20B9     		cbnz	r0, .L59
  243:Core/Src/main.c **** 
- 1171              		.loc 1 243 1 view .LVU305
- 1172 0094 15B0     		add	sp, sp, #84
- 1173              	.LCFI15:
- 1174              		.cfi_remember_state
- 1175              		.cfi_def_cfa_offset 4
- 1176              		@ sp needed
- 1177 0096 5DF804FB 		ldr	pc, [sp], #4
- 1178              	.L58:
- 1179              	.LCFI16:
- 1180              		.cfi_restore_state
+ 1148              		.loc 1 243 1 view .LVU300
+ 1149 0094 15B0     		add	sp, sp, #84
+ 1150              	.LCFI15:
+ 1151              		.cfi_remember_state
+ 1152              		.cfi_def_cfa_offset 4
+ 1153              		@ sp needed
+ 1154 0096 5DF804FB 		ldr	pc, [sp], #4
+ 1155              	.L58:
+ 1156              	.LCFI16:
+ 1157              		.cfi_restore_state
  227:Core/Src/main.c ****   }
- 1181              		.loc 1 227 5 is_stmt 1 view .LVU306
- 1182 009a FFF7FEFF 		bl	Error_Handler
- 1183              	.LVL72:
- 1184              	.L59:
+ 1158              		.loc 1 227 5 is_stmt 1 view .LVU301
+ 1159 009a FFF7FEFF 		bl	Error_Handler
+ 1160              	.LVL71:
+ 1161              	.L59:
  241:Core/Src/main.c ****   }
- 1185              		.loc 1 241 5 view .LVU307
- 1186 009e FFF7FEFF 		bl	Error_Handler
- 1187              	.LVL73:
- 1188              	.L61:
- 1189 00a2 00BF     		.align	2
- 1190              	.L60:
- 1191 00a4 00380240 		.word	1073887232
- 1192 00a8 00700040 		.word	1073770496
- 1193              		.cfi_endproc
- 1194              	.LFE139:
- 1196              		.section	.text.main,"ax",%progbits
- 1197              		.align	1
- 1198              		.global	main
- 1199              		.syntax unified
- 1200              		.thumb
- 1201              		.thumb_func
- 1203              	main:
- 1204              	.LFB138:
+ 1162              		.loc 1 241 5 view .LVU302
+ 1163 009e FFF7FEFF 		bl	Error_Handler
+ 1164              	.LVL72:
+ 1165              	.L61:
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 39
+
+
+ 1166 00a2 00BF     		.align	2
+ 1167              	.L60:
+ 1168 00a4 00380240 		.word	1073887232
+ 1169 00a8 00700040 		.word	1073770496
+ 1170              		.cfi_endproc
+ 1171              	.LFE139:
+ 1173              		.section	.text.main,"ax",%progbits
+ 1174              		.align	1
+ 1175              		.global	main
+ 1176              		.syntax unified
+ 1177              		.thumb
+ 1178              		.thumb_func
+ 1180              	main:
+ 1181              	.LFB138:
   99:Core/Src/main.c ****   /* USER CODE BEGIN 1 */
- 1205              		.loc 1 99 1 view -0
- 1206              		.cfi_startproc
- 1207              		@ Volatile: function does not return.
- 1208              		@ args = 0, pretend = 0, frame = 80
- 1209              		@ frame_needed = 0, uses_anonymous_args = 0
- 1210 0000 00B5     		push	{lr}
- 1211              	.LCFI17:
- 1212              		.cfi_def_cfa_offset 4
- 1213              		.cfi_offset 14, -4
- 1214 0002 95B0     		sub	sp, sp, #84
- 1215              	.LCFI18:
- 1216              		.cfi_def_cfa_offset 88
+ 1182              		.loc 1 99 1 view -0
+ 1183              		.cfi_startproc
+ 1184              		@ Volatile: function does not return.
+ 1185              		@ args = 0, pretend = 0, frame = 80
+ 1186              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1187 0000 00B5     		push	{lr}
+ 1188              	.LCFI17:
+ 1189              		.cfi_def_cfa_offset 4
+ 1190              		.cfi_offset 14, -4
+ 1191 0002 95B0     		sub	sp, sp, #84
+ 1192              	.LCFI18:
+ 1193              		.cfi_def_cfa_offset 88
  107:Core/Src/main.c **** 
- 1217              		.loc 1 107 3 view .LVU309
- 1218 0004 FFF7FEFF 		bl	HAL_Init
- 1219              	.LVL74:
+ 1194              		.loc 1 107 3 view .LVU304
+ 1195 0004 FFF7FEFF 		bl	HAL_Init
+ 1196              	.LVL73:
  114:Core/Src/main.c **** 
- 1220              		.loc 1 114 3 view .LVU310
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 40
-
-
- 1221 0008 FFF7FEFF 		bl	SystemClock_Config
- 1222              	.LVL75:
+ 1197              		.loc 1 114 3 view .LVU305
+ 1198 0008 FFF7FEFF 		bl	SystemClock_Config
+ 1199              	.LVL74:
  121:Core/Src/main.c ****   MX_DMA_Init();
- 1223              		.loc 1 121 3 view .LVU311
- 1224 000c FFF7FEFF 		bl	MX_GPIO_Init
- 1225              	.LVL76:
+ 1200              		.loc 1 121 3 view .LVU306
+ 1201 000c FFF7FEFF 		bl	MX_GPIO_Init
+ 1202              	.LVL75:
  122:Core/Src/main.c ****   MX_SPI1_Init();
- 1226              		.loc 1 122 3 view .LVU312
- 1227 0010 FFF7FEFF 		bl	MX_DMA_Init
- 1228              	.LVL77:
+ 1203              		.loc 1 122 3 view .LVU307
+ 1204 0010 FFF7FEFF 		bl	MX_DMA_Init
+ 1205              	.LVL76:
  123:Core/Src/main.c ****   MX_I2C1_Init();
- 1229              		.loc 1 123 3 view .LVU313
- 1230 0014 FFF7FEFF 		bl	MX_SPI1_Init
- 1231              	.LVL78:
+ 1206              		.loc 1 123 3 view .LVU308
+ 1207 0014 FFF7FEFF 		bl	MX_SPI1_Init
+ 1208              	.LVL77:
  124:Core/Src/main.c ****   /* USER CODE BEGIN 2 */
- 1232              		.loc 1 124 3 view .LVU314
- 1233 0018 FFF7FEFF 		bl	MX_I2C1_Init
- 1234              	.LVL79:
+ 1209              		.loc 1 124 3 view .LVU309
+ 1210 0018 FFF7FEFF 		bl	MX_I2C1_Init
+ 1211              	.LVL78:
  139:Core/Src/main.c **** 
- 1235              		.loc 1 139 3 view .LVU315
+ 1212              		.loc 1 139 3 view .LVU310
  139:Core/Src/main.c **** 
- 1236              		.loc 1 139 16 is_stmt 0 view .LVU316
- 1237 001c 0120     		movs	r0, #1
- 1238 001e FFF7FEFF 		bl	xQueueCreateMutex
- 1239              	.LVL80:
+ 1213              		.loc 1 139 16 is_stmt 0 view .LVU311
+ 1214 001c 0120     		movs	r0, #1
+ 1215 001e FFF7FEFF 		bl	xQueueCreateMutex
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 40
+
+
+ 1216              	.LVL79:
  139:Core/Src/main.c **** 
- 1240              		.loc 1 139 14 view .LVU317
- 1241 0022 244B     		ldr	r3, .L65
- 1242 0024 1860     		str	r0, [r3]
+ 1217              		.loc 1 139 14 view .LVU312
+ 1218 0022 234B     		ldr	r3, .L65
+ 1219 0024 1860     		str	r0, [r3]
  149:Core/Src/main.c ****   msTickHandle = osTimerCreate(osTimer(msTick), osTimerPeriodic, NULL);
- 1243              		.loc 1 149 3 is_stmt 1 view .LVU318
- 1244 0026 244B     		ldr	r3, .L65+4
- 1245 0028 1293     		str	r3, [sp, #72]
- 1246 002a 0025     		movs	r5, #0
- 1247 002c 1395     		str	r5, [sp, #76]
+ 1220              		.loc 1 149 3 is_stmt 1 view .LVU313
+ 1221 0026 234B     		ldr	r3, .L65+4
+ 1222 0028 1293     		str	r3, [sp, #72]
+ 1223 002a 0025     		movs	r5, #0
+ 1224 002c 1395     		str	r5, [sp, #76]
  150:Core/Src/main.c **** 
- 1248              		.loc 1 150 3 view .LVU319
+ 1225              		.loc 1 150 3 view .LVU314
  150:Core/Src/main.c **** 
- 1249              		.loc 1 150 18 is_stmt 0 view .LVU320
- 1250 002e 2A46     		mov	r2, r5
- 1251 0030 0121     		movs	r1, #1
- 1252 0032 12A8     		add	r0, sp, #72
- 1253 0034 FFF7FEFF 		bl	osTimerCreate
- 1254              	.LVL81:
+ 1226              		.loc 1 150 18 is_stmt 0 view .LVU315
+ 1227 002e 2A46     		mov	r2, r5
+ 1228 0030 0121     		movs	r1, #1
+ 1229 0032 12A8     		add	r0, sp, #72
+ 1230 0034 FFF7FEFF 		bl	osTimerCreate
+ 1231              	.LVL80:
  150:Core/Src/main.c **** 
- 1255              		.loc 1 150 16 view .LVU321
- 1256 0038 204B     		ldr	r3, .L65+8
- 1257 003a 1860     		str	r0, [r3]
+ 1232              		.loc 1 150 16 view .LVU316
+ 1233 0038 1F4B     		ldr	r3, .L65+8
+ 1234 003a 1860     		str	r0, [r3]
  153:Core/Src/main.c ****   debounceTimerHandle = osTimerCreate(osTimer(debounceTimer), osTimerOnce, NULL);
- 1258              		.loc 1 153 3 is_stmt 1 view .LVU322
- 1259 003c 204B     		ldr	r3, .L65+12
- 1260 003e 1093     		str	r3, [sp, #64]
- 1261 0040 1195     		str	r5, [sp, #68]
+ 1235              		.loc 1 153 3 is_stmt 1 view .LVU317
+ 1236 003c 1F4B     		ldr	r3, .L65+12
+ 1237 003e 1093     		str	r3, [sp, #64]
+ 1238 0040 1195     		str	r5, [sp, #68]
  154:Core/Src/main.c **** 
- 1262              		.loc 1 154 3 view .LVU323
+ 1239              		.loc 1 154 3 view .LVU318
  154:Core/Src/main.c **** 
- 1263              		.loc 1 154 25 is_stmt 0 view .LVU324
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 41
-
-
- 1264 0042 2A46     		mov	r2, r5
- 1265 0044 2946     		mov	r1, r5
- 1266 0046 10A8     		add	r0, sp, #64
- 1267 0048 FFF7FEFF 		bl	osTimerCreate
- 1268              	.LVL82:
+ 1240              		.loc 1 154 25 is_stmt 0 view .LVU319
+ 1241 0042 2A46     		mov	r2, r5
+ 1242 0044 2946     		mov	r1, r5
+ 1243 0046 10A8     		add	r0, sp, #64
+ 1244 0048 FFF7FEFF 		bl	osTimerCreate
+ 1245              	.LVL81:
  154:Core/Src/main.c **** 
- 1269              		.loc 1 154 23 view .LVU325
- 1270 004c 1D4B     		ldr	r3, .L65+16
- 1271 004e 1860     		str	r0, [r3]
+ 1246              		.loc 1 154 23 view .LVU320
+ 1247 004c 1C4B     		ldr	r3, .L65+16
+ 1248 004e 1860     		str	r0, [r3]
  157:Core/Src/main.c ****   blinkTimerHandle = osTimerCreate(osTimer(blinkTimer), osTimerOnce, NULL);
- 1272              		.loc 1 157 3 is_stmt 1 view .LVU326
- 1273 0050 1D4B     		ldr	r3, .L65+20
- 1274 0052 0E93     		str	r3, [sp, #56]
- 1275 0054 0F95     		str	r5, [sp, #60]
+ 1249              		.loc 1 157 3 is_stmt 1 view .LVU321
+ 1250 0050 1C4B     		ldr	r3, .L65+20
+ 1251 0052 0E93     		str	r3, [sp, #56]
+ 1252 0054 0F95     		str	r5, [sp, #60]
  158:Core/Src/main.c **** 
- 1276              		.loc 1 158 3 view .LVU327
+ 1253              		.loc 1 158 3 view .LVU322
  158:Core/Src/main.c **** 
- 1277              		.loc 1 158 22 is_stmt 0 view .LVU328
- 1278 0056 2A46     		mov	r2, r5
- 1279 0058 2946     		mov	r1, r5
- 1280 005a 0EA8     		add	r0, sp, #56
- 1281 005c FFF7FEFF 		bl	osTimerCreate
- 1282              	.LVL83:
+ 1254              		.loc 1 158 22 is_stmt 0 view .LVU323
+ 1255 0056 2A46     		mov	r2, r5
+ 1256 0058 2946     		mov	r1, r5
+ 1257 005a 0EA8     		add	r0, sp, #56
+ 1258 005c FFF7FEFF 		bl	osTimerCreate
+ 1259              	.LVL82:
  158:Core/Src/main.c **** 
- 1283              		.loc 1 158 20 view .LVU329
- 1284 0060 1A4B     		ldr	r3, .L65+24
- 1285 0062 1860     		str	r0, [r3]
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 41
+
+
+ 1260              		.loc 1 158 20 view .LVU324
+ 1261 0060 194B     		ldr	r3, .L65+24
+ 1262 0062 1860     		str	r0, [r3]
  171:Core/Src/main.c ****   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
- 1286              		.loc 1 171 3 is_stmt 1 view .LVU330
- 1287 0064 1A4C     		ldr	r4, .L65+28
- 1288 0066 0DF11C0C 		add	ip, sp, #28
- 1289 006a 04F11C0E 		add	lr, r4, #28
- 1290 006e BEE80F00 		ldmia	lr!, {r0, r1, r2, r3}
- 1291 0072 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
- 1292 0076 9EE80700 		ldm	lr, {r0, r1, r2}
- 1293 007a 8CE80700 		stm	ip, {r0, r1, r2}
+ 1263              		.loc 1 171 3 is_stmt 1 view .LVU325
+ 1264 0064 194C     		ldr	r4, .L65+28
+ 1265 0066 0DF11C0C 		add	ip, sp, #28
+ 1266 006a A646     		mov	lr, r4
+ 1267 006c BEE80F00 		ldmia	lr!, {r0, r1, r2, r3}
+ 1268 0070 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 1269 0074 9EE80700 		ldm	lr, {r0, r1, r2}
+ 1270 0078 8CE80700 		stm	ip, {r0, r1, r2}
  172:Core/Src/main.c **** 
- 1294              		.loc 1 172 3 view .LVU331
+ 1271              		.loc 1 172 3 view .LVU326
  172:Core/Src/main.c **** 
- 1295              		.loc 1 172 23 is_stmt 0 view .LVU332
- 1296 007e 2946     		mov	r1, r5
- 1297 0080 07A8     		add	r0, sp, #28
- 1298 0082 FFF7FEFF 		bl	osThreadCreate
- 1299              	.LVL84:
+ 1272              		.loc 1 172 23 is_stmt 0 view .LVU327
+ 1273 007c 2946     		mov	r1, r5
+ 1274 007e 07A8     		add	r0, sp, #28
+ 1275 0080 FFF7FEFF 		bl	osThreadCreate
+ 1276              	.LVL83:
  172:Core/Src/main.c **** 
- 1300              		.loc 1 172 21 view .LVU333
- 1301 0086 134B     		ldr	r3, .L65+32
- 1302 0088 1860     		str	r0, [r3]
+ 1277              		.loc 1 172 21 view .LVU328
+ 1278 0084 124B     		ldr	r3, .L65+32
+ 1279 0086 1860     		str	r0, [r3]
  178:Core/Src/main.c ****   displayTaskHandle = osThreadCreate(osThread(displayTask), NULL);
- 1303              		.loc 1 178 3 is_stmt 1 view .LVU334
- 1304 008a EE46     		mov	lr, sp
- 1305 008c 04F1380C 		add	ip, r4, #56
- 1306 0090 BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
- 1307 0094 AEE80F00 		stmia	lr!, {r0, r1, r2, r3}
- 1308 0098 9CE80700 		ldm	ip, {r0, r1, r2}
- 1309 009c 8EE80700 		stm	lr, {r0, r1, r2}
+ 1280              		.loc 1 178 3 is_stmt 1 view .LVU329
+ 1281 0088 EE46     		mov	lr, sp
+ 1282 008a 04F11C0C 		add	ip, r4, #28
+ 1283 008e BCE80F00 		ldmia	ip!, {r0, r1, r2, r3}
+ 1284 0092 AEE80F00 		stmia	lr!, {r0, r1, r2, r3}
+ 1285 0096 9CE80700 		ldm	ip, {r0, r1, r2}
+ 1286 009a 8EE80700 		stm	lr, {r0, r1, r2}
  179:Core/Src/main.c **** 
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 42
-
-
- 1310              		.loc 1 179 3 view .LVU335
+ 1287              		.loc 1 179 3 view .LVU330
  179:Core/Src/main.c **** 
- 1311              		.loc 1 179 23 is_stmt 0 view .LVU336
- 1312 00a0 2946     		mov	r1, r5
- 1313 00a2 6846     		mov	r0, sp
- 1314 00a4 FFF7FEFF 		bl	osThreadCreate
- 1315              	.LVL85:
+ 1288              		.loc 1 179 23 is_stmt 0 view .LVU331
+ 1289 009e 2946     		mov	r1, r5
+ 1290 00a0 6846     		mov	r0, sp
+ 1291 00a2 FFF7FEFF 		bl	osThreadCreate
+ 1292              	.LVL84:
  179:Core/Src/main.c **** 
- 1316              		.loc 1 179 21 view .LVU337
- 1317 00a8 0B4B     		ldr	r3, .L65+36
- 1318 00aa 1860     		str	r0, [r3]
+ 1293              		.loc 1 179 21 view .LVU332
+ 1294 00a6 0B4B     		ldr	r3, .L65+36
+ 1295 00a8 1860     		str	r0, [r3]
  186:Core/Src/main.c **** 
- 1319              		.loc 1 186 3 is_stmt 1 view .LVU338
- 1320 00ac FFF7FEFF 		bl	osKernelStart
- 1321              	.LVL86:
- 1322              	.L63:
+ 1296              		.loc 1 186 3 is_stmt 1 view .LVU333
+ 1297 00aa FFF7FEFF 		bl	osKernelStart
+ 1298              	.LVL85:
+ 1299              	.L63:
  191:Core/Src/main.c ****   {
- 1323              		.loc 1 191 3 discriminator 1 view .LVU339
+ 1300              		.loc 1 191 3 discriminator 1 view .LVU334
  196:Core/Src/main.c ****   /* USER CODE END 3 */
- 1324              		.loc 1 196 3 discriminator 1 view .LVU340
+ 1301              		.loc 1 196 3 discriminator 1 view .LVU335
  191:Core/Src/main.c ****   {
- 1325              		.loc 1 191 9 discriminator 1 view .LVU341
- 1326 00b0 FEE7     		b	.L63
- 1327              	.L66:
- 1328 00b2 00BF     		.align	2
- 1329              	.L65:
- 1330 00b4 00000000 		.word	.LANCHOR0
- 1331 00b8 00000000 		.word	msTickCallback
- 1332 00bc 00000000 		.word	.LANCHOR5
- 1333 00c0 00000000 		.word	debounceCallback
- 1334 00c4 00000000 		.word	.LANCHOR7
- 1335 00c8 00000000 		.word	blinkTimerCallback
- 1336 00cc 00000000 		.word	.LANCHOR8
- 1337 00d0 00000000 		.word	.LANCHOR3
- 1338 00d4 00000000 		.word	.LANCHOR9
- 1339 00d8 00000000 		.word	.LANCHOR10
- 1340              		.cfi_endproc
- 1341              	.LFE138:
- 1343              		.section	.rodata.str1.4,"aMS",%progbits,1
- 1344              		.align	2
- 1345              	.LC4:
- 1346 0000 6C6F7261 		.ascii	"loraRXTask\000"
- 1346      52585461 
- 1346      736B00
- 1347 000b 00       		.align	2
- 1348              	.LC2:
- 1349 000c 64697370 		.ascii	"displayTask\000"
- 1349      6C617954 
- 1349      61736B00 
- 1350              		.align	2
- 1351              	.LC0:
- 1352 0018 64656661 		.ascii	"defaultTask\000"
- 1352      756C7454 
- 1352      61736B00 
- 1353              		.global	myLoRa
- 1354              		.global	xloraMutex
- 1355              		.global	lora_mutexHandle
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 43
+ 1302              		.loc 1 191 9 discriminator 1 view .LVU336
+ 1303 00ae FEE7     		b	.L63
+ 1304              	.L66:
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 42
 
 
- 1356              		.global	blinkTimerHandle
- 1357              		.global	debounceTimerHandle
- 1358              		.global	msTickHandle
- 1359              		.global	displayTaskHandle
- 1360              		.global	loraRXTaskHandle
- 1361              		.global	defaultTaskHandle
- 1362              		.global	hdma_spi1_rx
- 1363              		.global	hdma_spi1_tx
- 1364              		.global	hspi1
- 1365              		.global	hdma_i2c1_tx
- 1366              		.global	hi2c1
- 1367              		.section	.rodata
- 1368              		.align	2
- 1369              		.set	.LANCHOR3,. + 0
- 1370              	.LC7:
- 1371 0000 00000000 		.word	.LC4
- 1372 0004 00000000 		.word	StartLoraRXTask
- 1373 0008 0100     		.short	1
- 1374 000a 0000     		.space	2
- 1375 000c 00000000 		.word	0
- 1376 0010 80000000 		.word	128
- 1377 0014 00000000 		.word	0
- 1378 0018 00000000 		.word	0
- 1379              	.LC12:
- 1380 001c 18000000 		.word	.LC0
- 1381 0020 00000000 		.word	StartDefaultTask
- 1382 0024 0000     		.short	0
- 1383 0026 0000     		.space	2
- 1384 0028 00000000 		.word	0
- 1385 002c 80000000 		.word	128
- 1386 0030 00000000 		.word	0
- 1387 0034 00000000 		.word	0
- 1388              	.LC13:
- 1389 0038 0C000000 		.word	.LC2
- 1390 003c 00000000 		.word	StartDisplayTask
- 1391 0040 0000     		.short	0
- 1392 0042 0000     		.space	2
- 1393 0044 00000000 		.word	0
- 1394 0048 80000000 		.word	128
- 1395 004c 00000000 		.word	0
- 1396 0050 00000000 		.word	0
- 1397              		.section	.bss.blinkTimerHandle,"aw",%nobits
- 1398              		.align	2
- 1399              		.set	.LANCHOR8,. + 0
- 1402              	blinkTimerHandle:
- 1403 0000 00000000 		.space	4
- 1404              		.section	.bss.debounceTimerHandle,"aw",%nobits
- 1405              		.align	2
- 1406              		.set	.LANCHOR7,. + 0
- 1409              	debounceTimerHandle:
- 1410 0000 00000000 		.space	4
- 1411              		.section	.bss.defaultTaskHandle,"aw",%nobits
- 1412              		.align	2
- 1413              		.set	.LANCHOR9,. + 0
- 1416              	defaultTaskHandle:
- 1417 0000 00000000 		.space	4
- 1418              		.section	.bss.displayTaskHandle,"aw",%nobits
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 44
+ 1305              		.align	2
+ 1306              	.L65:
+ 1307 00b0 00000000 		.word	.LANCHOR4
+ 1308 00b4 00000000 		.word	msTickCallback
+ 1309 00b8 00000000 		.word	.LANCHOR2
+ 1310 00bc 00000000 		.word	debounceCallback
+ 1311 00c0 00000000 		.word	.LANCHOR5
+ 1312 00c4 00000000 		.word	blinkTimerCallback
+ 1313 00c8 00000000 		.word	.LANCHOR6
+ 1314 00cc 00000000 		.word	.LANCHOR7
+ 1315 00d0 00000000 		.word	.LANCHOR8
+ 1316 00d4 00000000 		.word	.LANCHOR9
+ 1317              		.cfi_endproc
+ 1318              	.LFE138:
+ 1320              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 1321              		.align	2
+ 1322              	.LC2:
+ 1323 0000 64697370 		.ascii	"displayTask\000"
+ 1323      6C617954 
+ 1323      61736B00 
+ 1324              		.align	2
+ 1325              	.LC0:
+ 1326 000c 64656661 		.ascii	"defaultTask\000"
+ 1326      756C7454 
+ 1326      61736B00 
+ 1327              		.global	myLoRa
+ 1328              		.global	xloraMutex
+ 1329              		.global	lora_mutexHandle
+ 1330              		.global	blinkTimerHandle
+ 1331              		.global	debounceTimerHandle
+ 1332              		.global	msTickHandle
+ 1333              		.global	displayTaskHandle
+ 1334              		.global	loraRXTaskHandle
+ 1335              		.global	defaultTaskHandle
+ 1336              		.global	hdma_spi1_rx
+ 1337              		.global	hdma_spi1_tx
+ 1338              		.global	hspi1
+ 1339              		.global	hdma_i2c1_tx
+ 1340              		.global	hi2c1
+ 1341              		.section	.rodata
+ 1342              		.align	2
+ 1343              		.set	.LANCHOR7,. + 0
+ 1344              	.LC9:
+ 1345 0000 0C000000 		.word	.LC0
+ 1346 0004 00000000 		.word	StartDefaultTask
+ 1347 0008 0000     		.short	0
+ 1348 000a 0000     		.space	2
+ 1349 000c 00000000 		.word	0
+ 1350 0010 80000000 		.word	128
+ 1351 0014 00000000 		.word	0
+ 1352 0018 00000000 		.word	0
+ 1353              	.LC10:
+ 1354 001c 00000000 		.word	.LC2
+ 1355 0020 00000000 		.word	StartDisplayTask
+ 1356 0024 0000     		.short	0
+ 1357 0026 0000     		.space	2
+ 1358 0028 00000000 		.word	0
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 43
 
 
- 1419              		.align	2
- 1420              		.set	.LANCHOR10,. + 0
- 1423              	displayTaskHandle:
- 1424 0000 00000000 		.space	4
- 1425              		.section	.bss.hdma_i2c1_tx,"aw",%nobits
- 1426              		.align	2
- 1429              	hdma_i2c1_tx:
- 1430 0000 00000000 		.space	96
- 1430      00000000 
- 1430      00000000 
- 1430      00000000 
- 1430      00000000 
- 1431              		.section	.bss.hdma_spi1_rx,"aw",%nobits
- 1432              		.align	2
- 1435              	hdma_spi1_rx:
- 1436 0000 00000000 		.space	96
- 1436      00000000 
- 1436      00000000 
- 1436      00000000 
- 1436      00000000 
- 1437              		.section	.bss.hdma_spi1_tx,"aw",%nobits
- 1438              		.align	2
- 1441              	hdma_spi1_tx:
- 1442 0000 00000000 		.space	96
- 1442      00000000 
- 1442      00000000 
- 1442      00000000 
- 1442      00000000 
- 1443              		.section	.bss.hi2c1,"aw",%nobits
- 1444              		.align	2
- 1445              		.set	.LANCHOR6,. + 0
- 1448              	hi2c1:
- 1449 0000 00000000 		.space	84
- 1449      00000000 
- 1449      00000000 
- 1449      00000000 
- 1449      00000000 
- 1450              		.section	.bss.hspi1,"aw",%nobits
- 1451              		.align	2
- 1452              		.set	.LANCHOR2,. + 0
- 1455              	hspi1:
- 1456 0000 00000000 		.space	88
- 1456      00000000 
- 1456      00000000 
- 1456      00000000 
- 1456      00000000 
- 1457              		.section	.bss.loraRXTaskHandle,"aw",%nobits
- 1458              		.align	2
- 1459              		.set	.LANCHOR4,. + 0
- 1462              	loraRXTaskHandle:
- 1463 0000 00000000 		.space	4
- 1464              		.section	.bss.lora_mutexHandle,"aw",%nobits
- 1465              		.align	2
- 1468              	lora_mutexHandle:
- 1469 0000 00000000 		.space	4
- 1470              		.section	.bss.msTickHandle,"aw",%nobits
- 1471              		.align	2
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 45
+ 1359 002c 80000000 		.word	128
+ 1360 0030 00000000 		.word	0
+ 1361 0034 00000000 		.word	0
+ 1362              		.section	.bss.blinkTimerHandle,"aw",%nobits
+ 1363              		.align	2
+ 1364              		.set	.LANCHOR6,. + 0
+ 1367              	blinkTimerHandle:
+ 1368 0000 00000000 		.space	4
+ 1369              		.section	.bss.debounceTimerHandle,"aw",%nobits
+ 1370              		.align	2
+ 1371              		.set	.LANCHOR5,. + 0
+ 1374              	debounceTimerHandle:
+ 1375 0000 00000000 		.space	4
+ 1376              		.section	.bss.defaultTaskHandle,"aw",%nobits
+ 1377              		.align	2
+ 1378              		.set	.LANCHOR8,. + 0
+ 1381              	defaultTaskHandle:
+ 1382 0000 00000000 		.space	4
+ 1383              		.section	.bss.displayTaskHandle,"aw",%nobits
+ 1384              		.align	2
+ 1385              		.set	.LANCHOR9,. + 0
+ 1388              	displayTaskHandle:
+ 1389 0000 00000000 		.space	4
+ 1390              		.section	.bss.hdma_i2c1_tx,"aw",%nobits
+ 1391              		.align	2
+ 1394              	hdma_i2c1_tx:
+ 1395 0000 00000000 		.space	96
+ 1395      00000000 
+ 1395      00000000 
+ 1395      00000000 
+ 1395      00000000 
+ 1396              		.section	.bss.hdma_spi1_rx,"aw",%nobits
+ 1397              		.align	2
+ 1400              	hdma_spi1_rx:
+ 1401 0000 00000000 		.space	96
+ 1401      00000000 
+ 1401      00000000 
+ 1401      00000000 
+ 1401      00000000 
+ 1402              		.section	.bss.hdma_spi1_tx,"aw",%nobits
+ 1403              		.align	2
+ 1406              	hdma_spi1_tx:
+ 1407 0000 00000000 		.space	96
+ 1407      00000000 
+ 1407      00000000 
+ 1407      00000000 
+ 1407      00000000 
+ 1408              		.section	.bss.hi2c1,"aw",%nobits
+ 1409              		.align	2
+ 1410              		.set	.LANCHOR3,. + 0
+ 1413              	hi2c1:
+ 1414 0000 00000000 		.space	84
+ 1414      00000000 
+ 1414      00000000 
+ 1414      00000000 
+ 1414      00000000 
+ 1415              		.section	.bss.hspi1,"aw",%nobits
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 44
 
 
- 1472              		.set	.LANCHOR5,. + 0
- 1475              	msTickHandle:
- 1476 0000 00000000 		.space	4
- 1477              		.section	.bss.myLoRa,"aw",%nobits
- 1478              		.align	2
- 1479              		.set	.LANCHOR1,. + 0
- 1482              	myLoRa:
- 1483 0000 00000000 		.space	44
- 1483      00000000 
- 1483      00000000 
- 1483      00000000 
- 1483      00000000 
- 1484              		.section	.bss.xloraMutex,"aw",%nobits
- 1485              		.align	2
- 1486              		.set	.LANCHOR0,. + 0
- 1489              	xloraMutex:
- 1490 0000 00000000 		.space	4
- 1491              		.text
- 1492              	.Letext0:
- 1493              		.file 3 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h"
- 1494              		.file 4 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\machine\\_default_types.h"
- 1495              		.file 5 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\sys\\_stdint.h"
- 1496              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
- 1497              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 1498              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
- 1499              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
- 1500              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 1501              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 1502              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 1503              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
- 1504              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 1505              		.file 15 "Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h"
- 1506              		.file 16 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
- 1507              		.file 17 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
- 1508              		.file 18 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
- 1509              		.file 19 "Middlewares/Third_Party/FreeRTOS/Source/include/timers.h"
- 1510              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
- 1511              		.file 21 "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
- 1512              		.file 22 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
- 1513              		.file 23 "Core/Inc/lora.h"
- 1514              		.file 24 "Core/Inc/extern.h"
- 1515              		.file 25 "Core/Inc/ssd1306_fonts.h"
- 1516              		.file 26 "Core/Inc/ssd1306.h"
- 1517              		.file 27 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 1518              		.file 28 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\stdio.h"
- 1519              		.file 29 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
- 1520              		.file 30 "<built-in>"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 46
+ 1416              		.align	2
+ 1417              		.set	.LANCHOR1,. + 0
+ 1420              	hspi1:
+ 1421 0000 00000000 		.space	88
+ 1421      00000000 
+ 1421      00000000 
+ 1421      00000000 
+ 1421      00000000 
+ 1422              		.section	.bss.loraRXTaskHandle,"aw",%nobits
+ 1423              		.align	2
+ 1426              	loraRXTaskHandle:
+ 1427 0000 00000000 		.space	4
+ 1428              		.section	.bss.lora_mutexHandle,"aw",%nobits
+ 1429              		.align	2
+ 1432              	lora_mutexHandle:
+ 1433 0000 00000000 		.space	4
+ 1434              		.section	.bss.msTickHandle,"aw",%nobits
+ 1435              		.align	2
+ 1436              		.set	.LANCHOR2,. + 0
+ 1439              	msTickHandle:
+ 1440 0000 00000000 		.space	4
+ 1441              		.section	.bss.myLoRa,"aw",%nobits
+ 1442              		.align	2
+ 1443              		.set	.LANCHOR0,. + 0
+ 1446              	myLoRa:
+ 1447 0000 00000000 		.space	44
+ 1447      00000000 
+ 1447      00000000 
+ 1447      00000000 
+ 1447      00000000 
+ 1448              		.section	.bss.xloraMutex,"aw",%nobits
+ 1449              		.align	2
+ 1450              		.set	.LANCHOR4,. + 0
+ 1453              	xloraMutex:
+ 1454 0000 00000000 		.space	4
+ 1455              		.text
+ 1456              	.Letext0:
+ 1457              		.file 3 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h"
+ 1458              		.file 4 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1459              		.file 5 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 1460              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 1461              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 1462              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
+ 1463              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
+ 1464              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 1465              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 1466              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 1467              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
+ 1468              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 1469              		.file 15 "Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h"
+ 1470              		.file 16 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ 1471              		.file 17 "Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"
+ 1472              		.file 18 "Middlewares/Third_Party/FreeRTOS/Source/include/task.h"
+ 1473              		.file 19 "Middlewares/Third_Party/FreeRTOS/Source/include/timers.h"
+ 1474              		.file 20 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 1475              		.file 21 "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
+ 1476              		.file 22 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 45
+
+
+ 1477              		.file 23 "Core/Inc/lora.h"
+ 1478              		.file 24 "Core/Inc/extern.h"
+ 1479              		.file 25 "Core/Inc/ssd1306_fonts.h"
+ 1480              		.file 26 "Core/Inc/ssd1306.h"
+ 1481              		.file 27 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 1482              		.file 28 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\stdio.h"
+ 1483              		.file 29 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
+ 1484              		.file 30 "<built-in>"
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 46
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:20     .text.msTickCallback:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:26     .text.msTickCallback:00000000 msTickCallback
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:111    .text.msTickCallback:00000058 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:120    .text.debounceCallback:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:126    .text.debounceCallback:00000000 debounceCallback
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:144    .text.debounceCallback:00000008 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:149    .text.blinkTimerCallback:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:155    .text.blinkTimerCallback:00000000 blinkTimerCallback
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:169    .text.MX_GPIO_Init:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:174    .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:350    .text.MX_GPIO_Init:000000d4 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:357    .text.MX_DMA_Init:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:362    .text.MX_DMA_Init:00000000 MX_DMA_Init
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:449    .text.MX_DMA_Init:00000064 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:454    .text.StartDisplayTask:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:460    .text.StartDisplayTask:00000000 StartDisplayTask
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:487    .rodata.StartDefaultTask.str1.4:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:503    .text.StartDefaultTask:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:509    .text.StartDefaultTask:00000000 StartDefaultTask
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:747    .text.StartDefaultTask:0000015c $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:767    .text.StartLoraRXTask:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:773    .text.StartLoraRXTask:00000000 StartLoraRXTask
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:803    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:809    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:843    .text.HAL_TIM_PeriodElapsedCallback:00000014 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:848    .text.Error_Handler:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:854    .text.Error_Handler:00000000 Error_Handler
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:886    .text.MX_SPI1_Init:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:891    .text.MX_SPI1_Init:00000000 MX_SPI1_Init
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:960    .text.MX_SPI1_Init:00000038 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:966    .text.MX_I2C1_Init:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:971    .text.MX_I2C1_Init:00000000 MX_I2C1_Init
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1030   .text.MX_I2C1_Init:00000030 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1037   .text.SystemClock_Config:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1043   .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1191   .text.SystemClock_Config:000000a4 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1197   .text.main:00000000 $t
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1203   .text.main:00000000 main
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1330   .text.main:000000b4 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1344   .rodata.str1.4:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1482   .bss.myLoRa:00000000 myLoRa
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1489   .bss.xloraMutex:00000000 xloraMutex
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1468   .bss.lora_mutexHandle:00000000 lora_mutexHandle
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1402   .bss.blinkTimerHandle:00000000 blinkTimerHandle
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1409   .bss.debounceTimerHandle:00000000 debounceTimerHandle
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1475   .bss.msTickHandle:00000000 msTickHandle
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1423   .bss.displayTaskHandle:00000000 displayTaskHandle
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1462   .bss.loraRXTaskHandle:00000000 loraRXTaskHandle
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1416   .bss.defaultTaskHandle:00000000 defaultTaskHandle
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1435   .bss.hdma_spi1_rx:00000000 hdma_spi1_rx
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1441   .bss.hdma_spi1_tx:00000000 hdma_spi1_tx
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1455   .bss.hspi1:00000000 hspi1
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1429   .bss.hdma_i2c1_tx:00000000 hdma_i2c1_tx
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1448   .bss.hi2c1:00000000 hi2c1
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1368   .rodata:00000000 $d
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s 			page 47
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:20     .text.msTickCallback:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:26     .text.msTickCallback:00000000 msTickCallback
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:111    .text.msTickCallback:00000058 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:120    .text.debounceCallback:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:126    .text.debounceCallback:00000000 debounceCallback
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:144    .text.debounceCallback:00000008 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:149    .text.blinkTimerCallback:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:155    .text.blinkTimerCallback:00000000 blinkTimerCallback
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:169    .text.MX_GPIO_Init:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:174    .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:350    .text.MX_GPIO_Init:000000d4 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:357    .text.MX_DMA_Init:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:362    .text.MX_DMA_Init:00000000 MX_DMA_Init
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:449    .text.MX_DMA_Init:00000064 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:454    .text.StartDisplayTask:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:460    .text.StartDisplayTask:00000000 StartDisplayTask
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:487    .rodata.StartDefaultTask.str1.4:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:503    .text.StartDefaultTask:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:509    .text.StartDefaultTask:00000000 StartDefaultTask
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:727    .text.StartDefaultTask:00000138 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:744    .text.StartLoraRXTask:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:750    .text.StartLoraRXTask:00000000 StartLoraRXTask
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:780    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:786    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:820    .text.HAL_TIM_PeriodElapsedCallback:00000014 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:825    .text.Error_Handler:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:831    .text.Error_Handler:00000000 Error_Handler
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:863    .text.MX_SPI1_Init:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:868    .text.MX_SPI1_Init:00000000 MX_SPI1_Init
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:937    .text.MX_SPI1_Init:00000038 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:943    .text.MX_I2C1_Init:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:948    .text.MX_I2C1_Init:00000000 MX_I2C1_Init
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1007   .text.MX_I2C1_Init:00000030 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1014   .text.SystemClock_Config:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1020   .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1168   .text.SystemClock_Config:000000a4 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1174   .text.main:00000000 $t
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1180   .text.main:00000000 main
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1307   .text.main:000000b0 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1321   .rodata.str1.4:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1446   .bss.myLoRa:00000000 myLoRa
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1453   .bss.xloraMutex:00000000 xloraMutex
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1432   .bss.lora_mutexHandle:00000000 lora_mutexHandle
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1367   .bss.blinkTimerHandle:00000000 blinkTimerHandle
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1374   .bss.debounceTimerHandle:00000000 debounceTimerHandle
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1439   .bss.msTickHandle:00000000 msTickHandle
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1388   .bss.displayTaskHandle:00000000 displayTaskHandle
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1426   .bss.loraRXTaskHandle:00000000 loraRXTaskHandle
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1381   .bss.defaultTaskHandle:00000000 defaultTaskHandle
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1400   .bss.hdma_spi1_rx:00000000 hdma_spi1_rx
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1406   .bss.hdma_spi1_tx:00000000 hdma_spi1_tx
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1420   .bss.hspi1:00000000 hspi1
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1394   .bss.hdma_i2c1_tx:00000000 hdma_i2c1_tx
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1413   .bss.hi2c1:00000000 hi2c1
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1342   .rodata:00000000 $d
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s 			page 47
 
 
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1398   .bss.blinkTimerHandle:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1405   .bss.debounceTimerHandle:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1412   .bss.defaultTaskHandle:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1419   .bss.displayTaskHandle:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1426   .bss.hdma_i2c1_tx:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1432   .bss.hdma_spi1_rx:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1438   .bss.hdma_spi1_tx:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1444   .bss.hi2c1:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1451   .bss.hspi1:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1458   .bss.loraRXTaskHandle:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1465   .bss.lora_mutexHandle:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1471   .bss.msTickHandle:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1478   .bss.myLoRa:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccVSLySq.s:1485   .bss.xloraMutex:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1363   .bss.blinkTimerHandle:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1370   .bss.debounceTimerHandle:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1377   .bss.defaultTaskHandle:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1384   .bss.displayTaskHandle:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1391   .bss.hdma_i2c1_tx:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1397   .bss.hdma_spi1_rx:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1403   .bss.hdma_spi1_tx:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1409   .bss.hi2c1:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1416   .bss.hspi1:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1423   .bss.loraRXTaskHandle:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1429   .bss.lora_mutexHandle:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1435   .bss.msTickHandle:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1442   .bss.myLoRa:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccQ7sHkq.s:1449   .bss.xloraMutex:00000000 $d
 
 UNDEFINED SYMBOLS
 red_flag
@@ -2778,12 +2739,10 @@ HAL_GPIO_Init
 HAL_NVIC_SetPriority
 HAL_NVIC_EnableIRQ
 osDelay
-xQueueCreateMutex
 newLoRa
 LoRa_init
 sprintf
 LoRa_startReceiving
-osThreadCreate
 ssd1306_Init
 ssd1306_SetCursor
 ssd1306_WriteString
@@ -2791,12 +2750,12 @@ ssd1306_UpdateScreen
 ssd1306_Fill
 resetGame
 osTimerStart
-doGameState
+doGameStateSimple
+getKOTHPacket
 LoRa_transmit
 opcodeString
 debugBuddy
 Font_16x24
-getKOTHPacket
 HAL_IncTick
 HAL_SPI_Init
 HAL_I2C_Init
@@ -2804,5 +2763,7 @@ memset
 HAL_RCC_OscConfig
 HAL_RCC_ClockConfig
 HAL_Init
+xQueueCreateMutex
 osTimerCreate
+osThreadCreate
 osKernelStart
