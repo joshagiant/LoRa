@@ -56,7 +56,7 @@ DMA_HandleTypeDef hdma_spi1_tx;
 DMA_HandleTypeDef hdma_spi1_rx;
 
 osThreadId defaultTaskHandle;
-osThreadId loraRXTaskHandle;
+osThreadId loraTaskHandle;
 osThreadId displayTaskHandle;
 osTimerId msTickHandle;
 osTimerId debounceTimerHandle;
@@ -76,7 +76,7 @@ static void MX_DMA_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_I2C1_Init(void);
 void StartDefaultTask(void const * argument);
-void StartLoraRXTask(void const * argument);
+void StartLoraTask(void const * argument);
 void StartDisplayTask(void const * argument);
 void msTickCallback(void const * argument);
 void debounceCallback(void const * argument);
@@ -404,41 +404,15 @@ void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN 5 */
   //xloraMutex = xSemaphoreCreateMutex();
-  //xSemaphoreTake(xloraMutex, portMAX_DELAY);
-
-  // Create LoRa instance
-  myLoRa = newLoRa();
-
-  // configure
-    myLoRa.CS_port         = LORA_CS_GPIO_Port;
-    myLoRa.CS_pin          = LORA_CS_Pin;
-    myLoRa.reset_port      = LORA_RST_GPIO_Port;
-    myLoRa.reset_pin       = LORA_RST_Pin;
-    myLoRa.DIO0_port       = LORA_EXTI_GPIO_Port;
-    myLoRa.DIO0_pin        = LORA_EXTI_Pin;
-    myLoRa.hSPIx           = &hspi1;
-
-  // Kick it
-  uint16_t LoRa_Status = LoRa_init(&myLoRa);
-  sprintf(opcodeString,"Josh wins", 10);
-  if(LoRa_Status == LORA_OK)
-  {
-    LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 12, 100);
-  }
-  else
-  {
-    debugBuddy = 9;
-  }
-
-  LoRa_startReceiving(&myLoRa);
-  
+  //xSemaphoreTake(xloraMutex, portMAX_DELAY);  
   //xSemaphoreGive(xloraMutex);
   //debug osMutexRelease(lora_mutexHandle);
 
-  osThreadDef(loraRXTask, StartLoraRXTask, osPriorityAboveNormal, 0, 128);
-  //loraRXTaskHandle = osThreadCreate(osThread(loraRXTask), NULL);
+  osThreadDef(loraTask, StartLoraTask, osPriorityAboveNormal, 0, 128);
+  loraTaskHandle = osThreadCreate(osThread(loraTask), NULL);
 
   REDLED_OFF;
+  BLUELED_OFF;
   ssd1306_Init();
   ssd1306_SetCursor(0,0);
   ssd1306_WriteString("KING",Font_16x24,1);
@@ -471,16 +445,15 @@ void StartDefaultTask(void const * argument)
   for(;;)
   {
 
-    //doGameState();
-    doGameStateSimple();
+    // if packet received, process it
+    if(newRX_flag) decodeKOTHPacket();
 
-    getKOTHPacket();
+    // Evaluate current state
+    doGameState();
 
-
+  
     osDelay(20);
    
-
-
   }
   /* USER CODE END 5 */
 }
@@ -492,19 +465,67 @@ void StartDefaultTask(void const * argument)
 * @retval None
 */
 /* USER CODE END Header_StartLoraRXTask */
-void StartLoraRXTask(void const * argument)
+void StartLoraTask(void const * argument)
 {
-  /* USER CODE BEGIN StartLoraRXTask */
+  /* USER CODE BEGIN StartLoraTask */
+    
+    // Create LoRa instance
+    myLoRa = newLoRa();
+
+      // configure
+      myLoRa.CS_port         = LORA_CS_GPIO_Port;
+      myLoRa.CS_pin          = LORA_CS_Pin;
+      myLoRa.reset_port      = LORA_RST_GPIO_Port;
+      myLoRa.reset_pin       = LORA_RST_Pin;
+      myLoRa.DIO0_port       = LORA_EXTI_GPIO_Port;
+      myLoRa.DIO0_pin        = LORA_EXTI_Pin;
+      myLoRa.hSPIx           = &hspi1;
+
+      // Test it
+      uint16_t LoRa_Status = LoRa_init(&myLoRa);
+      sprintf(opcodeString,"Josh wins", 10);
+      if(LoRa_Status == LORA_OK)
+      {
+        LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 12, 100);
+      }
+
+    LoRa_startReceiving(&myLoRa);
+    rxCount = 0;
+    txCount = 0;
+
   /* Infinite loop */
   for(;;)
   {
+    // RX first
     // Get the data
-    getKOTHPacket();
+    // decodeKOTHPacket();
+
+    packet_size = LoRa_receive(&myLoRa, loraRXbuf, 10);
+
+    if(packet_size > 0)
+    {
+        newRX_flag = 1;
+        if(loraRXbuf[0] != receivedPacket[0])
+        {
+            memcpy(receivedPacket,loraRXbuf,10);
+        }
+
+    }
+
+    //osDelay(5);
+
+    // TX for every meaningful button press
+    if(newTX_flag)
+    {
+      newTX_flag = 0;
+      // send a message
+      LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 12, 100);
+    }
     
-    osDelay(100);
+    osDelay(200);
 
   }
-  /* USER CODE END StartLoraRXTask */
+  /* USER CODE END StartLoraTask */
 }
 
 /* USER CODE BEGIN Header_StartDisplayTask */
@@ -549,6 +570,23 @@ void msTickCallback(void const * argument)
         red_flag = 0;
         blue_flag = 0;
         gameState = BLUEWINS;
+      }
+    }
+
+    if(redLED_flag)
+    {
+        if(++redLED_timer >= 25)
+        {
+          redLED_flag = 0;
+          REDLED_OFF;
+        }
+    }
+    if(blueLED_flag)
+    {
+      if(++blueLED_timer >= 25)
+      {
+        blueLED_flag = 0;
+        BLUELED_OFF;
       }
     }
   /* USER CODE END msTickCallback */
