@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s 			page 1
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s 			page 1
   47 0040 57414954 		.ascii	"WAITING\000"
   47      494E4700 
   48              		.align	2
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s 			page 2
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s 			page 2
 
 
   49              	.LC9:
@@ -67,224 +67,244 @@ ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s 			page 1
   51              		.global	gameState
   52              		.global	rxCount
   53              		.global	txCount
-  54              		.global	txReadable
-  55              		.global	rxReadable
-  56              		.global	opcodeString
-  57              		.global	receivedPacket
-  58              		.global	loraRXbuf
-  59              		.global	loraRXopcode
-  60              		.global	packet_size
-  61              		.global	blueLED_flag
-  62              		.global	redLED_flag
-  63              		.global	blueLED_timer
-  64              		.global	redLED_timer
-  65              		.global	debounce_timer
-  66              		.global	blue_counter
-  67              		.global	red_counter
-  68              		.global	OTHER_PLAYER
-  69              		.global	THIS_PLAYER
-  70              		.global	newRX_flag
-  71              		.global	newTX_flag
-  72              		.global	debouncing_Flag
-  73              		.global	blue_flag
-  74              		.global	red_flag
-  75              		.global	stateChange_flag
-  76              		.global	loraRX_flag
-  77              		.global	debugBuddy
-  78              		.section	.bss.OTHER_PLAYER,"aw",%nobits
-  81              	OTHER_PLAYER:
-  82 0000 00       		.space	1
-  83              		.section	.bss.THIS_PLAYER,"aw",%nobits
-  86              	THIS_PLAYER:
-  87 0000 00       		.space	1
-  88              		.section	.bss.blueLED_flag,"aw",%nobits
-  91              	blueLED_flag:
-  92 0000 00       		.space	1
-  93              		.section	.bss.blueLED_timer,"aw",%nobits
-  96              	blueLED_timer:
-  97 0000 00       		.space	1
-  98              		.section	.bss.blue_counter,"aw",%nobits
-  99              		.align	2
- 102              	blue_counter:
- 103 0000 00000000 		.space	4
- 104              		.section	.bss.blue_flag,"aw",%nobits
- 107              	blue_flag:
- 108 0000 00       		.space	1
- 109              		.section	.bss.debounce_timer,"aw",%nobits
- 110              		.align	1
- 113              	debounce_timer:
- 114 0000 0000     		.space	2
- 115              		.section	.bss.debouncing_Flag,"aw",%nobits
- 118              	debouncing_Flag:
- 119 0000 00       		.space	1
- 120              		.section	.bss.debugBuddy,"aw",%nobits
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s 			page 3
+  54              		.global	finalScore
+  55              		.global	score
+  56              		.global	txReadable
+  57              		.global	rxReadable
+  58              		.global	opcodeString
+  59              		.global	receivedPacket
+  60              		.global	loraRXbuf
+  61              		.global	loraRXopcode
+  62              		.global	packet_size
+  63              		.global	blueLED_flag
+  64              		.global	redLED_flag
+  65              		.global	blueLED_timer
+  66              		.global	redLED_timer
+  67              		.global	debounce_timer
+  68              		.global	blue_counter
+  69              		.global	red_counter
+  70              		.global	OTHER_PLAYER
+  71              		.global	THIS_PLAYER
+  72              		.global	RXready_flag
+  73              		.global	TXready_flag
+  74              		.global	debouncing_Flag
+  75              		.global	blue_flag
+  76              		.global	red_flag
+  77              		.global	stateChange_flag
+  78              		.global	loraRX_flag
+  79              		.global	debugBuddy
+  80              		.section	.bss.OTHER_PLAYER,"aw",%nobits
+  83              	OTHER_PLAYER:
+  84 0000 00       		.space	1
+  85              		.section	.bss.RXready_flag,"aw",%nobits
+  88              	RXready_flag:
+  89 0000 00       		.space	1
+  90              		.section	.bss.THIS_PLAYER,"aw",%nobits
+  93              	THIS_PLAYER:
+  94 0000 00       		.space	1
+  95              		.section	.bss.TXready_flag,"aw",%nobits
+  98              	TXready_flag:
+  99 0000 00       		.space	1
+ 100              		.section	.bss.blueLED_flag,"aw",%nobits
+ 103              	blueLED_flag:
+ 104 0000 00       		.space	1
+ 105              		.section	.bss.blueLED_timer,"aw",%nobits
+ 108              	blueLED_timer:
+ 109 0000 00       		.space	1
+ 110              		.section	.bss.blue_counter,"aw",%nobits
+ 111              		.align	1
+ 114              	blue_counter:
+ 115 0000 0000     		.space	2
+ 116              		.section	.bss.blue_flag,"aw",%nobits
+ 119              	blue_flag:
+ 120 0000 00       		.space	1
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s 			page 3
 
 
- 121              		.align	1
- 124              	debugBuddy:
- 125 0000 0000     		.space	2
- 126              		.section	.bss.gameState,"aw",%nobits
- 129              	gameState:
- 130 0000 00       		.space	1
- 131              		.section	.bss.loraRX_flag,"aw",%nobits
- 134              	loraRX_flag:
- 135 0000 00       		.space	1
- 136              		.section	.bss.loraRXbuf,"aw",%nobits
- 137              		.align	2
- 140              	loraRXbuf:
- 141 0000 00000000 		.space	10
- 141      00000000 
- 141      0000
- 142              		.section	.bss.loraRXopcode,"aw",%nobits
- 145              	loraRXopcode:
- 146 0000 00       		.space	1
- 147              		.section	.bss.newRX_flag,"aw",%nobits
- 150              	newRX_flag:
- 151 0000 00       		.space	1
- 152              		.section	.bss.newTX_flag,"aw",%nobits
- 155              	newTX_flag:
- 156 0000 00       		.space	1
- 157              		.section	.bss.opcodeString,"aw",%nobits
- 158              		.align	2
- 161              	opcodeString:
- 162 0000 00000000 		.space	10
- 162      00000000 
- 162      0000
- 163              		.section	.bss.packet_size,"aw",%nobits
- 166              	packet_size:
- 167 0000 00       		.space	1
- 168              		.section	.bss.receivedPacket,"aw",%nobits
- 169              		.align	2
- 172              	receivedPacket:
- 173 0000 00000000 		.space	10
- 173      00000000 
- 173      0000
- 174              		.section	.bss.redLED_flag,"aw",%nobits
- 177              	redLED_flag:
- 178 0000 00       		.space	1
- 179              		.section	.bss.redLED_timer,"aw",%nobits
- 182              	redLED_timer:
- 183 0000 00       		.space	1
- 184              		.section	.bss.red_counter,"aw",%nobits
- 185              		.align	2
- 188              	red_counter:
- 189 0000 00000000 		.space	4
- 190              		.section	.bss.red_flag,"aw",%nobits
- 193              	red_flag:
- 194 0000 00       		.space	1
- 195              		.section	.bss.rxCount,"aw",%nobits
- 196              		.align	1
- 199              	rxCount:
- 200 0000 0000     		.space	2
- 201              		.section	.bss.rxReadable,"aw",%nobits
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s 			page 4
+ 121              		.section	.bss.debounce_timer,"aw",%nobits
+ 122              		.align	1
+ 125              	debounce_timer:
+ 126 0000 0000     		.space	2
+ 127              		.section	.bss.debouncing_Flag,"aw",%nobits
+ 130              	debouncing_Flag:
+ 131 0000 00       		.space	1
+ 132              		.section	.bss.debugBuddy,"aw",%nobits
+ 133              		.align	1
+ 136              	debugBuddy:
+ 137 0000 0000     		.space	2
+ 138              		.section	.bss.finalScore,"aw",%nobits
+ 139              		.align	2
+ 142              	finalScore:
+ 143 0000 00000000 		.space	16
+ 143      00000000 
+ 143      00000000 
+ 143      00000000 
+ 144              		.section	.bss.gameState,"aw",%nobits
+ 147              	gameState:
+ 148 0000 00       		.space	1
+ 149              		.section	.bss.loraRX_flag,"aw",%nobits
+ 152              	loraRX_flag:
+ 153 0000 00       		.space	1
+ 154              		.section	.bss.loraRXbuf,"aw",%nobits
+ 155              		.align	2
+ 158              	loraRXbuf:
+ 159 0000 00000000 		.space	10
+ 159      00000000 
+ 159      0000
+ 160              		.section	.bss.loraRXopcode,"aw",%nobits
+ 163              	loraRXopcode:
+ 164 0000 00       		.space	1
+ 165              		.section	.bss.opcodeString,"aw",%nobits
+ 166              		.align	2
+ 169              	opcodeString:
+ 170 0000 00000000 		.space	10
+ 170      00000000 
+ 170      0000
+ 171              		.section	.bss.packet_size,"aw",%nobits
+ 174              	packet_size:
+ 175 0000 00       		.space	1
+ 176              		.section	.bss.receivedPacket,"aw",%nobits
+ 177              		.align	2
+ 180              	receivedPacket:
+ 181 0000 00000000 		.space	10
+ 181      00000000 
+ 181      0000
+ 182              		.section	.bss.redLED_flag,"aw",%nobits
+ 185              	redLED_flag:
+ 186 0000 00       		.space	1
+ 187              		.section	.bss.redLED_timer,"aw",%nobits
+ 190              	redLED_timer:
+ 191 0000 00       		.space	1
+ 192              		.section	.bss.red_counter,"aw",%nobits
+ 193              		.align	1
+ 196              	red_counter:
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s 			page 4
 
 
- 202              		.align	2
- 205              	rxReadable:
- 206 0000 00000000 		.space	20
- 206      00000000 
- 206      00000000 
- 206      00000000 
- 206      00000000 
- 207              		.section	.bss.stateChange_flag,"aw",%nobits
- 210              	stateChange_flag:
- 211 0000 00       		.space	1
- 212              		.section	.bss.txCount,"aw",%nobits
- 213              		.align	1
- 216              	txCount:
- 217 0000 0000     		.space	2
- 218              		.section	.bss.txReadable,"aw",%nobits
- 219              		.align	2
- 222              	txReadable:
- 223 0000 00000000 		.space	20
- 223      00000000 
- 223      00000000 
- 223      00000000 
- 223      00000000 
- 224              		.section	.rodata.gameStateNames,"a"
- 225              		.align	2
- 228              	gameStateNames:
- 229 0000 00000000 		.word	.LC0
- 230 0004 08000000 		.word	.LC1
- 231 0008 10000000 		.word	.LC2
- 232 000c 14000000 		.word	.LC3
- 233 0010 1C000000 		.word	.LC4
- 234 0014 24000000 		.word	.LC5
- 235 0018 2C000000 		.word	.LC6
- 236 001c 38000000 		.word	.LC7
- 237 0020 40000000 		.word	.LC8
- 238 0024 48000000 		.word	.LC9
- 239              		.text
- 240              	.Letext0:
- 241              		.file 1 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\machine\\_default_types.h"
- 242              		.file 2 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\sys\\_stdint.h"
- 243              		.file 3 "Core/Inc/globals.c"
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s 			page 5
+ 197 0000 0000     		.space	2
+ 198              		.section	.bss.red_flag,"aw",%nobits
+ 201              	red_flag:
+ 202 0000 00       		.space	1
+ 203              		.section	.bss.rxCount,"aw",%nobits
+ 204              		.align	1
+ 207              	rxCount:
+ 208 0000 0000     		.space	2
+ 209              		.section	.bss.rxReadable,"aw",%nobits
+ 210              		.align	2
+ 213              	rxReadable:
+ 214 0000 00000000 		.space	20
+ 214      00000000 
+ 214      00000000 
+ 214      00000000 
+ 214      00000000 
+ 215              		.section	.bss.score,"aw",%nobits
+ 216              		.align	2
+ 219              	score:
+ 220 0000 00000000 		.space	16
+ 220      00000000 
+ 220      00000000 
+ 220      00000000 
+ 221              		.section	.bss.stateChange_flag,"aw",%nobits
+ 224              	stateChange_flag:
+ 225 0000 00       		.space	1
+ 226              		.section	.bss.txCount,"aw",%nobits
+ 227              		.align	1
+ 230              	txCount:
+ 231 0000 0000     		.space	2
+ 232              		.section	.bss.txReadable,"aw",%nobits
+ 233              		.align	2
+ 236              	txReadable:
+ 237 0000 00000000 		.space	20
+ 237      00000000 
+ 237      00000000 
+ 237      00000000 
+ 237      00000000 
+ 238              		.section	.rodata.gameStateNames,"a"
+ 239              		.align	2
+ 242              	gameStateNames:
+ 243 0000 00000000 		.word	.LC0
+ 244 0004 08000000 		.word	.LC1
+ 245 0008 10000000 		.word	.LC2
+ 246 000c 14000000 		.word	.LC3
+ 247 0010 1C000000 		.word	.LC4
+ 248 0014 24000000 		.word	.LC5
+ 249 0018 2C000000 		.word	.LC6
+ 250 001c 38000000 		.word	.LC7
+ 251 0020 40000000 		.word	.LC8
+ 252 0024 48000000 		.word	.LC9
+ 253              		.text
+ 254              	.Letext0:
+ 255              		.file 1 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 256              		.file 2 "c:\\libraries\\gcc\\11.2 2022.02\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 257              		.file 3 "Core/Inc/globals.c"
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 globals.c
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:228    .rodata.gameStateNames:00000000 gameStateNames
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:21     .rodata.str1.4:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:129    .bss.gameState:00000000 gameState
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:199    .bss.rxCount:00000000 rxCount
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:216    .bss.txCount:00000000 txCount
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:222    .bss.txReadable:00000000 txReadable
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:205    .bss.rxReadable:00000000 rxReadable
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:161    .bss.opcodeString:00000000 opcodeString
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:172    .bss.receivedPacket:00000000 receivedPacket
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:140    .bss.loraRXbuf:00000000 loraRXbuf
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:145    .bss.loraRXopcode:00000000 loraRXopcode
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:166    .bss.packet_size:00000000 packet_size
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:91     .bss.blueLED_flag:00000000 blueLED_flag
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:177    .bss.redLED_flag:00000000 redLED_flag
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:96     .bss.blueLED_timer:00000000 blueLED_timer
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:182    .bss.redLED_timer:00000000 redLED_timer
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:113    .bss.debounce_timer:00000000 debounce_timer
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:102    .bss.blue_counter:00000000 blue_counter
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:188    .bss.red_counter:00000000 red_counter
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:81     .bss.OTHER_PLAYER:00000000 OTHER_PLAYER
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:86     .bss.THIS_PLAYER:00000000 THIS_PLAYER
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:150    .bss.newRX_flag:00000000 newRX_flag
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:155    .bss.newTX_flag:00000000 newTX_flag
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:118    .bss.debouncing_Flag:00000000 debouncing_Flag
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:107    .bss.blue_flag:00000000 blue_flag
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:193    .bss.red_flag:00000000 red_flag
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:210    .bss.stateChange_flag:00000000 stateChange_flag
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:134    .bss.loraRX_flag:00000000 loraRX_flag
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:124    .bss.debugBuddy:00000000 debugBuddy
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:82     .bss.OTHER_PLAYER:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:87     .bss.THIS_PLAYER:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:92     .bss.blueLED_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:97     .bss.blueLED_timer:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:99     .bss.blue_counter:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:108    .bss.blue_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:110    .bss.debounce_timer:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:119    .bss.debouncing_Flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:121    .bss.debugBuddy:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:130    .bss.gameState:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:135    .bss.loraRX_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:137    .bss.loraRXbuf:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:146    .bss.loraRXopcode:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:151    .bss.newRX_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:156    .bss.newTX_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:158    .bss.opcodeString:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:167    .bss.packet_size:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:169    .bss.receivedPacket:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:178    .bss.redLED_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:183    .bss.redLED_timer:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:185    .bss.red_counter:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:194    .bss.red_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:196    .bss.rxCount:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:202    .bss.rxReadable:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:211    .bss.stateChange_flag:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:213    .bss.txCount:00000000 $d
-ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s 			page 6
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:242    .rodata.gameStateNames:00000000 gameStateNames
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:21     .rodata.str1.4:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:147    .bss.gameState:00000000 gameState
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:207    .bss.rxCount:00000000 rxCount
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:230    .bss.txCount:00000000 txCount
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:142    .bss.finalScore:00000000 finalScore
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:219    .bss.score:00000000 score
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:236    .bss.txReadable:00000000 txReadable
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:213    .bss.rxReadable:00000000 rxReadable
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:169    .bss.opcodeString:00000000 opcodeString
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:180    .bss.receivedPacket:00000000 receivedPacket
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:158    .bss.loraRXbuf:00000000 loraRXbuf
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:163    .bss.loraRXopcode:00000000 loraRXopcode
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:174    .bss.packet_size:00000000 packet_size
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:103    .bss.blueLED_flag:00000000 blueLED_flag
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:185    .bss.redLED_flag:00000000 redLED_flag
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:108    .bss.blueLED_timer:00000000 blueLED_timer
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:190    .bss.redLED_timer:00000000 redLED_timer
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:125    .bss.debounce_timer:00000000 debounce_timer
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:114    .bss.blue_counter:00000000 blue_counter
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:196    .bss.red_counter:00000000 red_counter
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:83     .bss.OTHER_PLAYER:00000000 OTHER_PLAYER
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:93     .bss.THIS_PLAYER:00000000 THIS_PLAYER
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:88     .bss.RXready_flag:00000000 RXready_flag
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:98     .bss.TXready_flag:00000000 TXready_flag
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:130    .bss.debouncing_Flag:00000000 debouncing_Flag
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:119    .bss.blue_flag:00000000 blue_flag
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:201    .bss.red_flag:00000000 red_flag
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:224    .bss.stateChange_flag:00000000 stateChange_flag
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:152    .bss.loraRX_flag:00000000 loraRX_flag
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:136    .bss.debugBuddy:00000000 debugBuddy
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:84     .bss.OTHER_PLAYER:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:89     .bss.RXready_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:94     .bss.THIS_PLAYER:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:99     .bss.TXready_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:104    .bss.blueLED_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:109    .bss.blueLED_timer:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:111    .bss.blue_counter:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:120    .bss.blue_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:122    .bss.debounce_timer:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:131    .bss.debouncing_Flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:133    .bss.debugBuddy:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:139    .bss.finalScore:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:148    .bss.gameState:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:153    .bss.loraRX_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:155    .bss.loraRXbuf:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:164    .bss.loraRXopcode:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:166    .bss.opcodeString:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:175    .bss.packet_size:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:177    .bss.receivedPacket:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:186    .bss.redLED_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:191    .bss.redLED_timer:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:193    .bss.red_counter:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:202    .bss.red_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:204    .bss.rxCount:00000000 $d
+ARM GAS  C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s 			page 6
 
 
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:219    .bss.txReadable:00000000 $d
-C:\Users\jdcox\AppData\Local\Temp\ccJM5p8F.s:225    .rodata.gameStateNames:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:210    .bss.rxReadable:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:216    .bss.score:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:225    .bss.stateChange_flag:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:227    .bss.txCount:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:233    .bss.txReadable:00000000 $d
+C:\Users\jdcox\AppData\Local\Temp\ccshOGnz.s:239    .rodata.gameStateNames:00000000 $d
 
 NO UNDEFINED SYMBOLS

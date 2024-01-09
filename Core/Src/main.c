@@ -29,6 +29,8 @@
 #include <stdio.h>
 #include "ssd1306.h"
 #include "semphr.h"
+#include "FreeRTOS.h"
+#include <task.h>
 
 
 /* USER CODE END Includes */
@@ -138,6 +140,14 @@ int main(void)
 
   xloraMutex = xSemaphoreCreateMutex();
 
+debugBuddy = pdTRUE;
+
+if (xloraMutex != NULL) 
+{
+  debugBuddy = xloraMutex;
+}
+
+
   /* USER CODE END RTOS_MUTEX */
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
@@ -175,8 +185,7 @@ int main(void)
   
 
   /* definition and creation of displayTask */
-  osThreadDef(displayTask, StartDisplayTask, osPriorityNormal, 0, 128);
-  displayTaskHandle = osThreadCreate(osThread(displayTask), NULL);
+ 
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -410,13 +419,13 @@ static void MX_GPIO_Init(void)
 void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN 5 */
-  //xloraMutex = xSemaphoreCreateMutex();
-  //xSemaphoreTake(xloraMutex, portMAX_DELAY);  
-  //xSemaphoreGive(xloraMutex);
-  //debug osMutexRelease(lora_mutexHandle);
+  
 
   osThreadDef(loraTask, StartLoraTask, osPriorityAboveNormal, 0, 128);
   loraTaskHandle = osThreadCreate(osThread(loraTask), NULL);
+
+  osThreadDef(displayTask, StartDisplayTask, osPriorityNormal, 0, 128);
+  displayTaskHandle = osThreadCreate(osThread(displayTask), NULL);
 
   if ( HAL_GPIO_ReadPin(PLAYER_SEL_GPIO_Port,PLAYER_SEL_Pin) == 0 )
   {
@@ -465,13 +474,18 @@ void StartDefaultTask(void const * argument)
   {
 
     // if packet received, process it
-    if(newRX_flag) decodeKOTHPacket();
+    
+      if(RXready_flag) decodeKOTHPacket();
 
-    // Evaluate current state
-    doGameState();
+      // Evaluate current state
+      
+      doGameState();
+      
 
-  
-    osDelay(20);
+    
+      osDelay(20);
+    
+
    
   }
   /* USER CODE END 5 */
@@ -509,6 +523,7 @@ void StartLoraTask(void const * argument)
       }
 
     LoRa_startReceiving(&myLoRa);
+
     rxCount = 0;
     txCount = 0;
 
@@ -517,30 +532,50 @@ void StartLoraTask(void const * argument)
   {
     // RX first
     // Get the data
-    // decodeKOTHPacket();
+    
+    // to do: add 2nd/3rd broadcast to each event. Configurable. 
 
-    packet_size = LoRa_receive(&myLoRa, loraRXbuf, 10);
-
-    if(packet_size > 0)
+    if(xloraMutex != NULL)
     {
-        newRX_flag = 1;
-        if(loraRXbuf[0] != receivedPacket[0])
+
+        packet_size = LoRa_receive(&myLoRa, loraRXbuf, 10);
+
+        if(packet_size > 0)
         {
-            memcpy(receivedPacket,loraRXbuf,10);
+          if(xSemaphoreTake(xloraMutex, portMAX_DELAY) == pdTRUE )
+          { 
+
+            RXready_flag = 1;
+
+            if(loraRXbuf[0] != receivedPacket[0])
+            {
+                memcpy(receivedPacket,loraRXbuf,10);
+            }
+
+            xSemaphoreGive(xloraMutex); 
+          }
         }
 
-    }
+        // Transmit always
+        LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 12, 100);
 
-    //osDelay(5);
 
-    // TX for every meaningful button press
-    if(newTX_flag)
-    {
-      newTX_flag = 0;
-      // send a message
-      LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 12, 100);
-    }
     
+        //osDelay(5);
+
+        /*
+        // TX for every meaningful button press
+        if(TXready_flag)
+        {
+          TXready_flag = 0;
+          // send a message
+          LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 12, 100);
+        }
+        */
+
+      } 
+    
+
     osDelay(200);
 
   }
@@ -560,8 +595,78 @@ void StartDisplayTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
+    switch(gameState)
+    {
+        case WAITING:
+          ssd1306_Fill(0); 
+          ssd1306_SetCursor(0,0);
+          if (THIS_PLAYER == RED) 
+          { 
+              ssd1306_WriteString("RED",Font_11x18,1);
+          }
+          else    
+          {
+              ssd1306_WriteString("BLUE",Font_11x18,1);
+          }
+          ssd1306_SetCursor(25,21);
+          ssd1306_WriteString("Push to play!",Font_7x10,1);
+          ssd1306_UpdateScreen();
 
-    osDelay(100);
+        break;
+
+
+        case RED:
+          ssd1306_Fill(0);
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("RED is king!",Font_7x10,1);
+          ssd1306_SetCursor(0,12);
+          sprintf(score, "R:%u", red_counter);
+          ssd1306_WriteString(score,Font_7x10,1);
+          ssd1306_UpdateScreen();               
+        break;
+
+        case BLUE:
+      
+          ssd1306_Fill(0);
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("BLUE is king!",Font_7x10,1);
+          ssd1306_SetCursor(0,12);
+          sprintf(score, "B:%u", blue_counter);
+          ssd1306_WriteString(score,Font_7x10,1);
+          ssd1306_UpdateScreen();
+      
+        break;
+
+        case REDWINS:
+  
+          ssd1306_Fill(0);
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("Red wins!",Font_7x10,1);
+          uint16_t difference = (red_counter - blue_counter);
+          ssd1306_SetCursor(0,12);
+          sprintf(finalScore, "Won by %ums", difference);
+          ssd1306_WriteString(finalScore,Font_7x10,1);
+          ssd1306_UpdateScreen();
+            
+        break;
+
+        case BLUEWINS:
+
+          ssd1306_Fill(0);
+          ssd1306_SetCursor(0,0);
+          ssd1306_WriteString("Blue wins!",Font_7x10,1);
+          char score [16];
+          ssd1306_SetCursor(0,12);
+          uint16_t differenceB = (blue_counter - red_counter);
+          sprintf(finalScore, "Won by %ums", differenceB);
+          ssd1306_WriteString(finalScore,Font_7x10,1);
+          ssd1306_UpdateScreen();
+          
+        break;
+    }
+
+
+    osDelay(250);
   }
   /* USER CODE END StartDisplayTask */
 }

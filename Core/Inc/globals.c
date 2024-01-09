@@ -7,14 +7,14 @@ uint8_t stateChange_flag;
 uint8_t red_flag;
 uint8_t blue_flag;
 uint8_t debouncing_Flag;
-uint8_t newTX_flag;
-uint8_t newRX_flag;
+uint8_t TXready_flag;
+uint8_t RXready_flag;
 uint8_t THIS_PLAYER;
 uint8_t OTHER_PLAYER;
 
 
-uint32_t red_counter;
-uint32_t blue_counter;
+uint16_t red_counter;
+uint16_t blue_counter;
 uint16_t debounce_timer;
 uint8_t redLED_timer;
 uint8_t blueLED_timer;
@@ -28,6 +28,8 @@ uint8_t receivedPacket[10];
 char opcodeString [10];
 char rxReadable[20];
 char txReadable[20];
+char score [16];
+char finalScore [16];
 
 uint16_t txCount, rxCount;
 
