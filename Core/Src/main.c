@@ -65,7 +65,7 @@ osTimerId debounceTimerHandle;
 osTimerId blinkTimerHandle;
 osMutexId lora_mutexHandle;
 /* USER CODE BEGIN PV */
-SemaphoreHandle_t xloraMutex;
+//SemaphoreHandle_t xloraMutex;
 LoRa myLoRa;
 
 
@@ -132,21 +132,21 @@ int main(void)
 
   /* Create the mutex(es) */
   /* definition and creation of lora_mutex */
-  //debug osMutexDef(lora_mutex);
-  //debug lora_mutexHandle = osMutexCreate(osMutex(lora_mutex));
+  osMutexDef(lora_mutex);
+  lora_mutexHandle = osMutexCreate(osMutex(lora_mutex));
 
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
 
-  xloraMutex = xSemaphoreCreateMutex();
+  //xloraMutex = xSemaphoreCreateMutex();
 
-debugBuddy = pdTRUE;
-
+//debugBuddy = pdTRUE;
+/*
 if (xloraMutex != NULL) 
 {
   debugBuddy = xloraMutex;
 }
-
+*/
 
   /* USER CODE END RTOS_MUTEX */
 
@@ -185,7 +185,7 @@ if (xloraMutex != NULL)
   
 
   /* definition and creation of displayTask */
- 
+  
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -481,12 +481,9 @@ void StartDefaultTask(void const * argument)
       
       doGameState();
       
-
     
-      osDelay(20);
+      osDelay(50);
     
-
-   
   }
   /* USER CODE END 5 */
 }
@@ -535,16 +532,12 @@ void StartLoraTask(void const * argument)
     
     // to do: add 2nd/3rd broadcast to each event. Configurable. 
 
-    if(xloraMutex != NULL)
-    {
+      packet_size = LoRa_receive(&myLoRa, loraRXbuf, 10);
 
-        packet_size = LoRa_receive(&myLoRa, loraRXbuf, 10);
+      if( osMutexWait(lora_mutexHandle, osWaitForever) == osOK )        { 
 
         if(packet_size > 0)
         {
-          if(xSemaphoreTake(xloraMutex, portMAX_DELAY) == pdTRUE )
-          { 
-
             RXready_flag = 1;
 
             if(loraRXbuf[0] != receivedPacket[0])
@@ -552,31 +545,30 @@ void StartLoraTask(void const * argument)
                 memcpy(receivedPacket,loraRXbuf,10);
             }
 
-            xSemaphoreGive(xloraMutex); 
-          }
         }
+          
 
-        // Transmit always
-        LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 12, 100);
-
-
-    
+   
         //osDelay(5);
 
-        /*
+        
         // TX for every meaningful button press
         if(TXready_flag)
         {
           TXready_flag = 0;
           // send a message
           LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 12, 100);
+
+          // Twice for fun
+          LoRa_transmit(&myLoRa, (uint8_t*)opcodeString, 12, 100);
         }
-        */
+        
+        osMutexRelease(lora_mutexHandle);
 
       } 
     
 
-    osDelay(200);
+    osDelay(150);
 
   }
   /* USER CODE END StartLoraTask */
@@ -655,7 +647,6 @@ void StartDisplayTask(void const * argument)
           ssd1306_Fill(0);
           ssd1306_SetCursor(0,0);
           ssd1306_WriteString("Blue wins!",Font_7x10,1);
-          char score [16];
           ssd1306_SetCursor(0,12);
           uint16_t differenceB = (blue_counter - red_counter);
           sprintf(finalScore, "Won by %ums", differenceB);
@@ -666,7 +657,7 @@ void StartDisplayTask(void const * argument)
     }
 
 
-    osDelay(250);
+    osDelay(150);
   }
   /* USER CODE END StartDisplayTask */
 }
@@ -680,6 +671,7 @@ void msTickCallback(void const * argument)
       red_counter += 10;
       if(red_counter >= 10000)
       {
+        red_counter = 10000;
         red_flag = 0;
         blue_flag = 0;
         gameState = REDWINS;
@@ -691,25 +683,26 @@ void msTickCallback(void const * argument)
       blue_counter += 10;
       if(blue_counter >= 10000)
       { 
+        blue_counter = 10000;
         red_flag = 0;
         blue_flag = 0;
         gameState = BLUEWINS;
       }
     }
 
-    if(redLED_flag)
+    if(blinkRED_flag)
     {
         if(++redLED_timer >= 25)
         {
-          redLED_flag = 0;
+          blinkRED_flag = 0;
           REDLED_OFF;
         }
     }
-    if(blueLED_flag)
+    if(blinkBLUE_flag)
     {
       if(++blueLED_timer >= 25)
       {
-        blueLED_flag = 0;
+        blinkBLUE_flag = 0;
         BLUELED_OFF;
       }
     }

@@ -7,7 +7,8 @@
 extern uint16_t debugBuddy;
 extern uint16_t txCount, rxCount;
 extern LoRa myLoRa;
-extern SemaphoreHandle_t xloraMutex;
+extern osMutexId lora_mutexHandle;
+// extern SemaphoreHandle_t xloraMutex;
 
 extern uint8_t THIS_PLAYER;
 extern uint8_t OTHER_PLAYER;
@@ -24,8 +25,8 @@ extern uint8_t RXready_flag;
 extern uint16_t debounce_timer;
 extern uint8_t redLED_timer;
 extern uint8_t blueLED_timer;
-extern uint8_t redLED_flag;
-extern uint8_t blueLED_flag;
+extern uint8_t blinkRED_flag;
+extern uint8_t blinkBLUE_flag;
 
 extern uint16_t red_counter;
 extern uint16_t blue_counter;

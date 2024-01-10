@@ -1,11 +1,3 @@
-// -------------------------------------------------- \\
-// |                                                | \\
-// |            WRITTEN BY: Sslman Motlaq           | \\
-// |               Telegram: @S_Motlaq              | \\
-// |         E-MAIL:  pilot.motlaq@gmail.com        | \\
-// |                                                | \\
-// -------------------------------------------------- //
-
 #ifndef __lora__
 #define __lora__
 

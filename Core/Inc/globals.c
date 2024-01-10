@@ -18,8 +18,8 @@ uint16_t blue_counter;
 uint16_t debounce_timer;
 uint8_t redLED_timer;
 uint8_t blueLED_timer;
-uint8_t redLED_flag;
-uint8_t blueLED_flag;
+uint8_t blinkRED_flag;
+uint8_t blinkBLUE_flag;
 
 uint8_t packet_size;
 uint8_t loraRXopcode;

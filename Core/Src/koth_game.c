@@ -13,8 +13,6 @@
 
 void resetGame()
 {
-    if( xSemaphoreTake(xloraMutex, portMAX_DELAY) == pdTRUE )
-    {
         REDLED_OFF;
         BLUELED_OFF;
         red_flag = 0;
@@ -23,9 +21,6 @@ void resetGame()
         blue_counter = 0;
         gameState = WAITING;
         stateChange_flag = 1;
-
-        xSemaphoreGive(xloraMutex);
-    }
 
 }
 
@@ -94,7 +89,7 @@ void doGameState()
 
     }
     
-    switch (gameState)
+    switch (gameState) // Not re: RX, just normal state check
     {
         case WAITING:
             if(stateChange_flag) // do once
@@ -113,11 +108,7 @@ void doGameState()
             newStateChange = 0;
             newred_flag = 0;
             newblue_flag = 0;
-
-            setOpcode(gameState);
             newTXready = 1;
-
-            osDelay(100);
 
         break;
 
@@ -125,7 +116,7 @@ void doGameState()
         case RED:
             if(stateChange_flag)
             {
-                setOpcode(RED);
+                newGameState = RED;
                 newTXready = 1;
                 newStateChange = 0;
             }
@@ -139,7 +130,7 @@ void doGameState()
         case BLUE:
             if(stateChange_flag)
             {
-                setOpcode(BLUE);
+                newGameState = BLUE;
                 newTXready = 1;
                 newStateChange = 0;
             }
@@ -152,7 +143,7 @@ void doGameState()
         case REDWINS:
             if(stateChange_flag)
             {
-                setOpcode(REDWINS);
+                newGameState = REDWINS;
                 newTXready = 1;
                 newStateChange = 0;
                 REDLED_ON;
@@ -164,7 +155,7 @@ void doGameState()
         case BLUEWINS:
             if(stateChange_flag)
             {
-                setOpcode(BLUEWINS);
+                newGameState = BLUEWINS;
                 newTXready = 1;
                 newStateChange = 0;
                 REDLED_OFF;
@@ -188,20 +179,22 @@ void doGameState()
         break;
 */
       
-    }
+    } // gamestate switch
 
     // Protected action: update globals
-    if(xSemaphoreTake(xloraMutex, portMAX_DELAY) == pdTRUE )
-    { 
-        gameState = newGameState;
-        stateChange_flag = newStateChange;
+    if( osMutexWait(lora_mutexHandle, osWaitForever) == osOK )
+        { 
+            gameState = newGameState;
+            setOpcode(gameState);
+            stateChange_flag = newStateChange;
 
-        RXready_flag = newRXready;
-        TXready_flag = newTXready;
-        red_flag = newred_flag;
-        blue_flag = newblue_flag;
-        xSemaphoreGive(xloraMutex);
-    }
+            RXready_flag = newRXready;
+            TXready_flag = newTXready;
+            red_flag = newred_flag;
+            blue_flag = newblue_flag;
+
+            osMutexRelease(lora_mutexHandle);
+        }
 
 
 }
@@ -221,12 +214,12 @@ void decodeKOTHPacket()
         if(gameState != opcodeRX) 
         {
             // Protected action: update globals
-            if(xSemaphoreTake(xloraMutex, portMAX_DELAY) == pdTRUE )
+        if( osMutexWait(lora_mutexHandle, osWaitForever) == osOK )
             { 
                 loraRXopcode = opcodeRX;
                 gameState = opcodeRX;
                 stateChange_flag = 1;
-                xSemaphoreGive(xloraMutex);
+                osMutexRelease(lora_mutexHandle);
             }
         }
 
@@ -286,28 +279,30 @@ void btnPressed()
         
         case REDWINS:
         case BLUEWINS:
+            
             newStateChange = 1; 
-            resetGame();
+            newGameState = WAITING;         
             
         break;
 
-    }
+    } // gamestate switch re: btn press
 
-    // Protected action: update globals
-    if(xSemaphoreTake(xloraMutex, portMAX_DELAY) == pdTRUE )
-    {
-        gameState = newGameState;
-        stateChange_flag = newStateChange;
+        // Protected action: update globals
+    if( osMutexWait(lora_mutexHandle, osWaitForever) == osOK )
+        {
+            gameState = newGameState;
+            stateChange_flag = newStateChange;
 
-        xSemaphoreGive(xloraMutex);
-    }
+            if(newGameState == WAITING) resetGame();
+            
+            osMutexRelease(lora_mutexHandle);
+        }
 
 }
 
 void setOpcode(uint8_t opcodeTX)
 {
-    if(xSemaphoreTake(xloraMutex, portMAX_DELAY) == pdTRUE )
-    {
+
         memset(opcodeString, 0, sizeof(opcodeString));
 
         // Create encoded string
@@ -315,7 +310,5 @@ void setOpcode(uint8_t opcodeTX)
 
         memcpy(txReadable, &gameStateNames[opcodeTX], sizeof(&gameStateNames[opcodeTX]));
         
-        xSemaphoreGive(xloraMutex);
-    }
   
 }
