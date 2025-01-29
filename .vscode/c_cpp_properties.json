@@ -1,25 +1,17 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "Mac",
             "includePath": [
-            
-                "${workspaceFolder}/**"
-
-                ],
-                
+                "/Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/include"
+            ],
             "defines": [
-                //"_DEBUG",
-                //"UNICODE",
                 "USE_HAL_DRIVER",
                 "STM32F401xC"
-                //"_UNICODE"
             ],
-            
-            "compilerPath": "C:\\Libraries\\mingw\\bin\\gcc.exe",
+            "compilerPath": "/usr/local/bin/arm-none-eabi-gcc",
             "cStandard": "c17",
-            //"cppStandard": "c++17",
-            "intelliSenseMode": "windows-gcc-x86",
+            "intelliSenseMode": "macos-gcc-arm",
             "configurationProvider": "ms-vscode.makefile-tools"
         }
     ],
